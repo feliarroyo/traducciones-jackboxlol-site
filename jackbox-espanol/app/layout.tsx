@@ -56,8 +56,8 @@ export default function RootLayout({
           <nav className="flex items-center gap-6">
             <div className="flex items-center gap-4 text-sm font-medium border-r border-slate-600 pr-6">
               <Link href="/downloads" className="hover:text-amber-400 transition-colors">Descargas</Link>
-              <Link href="/novedades" className="hover:text-amber-400 transition-colors">Novedades</Link>
-              <Link href="/creditos" className="hover:text-amber-400 transition-colors">Créditos</Link>
+              <Link href="/news" className="hover:text-amber-400 transition-colors">Novedades</Link>
+              <Link href="/credits" className="hover:text-amber-400 transition-colors">Créditos</Link>
             </div>
 
             {/* Social Icons */}
