@@ -464,14 +464,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Use-Your-Words-Spanish/releases/latest/download/UYW-ES.zip"
             },
             {
                 name: "Mac",
                 platforms: ["mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Use-Your-Words-Spanish/releases/latest/download/UYW-ES-MAC.zip"
             }
         ]
     },
@@ -485,28 +485,28 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/What-The-Dub-Spanish/releases/latest/download/WTD-ES.zip"
             },
             {
                 name: "Mac",
                 platforms: ["mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/What-The-Dub-Spanish/releases/latest/download/WTD-ES-MAC.zip"
             },
             {
                 name: "España",
                 platforms: ["win-linux"],
                 stores: ["default"],
                 lang: "spain",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/What-The-Dub-Spanish/releases/latest/download/WTD-ES-SPAIN.zip"
             },
             {
                 name: "Mac (España)",
                 platforms: ["mac"],
                 stores: ["default"],
                 lang: "spain",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/What-The-Dub-Spanish/releases/latest/download/WTD-ES-MAC-SPAIN.zip"
             }
         ]
     },
@@ -520,14 +520,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/RiffTrax-The-Game-Spanish/releases/latest/download/RTTG-ES.zip"
             },
             {
                 name: "Mac",
                 platforms: ["mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/RiffTrax-The-Game-Spanish/releases/latest/download/RTTG-ES-MAC.zip"
             }
         ]
     }
