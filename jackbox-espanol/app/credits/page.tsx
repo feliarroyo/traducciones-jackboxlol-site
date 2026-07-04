@@ -1,7 +1,6 @@
-// src/app/credits/page.tsx
-import React from "react";
 import Image from "next/image";
 import { CREDITS_REGISTRY } from "../data/creditsRegistry";
+import { GAME_ASSETS } from "../data/gameRegistry";
 
 export default function CreditsPage() {
   const admins = CREDITS_REGISTRY.filter(c => c.category === "administrator");
@@ -27,7 +26,7 @@ export default function CreditsPage() {
             <div key={admin.username} className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 backdrop-blur-sm">
               
               {/* Left Side: Avatar Panel */}
-              <div className="flex flex-col items-center space-y-3 md:w-48 flex-shrink-0">
+              <div className="flex flex-col items-center space-y-3 md:w-48 shrink-0">
                 <div className="w-24 h-24 relative rounded-2xl overflow-hidden border-2 border-amber-500/30 bg-slate-900">
                   <Image 
                     src={admin.avatarUrl || "/images/avatars/default.webp"} 
@@ -49,8 +48,8 @@ export default function CreditsPage() {
                     {role.games && (
                       <div className="flex flex-wrap gap-4 items-center bg-slate-900/40 p-3 rounded-2xl border border-slate-800/40">
                         {role.games.map((game, gIdx) => (
-                          <div key={gIdx} className="w-20 h-10 relative flex-shrink-0" title={game.alt}>
-                            <Image src={game.logoSrc} alt={game.alt} fill className="object-contain" />
+                          <div key={gIdx} className="w-20 h-10 relative flex-shrink-0" title={GAME_ASSETS[game]?.alt}>
+                            <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain" />
                           </div>
                         ))}
                       </div>
@@ -89,8 +88,8 @@ export default function CreditsPage() {
                       {role.games && (
                         <div className="flex flex-wrap gap-2 items-center">
                           {role.games.map((game, gIdx) => (
-                            <div key={gIdx} className="w-14 h-7 relative" title={game.alt}>
-                              <Image src={game.logoSrc} alt={game.alt} fill className="object-contain" />
+                            <div key={gIdx} className="w-14 h-7 relative" title={GAME_ASSETS[game]?.alt}>
+                              <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain" />
                             </div>
                           ))}
                         </div>

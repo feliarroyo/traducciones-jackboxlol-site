@@ -6,36 +6,14 @@ import SinglePackShowcase from "./components/SinglePackShowcase";
 import JackboxUtilityCard from "./components/JackboxUtilityCard";
 
 export default function Home() {
-  const pp1dubs = [
-    { src: "/images/games/drawful.webp", alt: "Logo de Drawful" }
-  ];
-  const pp2dubs = [
-    { src: "/images/games/earwax.webp", alt: "Logo de Earwax" }
-  ];
-  const pp3dubs = [
-    { src: "/images/games/fakinit.webp", alt: "Logo de ¡Engáñame!" }
-  ];
-  const pp4dubs = [
-    { src: "/images/games/survive.webp", alt: "Logo de Sobrevive al Internet" },
-    { src: "/images/games/monster.webp", alt: "Logo de Monstruo Busca Monstruo" },
-    { src: "/images/games/civic.webp", alt: "Logo de Garabato Cívico" }
-  ];
-  const pp5dubs = [
-    { src: "/images/games/zeeple.webp", alt: "Logo de Zeeple Dome" },
-    { src: "/images/games/patently.webp", alt: "Logo de Patentes Dementes" }
-  ];
-  const pp6dubs = [
-    { src: "/images/games/ptb.webp", alt: "Logo de Pulsa el Botón" }
-  ];
-  const pp7dubs = [
-    { src: "/images/games/devils.webp", alt: "Logo de La Familia es un Infierno" },
-    { src: "/images/games/talkingpoints.webp", alt: "Logo de Talking Points" }
-  ];
-
-  const soloDubs = [
-    { src: "/images/games/drawful2.webp", alt: "Logo de Drawful 2" },
-    { src: "/images/games/useyourwords.webp", alt: "Logo de Usa Tus Palabras" }
-  ];
+  const pp1dubs = [ "drawful" ];
+  const pp2dubs = [ "earwax" ]
+  const pp3dubs = [ "fakinit" ];
+  const pp4dubs = [ "survive", "monster", "civic" ];
+  const pp5dubs = [ "zeeple", "patently" ];
+  const pp6dubs = [ "ptb" ];
+  const pp7dubs = [ "devils", "talkingpoints" ];
+  const soloDubs = [ "drawful2", "useyourwords" ];
 
   return (
     <div className="space-y-24 pb-12">

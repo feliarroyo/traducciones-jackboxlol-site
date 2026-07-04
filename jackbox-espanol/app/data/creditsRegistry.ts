@@ -1,12 +1,10 @@
-// src/data/creditsRegistry.ts
-
 export interface CreditItem {
     username: string;
     avatarUrl?: string;
     category: "administrator" | "contributor";
     roles: {
         roleName: string; // e.g., "Traducción principal", "Edición de video", "Otros roles"
-        games?: { logoSrc: string; alt: string }[]; // Game logos linked to this specific role
+        games?: string[]; // Game logos linked to this specific role
         textNotes?: string[]; // For roles that use text descriptions instead of logos
     }[];
 }
@@ -237,16 +235,60 @@ export const CREDITS_REGISTRY: CreditItem[] = [
         roles: [
             {
                 roleName: "Traducción principal",
-                games: [{ logoSrc: "/images/games/talking-points.webp", alt: "Talking Points" }]
+                games: ["talkingpoints"]
             }
         ]
     },
     {
-        username: "hectorflipi",
+        username: "LucastuFett",
         category: "contributor",
         roles: [
-            { roleName: "Traducción principal [España]", games: [{ logoSrc: "/images/games/quiplash.webp", alt: "Quiplash" }] },
+            {
+                roleName: "Traducción principal",
+                games: ["dictionarium"]
+            }
+        ]
+    },
+    {
+        username: "Benelux",
+        category: "contributor",
+        roles: [
+            {
+                roleName: "Traducción principal",
+                games: ["devils"]
+            }
+        ]
+    },
+    {
+        username: "Tejas",
+        category: "contributor",
+        roles: [
+            {
+                roleName: "Traducción principal",
+                games: ["rolemodels"]
+            },
+            {
+                roleName: "Traducción asistente",
+                games: ["quiplash3"]
+            }
+        ]
+    },
+    {
+        username: "hectorflipi, lau_fleur y exviolinista13",
+        category: "contributor",
+        roles: [
+            { roleName: "Traducción principal [España]", games: ["quiplash"] },
             { roleName: "Otros roles", textNotes: ["Traducción de Drawful 2 antes de la oficial"] }
         ]
-    }
+    },
+    {
+        username: "Danda",
+        category: "contributor",
+        roles: [
+            {
+                roleName: "Traducción principal [España]",
+                games: ["wtd"]
+            }
+        ]
+    },
 ];
