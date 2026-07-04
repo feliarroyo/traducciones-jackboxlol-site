@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import DownloadButton from "../components/DownloadButton";
-import { WindowsIcon, MacIcon, LinuxIcon, SwitchIcon, EpicIcon, MicrosoftIcon } from "../components/icons/PlatformIcons";
+import { useState } from "react";
 import { DOWNLOADS_REGISTRY } from "../data/downloadRegistry";
+import GameDownloadButton from "../components/GameDownloadButton";
+import JackboxUtilityCard from "../components/JackboxUtilityCard";
 
 
 export default function DownloadsPage() {
@@ -14,17 +14,20 @@ export default function DownloadsPage() {
 
     return (
         <div className="space-y-8 py-6">
-
+            {/* JACKBOX UTILITY CARD */}
+            <section className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-8 md:p-12 shadow-xl">
+                <JackboxUtilityCard footerText="Recomendamos el uso de Jackbox Utility para la instalación de las traducciones, pero se ofrecen parches alternativos de instalación manual debajo." />
+            </section>
             {/* HEADER CODES */}
             <div className="space-y-2">
-                <h1 className="text-3xl font-black text-amber-400">Parches Disponibles</h1>
+                <h1 className="text-3xl font-black text-amber-400">Descarga manual</h1>
                 <p className="text-sm text-slate-400">Filtra según tu plataforma, tienda de compra y localización preferida.</p>
             </div>
 
             {/* THREE INTERACTIVE TOGGLE BARS */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-950/40 p-4 rounded-2xl border border-slate-800/80 text-xs font-bold">
 
-                {/* A. PLATFORM TOGGLE */}
+                {/* PLATFORM TOGGLE */}
                 <div className="space-y-2">
                     <label className="text-amber-500 block text-center">Sistema Operativo</label>
                     <div className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
@@ -36,8 +39,7 @@ export default function DownloadsPage() {
                     </div>
                 </div>
 
-                {/* B. STOREFRONT TOGGLE */}
-                {/* If platform is switch, we dim out the buttons and prevent clicking */}
+                {/* STOREFRONT TOGGLE */}
                 <div className="space-y-2">
                     <label className="text-amber-500 block text-center">Tienda de compra</label>
                     <div className={`flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 transition-all ${platformFilter === "switch" ? "opacity-40 pointer-events-none" : ""}`}>
@@ -79,7 +81,7 @@ export default function DownloadsPage() {
             </div>
 
             {/* DATA GRID DRAWER ELEMENT */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex flex-row flex-wrap gap-4 justify-start items-center">
                 {DOWNLOADS_REGISTRY.map((game) => {
                     // Determine the active storefront parameter to match against
                     const targetStoreToMatch = platformFilter === "switch" ? "nintendo" : storeFilter;
@@ -109,31 +111,15 @@ export default function DownloadsPage() {
                     // If no patches are available for this specific selection, hide the game card
                     if (matchingTargets.length === 0) return null;
 
-                    return (
-                        <div key={game.id} className="bg-slate-950/20 border border-slate-800/60 p-5 rounded-2xl flex flex-col justify-between gap-4">
-                            <div>
-                                <h3 className="text-lg font-bold text-slate-200">{game.title}</h3>
-                            </div>
-
-                            {/* Dynamic Square Button Row outputs matching configurations */}
-                            <div className="flex flex-wrap gap-3">
-                                {matchingTargets.map((target, idx) => (
-                                    <DownloadButton
-                                        key={idx}
-                                        href={target.link}
-                                        label={target.name}
-                                        icon={
-                                            platformFilter === "switch" ? <span className="text-xl"><SwitchIcon /></span> :
-                                                platformFilter === "mac" ? <MacIcon className="w-full h-full" /> :
-                                                storeFilter === "microsoft" ? <MicrosoftIcon className="w-full h-full" /> :
-                                                storeFilter === "epic" ? <EpicIcon className="w-full h-full" /> :
-                                                    <WindowsIcon className="w-full h-full" />
-                                        }
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    );
+                    return matchingTargets.map((target, idx) => (
+                        <GameDownloadButton
+                            key={`${game.id}-${idx}`}
+                            href={target.link}
+                            // Pass the game or pack image asset down instead of text labels
+                            imageSrc={game.imageSrc || "/images/covers/default-pack.webp"}
+                            altText={`Descargar parche para ${game.title}`}
+                        />
+                    ));
                 })}
             </div>
 
