@@ -9,6 +9,7 @@ export interface DownloadTarget {
 export interface GameRegistryItem {
     id: string;
     title: string;
+    imageSrc: string;
     hasSpain: boolean;
     targets: DownloadTarget[];
 }
@@ -17,6 +18,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp1",
         title: "The Jackbox Party Pack 1",
+        imageSrc: "/images/buttons/pp1.png",
         hasSpain: false,
         targets: [
             {
@@ -36,6 +38,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp2",
         title: "The Jackbox Party Pack 2",
+        imageSrc: "/images/buttons/pp2.png",
         hasSpain: false,
         targets: [
             {
@@ -64,6 +67,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp3",
         title: "The Jackbox Party Pack 3",
+        imageSrc: "/images/buttons/pp3.png",
         hasSpain: false,
         targets: [
             {
@@ -85,6 +89,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp4",
         title: "The Jackbox Party Pack 4",
+        imageSrc: "/images/buttons/pp4.jpg",
         hasSpain: false,
         targets: [
             {
@@ -106,6 +111,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp5",
         title: "The Jackbox Party Pack 5",
+        imageSrc: "/images/buttons/pp5.png",
         hasSpain: false,
         targets: [
             {
@@ -134,6 +140,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp6",
         title: "The Jackbox Party Pack 6",
+        imageSrc: "/images/buttons/pp6.jpg",
         hasSpain: false,
         targets: [
             {
@@ -155,6 +162,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp7",
         title: "The Jackbox Party Pack 7",
+        imageSrc: "/images/buttons/pp7.jpg",
         hasSpain: false,
         targets: [
             {
@@ -190,6 +198,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp8",
         title: "The Jackbox Party Pack 8",
+        imageSrc: "/images/buttons/pp8.webp",
         hasSpain: false,
         targets: [
             {
@@ -218,6 +227,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp9",
         title: "The Jackbox Party Pack 9",
+        imageSrc: "/images/buttons/pp9.webp",
         hasSpain: false,
         targets: [
             {
@@ -246,6 +256,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp10",
         title: "The Jackbox Party Pack 10",
+        imageSrc: "/images/buttons/pp10.webp",
         hasSpain: false,
         targets: [
             {
@@ -267,6 +278,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp11",
         title: "The Jackbox Party Pack 11",
+        imageSrc: "/images/buttons/pp11.webp",
         hasSpain: false,
         targets: [
             {
@@ -288,6 +300,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "starter",
         title: "The Jackbox Party Starter",
+        imageSrc: "/images/buttons/starter.webp",
         hasSpain: false,
         targets: [
             {
@@ -309,6 +322,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "naughty",
         title: "The Jackbox Naughty Pack",
+        imageSrc: "/images/buttons/naughty.png",
         hasSpain: false,
         targets: [
             {
@@ -330,6 +344,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "survey",
         title: "The Jackbox Survey Scramble",
+        imageSrc: "/images/buttons/survey.webp",
         hasSpain: false,
         targets: [
             {
@@ -351,6 +366,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "fibbageXL",
         title: "Fibbage XL",
+        imageSrc: "/images/buttons/fibbagexl.png",
         hasSpain: false,
         targets: [
             {
@@ -365,6 +381,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "quiplash",
         title: "Quiplash",
+        imageSrc: "/images/buttons/quiplash.webp",
         hasSpain: true,
         targets: [
             {
@@ -386,6 +403,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "interlash",
         title: "Quiplash 2 InterLASHional",
+        imageSrc: "/images/buttons/interlashional.png",
         hasSpain: true,
         targets: [
             {
@@ -407,6 +425,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "drawful2",
         title: "Drawful 2",
+        imageSrc: "/images/buttons/drawful2.png",
         hasSpain: true,
         targets: [
             {
@@ -455,8 +474,9 @@ export const DOWNLOADS_REGISTRY = [
     },
 
     {
-        id: "uyw",
+        id: "useyourwords",
         title: "Use Your Words",
+        imageSrc: "/images/buttons/useyourwords.webp",
         hasSpain: false,
         targets: [
             {
@@ -478,6 +498,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "wtd",
         title: "What the Dub?!",
+        imageSrc: "/images/buttons/wtd.webp",
         hasSpain: true,
         targets: [
             {
@@ -511,8 +532,9 @@ export const DOWNLOADS_REGISTRY = [
         ]
     },
     {
-        id: "riff-trax",
+        id: "rifftrax",
         title: "RiffTrax",
+        imageSrc: "/images/buttons/rifftrax.png",
         hasSpain: false,
         targets: [
             {
