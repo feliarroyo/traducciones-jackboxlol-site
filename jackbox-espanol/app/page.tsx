@@ -1,65 +1,125 @@
 import Image from "next/image";
+import { WindowsIcon, MacIcon, LinuxIcon } from "./components/icons/PlatformIcons";
+import DownloadButton from "./components/DownloadButton";
+import PackShowcase from "./components/PackShowcase";
+import SinglePackShowcase from "./components/SinglePackShowcase";
+import JackboxUtilityCard from "./components/JackboxUtilityCard";
 
 export default function Home() {
+  const pp1dubs = [
+    { src: "/images/games/drawful.webp", alt: "Logo de Drawful" }
+  ];
+  const pp2dubs = [
+    { src: "/images/games/earwax.webp", alt: "Logo de Earwax" }
+  ];
+  const pp3dubs = [
+    { src: "/images/games/fakinit.webp", alt: "Logo de ¡Engáñame!" }
+  ];
+  const pp4dubs = [
+    { src: "/images/games/survive.webp", alt: "Logo de Sobrevive al Internet" },
+    { src: "/images/games/monster.webp", alt: "Logo de Monstruo Busca Monstruo" },
+    { src: "/images/games/civic.webp", alt: "Logo de Garabato Cívico" }
+  ];
+  const pp5dubs = [
+    { src: "/images/games/zeeple.webp", alt: "Logo de Zeeple Dome" },
+    { src: "/images/games/patently.webp", alt: "Logo de Patentes Dementes" }
+  ];
+  const pp6dubs = [
+    { src: "/images/games/ptb.webp", alt: "Logo de Pulsa el Botón" }
+  ];
+  const pp7dubs = [
+    { src: "/images/games/devils.webp", alt: "Logo de La Familia es un Infierno" },
+    { src: "/images/games/talkingpoints.webp", alt: "Logo de Talking Points" }
+  ];
+
+  const soloDubs = [
+    { src: "/images/games/drawful2.webp", alt: "Logo de Drawful 2" },
+    { src: "/images/games/useyourwords.webp", alt: "Logo de Usa Tus Palabras" }
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="space-y-24 pb-12">
+
+      {/* 1. HERO SECTION */}
+      <section className="flex flex-col md:flex-row items-center justify-between gap-12 pt-8">
+        {/* Left Side: Text and Storefront Links */}
+        <div className="flex-1 max-w-xl space-y-6">
+          <h1 className="text-4xl text-center md:text-5xl font-black text-amber-400 tracking-tight leading-none">
+            ¡Juega los juegos de Jackbox en español!
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <div className="space-y-4 text-slate-300 leading-relaxed text-base text-center">
+            <p>
+              Jackbox en español es un sitio donde subimos traducciones no oficiales al español para los juegos de Jackbox Games, conocidos por ser creadores de los Jackbox Party Pack.
+            </p>
+            <p>
+              Aunque algunos de los juegos fueron localizados al español, la mayoría de ellos solamente están oficialmente disponibles en inglés. Gracias a una comunidad abierta en Discord, se han traducido de manera no oficial casi todos los juegos lanzados hasta el momento.
+            </p>
+            <p>
+              Para jugar las traducciones, debes tener comprados los juegos originales. Puedes adquirirlos en{" "}
+              <a href="https://store.steampowered.com/search?developer=Jackbox%20Games%2C%20Inc." target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline font-semibold">Steam</a>,{" "}
+              <a href="https://store.epicgames.com/es-ES/browse?q=Jackbox" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline font-semibold">Epic Games Store</a> y{" "}
+              <a href="https://www.xbox.com/Search/Results?q=Jackbox%20Games" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline font-semibold">Microsoft Store</a>.
+            </p>
+          </div>
+        </div>
+
+        {/* Right Side: Showcase Character graphic */}
+        <div className="w-full max-w-70 md:max-w-85 aspect-square relative flex items-center justify-center">
+          <Image
+            src="/images/animated.webp"
+            alt="Mascota de Jackbox asomándose desde una caja"
+            width={500}
+            height={500}
+            priority
+            className="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(245,158,11,0.15)] animate-fade-in"
+          />
+        </div>
+      </section>
+
+      {/* Jackbox Utility section */}
+      <section className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-8 md:p-12 shadow-xl">
+        <JackboxUtilityCard />
+      </section>
+
+      {/* 3. PROJECT OVERVIEW */}
+      <section className="space-y-12">
+        <div className="text-center space-y-2">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-100">
+            Se ofrecen parches de traducción para todos los juegos modernos de Jackbox.
+          </h2>
+          <p className="text-sm text-slate-400 max-w-2xl mx-auto">
+            (es decir, desde The Jackbox Party Pack 1 en adelante)
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Warning Callout Box */}
+        <div className="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-4 max-w-3xl mx-auto flex items-start gap-3">
+          <span className="text-xl mt-0.5">⚠️</span>
+          <p className="text-xs md:text-sm text-amber-200/80 leading-relaxed">
+            Actualmente, <b>You Don't Know Jack 2015</b> (Party Pack 1) y <b>Legends of Trivia</b> (Party Pack 11) se encuentran sin traducir actualmente.
+          </p>
         </div>
-      </main>
-    </div>
+
+        {/* Official Dubs Structure */}
+        <div className="space-y-6 pt-6">
+          <h3 className="text-xl font-bold text-center text-slate-200">
+            Adicionalmente, los siguientes juegos de cada pack cuentan con un doblaje no oficial:
+          </h3>
+
+          <div className="flex flex-row flex-wrap gap-4 w-full justify-center">
+            <PackShowcase packLogoSrc={"/images/games/pp1.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 1"} gameLogos={pp1dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp2.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 2"} gameLogos={pp2dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp3.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 3"} gameLogos={pp3dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp4.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 4"} gameLogos={pp4dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp5.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 5"} gameLogos={pp5dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp6.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 6"} gameLogos={pp6dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp7.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 7"} gameLogos={pp7dubs}></PackShowcase>
+            <SinglePackShowcase gameLogos={soloDubs}></SinglePackShowcase>
+          </div>
+        </div>
+      </section>
+
+    </div >
   );
 }
