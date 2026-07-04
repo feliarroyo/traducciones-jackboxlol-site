@@ -8,7 +8,7 @@ export default function CreditsPage() {
 
   return (
     <div className="max-w-6xl mx-auto py-12 px-4 space-y-16">
-      
+
       {/* PAGE HEADER */}
       <div className="text-center space-y-3">
         <h1 className="text-4xl font-black text-amber-400 tracking-tight">Créditos del Proyecto</h1>
@@ -20,21 +20,25 @@ export default function CreditsPage() {
       {/* SECTION 1: ADMINISTRATORS */}
       <section className="space-y-6">
         <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">Administradores</h2>
-        
+
         <div className="grid grid-cols-1 gap-6">
           {admins.map((admin) => (
             <div key={admin.username} className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 backdrop-blur-sm">
-              
+
               {/* Left Side: Avatar Panel */}
               <div className="flex flex-col items-center space-y-3 md:w-48 shrink-0">
+                {(admin.avatarUrl !== undefined) && (
                 <div className="w-24 h-24 relative rounded-2xl overflow-hidden border-2 border-amber-500/30 bg-slate-900">
-                  <Image 
-                    src={admin.avatarUrl || "/images/avatars/default.webp"} 
-                    alt={admin.username} 
-                    fill 
-                    className="object-cover" 
-                  />
+                  
+                    <Image
+                      src={admin.avatarUrl}
+                      alt={admin.username}
+                      fill
+                      className="object-cover"
+                    />
                 </div>
+                )
+                  }
                 <h3 className="text-xl font-bold text-amber-400">{admin.username}</h3>
               </div>
 
@@ -43,12 +47,12 @@ export default function CreditsPage() {
                 {admin.roles.map((role, idx) => (
                   <div key={idx} className="space-y-2">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">{role.roleName}</h4>
-                    
+
                     {/* Render game logos for this role if any exist */}
                     {role.games && (
                       <div className="flex flex-wrap gap-4 items-center bg-slate-900/40 p-3 rounded-2xl border border-slate-800/40">
                         {role.games.map((game, gIdx) => (
-                          <div key={gIdx} className="w-20 h-10 relative flex-shrink-0" title={GAME_ASSETS[game]?.alt}>
+                          <div key={gIdx} className="w-20 h-10 relative shrink-0" title={GAME_ASSETS[game]?.alt}>
                             <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain" />
                           </div>
                         ))}
@@ -73,7 +77,7 @@ export default function CreditsPage() {
       {/* SECTION 2: OTHER CONTRIBUTIONS */}
       <section className="space-y-6">
         <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">Otros Aportes</h2>
-        
+
         {/* Compact grid layout for minor contributions */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {contributors.map((user) => (
@@ -84,7 +88,7 @@ export default function CreditsPage() {
                   {user.roles.map((role, idx) => (
                     <div key={idx} className="text-xs">
                       <span className="text-slate-400 block font-medium mb-1">{role.roleName}:</span>
-                      
+
                       {role.games && (
                         <div className="flex flex-wrap gap-2 items-center">
                           {role.games.map((game, gIdx) => (
