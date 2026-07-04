@@ -21,15 +21,15 @@ export const DOWNLOADS_REGISTRY = [
         targets: [
             {
                 name: "Default", platforms: ["win-linux", "mac"], stores: ["default"], lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-1-Spanish/releases/latest/download/JPP1-ES.zip"
             },
             {
                 name: "EGS", platforms: ["win-linux", "mac"], stores: ["epic"], lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-1-Spanish/releases/latest/download/JPP1-ES-EGS.zip"
             },
             {
                 name: "Switch", platforms: ["switch"], stores: ["nintendo"], lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-1-Spanish/releases/latest/download/JPP1-ES-SWITCH.zip"
             }
         ]
     },
@@ -43,21 +43,21 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/latest/download/JPP2-ES.zip"
             },
             {
                 name: "EGS (Windows) / Switch",
                 platforms: ["win-linux", "switch"],
                 stores: ["epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/latest/download/JPP2-ES-EGS-SWITCH.zip"
             },
             {
                 name: "EGS (Mac)",
                 platforms: ["mac"],
                 stores: ["epic"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/latest/download/JPP2-ES-MAC-EGS.zip"
             }
         ]
     },
@@ -71,14 +71,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-3-Spanish/releases/latest/download/JPP3-ES.zip"
             },
             {
                 name: "EGS / Switch",
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-3-Spanish/releases/latest/download/JPP3-ES-EGS-SWITCH.zip"
             }
         ]
     },
@@ -92,14 +92,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-4-Spanish/releases/latest/download/JPP4-ES.zip"
             },
             {
                 name: "EGS / Switch",
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-4-Spanish/releases/latest/download/JPP4-ES-EGS-SWITCH.zip"
             }
         ]
     },
@@ -113,21 +113,21 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-5-Spanish/releases/latest/download/JPP5-ES.zip"
             },
             {
                 name: "EGS (Windows) / Switch",
                 platforms: ["win-linux", "switch"],
                 stores: ["epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-5-Spanish/releases/latest/download/JPP5-ES-EGS-SWITCH.zip"
             },
             {
                 name: "EGS (Mac)",
                 platforms: ["mac"],
                 stores: ["epic"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-5-Spanish/releases/latest/download/JPP5-ES-MAC-EGS.zip"
             }
         ]
     },
@@ -141,14 +141,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-6-Spanish/releases/latest/download/JPP6-ES.zip"
             },
             {
                 name: "EGS / Switch",
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-6-Spanish/releases/latest/download/JPP6-ES-EGS-SWITCH.zip"
             }
         ]
     },
@@ -162,28 +162,28 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/latest/download/JPP7-ES.zip"
             },
             {
                 name: "EGS (Windows) / Switch",
                 platforms: ["win-linux", "switch"],
                 stores: ["epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/latest/download/JPP7-ES-EGS-SWITCH.zip"
             },
             {
                 name: "EGS (Mac)",
                 platforms: ["mac"],
                 stores: ["epic"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/latest/download/JPP7-ES-MAC-EGS.zip"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["windows"],
                 stores: ["microsoft"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/latest/download/JPP7-ES-MS.zip"
             }
         ]
     },
@@ -197,21 +197,21 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-8-Spanish/releases/latest/download/JPP8-ES.zip"
             },
             {
                 name: "EGS",
                 platforms: ["win-linux", "mac"],
                 stores: ["epic"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-8-Spanish/releases/latest/download/JPP8-ES-EGS.zip"
             },
             {
                 name: "Switch",
                 platforms: ["switch"],
                 stores: ["nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-8-Spanish/releases/latest/download/JPP8-ES-SWITCH.zip"
             }
         ]
     },
@@ -225,21 +225,21 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-9-Spanish/releases/latest/download/JPP9-ES.zip"
             },
             {
                 name: "EGS / Switch",
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-9-Spanish/releases/latest/download/JPP9-ES-EGS-SWITCH.zip"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-9-Spanish/releases/latest/download/JPP9-ES-MS.zip"
             }
         ]
     },
@@ -253,14 +253,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-10-Spanish/releases/latest/download/JPP10-ES.zip"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-9-Spanish/releases/latest/download/JPP9-ES-EGS-MS-SWITCH.zip"
             }
         ]
     },
@@ -274,14 +274,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-11-Spanish/releases/latest/download/JPP11-ES.zip"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-11-Spanish/releases/latest/download/JPP11-ES-MS.zip"
             }
         ]
     },
@@ -295,14 +295,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Starter-Spanish/releases/latest/download/JPS-ES.zip"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Starter-Spanish/releases/latest/download/JPS-ES-MS.zip"
             }
         ]
     },
@@ -316,14 +316,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Naughty-Pack-Spanish/releases/latest/download/JNP-ES.zip"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Naughty-Pack-Spanish/releases/latest/download/JNP-ES-MS.zip"
             }
         ]
     },
@@ -337,14 +337,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Survey-Scramble-Spanish/releases/latest/download/JSS-ES.zip"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Survey-Scramble-Spanish/releases/latest/download/JSS-ES-MS.zip"
             }
         ]
     },
@@ -358,7 +358,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Fibbage-XL-Spanish/releases/latest/download/FBXL-ES.zip"
             }
         ]
     },
@@ -372,14 +372,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Quiplash-Quip-Pack-1-Spanish/releases/latest/download/QUIP-ES.zip"
             },
             {
                 name: "España",
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "spain",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Quiplash-Quip-Pack-1-Spanish/releases/latest/download/QUIP-ES-SPAIN.zip"
             }
         ]
     },
@@ -393,14 +393,14 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Quiplash-2-InterLASHional-Latin-American-Spanish/releases/latest/download/Q2INT-LAT.zip"
             },
             {
                 name: "España",
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "spain",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Quiplash-2-InterLASHional-Latin-American-Spanish/releases/latest/download/Q2INT-ES-SPAIN.zip"
             }
         ]
     },
@@ -414,42 +414,42 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Drawful-2-Latin-American-Spanish/releases/latest/download/DF2-LAT.zip"
             },
             {
                 name: "Default",
                 platforms: ["mac"],
                 stores: ["default"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Drawful-2-Latin-American-Spanish/releases/latest/download/DF2-LAT.zip"
             },
             {
                 name: "EGS (Mac)",
                 platforms: ["mac"],
                 stores: ["epic"],
                 lang: "latam",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Drawful-2-Latin-American-Spanish/releases/latest/download/DF2-ES-MAC-EGS.zip"
             },
             {
                 name: "España",
                 platforms: ["win-linux", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "spain",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Drawful-2-Latin-American-Spanish/releases/latest/download/DF2-ES-SPAIN.zip"
             },
             {
                 name: "España",
                 platforms: ["mac"],
                 stores: ["default"],
                 lang: "spain",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Drawful-2-Latin-American-Spanish/releases/latest/download/DF2-ES-SPAIN.zip"
             },
             {
                 name: "España - EGS (Mac)",
                 platforms: ["mac"],
                 stores: ["epic"],
                 lang: "spain",
-                link: "#"
+                link: "https://github.com/AkiraArtuhaxis/Drawful-2-Latin-American-Spanish/releases/latest/download/DF2-ES-MAC-EGS-SPAIN.zip"
             }
         ]
     },
