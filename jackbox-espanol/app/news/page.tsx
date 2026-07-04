@@ -12,10 +12,10 @@ export default function NewsHubPage() {
             {/* SECTION TOP HEADER */}
             <div className="space-y-2">
                 <h1 className="text-3xl font-black text-amber-400 tracking-tight">
-                    Noticias y Actualizaciones
+                    Novedades
                 </h1>
                 <p className="text-sm text-slate-400">
-                    Sigue de cerca los anuncios oficiales, parches de traducción y novedades de la comunidad.
+                    Registro de las actualizaciones realizadas durante los años en el proyecto.
                 </p>
             </div>
 
