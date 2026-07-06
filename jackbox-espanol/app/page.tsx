@@ -1,9 +1,9 @@
+"useClient"
 import Image from "next/image";
-import { WindowsIcon, MacIcon, LinuxIcon } from "./components/icons/PlatformIcons";
-import DownloadButton from "./components/DownloadButton";
 import PackShowcase from "./components/PackShowcase";
 import SinglePackShowcase from "./components/SinglePackShowcase";
 import JackboxUtilityCard from "./components/JackboxUtilityCard";
+import PackTicker from "./components/PackTicker";
 
 export default function Home() {
   const pp1dubs = ["drawful"];
@@ -13,7 +13,8 @@ export default function Home() {
   const pp5dubs = ["zeeple", "patently"];
   const pp6dubs = ["ptb"];
   const pp7dubs = ["devils", "talkingpoints"];
-  const soloDubs = ["drawful2", "useyourwords"];
+  const drawful2 = ["drawful2"];
+  const uyw = ["useyourwords"];
 
   return (
     <div className="space-y-24 pb-12">
@@ -77,7 +78,7 @@ export default function Home() {
             Adicionalmente, los siguientes juegos de cada pack cuentan con un doblaje no oficial:
           </h3>
 
-          <div className="flex flex-row flex-wrap gap-6 w-full max-w-6xl mx-auto px-4 justify-center items-stretch ">
+          <PackTicker>
             <PackShowcase packLogoSrc={"/images/buttons/pp1.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 1"} gameLogos={pp1dubs}></PackShowcase>
             <PackShowcase packLogoSrc={"/images/buttons/pp2.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 2"} gameLogos={pp2dubs}></PackShowcase>
             <PackShowcase packLogoSrc={"/images/buttons/pp3.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 3"} gameLogos={pp3dubs}></PackShowcase>
@@ -85,8 +86,9 @@ export default function Home() {
             <PackShowcase packLogoSrc={"/images/buttons/pp5.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 5"} gameLogos={pp5dubs}></PackShowcase>
             <PackShowcase packLogoSrc={"/images/buttons/pp6.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 6"} gameLogos={pp6dubs}></PackShowcase>
             <PackShowcase packLogoSrc={"/images/buttons/pp7.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 7"} gameLogos={pp7dubs}></PackShowcase>
-            <SinglePackShowcase gameLogos={soloDubs}></SinglePackShowcase>
-          </div>
+            <SinglePackShowcase gameLogos={drawful2}></SinglePackShowcase>
+            <SinglePackShowcase gameLogos={uyw}></SinglePackShowcase>
+          </PackTicker>
         </div>
       </section>
 
