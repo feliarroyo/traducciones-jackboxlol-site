@@ -552,5 +552,41 @@ export const DOWNLOADS_REGISTRY = [
                 link: "https://github.com/AkiraArtuhaxis/RiffTrax-The-Game-Spanish/releases/latest/download/RTTG-ES-MAC.zip"
             }
         ]
+    },
+    {
+        id: "cursedpoints",
+        title: "Cursed Points",
+        imageSrc: "/images/buttons/cursedpoints.webp",
+        hasSpain: false,
+        targets: [
+            {
+                name: "Default",
+                platforms: ["win-linux", "mac"],
+                stores: ["default"],
+                lang: "latam",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/CursedPointsES-CapyV2-ES.zip"
+            },
+            {
+                name: "EGS (Windows) / Switch",
+                platforms: ["win-linux", "switch"],
+                stores: ["epic", "nintendo"],
+                lang: "latam",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/CursedPointsES-CapyV2-ES-EGS-SWITCH.zip"
+            },
+            {
+                name: "Microsoft Store",
+                platforms: ["win-linux"],
+                stores: ["microsoft"],
+                lang: "latam",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/CursedPointsES-CapyV2-ES-MS.zip"
+            },
+            {
+                name: "EGS (Mac)",
+                platforms: ["mac"],
+                stores: ["epic"],
+                lang: "latam",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/CursedPointsES-CapyV2-ES-MAC-EGS.zip"
+            },
+        ]
     }
 ];
