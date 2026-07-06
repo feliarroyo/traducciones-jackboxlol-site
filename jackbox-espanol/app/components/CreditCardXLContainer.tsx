@@ -11,7 +11,7 @@ interface CreditCardXLContainerProps {
 export default function CreditCardXLContainer({
     title,
     data,
-    titleClassName = "text-2xl font-extrabold text-amber-400/90" }: CreditCardXLContainerProps) {
+    titleClassName = "text-center text-2xl font-extrabold text-amber-400/90" }: CreditCardXLContainerProps) {
     if (data.length === 0) return null;
 
     return (

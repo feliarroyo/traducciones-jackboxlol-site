@@ -10,13 +10,13 @@ interface CreditCardContainerProps {
 export default function CreditCardContainer({ 
   title, 
   data, 
-  titleClassName = "text-2xl font-extrabold text-amber-400/90" 
+  titleClassName = "text-center text-2xl font-extrabold text-amber-400/90" 
 }: CreditCardContainerProps) {
   if (data.length === 0) return null;
 
   return (
     <section className="space-y-6">
-      <h2 className={`${titleClassName} border-b border-slate-800 pb-2`}>
+      <h2 className={titleClassName}>
         {title}
       </h2>
       <div className="flex flex-row flex-wrap gap-4 justify-center items-start w-full mx-auto">
