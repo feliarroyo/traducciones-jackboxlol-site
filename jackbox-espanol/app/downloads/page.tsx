@@ -85,7 +85,7 @@ export default function DownloadsPage() {
                 </div>
 
                 {/* DATA GRID DRAWER ELEMENT */}
-                <div className="flex flex-row flex-wrap gap-4 justify-start items-center mt-4">
+                <div className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
                     {DOWNLOADS_REGISTRY.map((game) => {
                         // Determine the active storefront parameter to match against
                         const targetStoreToMatch = platformFilter === "switch" ? "nintendo" : storeFilter;
