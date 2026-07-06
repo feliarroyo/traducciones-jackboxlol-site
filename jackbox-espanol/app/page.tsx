@@ -79,13 +79,13 @@ export default function Home() {
           </h3>
 
           <PackTicker>
-            <PackShowcase packLogoSrc={"/images/buttons/pp1.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 1"} gameLogos={pp1dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/buttons/pp2.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 2"} gameLogos={pp2dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/buttons/pp3.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 3"} gameLogos={pp3dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/buttons/pp4.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 4"} gameLogos={pp4dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/buttons/pp5.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 5"} gameLogos={pp5dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/buttons/pp6.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 6"} gameLogos={pp6dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/buttons/pp7.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 7"} gameLogos={pp7dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp1.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 1"} gameLogos={pp1dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp2.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 2"} gameLogos={pp2dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp3.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 3"} gameLogos={pp3dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp4.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 4"} gameLogos={pp4dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp5.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 5"} gameLogos={pp5dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp6.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 6"} gameLogos={pp6dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp7.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 7"} gameLogos={pp7dubs}></PackShowcase>
             <SinglePackShowcase gameLogos={drawful2}></SinglePackShowcase>
             <SinglePackShowcase gameLogos={uyw}></SinglePackShowcase>
           </PackTicker>
