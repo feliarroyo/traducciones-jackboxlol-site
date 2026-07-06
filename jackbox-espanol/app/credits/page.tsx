@@ -1,116 +1,112 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
 import { CREDITS_REGISTRY } from "../data/creditsRegistry";
-import { GAME_ASSETS } from "../data/gameRegistry";
+import { DUB_CREDITS_REGISTRY } from "../data/dubCreditsRegistry";
+import CreditCardXL from "../components/CreditCardXL";
+import CreditCardContainer from "../components/CreditCardContainer";
+import CreditCardXLContainer from "../components/CreditCardXLContainer";
+import DubGameCardXL from "../components/DubGameCardXL";
+import DubGameCard from "../components/DubGameCard";
+
+type CreditView = "translations" | "dubs";
 
 export default function CreditsPage() {
+  const [activeView, setActiveView] = useState<CreditView>("translations");
+  const activeRegistry = activeView === "translations" ? CREDITS_REGISTRY : DUB_CREDITS_REGISTRY;
   const admins = CREDITS_REGISTRY.filter(c => c.category === "administrator");
-  const contributors = CREDITS_REGISTRY.filter(c => c.category === "contributor");
+  const majorContributors = CREDITS_REGISTRY.filter(c => c.category === "majorContributor");
+  const minorContributors = CREDITS_REGISTRY.filter(c => c.category === "minorContributor");
+  const miscContributors = CREDITS_REGISTRY.filter(c => c.category === "miscContributor");
 
   return (
-    <div className="max-w-6xl mx-auto py-12 px-4 space-y-16">
+    <div className="max-w-6xl mx-auto py-12 px-4 space-y-4">
 
       {/* PAGE HEADER */}
       <div className="text-center space-y-3">
-        <h1 className="text-4xl font-black text-amber-400 tracking-tight">Créditos del Proyecto</h1>
+        <h1 className="text-4xl font-black text-amber-400 tracking-tight">Créditos del proyecto</h1>
         <p className="text-sm text-slate-400 max-w-xl mx-auto">
-          Todo esto es posible gracias al increíble esfuerzo de traductores, actores de voz, editores y programadores de la comunidad.
+          Se listan todos los traductores, editores de audio/video, actores de doblaje y otros colaboradores que han contribuido al proyecto.
         </p>
       </div>
 
-      {/* SECTION 1: ADMINISTRATORS */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">Administradores</h2>
+      {/* SEGMENTED TOGGLE SWITCH CONTROLLER */}
+      <div className="flex justify-center w-full">
+        <div className="bg-slate-950/60 p-1 rounded-2xl border border-slate-800/60 flex items-center gap-1">
+          <button
+            onClick={() => setActiveView("translations")}
+            className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-200 ${activeView === "translations"
+              ? "bg-amber-500 text-slate-950 shadow-md font-extrabold"
+              : "text-slate-400 hover:text-slate-200"
+              }`}
+          >
+            Traducciones
+          </button>
+          <button
+            onClick={() => setActiveView("dubs")}
+            className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-200 ${activeView === "dubs"
+              ? "bg-amber-500 text-slate-950 shadow-md font-extrabold"
+              : "text-slate-400 hover:text-slate-200"
+              }`}
+          >
+            Doblajes
+          </button>
+        </div>
+      </div>
 
-        <div className="grid grid-cols-1 gap-6">
-          {admins.map((admin) => (
-            <div key={admin.username} className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-8 backdrop-blur-sm">
-
-              {/* Left Side: Avatar Panel */}
-              <div className="flex flex-col items-center space-y-3 md:w-48 shrink-0">
-                {(admin.avatarUrl !== undefined) && (
-                <div className="w-24 h-24 relative rounded-2xl overflow-hidden border-2 border-amber-500/30 bg-slate-900">
-                  
-                    <Image
-                      src={admin.avatarUrl}
-                      alt={admin.username}
-                      fill
-                      className="object-cover"
-                    />
-                </div>
-                )
-                  }
-                <h3 className="text-xl font-bold text-amber-400">{admin.username}</h3>
-              </div>
-
-              {/* Right Side: Detailed Roles Matrix Layout */}
-              <div className="flex-1 space-y-6">
-                {admin.roles.map((role, idx) => (
-                  <div key={idx} className="space-y-2">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">{role.roleName}</h4>
-
-                    {/* Render game logos for this role if any exist */}
-                    {role.games && (
-                      <div className="flex flex-wrap gap-4 items-center bg-slate-900/40 p-3 rounded-2xl border border-slate-800/40">
-                        {role.games.map((game, gIdx) => (
-                          <div key={gIdx} className="w-20 h-10 relative shrink-0" title={GAME_ASSETS[game]?.alt}>
-                            <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain" />
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Render text descriptors if any exist */}
-                    {role.textNotes && (
-                      <ul className="list-disc pl-5 text-sm text-slate-300 space-y-1">
-                        {role.textNotes.map((note, nIdx) => <li key={nIdx}>{note}</li>)}
-                      </ul>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-            </div>
+      {/* CONDITIONAL REGISTRY ROUTING SECTIONS */}
+      <div className="space-y-20 pt-4">
+        {activeView === "translations" ? (
+          <>
+            {/* 🟦 TRANSLATIONS RENDER TRACKS */}
+            <CreditCardXLContainer
+              title="Administradores"
+              data={admins}
+            />
+            <CreditCardContainer
+              title="Colaboradores Principales"
+              data={majorContributors}
+            />
+            <CreditCardContainer
+              title="Colaboradores Asistentes"
+              titleClassName="text-xl font-bold text-slate-200"
+              data={minorContributors}
+            />
+            <CreditCardContainer
+              title="Otros Aportes / Agradecimientos"
+              titleClassName="text-lg font-bold text-slate-400"
+              data={miscContributors}
+            />
+          </>
+        ) : (
+          <>
+          {/* 🎮 NEW GAME-CENTRIC GRID FOR MAIN DUBS */ }
+          <section className="space-y-6">
+        <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">
+          Doblajes Principales
+        </h2>
+        <div className="flex flex-row flex-wrap gap-6 justify-center items-center w-full mx-auto">
+          {DUB_CREDITS_REGISTRY.filter(g => g.category === "mainDub").map((game) => (
+            <DubGameCardXL key={game.id} game={game} />
           ))}
         </div>
       </section>
 
-      {/* SECTION 2: OTHER CONTRIBUTIONS */}
+      {/* 🎮 NEW GAME-CENTRIC CLOUD FOR MINOR DUBS */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">Otros Aportes</h2>
-
-        {/* Compact grid layout for minor contributions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {contributors.map((user) => (
-            <div key={user.username} className="bg-slate-950/20 border border-slate-800/40 rounded-2xl p-4 flex flex-col justify-between gap-3">
-              <div>
-                <h3 className="font-bold text-slate-100 text-base">{user.username}</h3>
-                <div className="space-y-2 mt-2">
-                  {user.roles.map((role, idx) => (
-                    <div key={idx} className="text-xs">
-                      <span className="text-slate-400 block font-medium mb-1">{role.roleName}:</span>
-
-                      {role.games && (
-                        <div className="flex flex-wrap gap-2 items-center">
-                          {role.games.map((game, gIdx) => (
-                            <div key={gIdx} className="w-14 h-7 relative" title={GAME_ASSETS[game]?.alt}>
-                              <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain" />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {role.textNotes && (
-                        <p className="text-slate-300 italic">{role.textNotes.join(", ")}</p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+        <h2 className="text-xl font-bold text-slate-400 border-b border-slate-800 pb-2">
+          Doblajes Menores / Adicionales
+        </h2>
+        <div className="flex flex-row flex-wrap gap-4 justify-center items-start w-full mx-auto">
+          {DUB_CREDITS_REGISTRY.filter(g => g.category === "minorDub").map((game) => (
+            <DubGameCard key={game.id} game={game} />
           ))}
         </div>
       </section>
-
+    </>
+  )
+}
+        
+      </div>
     </div>
   );
 }
