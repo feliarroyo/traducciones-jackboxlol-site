@@ -57,6 +57,7 @@ export default function RootLayout({
             <div className="flex items-center gap-4 text-sm font-medium border-r border-slate-600 pr-6">
               <Link href="/downloads" className="hover:text-amber-400 transition-colors">Descargas</Link>
               <Link href="/news" className="hover:text-amber-400 transition-colors">Novedades</Link>
+              <Link href="/help" className="hover:text-amber-400 transition-colors">Ayuda</Link>
               <Link href="/credits" className="hover:text-amber-400 transition-colors">Créditos</Link>
             </div>
 
