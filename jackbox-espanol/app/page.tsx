@@ -17,7 +17,7 @@ export default function Home() {
   const uyw = ["useyourwords"];
 
   return (
-    <div className="space-y-24 pb-12">
+    <div className="space-y-18 pb-12">
 
       {/* 1. HERO SECTION */}
       <section className="flex flex-col md:flex-row items-center justify-between gap-12 pt-8">
@@ -53,7 +53,7 @@ export default function Home() {
       </section>
 
       {/* 3. PROJECT OVERVIEW */}
-      <section className="space-y-12">
+      <section className="space-y-4">
         <div className="text-center space-y-2">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-100">
             Se ofrecen parches de traducción para todos los juegos modernos de Jackbox, y otros de índole similar.
@@ -70,10 +70,8 @@ export default function Home() {
           </div>
         </div>
 
-
-
         {/* Official Dubs Structure */}
-        <div className="space-y-6 pt-6">
+        <div className="space-y-6 pt-4">
           <h3 className="text-xl font-bold text-center text-slate-200">
             Adicionalmente, los siguientes juegos de cada pack cuentan con un doblaje no oficial:
           </h3>
