@@ -56,7 +56,7 @@ export default function Home() {
       <section className="space-y-12">
         <div className="text-center space-y-2">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-100">
-            Se ofrecen parches de traducción para todos los juegos modernos de Jackbox.
+            Se ofrecen parches de traducción para todos los juegos modernos de Jackbox, y otros de índole similar.
           </h2>
           <p className="text-sm text-slate-400 max-w-2xl mx-auto">
             (desde The Jackbox Party Pack 1 en adelante)
