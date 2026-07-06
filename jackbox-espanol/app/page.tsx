@@ -4,6 +4,7 @@ import PackShowcase from "./components/PackShowcase";
 import SinglePackShowcase from "./components/SinglePackShowcase";
 import JackboxUtilityCard from "./components/JackboxUtilityCard";
 import PackTicker from "./components/PackTicker";
+import Link from "next/link";
 
 export default function Home() {
   const pp1dubs = ["drawful"];
@@ -31,7 +32,14 @@ export default function Home() {
             <p>
               Jackbox en español es un sitio donde subimos traducciones no oficiales al español para los juegos de Jackbox Games y otros de temática similar.
             </p>
+            <Link
+            href="/downloads" // Update this link path to point to your specific download routing section
+            className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-base px-8 py-4 rounded-2xl border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_25px_rgba(16,185,129,0.35)] transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95"
+          >
+            Descargar traducciones
+          </Link>
           </div>
+          
         </div>
 
         {/* Right Side: Showcase Character graphic */}
@@ -48,9 +56,9 @@ export default function Home() {
       </section>
 
       {/* Jackbox Utility section */}
-      <section className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-8 md:p-12 shadow-xl">
+      {/* <section className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-8 md:p-12 shadow-xl">
         <JackboxUtilityCard />
-      </section>
+      </section> */}
 
       {/* 3. PROJECT OVERVIEW */}
       <section className="space-y-4">
