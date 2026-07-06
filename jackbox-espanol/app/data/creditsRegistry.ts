@@ -137,6 +137,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     {
         username: "Hanzel Translations",
         avatarUrl: "/images/avatars/hanzeltranslations.webp",
+        profileUrl: "https://sites.google.com/view/hanzel-translations",
         category: "administrator",
         roles: [
             {
@@ -164,7 +165,6 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     {
         username: "Eleiber",
         avatarUrl: "/images/avatars/eleiber.webp",
-        tags: ["Encargado del dominio jackbox.lol"],
         category: "administrator",
         roles: [
             {
@@ -183,6 +183,12 @@ export const CREDITS_REGISTRY: CreditItem[] = [
                 roleName: "Soporte técnico",
                 games: [
                     "tmp1"
+                ]
+            },
+            {
+                roleName: "Otros roles",
+                textNotes: [
+                    "Encargado del manejo del dominio jackbox.lol"
                 ]
             }
         ]
