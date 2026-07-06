@@ -9,12 +9,21 @@ interface PostPageProps {
 export default async function IndividualPostPage({ params }: PostPageProps) {
     return (
         <div className="space-y-8 py-6">
-            <h1 className="text-4xl text-center font-black text-amber-400 tracking-tight">
-                Ayuda
-            </h1>
-            <p>
-                Aquí dejamos respuestas a algunas de las preguntas más frecuentes relacionadas al proyecto. Ante cualquier otra cuestión, puedes unirte al servidor de Discord del proyecto <Link href="https://discord.com/invite/k8MASuepRw">aquí</Link>.
-            </p>
+            {/* SECTION TOP HEADER */}
+            <div className="space-y-2">
+                <h1 className="text-4xl text-center font-black text-amber-400 tracking-tight">
+                    Ayuda
+                </h1>
+                <p className="text-sm text-center text-slate-400">
+                    Aquí dejamos respuestas a algunas de las preguntas más frecuentes relacionadas al proyecto. </p>
+                    <p className="text-sm text-center text-slate-400">
+                    Si no encuentras respuesta a tu pregunta, puedes intentar resolverla en <Link href="https://discord.com/invite/k8MASuepRw">el servidor de Discord del proyecto</Link>.
+                </p>
+            </div>
+
+
+
+
             <h2>Encontré un error en una de las traducciones. ¿Dónde puedo reportarlo?</h2>
             <p>
                 Puedes reportar el error en el canal "soporte" del servidor de Discord. En lo posible, no escatimes en los detalles.
