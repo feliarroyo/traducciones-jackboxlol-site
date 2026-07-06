@@ -52,9 +52,9 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                 {/* Read More Trigger Link Button */}
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="text-[11px] font-black text-cyan-400 hover:text-cyan-300 hover:underline mb-1 tracking-wide"
+                    className="text-[11px] font-bold text-cyan-400 hover:text-cyan-300 hover:underline mb-1 tracking-wide"
                 >
-                    Ver Elenco ▼
+                    Ver créditos de doblaje
                 </button>
             </div>
 
