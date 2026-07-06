@@ -57,7 +57,7 @@ export default function JackboxUtility({
       {/* Right Side: Text and Download Buttons */}
       <div className="flex-1 max-w-3xl mx-auto text-center space-y-6">
         <div className="space-y-3">
-          <Image src="/images/jackboxutility.webp" alt="Logo de Jackbox Utility" width={120} height={120} className="mx-auto w-24 h-auto object-contain drop-shadow-[0_10px_20px_rgba(48,140,231,0.5)]" />
+          {/* <Image src="/images/jackboxutility.webp" alt="Logo de Jackbox Utility" width={120} height={120} className="mx-auto w-24 h-auto object-contain drop-shadow-[0_10px_20px_rgba(48,140,231,0.5)]" /> */}
           <h2 className="text-3xl font-extrabold text-amber-400 tracking-tight">
             Jackbox Utility
           </h2>
