@@ -18,7 +18,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp1",
         title: "The Jackbox Party Pack 1",
-        imageSrc: "/images/buttons/pp1.png",
+        imageSrc: "/images/buttons/pp1.webp",
         hasSpain: false,
         targets: [
             {
@@ -38,7 +38,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp2",
         title: "The Jackbox Party Pack 2",
-        imageSrc: "/images/buttons/pp2.png",
+        imageSrc: "/images/buttons/pp2.webp",
         hasSpain: false,
         targets: [
             {
@@ -67,7 +67,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp3",
         title: "The Jackbox Party Pack 3",
-        imageSrc: "/images/buttons/pp3.png",
+        imageSrc: "/images/buttons/pp3.webp",
         hasSpain: false,
         targets: [
             {
@@ -89,7 +89,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp4",
         title: "The Jackbox Party Pack 4",
-        imageSrc: "/images/buttons/pp4.jpg",
+        imageSrc: "/images/buttons/pp4.webp",
         hasSpain: false,
         targets: [
             {
@@ -111,7 +111,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp5",
         title: "The Jackbox Party Pack 5",
-        imageSrc: "/images/buttons/pp5.png",
+        imageSrc: "/images/buttons/pp5.webp",
         hasSpain: false,
         targets: [
             {
@@ -140,7 +140,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp6",
         title: "The Jackbox Party Pack 6",
-        imageSrc: "/images/buttons/pp6.jpg",
+        imageSrc: "/images/buttons/pp6.webp",
         hasSpain: false,
         targets: [
             {
@@ -162,7 +162,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "pp7",
         title: "The Jackbox Party Pack 7",
-        imageSrc: "/images/buttons/pp7.jpg",
+        imageSrc: "/images/buttons/pp7.webp",
         hasSpain: false,
         targets: [
             {
@@ -322,7 +322,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "naughty",
         title: "The Jackbox Naughty Pack",
-        imageSrc: "/images/buttons/naughty.png",
+        imageSrc: "/images/buttons/naughty.webp",
         hasSpain: false,
         targets: [
             {
@@ -366,7 +366,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "fibbageXL",
         title: "Fibbage XL",
-        imageSrc: "/images/buttons/fibbagexl.png",
+        imageSrc: "/images/buttons/fibbagexl.webp",
         hasSpain: false,
         targets: [
             {
@@ -403,7 +403,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "interlash",
         title: "Quiplash 2 InterLASHional",
-        imageSrc: "/images/buttons/interlashional.png",
+        imageSrc: "/images/buttons/interlashional.webp",
         hasSpain: true,
         targets: [
             {
@@ -425,7 +425,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "drawful2",
         title: "Drawful 2",
-        imageSrc: "/images/buttons/drawful2.png",
+        imageSrc: "/images/buttons/drawful2.webp",
         hasSpain: true,
         targets: [
             {
@@ -534,7 +534,7 @@ export const DOWNLOADS_REGISTRY = [
     {
         id: "rifftrax",
         title: "RiffTrax",
-        imageSrc: "/images/buttons/rifftrax.png",
+        imageSrc: "/images/buttons/rifftrax.webp",
         hasSpain: false,
         targets: [
             {
