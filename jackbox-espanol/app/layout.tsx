@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang="es" data-scroll-behavior="smooth" className="scroll-smooth">
       <body className={`${geistSans.className} bg-indigo-900 text-slate-100 flex flex-col min-h-screen relative`}>
         {/* BACKGROUND IMAGE */}
         <div className="fixed h-screen inset-0 -z-50">
