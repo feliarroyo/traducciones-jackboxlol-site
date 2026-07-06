@@ -148,6 +148,10 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
     src: "/images/games/split.webp",
     alt: "Divide la Sala"
   },
+  survey: {
+    src: "/images/games/survey.webp",
+    alt: "The Jackbox Survey Scramble"
+  },
   survive: {
     src: "/images/games/survive.webp",
     alt: "Sobrevive al Internet"
