@@ -332,6 +332,8 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     {
         username: "Alexis",
         category: "majorContributor",
+        avatarUrl: "/images/avatars/alexis.webp",
+        profileUrl: "https://alexisl.fr/",
         tags: ["Creador de Jackbox Utility"],
         roles: []
     },
@@ -359,6 +361,8 @@ export const CREDITS_REGISTRY: CreditItem[] = [
         username: "Erizzle",
         tags: ["de parte de Team Gamechanger"],
         category: "minorContributor",
+        avatarUrl: "/images/avatars/erizzle.webp",
+        profileUrl: "https://linktr.ee/erizzle",
         roles: [
             {
                 roleName: "Otros roles",
