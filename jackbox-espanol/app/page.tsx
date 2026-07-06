@@ -6,14 +6,14 @@ import SinglePackShowcase from "./components/SinglePackShowcase";
 import JackboxUtilityCard from "./components/JackboxUtilityCard";
 
 export default function Home() {
-  const pp1dubs = [ "drawful" ];
-  const pp2dubs = [ "earwax" ]
-  const pp3dubs = [ "fakinit" ];
-  const pp4dubs = [ "survive", "monster", "civic" ];
-  const pp5dubs = [ "zeeple", "patently" ];
-  const pp6dubs = [ "ptb" ];
-  const pp7dubs = [ "devils", "talkingpoints" ];
-  const soloDubs = [ "drawful2", "useyourwords" ];
+  const pp1dubs = ["drawful"];
+  const pp2dubs = ["earwax"]
+  const pp3dubs = ["fakinit"];
+  const pp4dubs = ["survive", "monster", "civic"];
+  const pp5dubs = ["zeeple", "patently"];
+  const pp6dubs = ["ptb"];
+  const pp7dubs = ["devils", "talkingpoints"];
+  const soloDubs = ["drawful2", "useyourwords"];
 
   return (
     <div className="space-y-24 pb-12">
@@ -26,18 +26,9 @@ export default function Home() {
             ¡Juega los juegos de Jackbox en español!
           </h1>
 
-          <div className="space-y-4 text-slate-300 leading-relaxed text-base text-center">
+          <div className="space-y-4 text-slate-300 leading-relaxed md:text-xl font-bold text-center">
             <p>
-              Jackbox en español es un sitio donde subimos traducciones no oficiales al español para los juegos de Jackbox Games, conocidos por ser creadores de los Jackbox Party Pack.
-            </p>
-            <p>
-              Aunque algunos de los juegos fueron localizados al español, la mayoría de ellos solamente están oficialmente disponibles en inglés. Gracias a una comunidad abierta en Discord, se han traducido de manera no oficial casi todos los juegos lanzados hasta el momento.
-            </p>
-            <p>
-              Para jugar las traducciones, debes tener comprados los juegos originales. Puedes adquirirlos en{" "}
-              <a href="https://store.steampowered.com/search?developer=Jackbox%20Games%2C%20Inc." target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline font-semibold">Steam</a>,{" "}
-              <a href="https://store.epicgames.com/es-ES/browse?q=Jackbox" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline font-semibold">Epic Games Store</a> y{" "}
-              <a href="https://www.xbox.com/Search/Results?q=Jackbox%20Games" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline font-semibold">Microsoft Store</a>.
+              Jackbox en español es un sitio donde subimos traducciones no oficiales al español para los juegos de Jackbox Games y otros de temática similar.
             </p>
           </div>
         </div>
@@ -67,17 +58,18 @@ export default function Home() {
             Se ofrecen parches de traducción para todos los juegos modernos de Jackbox.
           </h2>
           <p className="text-sm text-slate-400 max-w-2xl mx-auto">
-            (es decir, desde The Jackbox Party Pack 1 en adelante)
+            (desde The Jackbox Party Pack 1 en adelante)
           </p>
+          {/* Warning Callout Box */}
+          <div className="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-4 max-w-3xl mx-auto flex items-start gap-3">
+            <span className="text-xl mt-0.5">⚠️</span>
+            <p className="text-sm md:text-sm text-amber-200/80 leading-relaxed">
+              Actualmente, <b>You Don't Know Jack 2015</b> (Party Pack 1) y <b>Legends of Trivia</b> (Party Pack 11) no se encuentran traducidos.
+            </p>
+          </div>
         </div>
 
-        {/* Warning Callout Box */}
-        <div className="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-4 max-w-3xl mx-auto flex items-start gap-3">
-          <span className="text-xl mt-0.5">⚠️</span>
-          <p className="text-xs md:text-sm text-amber-200/80 leading-relaxed">
-            Actualmente, <b>You Don't Know Jack 2015</b> (Party Pack 1) y <b>Legends of Trivia</b> (Party Pack 11) se encuentran sin traducir actualmente.
-          </p>
-        </div>
+
 
         {/* Official Dubs Structure */}
         <div className="space-y-6 pt-6">
@@ -85,14 +77,14 @@ export default function Home() {
             Adicionalmente, los siguientes juegos de cada pack cuentan con un doblaje no oficial:
           </h3>
 
-          <div className="flex flex-row flex-wrap gap-4 w-full justify-center">
-            <PackShowcase packLogoSrc={"/images/games/pp1.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 1"} gameLogos={pp1dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/games/pp2.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 2"} gameLogos={pp2dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/games/pp3.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 3"} gameLogos={pp3dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/games/pp4.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 4"} gameLogos={pp4dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/games/pp5.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 5"} gameLogos={pp5dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/games/pp6.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 6"} gameLogos={pp6dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/games/pp7.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 7"} gameLogos={pp7dubs}></PackShowcase>
+          <div className="flex flex-row flex-wrap gap-6 w-full max-w-6xl mx-auto px-4 justify-center items-stretch ">
+            <PackShowcase packLogoSrc={"/images/buttons/pp1.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 1"} gameLogos={pp1dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/buttons/pp2.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 2"} gameLogos={pp2dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/buttons/pp3.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 3"} gameLogos={pp3dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/buttons/pp4.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 4"} gameLogos={pp4dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/buttons/pp5.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 5"} gameLogos={pp5dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/buttons/pp6.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 6"} gameLogos={pp6dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/buttons/pp7.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 7"} gameLogos={pp7dubs}></PackShowcase>
             <SinglePackShowcase gameLogos={soloDubs}></SinglePackShowcase>
           </div>
         </div>
