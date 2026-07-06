@@ -561,7 +561,7 @@ export const DOWNLOADS_REGISTRY = [
         imageSrc: "/images/buttons/cursedpoints.webp",
         hasSpain: false,
         noteTitle: "Mod para The Jackbox Party Pack 7",
-        notes: "Cursed Points incorpora imágenes \"curseadas\" en Talking Points.",
+        notes: "Cursed Points incorpora imágenes \"curseadas\" en Talking Points. Se debe jugar desde Capyparty.xyz.",
         targets: [
             {
                 name: "Default",
