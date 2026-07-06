@@ -82,7 +82,7 @@ export default function CreditsPage() {
           {/* 🎮 NEW GAME-CENTRIC GRID FOR MAIN DUBS */ }
           <section className="space-y-6">
         <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">
-          Doblajes Principales
+          Doblajes completos
         </h2>
         <div className="flex flex-row flex-wrap gap-6 justify-center items-center w-full mx-auto">
           {DUB_CREDITS_REGISTRY.filter(g => g.category === "mainDub").map((game) => (
@@ -94,7 +94,7 @@ export default function CreditsPage() {
       {/* 🎮 NEW GAME-CENTRIC CLOUD FOR MINOR DUBS */}
       <section className="space-y-6">
         <h2 className="text-xl font-bold text-slate-400 border-b border-slate-800 pb-2">
-          Doblajes Menores / Adicionales
+          Doblajes parciales
         </h2>
         <div className="flex flex-row flex-wrap gap-4 justify-center items-start w-full mx-auto">
           {DUB_CREDITS_REGISTRY.filter(g => g.category === "minorDub").map((game) => (
