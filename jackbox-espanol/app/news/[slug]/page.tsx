@@ -1,5 +1,3 @@
-// src/app/news/[slug]/page.tsx
-import React from "react";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "../../lib/markdownParser";
 import Image from "next/image";
@@ -35,9 +33,6 @@ export default async function IndividualPostPage({ params }: PostPageProps) {
 
       {/* ARTICLE METADATA PANEL */}
       <div className="space-y-3 border-b border-slate-800/60 pb-6">
-        <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-md">
-          {metadata.category}
-        </span>
         <h1 className="text-3xl md:text-4xl font-black text-slate-100 tracking-tight">
           {metadata.title}
         </h1>
