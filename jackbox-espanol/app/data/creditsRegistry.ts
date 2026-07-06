@@ -1,7 +1,9 @@
 export interface CreditItem {
     username: string;
     avatarUrl?: string;
-    category: "administrator" | "contributor";
+    profileUrl?: string;
+    tags?: string[];
+    category: "administrator" | "majorContributor" | "minorContributor" | "miscContributor";
     roles: {
         roleName: string; // e.g., "Traducción principal", "Edición de video", "Otros roles"
         games?: string[]; // Game logos linked to this specific role
@@ -13,6 +15,8 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     {
         username: "Akira896",
         avatarUrl: "/images/avatars/akira896.webp",
+        profileUrl: "https://www.youtube.com/@Akira896",
+        tags: ["Creador del proyecto"],
         category: "administrator",
         roles: [
             {
@@ -40,37 +44,23 @@ export const CREDITS_REGISTRY: CreditItem[] = [
                 ]
             },
             {
-                roleName: "Redacción de guiones",
-                games: [
-                    "drawful", "fakinit", "monster", "civic", "zeeple", "ptb", "drawful2", "useyourwords"
-                ]
-            },
-            {
-                roleName: "Recorte y ecualización de audio",
-                games: [
-                    "drawful", "earwax", "fakinit", "survive", "monster", "civic", "zeeple", "ptb", "talkingpoints", "useyourwords"
-                ]
-            },
-            {
                 roleName: "Otros roles",
                 textNotes: [
-                    "Creador del proyecto",
                     "Encargado de los archivos SWF de los juegos",
                     "Editor de imágenes vectoriales de los juegos",
                     "Encargado de las redes sociales",
                     "Encargado de subir los parches",
                     "Editor de la página web",
-                    "Encargado principal de editar/traducir archivos del dominio",
-                    "Contribución monetaria para mantener el dominio",
-                    "Supervisor de doblajes"
+                    "Encargado principal de editar/traducir archivos del dominio"
                 ]
             }
         ]
     },
     {
         username: "Artuhaxis",
-        avatarUrl: undefined,
+        avatarUrl: "/images/avatars/artuhaxis.webp",
         category: "administrator",
+        tags: ["Creador del proyecto"],
         roles: [
             {
                 roleName: "Traducción principal",
@@ -97,21 +87,8 @@ export const CREDITS_REGISTRY: CreditItem[] = [
                 ]
             },
             {
-                roleName: "Redacción de guiones",
-                games: [
-                    "earwax", "fakinit", "survive", "patently", "ptb"
-                ]
-            },
-            {
-                roleName: "Recorte y ecualización de audio",
-                games: [
-                    "earwax", "fakinit", "monster", "patently", "ptb", "devils"
-                ]
-            },
-            {
                 roleName: "Otros roles",
                 textNotes: [
-                    "Creador del proyecto",
                     "Editor de la página web",
                     "Encargado de las redes sociales"
                 ]
@@ -121,6 +98,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     {
         username: "Fixed Fun",
         avatarUrl: "/images/avatars/fixedfun.webp",
+        profileUrl: "https://www.youtube.com/@fixedfunshow",
         category: "administrator",
         roles: [
             {
@@ -186,6 +164,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     {
         username: "Eleiber",
         avatarUrl: "/images/avatars/eleiber.webp",
+        tags: ["Encargado del dominio jackbox.lol"],
         category: "administrator",
         roles: [
             {
@@ -205,25 +184,12 @@ export const CREDITS_REGISTRY: CreditItem[] = [
                 games: [
                     "tmp1"
                 ]
-            },
-            {
-                roleName: "Guiones",
-                games: [
-                    "earwax", "monster", "civic"
-                ]
-            },
-            {
-                roleName: "Otros roles",
-                textNotes: [
-                    "Encargado del dominio Jackbox.lol",
-                    "Contribución monetaria para mantener el dominio"
-                ]
             }
         ]
     },
     {
         username: "Markmtz90",
-        avatarUrl: undefined,
+        avatarUrl: "/images/avatars/markmtz90.webp",
         category: "administrator",
         roles: [
             {
@@ -255,7 +221,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Ker",
-        category: "contributor",
+        category: "majorContributor",
         roles: [
             {
                 roleName: "Traducción principal",
@@ -269,7 +235,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Pachekin",
-        category: "contributor",
+        category: "majorContributor",
         roles: [
             {
                 roleName: "Traducción principal",
@@ -283,7 +249,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Alosinwhat",
-        category: "contributor",
+        category: "majorContributor",
         roles: [
             {
                 roleName: "Traducción principal",
@@ -296,18 +262,8 @@ export const CREDITS_REGISTRY: CreditItem[] = [
         ]
     },
     {
-        username: "Brody",
-        category: "contributor",
-        roles: [
-            {
-                roleName: "Traducción principal",
-                games: ["quiplash3"]
-            }
-        ]
-    },
-    {
-        username: "Suukiro",
-        category: "contributor",
+        username: "Brody y Suukiro",
+        category: "majorContributor",
         roles: [
             {
                 roleName: "Traducción principal",
@@ -317,7 +273,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Raúl Mora",
-        category: "contributor",
+        category: "majorContributor",
         roles: [
             {
                 roleName: "Traducción principal",
@@ -331,23 +287,29 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Radioactive Man",
-        category: "contributor",
+        tags: ["Primer traducción al español de Jackbox"],
+        category: "majorContributor",
         roles: [
             {
                 roleName: "Traducción principal",
                 games: ["earwax", "bidiots", "quiplashXL", "useyourwords"]
-            },
+            }
+        ]
+    },
+    {
+        username: "Zants69",
+        category: "majorContributor",
+        roles: [
             {
-                roleName: "Otros roles",
-                textNotes: [
-                    "Primera persona en compartir traducciones al español de los juegos de Jackbox"
-                ]
+                roleName: "Traducción principal",
+                games: ["talkingpoints"]
             }
         ]
     },
     {
         username: "PauX",
-        category: "contributor",
+        category: "majorContributor",
+        tags: ["Tester de Mac"],
         roles: [
             {
                 roleName: "Soporte técnico",
@@ -356,51 +318,47 @@ export const CREDITS_REGISTRY: CreditItem[] = [
             {
                 roleName: "Otros roles",
                 textNotes: [
-                    "Asistencia inicial con los SWFs",
-                    "Testeo completo de Mac"
+                    "Asistencia inicial con los SWFs"
                 ]
             }
         ]
     },
     {
         username: "Alexis",
-        category: "contributor",
-        roles: [
-            {
-                roleName: "Otros roles",
-                textNotes: [
-                    "Creador de Jackbox Utility"
-                ]
-            }
-        ]
+        category: "majorContributor",
+        tags: ["Creador de Jackbox Utility"],
+        roles: []
     },
     {
         username: "UnrulyJuli3",
-        category: "contributor",
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Edición de imágenes",
                 games: ["lieswatter"]
             },
             {
+                roleName: "Soporte técnico",
+                games: ["bombcorp", "wheel", "blather"]
+            },
+            {
                 roleName: "Otros roles",
                 textNotes: [
-                    "Extracción de jackbox.tv",
-                    "Implementación de traducción de bot de Mata Mentiras"
+                    "Extracción de jackbox.tv"
                 ]
             }
         ]
     },
     {
-        username: "Erizzle / Jackbox DE",
-        category: "contributor",
+        username: "Erizzle",
+        tags: ["de parte de Team Gamechanger"],
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Otros roles",
                 textNotes: [
                     "Idea del primer parcheador",
-                    "Bots de Discord para notificaciones de stream y la ruleta",
-                    "Aporte de transcripciones para doblajes",
+                    "Bot de Discord para notificaciones de stream",
                     "Prueba temprana de The Jackbox Party Starter"
                 ]
             }
@@ -408,7 +366,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Alomancia",
-        category: "contributor",
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Edición de imágenes",
@@ -418,7 +376,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "El Tristanlaker2582",
-        category: "contributor",
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Edición de imágenes",
@@ -428,7 +386,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "P4ND4_1100010",
-        category: "contributor",
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Soporte técnico",
@@ -441,43 +399,38 @@ export const CREDITS_REGISTRY: CreditItem[] = [
             {
                 roleName: "Otros roles",
                 textNotes: [
-                    "Propuso usar Crowdin"
+                    "Propuso el uso de Crowdin, enseñó cómo utilizarlo"
                 ]
             }
         ]
     },
     {
-        username: "Romnickol / What If?",
-        category: "contributor",
+        username: "Romnickol",
+        tags: ["de parte del equipo de What If?"],
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Otros roles",
                 textNotes: [
-                    "Asistencia con  los SWFs",
-                    "Aporte de transcripciones para doblajes"
+                    "Asistencia con los SWFs"
                 ]
             }
         ]
     },
     {
         username: "Nicolaselzorro1",
-        category: "contributor",
+        category: "minorContributor",
+        tags: ["Tester de Nintendo Switch"],
         roles: [
             {
                 roleName: "Traducción asistente",
                 games: ["lieswatter"]
-            },
-            {
-                roleName: "Otros roles",
-                textNotes: [
-                    "Testeo de parches de Nintendo Switch"
-                ]
             }
         ]
     },
     {
         username: "Neep",
-        category: "contributor",
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Soporte técnico",
@@ -487,7 +440,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "DirtyDeeds",
-        category: "contributor",
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Otros roles",
@@ -499,7 +452,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "vector_sux e Irvin Guzmán",
-        category: "contributor",
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Otros roles",
@@ -511,7 +464,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
         {
         username: ".#SpooX* y Nesjob",
-        category: "contributor",
+        category: "minorContributor",
         roles: [
             {
                 roleName: "Otros roles",
@@ -523,18 +476,8 @@ export const CREDITS_REGISTRY: CreditItem[] = [
         ]
     },
     {
-        username: "Zants69",
-        category: "contributor",
-        roles: [
-            {
-                roleName: "Traducción principal",
-                games: ["talkingpoints"]
-            }
-        ]
-    },
-    {
         username: "LucastuFett",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción principal",
@@ -544,7 +487,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Benelux",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción principal",
@@ -554,7 +497,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Tejas",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción principal",
@@ -568,7 +511,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "diegoflg3",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -578,7 +521,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Marti005",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -588,7 +531,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Nairoliv",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -598,7 +541,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Fenixhim272",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -608,7 +551,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "NatsukiZoe",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -618,7 +561,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "DanielMGC",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -628,7 +571,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "damian29",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -638,7 +581,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Molonazo",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -648,7 +591,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "MarioPereyra",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -658,7 +601,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Pepe Pepo",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -668,7 +611,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "stefano30",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -678,7 +621,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "MrCityWaffles",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -688,7 +631,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Inuzen",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -698,7 +641,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Lafufu",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción asistente",
@@ -708,15 +651,15 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "hectorflipi, lau_fleur y exviolinista13",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             { roleName: "Traducción principal [España]", games: ["quiplash"] },
-            { roleName: "Otros roles", textNotes: ["Traducción de Drawful 2 antes de la oficial"] }
+            { roleName: "Traducción original (antes de la oficial)", games: ["drawful2"] }
         ]
     },
     {
         username: "Danda",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Traducción principal [España]",
@@ -726,7 +669,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "Roxas",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Edición de imágenes",
@@ -736,7 +679,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     },
     {
         username: "YosY",
-        category: "contributor",
+        category: "miscContributor",
         roles: [
             {
                 roleName: "Edición de imágenes",
