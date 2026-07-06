@@ -3,6 +3,8 @@ export interface DownloadTarget {
     platforms: string[];
     stores: string[];
     lang: "latam" | "spain";
+    noteTitle?: string;
+    notes?: string;
     link: string;
 }
 
@@ -558,6 +560,8 @@ export const DOWNLOADS_REGISTRY = [
         title: "Cursed Points",
         imageSrc: "/images/buttons/cursedpoints.webp",
         hasSpain: false,
+        noteTitle: "Mod para The Jackbox Party Pack 7",
+        notes: "Cursed Points incorpora imágenes \"curseadas\" en Talking Points.",
         targets: [
             {
                 name: "Default",
