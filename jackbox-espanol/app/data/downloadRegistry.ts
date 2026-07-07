@@ -1,8 +1,8 @@
 export interface DownloadTarget {
     name: string;
-    platforms: string[];
-    stores: string[];
-    lang: "latam" | "spain";
+    platforms?: string[];
+    stores?: string[];
+    lang?: "latam" | "spain";
     notes?: string;
     link: string;
 }
@@ -11,7 +11,7 @@ export interface GameRegistryItem {
     id: string;
     title: string;
     imageSrc: string;
-    hasSpain: boolean;
+    hasSpain?: boolean;
     targets: DownloadTarget[];
 }
 
@@ -589,6 +589,206 @@ export const DOWNLOADS_REGISTRY = [
                 lang: "latam",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/CursedPointsES-CapyV2-ES-MAC-EGS.zip"
             },
+        ]
+    }
+];
+
+export const ENG_DOWNLOADS_REGISTRY = [
+    {
+        id: "pp1",
+        title: "The Jackbox Party Pack 1",
+        imageSrc: "/images/buttons/pp1.webp",
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte el doblaje de Drawful.",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-1-Spanish/releases/download/20.13-ES/JPP1-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "pp2",
+        title: "The Jackbox Party Pack 2",
+        imageSrc: "/images/buttons/pp2.webp",
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte el doblaje de Earwax: Sonidos Raros.",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/download/15.9-ES/JPP2-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "pp3",
+        title: "The Jackbox Party Pack 3",
+        imageSrc: "/images/buttons/pp3.webp",
+
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte el doblaje de ¡Engáñame!",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-3-Spanish/releases/download/13.13b-ES/JPP3-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "pp4",
+        title: "The Jackbox Party Pack 4",
+        imageSrc: "/images/buttons/pp4.webp",
+
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte los doblajes de Sobrevive Al Internet, Monstruo Busca Monstruo y Garabato Cívico",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-4-Spanish/releases/download/134.10-ES/JPP4-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "pp5",
+        title: "The Jackbox Party Pack 5",
+        imageSrc: "/images/buttons/pp5.webp",
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte los doblajes de Zeeple Dome y Patentes Dementes.",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-5-Spanish/releases/download/213.21-ES/JPP5-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "pp6",
+        title: "The Jackbox Party Pack 6",
+        imageSrc: "/images/buttons/pp6.webp",
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte el doblaje de Pulsa El Botón.",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-6-Spanish/releases/download/25.1-ES/JPP6-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "pp7",
+        title: "The Jackbox Party Pack 7",
+        imageSrc: "/images/buttons/pp7.webp",
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte los doblajes de La Familia es un Infierno y Talking Points.",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/JPP7-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "pp8",
+        title: "The Jackbox Party Pack 8",
+        imageSrc: "/images/buttons/pp8.webp",
+        targets: [
+            {
+                name: "Canción de La Ruleta en inglés",
+                notes: "Revierte la versión adaptada de la canción de este juego.",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-8-Spanish/releases/download/437.12-ES/TemaCreditosOriginalesRuleta.zip"
+            }
+        ]
+    },
+    {
+        id: "survey",
+        title: "The Jackbox Survey Scramble",
+        imageSrc: "/images/buttons/survey.webp",
+        targets: [
+            {
+                name: "Elimina doblaje de los audios restaurados",
+                notes: "Revierte los audios doblados por Akira896, que pasarán a sonar en inglés.",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Survey-Scramble-Spanish/releases/download/540.1-ES/JSS-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "useyourwords",
+        title: "Use Your Words",
+        imageSrc: "/images/buttons/useyourwords.webp",
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte el doblaje realizado.",
+                link: "https://github.com/AkiraArtuhaxis/Use-Your-Words-Spanish/releases/download/1.3-ES/UYW-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "quiplash",
+        title: "Quiplash",
+        imageSrc: "/images/buttons/quiplash.webp",
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte el doblaje realizado para el parche de España.",
+                link: "https://github.com/AkiraArtuhaxis/Quiplash-Quip-Pack-1-Spanish/releases/download/23.1-ES/QUIP-ES-ENGVOICES.zip"
+            }
+        ]
+    }
+];
+
+export const EXTRA_DOWNLOADS_REGISTRY = [
+    {
+        id: "singleAccess",
+        title: "Accesos individuales de juegos",
+        imageSrc: "/images/buttons/utilityShortcuts.webp",
+        targets: [
+            {
+                name: "Accesos directos individuales para cada juego",
+                notes: "Para Windows. Requiere el uso de Jackbox Utility.",
+                link: "https://github.com/JackboxUtility/Jackbox-Utility-Extras/releases/latest/download/Jackbox.Utility.Accesos.Directos.Individuales.ESP.zip"
+            }
+        ]
+    },
+    {
+        id: "steamBanners",
+        title: "Banners y logos de Steam en español",
+        imageSrc: "/images/buttons/steamBanners.webp",
+        targets: [
+            {
+                name: "Banners y logos de Steam en español",
+                notes: "Imágenes traducidas y personalizadas.",
+                link: "https://www.mediafire.com/file/zcqfilkrlaz54rg/Banners+y+Logos+de+Steam.zip/file"
+            }
+        ]
+    },
+    {
+        id: "triviamuerte1",
+        title: "The Jackbox Party Pack 3",
+        imageSrc: "/images/buttons/triviamuerte1.webp",
+        targets: [
+            {
+                name: "Trivia Murder Party traducido a Trivia de la Muerte",
+                notes: "Cambia el logo por una versión traducida.",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-3-Spanish/releases/download/13.6-ES/TituloTDLM.zip"
+            }
+        ]
+    },
+    {
+        id: "survive",
+        title: "The Jackbox Party Pack 4",
+        imageSrc: "/images/buttons/surviveDub.webp",
+        targets: [
+            {
+                name: "Doblajes viejos de Survive The Internet",
+                notes: "Incluye dos versiones anteriores del doblaje: Yoshiro como Todd, Akira896 como ChicoFiestero7 | Yoshiro como ChicoFiestero7",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-4-Spanish/releases/latest/download/JPP4-ES-STIYOSHIRO.zip"
+            }
+        ]
+    },
+    {
+        id: "triviamuerte2",
+        title: "The Jackbox Party Pack 6",
+        imageSrc: "/images/buttons/triviamuerte2.webp",
+        targets: [
+            {
+                name: "Título traducido a Trivia de la Muerte 2",
+                notes: "Cambia el logo por una versión traducida.",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-6-Spanish/releases/download/25.1-ES/TituloTDLM2.zip"
+            }
         ]
     }
 ];
