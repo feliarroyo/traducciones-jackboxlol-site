@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import DownloadButton from "./DownloadButton";
-import { WindowsIcon, MacIcon, LinuxIcon, SwitchIcon, EpicIcon, MicrosoftIcon } from "../components/icons/PlatformIcons";
+import { WindowsIcon, MacIcon, LinuxIcon, SwitchIcon, EpicIcon, MicrosoftIcon, YouTubeIcon } from "../components/icons/PlatformIcons";
 
 interface JackboxUtilityProps {
   footerText?: React.ReactNode; // ReactNode allows you to pass both plain text or text with links (JSX)
@@ -35,23 +35,37 @@ export default function JackboxUtility({
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-      {/* Left Side: Screenshot */}
-      <div className="w-full md:w-1/2 max-w-xl aspect-video relative flex items-center justify-center bg-slate-900/50 rounded-2xl border border-slate-800 overflow-hidden">
-        {CAROUSEL_IMAGES.map((src, idx) => (
-          <div
-            key={src}
-            className={`absolute inset-0 w-full h-full p-4 transition-opacity duration-700 ease-in-out ${idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
+      {/* Left Side: Screenshot Carousel & YouTube Button */}
+      <div className="w-full md:w-1/2 max-w-xl flex flex-col gap-4">
+        {/* Carousel Container */}
+        <div className="w-full aspect-video relative flex items-center justify-center bg-slate-900/50 rounded-2xl border border-slate-800 overflow-hidden">
+          {CAROUSEL_IMAGES.map((src, idx) => (
+            <div
+              key={src}
+              className={`absolute inset-0 w-full h-full p-4 transition-opacity duration-700 ease-in-out ${idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
+            >
+              <Image
+                src={src}
+                alt={`Previsualización de Jackbox Utility ${idx + 1}`}
+                fill
+                priority={idx === 0} // High priority only on the initial frame load
+                className="object-contain drop-shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-500"
+              />
+            </div>
+          ))}
+        </div>
+          {/* YouTube Video Button */}
+          <a
+            href="https://youtu.be/YB6t5YfuMzo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-red-700 hover:bg-red-800 text-white font-semibold rounded-xl transition-colors duration-200 shadow-lg shadow-red-900/20 text-sm"
           >
-            <Image
-              src={src}
-              alt={`Previsualización de Jackbox Utility ${idx + 1}`}
-              fill
-              priority={idx === 0} // High priority only on the initial frame load
-              className="object-contain drop-shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-500"
-            />
-          </div>
-        ))}
+            <YouTubeIcon fill="#ffffff"/>
+            Videotutorial de instalación
+          </a>
+        
       </div>
 
       {/* Right Side: Text and Download Buttons */}
