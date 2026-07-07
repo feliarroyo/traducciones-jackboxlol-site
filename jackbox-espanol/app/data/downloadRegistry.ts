@@ -3,7 +3,6 @@ export interface DownloadTarget {
     platforms: string[];
     stores: string[];
     lang: "latam" | "spain";
-    noteTitle?: string;
     notes?: string;
     link: string;
 }
@@ -19,7 +18,7 @@ export interface GameRegistryItem {
 export const DOWNLOADS_REGISTRY = [
     {
         id: "pp1",
-        title: "The Jackbox Party Pack 1",
+        title: "The Jackbox Party Pack",
         imageSrc: "/images/buttons/pp1.webp",
         hasSpain: false,
         targets: [
@@ -535,7 +534,7 @@ export const DOWNLOADS_REGISTRY = [
     },
     {
         id: "rifftrax",
-        title: "RiffTrax",
+        title: "RiffTrax: The Game",
         imageSrc: "/images/buttons/rifftrax.webp",
         hasSpain: false,
         targets: [
@@ -560,8 +559,7 @@ export const DOWNLOADS_REGISTRY = [
         title: "Cursed Points",
         imageSrc: "/images/buttons/cursedpoints.webp",
         hasSpain: false,
-        noteTitle: "Mod para The Jackbox Party Pack 7",
-        notes: "Cursed Points incorpora imágenes \"curseadas\" en Talking Points. Se debe jugar desde Capyparty.xyz.",
+        notes: "Mod para el Pack 7 que incorpora imágenes \"curseadas\" en Talking Points. Se debe jugar desde Capyparty.xyz.",
         targets: [
             {
                 name: "Default",
