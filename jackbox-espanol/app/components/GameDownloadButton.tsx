@@ -28,7 +28,7 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
       />
       { /* Overlay icon if it's Spain translation*/ }
       {isSpain && (
-        <div className="absolute top-2 right-2 w-6 h-6 rounded-md overflow-hidden shadow-md flex items-center justify-center z-10 animate-fade-in pointer-events-none">
+        <div className="absolute top-2 right-2 w-6 h-6 rounded-md overflow-hidden shadow-md flex items-center justify-center z-10 animate-fade-in">
           <Image
             src="/images/spain.webp" // Replace with your Spain flag asset path location
             alt="Variante de España"
@@ -39,16 +39,16 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
         </div>
       )}
       {/* FLOATING HOVER NOTE TOOLTIP */}
-      {notes && noteTitle && (
+      { noteTitle && (
         <div 
-          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 z-30 p-2.5 rounded-xl bg-slate-950/95 border border-slate-800/90 backdrop-blur-md text-[10px] text-slate-200 text-center leading-normal shadow-2xl transition-all duration-300 opacity-0 translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0"
+          className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 z-30 p-2.5 rounded-xl bg-slate-950/95 border border-slate-800/90 backdrop-blur-md text-[10px] text-slate-200 text-center leading-normal shadow-2xl transition-all duration-300 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto"
         >
           <p className="font-medium text-amber-400 mb-0.5 uppercase tracking-wider text-[8px]">
             {noteTitle}
           </p>
-          <p className="italic text-slate-300">
+          {notes && (<p className="italic text-slate-300">
             {notes}
-          </p>
+          </p>)}
         </div>
       )}
     </a>
