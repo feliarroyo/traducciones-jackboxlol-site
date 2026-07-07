@@ -30,7 +30,7 @@ export default function Home() {
 
           <div className="space-y-4 text-slate-300 leading-relaxed md:text-xl font-bold text-center">
             <p>
-              Jackbox en español es un sitio donde subimos traducciones no oficiales al español para los juegos de Jackbox Games y otros de temática similar.
+              Jackbox en español es un proyecto no oficial dedicado a la traducción al español de los juegos de Jackbox Games.
             </p>
             <Link
             href="/downloads" // Update this link path to point to your specific download routing section
