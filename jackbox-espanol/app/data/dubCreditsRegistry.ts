@@ -1,6 +1,6 @@
 export interface DubCreditItem {
     id: string;
-    category: "mainDub" | "minorDub";
+    category: "mainDub" | "minorDub" | "comingSoon";
     details?: string;
     demoUrl?: string;
     songUrl?: string;
@@ -377,5 +377,126 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
                 roles: ["Mezcla"]
             }
         ]
-    }
+    },
+    {
+        id: "bombcorp",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "Mariano Cescatti",
+                roles: ["Voz de Greg"],
+            },
+            {
+                username: "María Eugenia Suárez",
+                roles: ["Voz de Meegan"],
+            },
+            {
+                username: "Laura Ravioli",
+                roles: ["Voz de Linda"],
+            },
+            {
+                username: "Santiago Giordani",
+                roles: ["Voz de Robot"],
+            },
+            {
+                username: "BinaryPie",
+                roles: ["Voz del tipo viejo"],
+            },
+            {
+                username: "Federico Abrego",
+                roles: ["Voz de Gavin"],
+            },
+            {
+                username: "Akira896",
+                roles: ["Voz de Kent el perro"],
+            },
+            {
+                username: "Mila Tapia, Artuhaxis y maritomomomemardo",
+                roles: ["Voces de internos"],
+            },
+        ]
+    },
+    {
+        id: "bidiots",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "Fixed Fun",
+                roles: ["Anfitrión"]
+            },
+            {
+                username: "Rocío Benítez Blasco",
+                roles: ["Voz de vendedora de Crédito Feroz"]
+            },
+            {
+                username: "Nahuel Guidi",
+                roles: ["Cantante de jingles de Crédito Feroz"]
+            },
+            {
+                username: "Akira896, Artuhaxis, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
+                roles: ["Voces de subastadores"]
+            },
+        ]
+    },
+    {
+        id: "madverse",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "\"Lucho\" y Rocío Benítez Blasco",
+                roles: ["Anfitriones (Shadow Master MC y DJ Raych)"]
+            },
+            {
+                username: "Artuhaxis",
+                roles: ["Voz de Gene"]
+            },
+            {
+                username: "Trinidad González, Akira896, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
+                roles: ["Voces de hinchada"]
+            }
+        ]
+    },
+    {
+        id: "blather",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "Laura Ravioli",
+                roles: ["Anfitriona"]
+            },
+            {
+                username: "Ana Fernández",
+                roles: ["Cantante"]
+            }
+        ]
+    },
+    {
+        id: "drawfulanimate",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "Mila Tapia",
+                roles: ["Anfitriona"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Voz extra"]
+            },
+            {
+                username: "Nahuel Guidi",
+                roles: ["Cantante"]
+            }
+        ]
+    },
+        {
+        id: "champdup",
+        details: "(canción)",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "Nahuel Guidi",
+                roles: ["Cantante"]
+            }
+        ]
+    },
 ];
