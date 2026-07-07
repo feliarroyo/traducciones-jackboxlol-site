@@ -37,6 +37,50 @@ export const FAQ_REGISTRY: Faq[] = [
             "Hecho eso, debes editar los bats con el Bloc de Notas copiando y pegando los comandos que posee.Reemplaza el nombre \"games\" por el nombre de uno de los archivos que haya que restaurar. Repite el proceso con el resto de los archivos.",
             "Una vez guardado el bat, eso sería todo. Opcionalmente, puedes al final de cada bat colocar el nombre del exe entre comillas para que el juego se ejecute automáticamente al abrir los bats."
         ]
-    }
+    },
+    {
+        question: "¿Cómo instalo las traducciones en Mac?",
+        answer: [
+            "Método 1 (recomendado): Para este método es necesario utilizar WinZip, ya que el gestor de archivos por defecto de Mac no opera de la misma forma que en Windows. WinZip ofrece una prueba gratis, pero incluímos un método alternativo que usa la consola de comandos en caso que te parezca más cómodo o tu prueba de WinZip haya caducado.",
+            "Además, para descargar los parches recomendamos utilizar un navegador diferente a Safari, ya que este descomprime los zips automáticamente al descargarse. Puedes utilizar alternativas como Mozilla Firefox o Google Chrome.",
+            "Ve al directorio de instalación del juego. Para ello, hay un método simple de hacerlo:",
+            "En Steam: Haz clic derecho en el juego de tu biblioteca → Administrar → Explorar archivos locales",
+            "En Epic Games Store: Haz clic en \"...\" del juego → Gestionar → Clic en el icono de carpeta de la sección \"Instalación\"",
+            "Acto seguido, haz clic derecho sobre la \"App\" del juego y pulsa \"Mostrar contenido del paquete\".",
+            "Una vez descargado el parche, extrae el contenido del zip en la carpeta \"Contents/Resources/macos\", reemplazando todo lo necesario.",
+            "NOTA: Los parches de la sección \"Otros juegos\" se extraen en la carpeta \"Contents/Resources/Data\".",
+            "NOTA 2: En el caso de Quiplash, para que el DLC \"Quip Pack 1\" sea traducido en esta plataforma, la carpeta \"DLC\" del parche debe extraerse en el mismo directorio en el que se encuentra la App del juego.",
+
+            "Método alternativo utilizando la consola de comandos (para usuarios experimentados):",
+
+            "Descarga y extrae el parche en la carpeta de \"Descargas\".Asegúrate que sea extraído en una carpeta con el mismo nombre del parche.",
+            "Accede por la terminal al directorio donde están los juegos. Para ello, una vez abierta la terminal se debe escribir el siguiente comando:",
+            "En Steam: \"cd ~/Library/Application\ Support / Steam / steamapps / common\"",
+            "En Epic Games Store: \"cd / Users / Shared / Epic\ Games\"",
+            "Accede a la carpeta del Pack a traducir, utilizando el comando:",
+            "\"cd JUEGO / JUEGO.app / Contents / Resources\"",
+            "(JUEGO debe ser reemplazado con el nombre de la carpeta del juego).",
+            "Instala la traducción usando el comando el comando \"ditto\". Asumiendo que el archivo de la traducción está extraído en la carpeta de \"Descargas\" de tu equipo, usa el siguiente comando:",
+            "\"ditto ~/Downloads/PARCHE macos\"",
+            "(PARCHE debe ser reemplazado con el nombre del parche descargado).",
+
+            "NOTA: Para los parches de la sección \"Otros juegos\", el directorio \"macos\" debe reemplazarse por \"Data\".",
+            "NOTA 2: En el caso de Quiplash, para que el DLC \"Quip Pack 1\" sea traducido en esta plataforma, una vez reiniciada la consola se deben también ingresar estos comandos:",
+            "\"cd ~/Library/Application\ Support / Steam / steamapps / common\"",
+            "\"cd Quiplash\"",
+            "\"ditto ~/Downloads/QUIP - ES / DLC DLC\"",
+            "Con esto, se copiarán todos los archivos y directorios de forma recursiva, reemplazando aquellos que están repetidos y manteniendo los que no requieren ser reemplazados.",
+        ]
+    },
+    {
+        question: "¿Qué problemas pueden encontrarse usando los parches para versiones de Nintendo Switch?",
+        answer: [
+            "Excepto en el Pack 8, los siguientes problemas ocurren al utilizar los parches:",
+            "- Al abrir el Pack, el menú no estará en español. Para que lo esté, se debe entrar a cualquier juego y luego volver al menú.",
+            "- Las imágenes de los botones del mando no aparecen en ciertos lugares.",
+            "- La pantalla de carga no tendrá la imagen correspondiente.",
+            "Cabe destacar que son problemas menores, y no interfieren con la experiencia de juego."
+        ]
+    },
 
 ]
