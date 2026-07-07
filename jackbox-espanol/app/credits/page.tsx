@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { CREDITS_REGISTRY } from "../data/creditsRegistry";
 import { DUB_CREDITS_REGISTRY } from "../data/dubCreditsRegistry";
-import CreditCardXL from "../components/CreditCardXL";
 import CreditCardContainer from "../components/CreditCardContainer";
 import CreditCardXLContainer from "../components/CreditCardXLContainer";
 import DubGameCardXL from "../components/DubGameCardXL";
@@ -15,8 +14,9 @@ export default function CreditsPage() {
   const activeRegistry = activeView === "translations" ? CREDITS_REGISTRY : DUB_CREDITS_REGISTRY;
   const admins = CREDITS_REGISTRY.filter(c => c.category === "administrator");
   const majorContributors = CREDITS_REGISTRY.filter(c => c.category === "majorContributor");
+  const techContributors = CREDITS_REGISTRY.filter(c => c.category === "techContributor");
   const minorContributors = CREDITS_REGISTRY.filter(c => c.category === "minorContributor");
-  const miscContributors = CREDITS_REGISTRY.filter(c => c.category === "miscContributor");
+  const miscContributors = CREDITS_REGISTRY.filter(c => c.category === "minorContributor");
 
   return (
     <div className="max-w-6xl mx-auto py-12 px-4 space-y-4">
@@ -60,52 +60,64 @@ export default function CreditsPage() {
             {/* 🟦 TRANSLATIONS RENDER TRACKS */}
             <CreditCardXLContainer
               title="Administradores"
+              subtitle="Los administradores realizaron una cantidad considerable de contribuciones al proyecto."
               data={admins}
             />
             <CreditCardContainer
-              title="Colaboradores Principales"
+              title="Traductores notables"
+              subtitle="Se lista aquí a aquellas personas que han contribuido de manera significativa a la traducción de al menos un juego."
               data={majorContributors}
             />
             <CreditCardContainer
-              title="Colaboradores Asistentes"
-              titleClassName="text-xl font-bold text-slate-200"
-              data={minorContributors}
+              title="Colaboradores técnicos"
+              subtitle="Se lista aquí a aquellos que han contribuido de manera significativa con los pormenores artísticos y/o técnicos del proyecto."
+              data={techContributors}
             />
             <CreditCardContainer
-              title="Otros Aportes / Agradecimientos"
-              titleClassName="text-lg font-bold text-slate-400"
-              data={miscContributors}
+              title="Otros colaboradores"
+              subtitle="Se lista aquí a colaboradores que aportaron lo suficiente para ser acreditados en alguna de las traducciones del proyecto."
+              data={minorContributors}
             />
           </>
         ) : (
           <>
-          {/* 🎮 NEW GAME-CENTRIC GRID FOR MAIN DUBS */ }
-          <section className="space-y-6">
-        <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">
-          Doblajes completos
-        </h2>
-        <div className="flex flex-row flex-wrap gap-6 justify-center items-center w-full mx-auto">
-          {DUB_CREDITS_REGISTRY.filter(g => g.category === "mainDub").map((game) => (
-            <DubGameCardXL key={game.id} game={game} />
-          ))}
-        </div>
-      </section>
+            {/* 🎮 NEW GAME-CENTRIC GRID FOR MAIN DUBS */}
+            <section className="space-y-6">
+              <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">
+                Doblajes completos
+              </h2>
+              <div className="flex flex-row flex-wrap gap-6 justify-center items-center w-full mx-auto">
+                {DUB_CREDITS_REGISTRY.filter(g => g.category === "mainDub").map((game) => (
+                  <DubGameCardXL key={game.id} game={game} />
+                ))}
+              </div>
+            </section>
 
-      {/* 🎮 NEW GAME-CENTRIC CLOUD FOR MINOR DUBS */}
-      <section className="space-y-6">
-        <h2 className="text-xl font-bold text-slate-400 border-b border-slate-800 pb-2">
-          Doblajes parciales
-        </h2>
-        <div className="flex flex-row flex-wrap gap-4 justify-center items-start w-full mx-auto">
-          {DUB_CREDITS_REGISTRY.filter(g => g.category === "minorDub").map((game) => (
-            <DubGameCard key={game.id} game={game} />
-          ))}
-        </div>
-      </section>
-    </>
-  )
-}
-        
+            {/* 🎮 NEW GAME-CENTRIC CLOUD FOR MINOR DUBS */}
+            <section className="space-y-6">
+              <h2 className="text-xl font-bold text-slate-400 border-b border-slate-800 pb-2">
+                Doblajes parciales
+              </h2>
+              <div className="flex flex-row flex-wrap gap-4 justify-center items-start w-full mx-auto">
+                {DUB_CREDITS_REGISTRY.filter(g => g.category === "minorDub").map((game) => (
+                  <DubGameCard key={game.id} game={game} />
+                ))}
+              </div>
+            </section>
+            <section className="space-y-6">
+              <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">
+                Próximamente
+              </h2>
+              <div className="flex flex-row flex-wrap gap-6 justify-center items-center w-full mx-auto">
+                {DUB_CREDITS_REGISTRY.filter(g => g.category === "comingSoon").map((game) => (
+                  <DubGameCardXL key={game.id} game={game} />
+                ))}
+              </div>
+            </section>
+          </>
+        )
+        }
+
       </div>
     </div>
   );
