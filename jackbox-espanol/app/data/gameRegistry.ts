@@ -148,6 +148,10 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
     src: "/images/games/split.webp",
     alt: "Divide la Sala"
   },
+  starter: {
+    src: "/images/games/starter.webp",
+    alt: "The Jackbox Party Starter"
+  },
   survey: {
     src: "/images/games/survey.webp",
     alt: "The Jackbox Survey Scramble"
@@ -179,6 +183,10 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
   useyourwords: {
     src: "/images/games/useyourwords.webp",
     alt: "Usa Tus Palabras"
+  },
+  utility: {
+    src: "/images/games/utility.webp",
+    alt: "Jackbox Utility"
   },
   weapons: {
     src: "/images/games/weapons.webp",
