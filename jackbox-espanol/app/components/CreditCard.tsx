@@ -5,6 +5,7 @@ import { GAME_ASSETS } from "../data/gameRegistry";
 interface CreditCardProps {
     user: {
         username: string;
+        avatarUrl?: string;
         tags?: string[];
         roles: {
             roleName: string;
@@ -17,10 +18,19 @@ interface CreditCardProps {
 export default function CreditCard({ user }: CreditCardProps) {
     return (
         <div
-            // 🎯 Content is always open, so we let the card naturally size up to its widest inner element
             className="flex-initial min-w-35 max-w-sm bg-slate-950/20 border border-slate-800/40 rounded-2xl p-4 flex flex-col justify-start gap-3 hover:border-slate-700/40 transition-all duration-300"
         >
             <div className="w-full">
+                {user.avatarUrl && (
+                    <div className="w-24 h-24 relative rounded-2xl overflow-hidden border-2 border-amber-500/10 bg-slate-900 group-hover:border-amber-500/30 transition-colors shrink-0 mx-auto mb-2">
+                        <Image
+                            src={user.avatarUrl}
+                            alt={user.username}
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                )}
                 {/* Centered Username */}
                 <h3 className="font-bold text-slate-100 text-sm text-center leading-snug px-1 border-b border-slate-800/40 pb-2 mb-2">
                     {user.username}
@@ -44,7 +54,7 @@ export default function CreditCard({ user }: CreditCardProps) {
                     {user.roles.map((role, idx) => (
                         <div key={idx} className="text-[11px] text-center">
                             <span className="text-slate-400 block font-semibold mb-1">
-                                {role.roleName}:
+                                {role.roleName}{(role.games || role.textNotes) && ": "}
                             </span>
 
                             {/* Game Logos Row */}
