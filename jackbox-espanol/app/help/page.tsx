@@ -6,14 +6,12 @@ export default async function HelpPage() {
   return (
     <div className="space-y-12 py-6 max-w-4xl mx-auto">
       {/* SECTION TOP HEADER */}
-      <div className="space-y-3">
+      <div className="space-y-2">
         <h1 className="text-4xl text-center font-black text-amber-400 tracking-tight md:text-5xl">
           Ayuda
         </h1>
-        <p className="text-base text-center text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Aquí dejamos respuestas a algunas de las preguntas más frecuentes relacionadas al proyecto.
-        </p>
         <p className="text-sm text-center text-slate-400">
+          Aquí dejamos respuestas a algunas de las preguntas más frecuentes relacionadas al proyecto.
           Si no encuentras respuesta a tu pregunta, puedes intentar resolverla en{" "}
           <Link 
             href="https://discord.com/invite/k8MASuepRw" 
