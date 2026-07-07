@@ -27,7 +27,7 @@ export default function CreditCardXL({ admin }: CreditCardXLProps) {
       {/* 🟦 MAIN SQUARE CARD */}
       <div className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 flex flex-col items-center justify-center gap-4 backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group">
 
-        {admin.avatarUrl !== undefined && (
+        {admin.avatarUrl && (
           <div className="w-24 h-24 relative rounded-2xl overflow-hidden border-2 border-amber-500/10 bg-slate-900 group-hover:border-amber-500/30 transition-colors shrink-0">
             <Image
               src={admin.avatarUrl}
@@ -52,12 +52,9 @@ export default function CreditCardXL({ admin }: CreditCardXLProps) {
             ) : (
               <span className="text-slate-100 group-hover:text-amber-400">{admin.username}</span>
             )}
-          </h3>
-        </div>
-
-        {/* 🎯 2. CAPSULE TAGS ROW (Renders under the name if present) */}
+            {/* TAGS (if present) */}
         {admin.tags && admin.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 justify-center max-w-full px-1">
+          <div className="flex flex-wrap gap-1.5 justify-center max-w-full my-1 px-1">
             {admin.tags.map((tag, tIdx) => (
               <span
                 key={tIdx}
@@ -68,6 +65,10 @@ export default function CreditCardXL({ admin }: CreditCardXLProps) {
             ))}
           </div>
         )}
+          </h3>
+        </div>
+
+        
 
         <button
           onClick={() => setIsOpen(true)}
@@ -77,7 +78,7 @@ export default function CreditCardXL({ admin }: CreditCardXLProps) {
         </button>
       </div>
 
-      {/* OVERLAY MODAL */}
+      {/* Overlay Modal */}
       {isOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
@@ -95,7 +96,7 @@ export default function CreditCardXL({ admin }: CreditCardXLProps) {
                     <Image src={admin.avatarUrl} alt={admin.username} fill className="object-cover" />
                   </div>
                 )}
-                <h3 className="text-2xl font-black">
+                <h3 className="flex flex-col text-2xl font-black">
                   {admin.profileUrl ? (
                     <a href={admin.profileUrl} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">
                       {admin.username}
@@ -103,13 +104,14 @@ export default function CreditCardXL({ admin }: CreditCardXLProps) {
                   ) : (
                     <span className="text-amber-400">{admin.username}</span>
                   )}
-                </h3>
-                {/* TAGS */}
+                  {/* TAGS */}
                     {admin.tags && admin.tags.map((tag, tIdx) => (
                       <span key={tIdx} className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 uppercase tracking-wider">
                         {tag}
                       </span>
                     ))}
+                </h3>
+                
               </div>
 
               <button
