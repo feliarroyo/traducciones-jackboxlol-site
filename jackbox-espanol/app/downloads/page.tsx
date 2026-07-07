@@ -77,7 +77,7 @@ export default function DownloadsPage() {
             </div>
             {/* JACKBOX UTILITY CARD */}
             <section className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-8 md:p-12 shadow-xl">
-                <JackboxUtilityCard footerText="Recomendamos el uso de Jackbox Utility para la instalación de las traducciones, pero se ofrecen parches de instalación manual debajo como alternativa." />
+                <JackboxUtilityCard footerText="Recomendamos el uso de Jackbox Utility para la instalación de las traducciones, pero se ofrecen parches de instalación manual debajo como alternativa (necesarios para Nintendo Switch)." />
             </section>
             {/* HEADER CODES */}
             <section>
