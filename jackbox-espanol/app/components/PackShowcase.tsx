@@ -20,7 +20,7 @@ export default function PackShowcase({
 
             {/* PACK ICON */}
             <div className="w-full h-18 relative opacity-60 hover:opacity-100 transition-opacity shrink-0">
-                <Image src={packLogoSrc} alt={packLogoAlt} fill className="object-contain fill draggable={false} pointer-events-none" />
+                <Image src={packLogoSrc} alt={packLogoAlt} fill className="object-contain fill" draggable={false} />
             </div>
 
             <div className="w-full border-t border-slate-800/40" />
@@ -32,7 +32,7 @@ export default function PackShowcase({
                         key={index}
                         className="w-28 h-20 relative transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
                     >
-                        <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain pointer-events-none" draggable={false}/>
+                        <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain" draggable={false}/>
                     </div>
                 ))}
             </div>
