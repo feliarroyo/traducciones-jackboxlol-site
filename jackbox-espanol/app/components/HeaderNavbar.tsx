@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CloseIcon, DiscordIcon, MenuIcon, TwitterIcon, YouTubeIcon } from "./icons/PlatformIcons";
+import { CloseIcon, DiscordIcon, MenuIcon, TwitterIcon, YouTubeIcon } from "./Icons";
 
 export default function HeaderNavbar() {
     const [isOpen, setIsOpen] = useState(false);

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import DownloadButton from "./DownloadButton";
-import { WindowsIcon, MacIcon, LinuxIcon, SwitchIcon, EpicIcon, MicrosoftIcon, YouTubeIcon } from "../components/icons/PlatformIcons";
+import { WindowsIcon, MacIcon, LinuxIcon, SwitchIcon, EpicIcon, MicrosoftIcon, YouTubeIcon } from "./Icons";
 
 interface JackboxUtilityProps {
   footerText?: React.ReactNode; // ReactNode allows you to pass both plain text or text with links (JSX)

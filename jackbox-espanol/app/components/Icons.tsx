@@ -1,7 +1,3 @@
-import React from "react";
-import Image from "next/image"
-
-// Windows Logo (Modern 4-blue pane)
 export function WindowsIcon({ className = "w-full h-full" }: { className?: string }) {
     return (
         <svg className={className} viewBox="0 0 4875 4875" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,7 +6,6 @@ export function WindowsIcon({ className = "w-full h-full" }: { className?: strin
     );
 }
 
-// Apple Mac Logo (Classic Silver/Off-White Gray for Dark Layouts)
 export function MacIcon({ className = "w-full h-full" }: { className?: string }) {
     return (
         <svg className={className} viewBox="0 0 814 1000" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +14,6 @@ export function MacIcon({ className = "w-full h-full" }: { className?: string })
     );
 }
 
-// Linux Tux Logo (Official Yellow Base Accent Foot/Beak Frame)
 export function LinuxIcon({ className = "w-full h-full" }: { className?: string }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 600 700">
@@ -54,7 +48,7 @@ export function TwitterIcon({ className = "w-6 h-6" }) {
     );
 }
 
-export function EpicIcon({ className = "w-6 h-6" }) {
+export function EpicIcon() {
     return (
         <svg version="1.1" id="EGS-Logotype-2023-Vertical-Black"
             xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 376.35 613.31"
@@ -132,7 +126,7 @@ export function EpicIcon({ className = "w-6 h-6" }) {
     );
 }
 
-export function MicrosoftIcon({ className = "w-6 h-6" }) {
+export function MicrosoftIcon() {
     return (
         <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 3.75V6H2.75C2.33579 6 2 6.33579 2 6.75V18.25C2 19.7688 3.23122 21 4.75 21H19.25C20.7688 21 22 19.7688 22 18.25V6.75C22 6.33579 21.6642 6 21.25 6H16V3.75C16 2.7835 15.2165 2 14.25 2H9.75C8.7835 2 8 2.7835 8 3.75ZM9.75 3.5H14.25C14.3881 3.5 14.5 3.61193 14.5 3.75V6H9.5V3.75C9.5 3.61193 9.61193 3.5 9.75 3.5ZM8 13V9.5H11.5V13H8ZM8 17.5V14H11.5V17.5H8ZM16 13H12.5V9.5H16V13ZM12.5 17.5V14H16V17.5H12.5Z" fill="#ffffff" />
@@ -140,13 +134,7 @@ export function MicrosoftIcon({ className = "w-6 h-6" }) {
     );
 }
 
-export function SpainIcon({ className = "w-6 h-6" }) {
-    return (
-        "España"
-    );
-}
-
-export function SwitchIcon({ className = "w-6 h-6" }) {
+export function SwitchIcon() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-nintendo-switch" viewBox="0 0 16 16">
             <path d="M9.34 8.005c0-4.38.01-7.972.023-7.982C9.373.01 10.036 0 10.831 0c1.153 0 1.51.01 1.743.05 1.73.298 3.045 1.6 3.373 3.326.046.242.053.809.053 4.61 0 4.06.005 4.537-.123 4.976-.022.076-.048.15-.08.242a4.14 4.14 0 0 1-3.426 2.767c-.317.033-2.889.046-2.978.013-.05-.02-.053-.752-.053-7.979m4.675.269a1.62 1.62 0 0 0-1.113-1.034 1.61 1.61 0 0 0-1.938 1.073 1.9 1.9 0 0 0-.014.935 1.63 1.63 0 0 0 1.952 1.107c.51-.136.908-.504 1.11-1.028.11-.285.113-.742.003-1.053M3.71 3.317c-.208.04-.526.199-.695.348-.348.301-.52.729-.494 1.232.013.262.03.332.136.544.155.321.39.556.712.715.222.11.278.123.567.133.261.01.354 0 .53-.06.719-.242 1.153-.94 1.03-1.656-.142-.852-.95-1.422-1.786-1.256" />
