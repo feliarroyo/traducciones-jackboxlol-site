@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { DOWNLOADS_REGISTRY } from "../data/downloadRegistry";
+import { DOWNLOADS_REGISTRY, ENG_DOWNLOADS_REGISTRY, EXTRA_DOWNLOADS_REGISTRY } from "../data/downloadRegistry";
 import GameDownloadButton from "../components/GameDownloadButton";
 import JackboxUtilityCard from "../components/JackboxUtilityCard";
 
@@ -12,11 +12,69 @@ export default function DownloadsPage() {
     const [storeFilter, setStoreFilter] = useState("default");       // default, epic, microsoft, nintendo
     const [langFilter, setLangFilter] = useState("latam");       // latam, spain
 
+    const [showInstructions, setShowInstructions] = useState(false);
+
+    // 1. DYNAMIC TEXT GENERATOR BASED ON FILTERS
+    const getPlatformName = () => {
+        if (platformFilter === "switch") return "Nintendo Switch";
+        if (storeFilter === "microsoft") return "Microsoft Store";
+        if (platformFilter === "mac") return "Mac";
+        return storeFilter === "epic" ? "EGS en Windows/Linux" : "Steam en Windows/Linux";
+    };
+
+    // 2. STEP-BY-STEP INSTRUCTIONS DATA MATRIX
+    const getInstructions = () => {
+        if (platformFilter === "switch") {
+            return [
+                "Las traducciones pueden instalarse en una consola hackeada/modificada que posea Atmosphere. Debes usar la versión original de los juegos, y no la que posea el parche del online de Nintendo. Los parches se aplican por medio de LayeredFS. Se debe realizar lo siguiente:",
+                "1. Instala el juego.",
+                <>2. Descarga <a href="https://www.mediafire.com/file/muy73uck35g57gb/Jackbox+1-8+Online+Patch+Switch.zip/file" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline font-semibold">estos archivos</a>.</>,
+                <>3. Extrae la carpeta correspondiente al id del juego (puedes encontrar el ID necesario en esta página) en \"atmosphere / contents\" de tu tarjeta SD.</>,
+                "4. Descarga el parche de traducción del juego.",
+                "5. Extrae el contenido del parche en \"atmosphere / contents / (id del juego)/romfs\" de tu tarjeta SD.",
+                <>Nota: hay bugs menores en esta plataforma que no interfieren con la experiencia y se listan en la <a href="./help" target="_self" rel="noopener noreferrer" className="text-cyan-400 hover:underline font-semibold">sección de Ayuda</a>.</>
+            ];
+        }
+        if (storeFilter === "microsoft") {
+            return [
+                <>Una vez descargado el parche, extrae el contenido del zip en la carpeta <b>"Content"</b>, reemplazando todo lo necesario.</>,
+                "En Microsoft Store, el directorio por defecto es \"C:\\XboxGames\\[Carpeta del juego]\"."
+            ];
+        }
+        if (platformFilter === "mac") {
+            return [
+                "Hay dos métodos para instalar las traducciones en Mac, explicados en los siguientes videotutoriales:",
+                <><a href="https://youtu.be/RTb0_aFtLLY" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline font-semibold">Método 1 (recomendado)</a> | <a href="https://drive.google.com/file/d/1cqZ2mi9CKJwuc3pitR59f3jDASlKAvRF/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline font-semibold">Método 2 (para usuarios avanzados)</a></>,
+                <>Una explicación textual más detallada de los métodos puede encontrarse en la <a href="./help" target="_self" rel="noopener noreferrer" className="text-cyan-400 hover:underline font-semibold">sección de Ayuda</a>.
+                </>
+            ];
+        }
+
+        if (storeFilter === "epic") {
+            return [
+                "Una vez descargado el parche, extrae el contenido del zip en la carpeta de instalación del juego, reemplazando todo lo necesario.",
+                "Para ir al directorio de instalación del juego, haz clic en \"...\" del juego en tu biblioteca de Epic Games Store -> Gestionar -> Clickea en el ícono de carpeta de la sección instalación."
+            ];
+        }
+
+        // Default (Steam)
+        return [
+            "Una vez descargado el parche, extrae el contenido del zip en la carpeta de instalación del juego, reemplazando todo lo necesario.",
+            "Para ir al directorio de instalación del juego, haz clic derecho en el juego de tu biblioteca en Steam -> Administrar -> Explorar archivos locales."
+        ];
+    };
+
+    const currentInstructions = getInstructions();
     return (
         <div className="space-y-8 py-6">
-            <h1 className="text-4xl text-center font-black text-amber-400 tracking-tight">
-                Descargas
-            </h1>
+            <div className="space-y-2">
+                <h1 className="text-4xl text-center font-black text-amber-400 tracking-tight">
+                    Descargas
+                </h1>
+                <p className="text-sm text-center text-slate-400">
+                    Encuentra enlaces de descarga para el parcheador, descargas individuales para cada parche, y más.
+                </p>
+            </div>
             {/* JACKBOX UTILITY CARD */}
             <section className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-8 md:p-12 shadow-xl">
                 <JackboxUtilityCard footerText="Recomendamos el uso de Jackbox Utility para la instalación de las traducciones, pero se ofrecen parches de instalación manual debajo como alternativa." />
@@ -26,6 +84,39 @@ export default function DownloadsPage() {
                 <div className="space-y-2 mb-4">
                     <h2 className="text-3xl text-center font-black text-amber-400">Descarga manual</h2>
                     <p className="text-sm text-center text-slate-400">Filtra según tu plataforma, tienda de compra y localización preferida.</p>
+                </div>
+
+                {/* DYNAMIC INSTRUCTION ACCORDION BUTTON (Upper Side of Toggles) */}
+                <div className="max-w-md mx-auto mb-4 flex flex-col items-center">
+                    <button
+                        onClick={() => setShowInstructions(!showInstructions)}
+                        className={`w-full py-2.5 px-4 font-bold rounded-xl border transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider ${showInstructions
+                            ? "bg-amber-500 text-slate-950 border-amber-400"
+                            : "bg-slate-900 text-slate-200 border-slate-800 hover:border-slate-700 hover:bg-slate-850"
+                            }`}
+                    >
+                        <svg
+                            className={`w-4 h-4 fill-current transition-transform duration-200 ${showInstructions ? "rotate-180" : ""}`}
+                            viewBox="0 0 20 20"
+                        >
+                            <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                        </svg>
+                        Instrucciones de instalación ({getPlatformName()})
+                    </button>
+                </div>
+                <div className="mb-4 flex flex-col items-center">
+                    {/* EXPANDABLE INSTRUCTIONS ACCORDION DRAWER */}
+                    {showInstructions && (
+                        <div className="w-auto mt-2 p-5 bg-slate-950/80 border border-amber-500/30 rounded-xl text-center text-sm text-slate-300 shadow-xl animate-fadeIn space-y-3">
+                            <ol className="list-inside space-y-2 leading-relaxed text-xs">
+                                {currentInstructions.map((step, index) => (
+                                    <li key={index} className="pl-1">
+                                        <span className="text-slate-300">{step}</span>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
+                    )}
                 </div>
 
                 {/* THREE INTERACTIVE TOGGLE BARS */}
@@ -123,31 +214,63 @@ export default function DownloadsPage() {
                                 imageSrc={game.imageSrc || "/images/covers/default-pack.webp"}
                                 altText={`Descargar parche para ${game.title}`}
                                 isSpain={target.lang === "spain"}
-                                noteTitle={game.noteTitle }
-                                notes={game.notes }
+                                noteTitle={game.title}
+                                notes={game.notes}
                             />
                         ));
                     })}
                 </div>
             </section>
-            {/* INSTALL TUTORIAL SECTION */}
-            <section className="mt-8">
-                <div className="space-y-2">
-                    <h2 className="text-3xl font-black text-amber-400">Cómo instalar</h2>
-                    <p className="text-sm text-slate-400">Filtra según tu plataforma, tienda de compra y localización preferida.</p>
-                </div>
-                <ol className="list-decimal list-inside mt-2">
-                    <li>Descarga el parche correspondiente a tu juego y región.</li>
-                    <li>Descomprime el archivo descargado.</li>
-                    <li>Coloca los archivos en la carpeta de instalación del juego.</li>
-                    <li>Inicia el juego y disfruta del audio en español.</li>
-                </ol>
-            </section>
             {/* OTHER DOWNLOADS */}
             <section className="mt-8">
                 <div className="space-y-2">
-                    <h2 className="text-3xl font-black text-amber-400">Otras descargas</h2>
-                    <p className="text-sm text-slate-400">Aquí puedes encontrar más contenido para tus juegos favoritos.</p>
+                    <h2 className="text-center text-3xl font-black text-amber-400">Descargas adicionales</h2>
+                    <p className="text-center text-sm text-slate-400">El contenido de estas descargas debe instalarse <b>luego de instalar o actualizar los parches de traducción correspondientes</b>.
+                    </p>
+                </div>
+            </section>
+            <section className="mt-8">
+                <div className="space-y-2">
+                    <h3 className="text-center text-2xl font-black text-amber-400">Voces en inglés</h3>
+                    <p className="text-center text-sm text-slate-400">Estos archivos restauran el contenido relacionado a doblajes no oficiales en parches previamente instalados, tanto en voces y canciones como textualmente.</p>
+                </div>
+                <div className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
+                    {ENG_DOWNLOADS_REGISTRY.map((game) => {
+                        const games = game.targets;
+
+                        return games.map((target, idx) => (
+                            <GameDownloadButton
+                                key={`${game.id}-${idx}`}
+                                href={target.link}
+                                imageSrc={game.imageSrc || "/images/covers/default-pack.webp"}
+                                altText={`Descargar parche para ${game.title}`}
+                                noteTitle={target.name}
+                                notes={target.notes}
+                            />
+                        ));
+                    })}
+                </div>
+            </section>
+            <section className="mt-8 mb-8">
+                <div className="space-y-2">
+                    <h2 className="text-center text-2xl font-black text-amber-400">Extras</h2>
+                    <p className="text-center text-sm text-slate-400">Se listan descargas que involucran contenido extra a lo que son los juegos en sí; o contenido obsoleto, como traducciones de títulos o doblajes retirados.</p>
+                </div>
+                <div className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
+                    {EXTRA_DOWNLOADS_REGISTRY.map((game) => {
+                        const games = game.targets;
+
+                        return games.map((target, idx) => (
+                            <GameDownloadButton
+                                key={`${game.id}-${idx}`}
+                                href={target.link}
+                                imageSrc={game.imageSrc || "/images/covers/default-pack.webp"}
+                                altText={`Descargar parche para ${game.title}`}
+                                noteTitle={target.name}
+                                notes={target.notes}
+                            />
+                        ));
+                    })}
                 </div>
             </section>
         </div>
