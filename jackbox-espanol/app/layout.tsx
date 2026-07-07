@@ -3,7 +3,7 @@ import { Geist } from "next/font/google";
 import Link from "next/link"
 import Image from "next/image";
 import "./globals.css";
-import { DiscordIcon, TwitterIcon, YouTubeIcon } from "./components/icons/PlatformIcons";
+import HeaderNavbar from "./components/HeaderNavbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +27,7 @@ export default function RootLayout({
         {/* BACKGROUND IMAGE */}
         <div className="fixed h-screen inset-0 -z-50">
           <Image
-            src="/images/background.png"
+            src="/images/background.webp"
             alt="Fondo de pantalla"
             fill
             priority={true}
@@ -37,7 +37,7 @@ export default function RootLayout({
 
         {/* HEADER */}
         <header className="sticky top-0 z-50 bg-indigo-950/60 backdrop-blur-md border-b border-indigo-800 px-6 py-4 flex items-center justify-between">
-          {/* Left Side */}
+          {/* Header Title */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl hover:opacity-90 transition-opacity">
             <span className="text-2xl">
               <Image
@@ -52,28 +52,8 @@ export default function RootLayout({
             <span>Jackbox en español</span>
           </Link>
 
-          {/* Right Side */}
-          <nav className="flex items-center gap-6">
-            <div className="flex items-center gap-4 text-sm font-medium border-r border-slate-600 pr-6">
-              <Link href="/downloads" className="hover:text-amber-400 transition-colors">Descargas</Link>
-              <Link href="/news" className="hover:text-amber-400 transition-colors">Novedades</Link>
-              <Link href="/help" className="hover:text-amber-400 transition-colors">Ayuda</Link>
-              <Link href="/credits" className="hover:text-amber-400 transition-colors">Créditos</Link>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-4 text-xl">
-              <a href="https://discord.com/invite/k8MASuepRw" target="_blank" rel="noreferrer" title="Discord" className="hover:scale-110 transition-all">
-                <DiscordIcon />
-              </a>
-              <a href="https://www.youtube.com/@esjackbox" target="_blank" rel="noreferrer" title="YouTube" className="hover:scale-110 transition-all">
-                <YouTubeIcon />
-              </a>
-              <a href="https://x.com/esjackbox" target="_blank" rel="noreferrer" title="Twitter/X" className="hover:scale-110 transition-all">
-                <TwitterIcon />
-              </a>
-            </div>
-          </nav>
+          {/* Header navigation options */}
+          <HeaderNavbar />
         </header>
 
         {/* MAIN CONTENT AREA */}
