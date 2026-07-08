@@ -7,6 +7,7 @@ export interface CreditItem {
     roles: {
         roleName: string; // e.g., "Traducción principal", "Edición de video", "Otros roles"
         games?: string[]; // Game logos linked to this specific role
+        displayAsText?: boolean;
         textNotes?: string[]; // For roles that use text descriptions instead of logos
     }[];
 }
@@ -323,7 +324,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
                 roleName: "Asistencia inicial con los SWFs",
             },
             {
-                roleName: "Soporte técnico",
+                roleName: "Caracteres especiales en jackbox.lol",
                 games: ["devils"]
             }
         ]
@@ -363,8 +364,16 @@ export const CREDITS_REGISTRY: CreditItem[] = [
                 games: ["lieswatter"]
             },
             {
-                roleName: "Soporte técnico",
-                games: ["bombcorp", "wheel", "blather"]
+                roleName: "Términos especiales",
+                games: ["wheel"]
+            },
+            {
+                roleName: "Ayuda con cables y tutorial",
+                games: ["bombcorp"]
+            },
+            {
+                roleName: "Descriptores para enunciados",
+                games: ["blather"]
             }
         ]
     },
@@ -412,11 +421,12 @@ export const CREDITS_REGISTRY: CreditItem[] = [
         category: "techContributor",
         roles: [
             {
-                roleName: "Soporte técnico",
+                roleName: "Implementación de voces de robot",
                 games: ["madverse"]
             },
             {
                 roleName: "Creador de proyecto de Crowdin",
+                displayAsText: true,
                 games: ["fibbage3", "devils"]
             },
             {
@@ -427,6 +437,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
     {
         username: "Romnickol",
         tags: ["de parte del equipo de What If?"],
+        profileUrl: "https://whatif.one/jackboxru/",
         category: "techContributor",
         roles: [
             {
@@ -453,7 +464,7 @@ export const CREDITS_REGISTRY: CreditItem[] = [
         category: "techContributor",
         roles: [
             {
-                roleName: "Soporte técnico",
+                roleName: "SVGs de jackbox.lol",
                 games: ["wheel"]
             }
         ]
