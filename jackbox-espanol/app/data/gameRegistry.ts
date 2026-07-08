@@ -194,7 +194,7 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
   },
   wheel: {
     src: "/images/games/wheel.webp",
-    alt: "La Rueda de Enormes Proporciones"
+    alt: "La Ruleta de Enormes Proporciones"
   },
   wordspud: {
     src: "/images/games/wordspud.webp",
