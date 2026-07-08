@@ -61,6 +61,28 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         ]
     },
     {
+        id: "bidiots",
+        category: "mainDub",
+        roles: [
+            {
+                username: "Fixed Fun",
+                roles: ["Anfitrión"]
+            },
+            {
+                username: "Rocío Benítez Blasco",
+                roles: ["Voz de vendedora de Crédito Feroz"]
+            },
+            {
+                username: "Nahuel Guidi",
+                roles: ["Cantante de jingles de Crédito Feroz"]
+            },
+            {
+                username: "Akira896, Artuhaxis, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
+                roles: ["Voces de subastadores"]
+            },
+        ]
+    },
+    {
         id: "fakinit",
         category: "mainDub",
         demoUrl: "https://youtu.be/xLO6gW9wqlc?si=OTgceYXPuHEAqPl0",
@@ -425,28 +447,6 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             {
                 username: "Mila Tapia, Artuhaxis y maritomomomemardo",
                 roles: ["Voces de internos"],
-            },
-        ]
-    },
-    {
-        id: "bidiots",
-        category: "comingSoon",
-        roles: [
-            {
-                username: "Fixed Fun",
-                roles: ["Anfitrión"]
-            },
-            {
-                username: "Rocío Benítez Blasco",
-                roles: ["Voz de vendedora de Crédito Feroz"]
-            },
-            {
-                username: "Nahuel Guidi",
-                roles: ["Cantante de jingles de Crédito Feroz"]
-            },
-            {
-                username: "Akira896, Artuhaxis, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
-                roles: ["Voces de subastadores"]
             },
         ]
     },
