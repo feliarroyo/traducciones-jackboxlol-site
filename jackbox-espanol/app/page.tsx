@@ -73,7 +73,7 @@ export default function Home() {
         {/* Official Dubs Structure */}
         <div className="space-y-6 pt-4">
           <h3 className="text-xl font-bold text-center text-slate-200">
-            Adicionalmente, los siguientes juegos de cada pack cuentan con un doblaje no oficial:
+            Adicionalmente, los siguientes juegos cuentan con un doblaje no oficial:
           </h3>
 
           <PackTicker>
