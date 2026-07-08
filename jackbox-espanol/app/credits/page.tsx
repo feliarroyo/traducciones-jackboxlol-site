@@ -6,6 +6,7 @@ import CreditCardContainer from "../components/CreditCardContainer";
 import CreditCardXLContainer from "../components/CreditCardXLContainer";
 import DubGameCardXL from "../components/DubGameCardXL";
 import DubGameCard from "../components/DubGameCard";
+import CreditCardText from "../components/CreditCardText";
 
 type CreditView = "translations" | "dubs";
 
@@ -78,6 +79,12 @@ export default function CreditsPage() {
               subtitle="Se lista aquí a colaboradores que aportaron lo suficiente para ser acreditados en alguna de las traducciones del proyecto."
               data={minorContributors}
             />
+            <CreditCardText
+              title="Donaciones para mantener el dominio"
+              users={["Akira896", "Hanzel Translations", "Eleiber", "alexbg724", "MakaayX", "david.az.4","Tonycam21", "Erickelnd", "Erick López", "Sergio Junco", "Daniel Sánchez", "Juan Herranz","Mario Edher", "Alba Franganillo", "Erick Guerrero"]
+              }
+
+                />
           </>
         ) : (
           <>
