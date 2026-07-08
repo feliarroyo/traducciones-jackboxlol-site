@@ -63,6 +63,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "bidiots",
         category: "mainDub",
+        demoUrl: "PLACEHOLDER",
         roles: [
             {
                 username: "Fixed Fun",
@@ -482,21 +483,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             }
         ]
     },
-    {
-        id: "jobjob",
-        category: "comingSoon",
-        roles: [
-            {
-                username: "Valentina Dogovich",
-                roles: ["Voz de M. Burbujas", "Cantante"]
-            },
-            {
-                username: "???",
-                roles: ["Voz del fax"]
-            }
-        ]
-    },
-    {
+        {
         id: "drawfulanimate",
         category: "comingSoon",
         roles: [
@@ -511,6 +498,20 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             {
                 username: "Nahuel Guidi",
                 roles: ["Cantante"]
+            }
+        ]
+    },
+    {
+        id: "jobjob",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "Valentina Dogovich",
+                roles: ["Voz de M. Burbujas", "Cantante"]
+            },
+            {
+                username: "???",
+                roles: ["Voz del fax"]
             }
         ]
     },
