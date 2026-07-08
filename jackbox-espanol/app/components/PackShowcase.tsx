@@ -23,7 +23,7 @@ export default function PackShowcase({
                 <Image src={packLogoSrc} alt={packLogoAlt} fill className="object-contain fill" draggable={false} />
             </div>
 
-            <div className="w-full border-t border-slate-800/40" />
+            <div className="w-full" />
 
             {/* INNER GAME LOGOS ROW */}
             <div className="flex flex-row items-center justify-center gap-6 w-full py-2">
