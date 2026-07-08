@@ -65,7 +65,7 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
     alt: "¡Engáñame!"
   },
   fibbagexl: {
-    src: "/images/games/fibbagexl.webp",
+    src: "/images/games/fibbageXL.webp",
     alt: "Fibbage XL"
   },
   fibbage2: {
@@ -182,7 +182,7 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
   },
   useyourwords: {
     src: "/images/games/useyourwords.webp",
-    alt: "Usa Tus Palabras"
+    alt: "Usa Tus Palabras (Use Your Words)"
   },
   utility: {
     src: "/images/games/utility.webp",
