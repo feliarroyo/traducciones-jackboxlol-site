@@ -1,5 +1,4 @@
 "useClient"
-import Image from "next/image";
 import PackShowcase from "./components/PackShowcase";
 import SinglePackShowcase from "./components/SinglePackShowcase";
 import PackTicker from "./components/PackTicker";
@@ -8,7 +7,7 @@ import VideoCarousel from "./components/VideoCarousel";
 
 export default function Home() {
   const pp1dubs = ["drawful"];
-  const pp2dubs = ["earwax"]
+  const pp2dubs = ["earwax", "bidiots"]
   const pp3dubs = ["fakinit"];
   const pp4dubs = ["survive", "monster", "civic"];
   const pp5dubs = ["zeeple", "patently"];
