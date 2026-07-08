@@ -2,9 +2,9 @@
 import Image from "next/image";
 import PackShowcase from "./components/PackShowcase";
 import SinglePackShowcase from "./components/SinglePackShowcase";
-import JackboxUtilityCard from "./components/JackboxUtilityCard";
 import PackTicker from "./components/PackTicker";
 import Link from "next/link";
+import VideoCarousel from "./components/VideoCarousel";
 
 export default function Home() {
   const pp1dubs = ["drawful"];
@@ -43,15 +43,8 @@ export default function Home() {
         </div>
 
         {/* Right Side: Showcase Character graphic */}
-        <div className="w-full max-w-70 md:max-w-85 aspect-square relative flex items-center justify-center">
-          <Image
-            src="/images/animated.webp"
-            alt="Mascota de Jackbox asomándose desde una caja"
-            width={500}
-            height={500}
-            priority
-            className="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(245,158,11,0.15)] animate-fade-in"
-          />
+        <div className="w-full flex-1 flex items-center justify-center">
+          <VideoCarousel />
         </div>
       </section>
 
