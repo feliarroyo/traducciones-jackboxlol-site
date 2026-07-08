@@ -189,7 +189,7 @@ export const DOWNLOADS_REGISTRY = [
             },
             {
                 name: "Microsoft Store",
-                platforms: ["windows"],
+                platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/latest/download/JPP7-ES-MS.zip"
@@ -373,7 +373,7 @@ export const DOWNLOADS_REGISTRY = [
             {
                 name: "Default",
                 platforms: ["win-linux", "mac", "switch"],
-                stores: ["default", "epic", "nintendo"],
+                stores: ["default", "nintendo"],
                 lang: "latam",
                 link: "https://github.com/AkiraArtuhaxis/Fibbage-XL-Spanish/releases/latest/download/FBXL-ES.zip"
             }
@@ -388,7 +388,7 @@ export const DOWNLOADS_REGISTRY = [
             {
                 name: "Default",
                 platforms: ["win-linux", "mac", "switch"],
-                stores: ["default", "epic", "nintendo"],
+                stores: ["default", "nintendo"],
                 lang: "latam",
                 link: "https://github.com/AkiraArtuhaxis/Quiplash-Quip-Pack-1-Spanish/releases/latest/download/QUIP-ES.zip"
             },
@@ -613,7 +613,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
         targets: [
             {
                 name: "Voces en inglés",
-                notes: "Revierte el doblaje de Earwax: Sonidos Raros.",
+                notes: "Revierte los doblajes de Earwax: Sonidos Raros y Subastardos.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/download/15.9-ES/JPP2-ES-ENGVOICES.zip"
             }
         ]
