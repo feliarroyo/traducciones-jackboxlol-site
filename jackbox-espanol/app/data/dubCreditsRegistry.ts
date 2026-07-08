@@ -25,7 +25,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Voz extra", "Redacción de guiones", "Recorte y ecualización de audio"]
+                roles: ["Supervisión del doblaje", "Voz extra", "Redacción de guiones", "Recorte y ecualización de audio"]
             }
         ]
     },
@@ -70,7 +70,11 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
                 roles: ["Anfitrión (Cookie Masterson)"],
             },
             {
-                username: "Akira896 y Artuhaxis",
+                username: "Akira896",
+                roles: ["Supervisión del doblaje", "Redacción de guiones", "Recorte y ecualización de audio"]
+            },
+            {
+                username: "Artuhaxis",
                 roles: ["Redacción de guiones", "Recorte y ecualización de audio"]
             }
         ]
@@ -83,7 +87,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         roles: [
             {
                 username: "Akira896",
-                roles: ["Anfitrión (Todd)", "Recorte y ecualización de audio"]
+                roles: ["Anfitrión (Todd)", "Cantante", "Letra", "Recorte y ecualización de audio"]
             },
             {
                 username: "maritomomomemardo",
@@ -91,7 +95,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Artuhaxis",
-                roles: ["Voz de Gene", "Redacción de guiones"]
+                roles: ["Voz de Gene", "Redacción de guiones y letra"]
             },
             {
                 username: "Yoshiro",
@@ -111,7 +115,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Voz de Marioneta", "Cantante", "Redacción de guiones", "Recorte y ecualización de audio"]
+                roles: ["Supervisión del doblaje", "Cantante", "Voz de Marioneta", "Redacción de guiones y letra", "Recorte y ecualización de audio"]
             },
             {
                 username: "Nahuel Guidi",
@@ -119,7 +123,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Artuhaxis",
-                roles: ["Recorte y ecualización de audio"]
+                roles: ["Letra", "Recorte y ecualización de audio"]
             },
             {
                 username: "Eleiber",
@@ -143,7 +147,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Voz de lobby", "Redacción de guiones y letra", "Recorte y ecualización de audio"]
+                roles: ["Supervisión del doblaje", "Voz de lobby", "Redacción de guiones y letra", "Recorte y ecualización de audio"]
             },
             {
                 username: "Rocío Benítez Blasco, Camila Iriart, Vanesa Peralta, Guillermina Marín, maritomomomemardo y ner0",
@@ -175,7 +179,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Voz de lobby (Mate)", "Letra"]
+                roles: ["Supervisión del doblaje", "Voz de lobby (Mate)", "Letra"]
             },
             {
                 username: "Rocío Benítez Blasco, Santiago Giordani y Tomás Serio",
@@ -234,7 +238,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Redacción de guiones", "Recorte y ecualización de audio"]
+                roles: ["Supervisión del doblaje", "Redacción de guiones", "Recorte y ecualización de audio"]
             }
         ]
     },
@@ -254,7 +258,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Cantante de coro", "Redacción de guiones y letra", "Recorte y ecualización de audio"]
+                roles: ["Supervisión del doblaje", "Cantante de coro", "Redacción de guiones y letra", "Recorte y ecualización de audio"]
             },
             {
                 username: "Artuhaxis",
@@ -277,7 +281,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Recorte y ecualización de audio"]
+                roles: ["Supervisión del doblaje", "Recorte y ecualización de audio"]
             },
             {
                 username: "Erizzle (Team Gamechanger)",
@@ -301,7 +305,15 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Artuhaxis",
-                roles: ["Recorte y ecualización de audio"]
+                roles: ["Letra, Recorte y ecualización de audio"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Supervisión del doblaje", "Letra"]
+            },
+            {
+                username: "Fixed Fun",
+                roles: ["Letra"]
             }
         ]
     },
@@ -317,7 +329,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Voz extra", "Redacción de guiones"]
+                roles: ["Supervisión del doblaje", "Voz extra", "Redacción de guiones"]
             }
         ]
     },
