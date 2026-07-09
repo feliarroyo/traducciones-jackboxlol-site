@@ -16,6 +16,7 @@ export interface GameCreditItem {
     id: string;
     mainContributors: string[];
     isAdaptation?: boolean;
+    isSolo?: boolean;
     roles: {
         username: string;
         roles: string[];
@@ -29,6 +30,7 @@ export interface PackCreditItem {
         id: string;
         mainContributors: string[];
         isAdaptation?: boolean;
+        isSolo?: true,
         roles: {
             username: string;
             roles: string[];
@@ -95,7 +97,7 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
             {
                 roleName: "Traducción principal",
                 games: [
-                    "drawful", "wordspud", "quiplashXL", "fakinit", "fibbage3", "monster", "ydkjfs", "split", "madverse", "zeeple", "patently", "tmp2", "rolemodels", "devils", "champdup", "jobjob", "pollmine", "cookiehaus", "suspectives"
+                    "drawful", "wordspud", "quiplashXL", "fakinit", "fibbage3", "monster", "ydkjfs", "split", "madverse", "zeeple", "patently", "tmp2", "rolemodels", "devils", "champdup", "drawfulanimate", "jobjob", "pollmine", "cookiehaus", "suspectives"
                 ]
             },
             {
@@ -183,10 +185,13 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
                 ]
             },
             {
+                roleName: "Testeo",
+                games: ["blather"]
+            },
+            {
                 roleName: "Otros roles",
                 textNotes: [
-                    "Editor de archivos de Unity",
-                    "Testeo de Balbuceando Juntos"
+                    "Editor de archivos de Unity"
                 ]
             }
         ]
@@ -335,6 +340,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
         games:
             [{
                 id: "fibbage2",
+                isSolo: true,
                 mainContributors: ["Akira896"],
                 roles: [
                     {
@@ -434,6 +440,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
         games: [
             {
                 id: "quiplash2",
+                isSolo: true,
                 mainContributors: ["Akira896"],
                 roles: [
                     {
@@ -466,6 +473,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "guesspionage",
+                isSolo: true,
                 mainContributors: ["Akira896"],
                 roles: [
                     {
@@ -476,6 +484,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "fakinit",
+                isSolo: true,
                 mainContributors: ["Artuhaxis"],
                 roles: [
                     {
@@ -547,6 +556,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "survive",
+                isSolo: true,
                 mainContributors: ["Akira896"],
                 roles: [
                     {
@@ -602,6 +612,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "civic",
+                isSolo: true,
                 mainContributors: ["Akira896"],
                 roles: [
                     {
@@ -1068,6 +1079,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "weapons",
+                isSolo: true,
                 mainContributors: ["Hanzel Translations"],
                 roles: [
                     {
@@ -1105,6 +1117,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "hearsay",
+                isSolo: true,
                 mainContributors: ["Akira896"],
                 roles: [
                     {
@@ -1119,6 +1132,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "cookiehaus",
+                isSolo: true,
                 mainContributors: ["Artuhaxis"],
                 roles: [
                     {
@@ -1160,8 +1174,12 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                 mainContributors: ["Radioactive Man", "Artuhaxis", "hectorflipi", "lau_fleur", "exviolinista13"],
                 roles: [
                     {
-                        username: "Radioactive Man y Artuhaxis",
+                        username: "Radioactive Man",
                         roles: ["Traducción principal (versión de Latinoamérica)"]
+                    },
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal (Quip Pack 1)"]
                     },
                     {
                         username: "hectorflipi, lau_fleur y exviolinista13",
@@ -1180,6 +1198,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             {
                 id: "interlashional",
                 isAdaptation: true,
+                isSolo: true,
                 mainContributors: ["Akira896"],
                 roles: [
                     {
@@ -1191,6 +1210,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             {
                 id: "drawful2",
                 isAdaptation: true,
+                isSolo: true,
                 mainContributors: ["Akira896"],
                 roles: [
                     {

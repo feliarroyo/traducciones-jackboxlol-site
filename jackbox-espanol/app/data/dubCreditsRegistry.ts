@@ -372,6 +372,21 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         ]
     },
     {
+        id: "quiplash",
+        category: "minorDub",
+        details: "(versión de España - solo enunciados)",
+        roles: [
+            {
+                username: "hectorflipi",
+                roles: ["Anfitrión (Schmitty)"]
+            },
+            {
+                username: "lau_fleur y exviolinista13",
+                roles: ["Redacción de guiones"]
+            }
+        ]
+    },
+    {
         id: "survey",
         category: "minorDub",
         details: "(audios restaurados)",

@@ -10,6 +10,7 @@ interface GamePackItem {
     id: string;
     mainContributors: string[];
     isAdaptation?: boolean;
+    isSolo?: boolean;
     roles: {
       username: string;
       roles: string[];
@@ -52,11 +53,11 @@ export default function CreditCardContainer({
             <div className="flex flex-row flex-wrap gap-4 justify-center w-full mx-auto">
               {!pack.isText && (
                 <div className="pb-4">
-                  {<Image src={`/images/buttons/${pack.packId}.webp`} alt={pack.packId} width={96} height={96} className="group relative bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold rounded-2xl border border-slate-700/80 shadow-lg transition-all hover:scale-105 active:scale-95 flex flex-col items-start justify-center gap-2 w-18 h-18 text-center" />}
+                  {<Image src={`/images/buttons/${pack.packId}.webp`} alt={pack.packId} width={96} height={96} className="group relative bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold rounded-2xl border border-slate-700/80 shadow-lg transition-all hover:scale-105 flex flex-col items-start justify-center gap-2 w-18 h-18 text-center" />}
                 </div>)
               }
               {pack.games.map((game) =>
-                <CreditCardGame key={game.id} id={game.id} isAdaptation={game.isAdaptation} mainContributors={game.mainContributors} roles={game.roles} />
+                <CreditCardGame key={game.id} id={game.id} isAdaptation={game.isAdaptation} isSolo={game.isSolo} mainContributors={game.mainContributors} roles={game.roles} />
               )}
             </div>
           </div>
