@@ -46,15 +46,14 @@ export default async function HelpPage() {
             <div className="p-5 bg-slate-950/20 text-slate-300 space-y-4 leading-relaxed text-sm md:text-base">
               {faq.answer.map((paragraph, pIdx) => {
                 // Validación para estilizar las listas numeradas si el texto empieza con un número
-                const isListItem = /^\d+\./.test(paragraph);
+                
                 
                 return (
-                  <p 
+                  <div 
                     key={pIdx} 
-                    className={`${isListItem ? "pl-4 text-slate-400 border-l border-slate-800" : ""}`}
                   >
                     {paragraph}
-                  </p>
+                  </div>
                 );
               })}
             </div>

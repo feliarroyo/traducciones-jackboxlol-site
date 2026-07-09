@@ -1,8 +1,10 @@
 export interface Faq {
     question: string;
-    answer: string[];
+    answer: (string | React.ReactNode)[];
 }
 
+const emphasis = "text-amber-400 font-bold";
+const white_bold = "text-white font-bold";
 export const FAQ_REGISTRY: Faq[] = [
     {
         question: "Encontré un error en una de las traducciones. ¿Dónde puedo reportarlo?",
@@ -41,35 +43,45 @@ export const FAQ_REGISTRY: Faq[] = [
     {
         question: "¿Cómo instalo las traducciones en Mac?",
         answer: [
-            "Método 1 (recomendado): Para este método es necesario utilizar WinZip, ya que el gestor de archivos por defecto de Mac no opera de la misma forma que en Windows. WinZip ofrece una prueba gratis, pero incluímos un método alternativo que usa la consola de comandos en caso que te parezca más cómodo o tu prueba de WinZip haya caducado.",
-            "Además, para descargar los parches recomendamos utilizar un navegador diferente a Safari, ya que este descomprime los zips automáticamente al descargarse. Puedes utilizar alternativas como Mozilla Firefox o Google Chrome.",
-            "Ve al directorio de instalación del juego. Para ello, hay un método simple de hacerlo:",
-            "En Steam: Haz clic derecho en el juego de tu biblioteca → Administrar → Explorar archivos locales",
-            "En Epic Games Store: Haz clic en \"...\" del juego → Gestionar → Clic en el icono de carpeta de la sección \"Instalación\"",
+            <><b>Método 1 (recomendado)</b></>,
+            <>Para este método es necesario utilizar <a href="https://www.winzip.com/en/mac" target="_blank" rel="noopener noreferrer" className={emphasis}>WinZip</a>, ya que el gestor de archivos por defecto de Mac no opera de la misma forma que en Windows. WinZip ofrece una prueba gratis, pero incluímos un método alternativo que usa la consola de comandos en caso que te parezca más cómodo o tu prueba de WinZip haya caducado.</>,
+            "Además, para descargar los parches se recomienda utilizar un navegador diferente a Safari, ya que este descomprime los zips automáticamente al descargarse.",
+            <>Ve al directorio de instalación del juego. Para ello, hay un método simple de hacerlo:
+            <ul>
+                <li><b>- En Steam:</b> Haz clic derecho en el juego de tu biblioteca → Administrar → Explorar archivos locales</li>
+                <li><b>- En Epic Games Store:</b> Haz clic en "..." del juego → Gestionar → Clic en el icono de carpeta de la sección "Instalación"</li>
+            </ul>
+            </>,
             "Acto seguido, haz clic derecho sobre la \"App\" del juego y pulsa \"Mostrar contenido del paquete\".",
             "Una vez descargado el parche, extrae el contenido del zip en la carpeta \"Contents/Resources/macos\", reemplazando todo lo necesario.",
-            "NOTA: Los parches de la sección \"Otros juegos\" se extraen en la carpeta \"Contents/Resources/Data\".",
-            "NOTA 2: En el caso de Quiplash, para que el DLC \"Quip Pack 1\" sea traducido en esta plataforma, la carpeta \"DLC\" del parche debe extraerse en el mismo directorio en el que se encuentra la App del juego.",
+            <><b>Aclaración para juegos no de Jackbox:</b> Los parches de estos juegos (ver listado al final) se extraen en la carpeta "Contents/Resources/Data".</>,
+            <><b>Aclaración para Quiplash:</b> Para que el DLC "Quip Pack 1" sea traducido en esta plataforma, la carpeta "DLC" del parche debe extraerse en el mismo directorio en el que se encuentra la App del juego.</>,
+            <><b>Método alternativo utilizando la consola de comandos (para usuarios experimentados):</b></>,
+            "Descarga y extrae el parche en la carpeta de \"Descargas\". Asegúrate que sea extraído en una carpeta con el mismo nombre del parche.",
+            <>Accede por la terminal al directorio donde están los juegos. Para ello, una vez abierta la terminal se debe escribir el siguiente comando:
+            <p><b>En Steam:</b></p> <p className={emphasis}><code>cd ~/Library/Application\ Support/Steam/steamapps/common</code></p>
+            <b>En Epic Games Store:</b> <p className={emphasis}><code>cd /Users/Shared/Epic\ Games</code></p></>,
+            <>Accede a la carpeta del Pack a traducir, utilizando el comando: <p className={emphasis}>
+                <code>cd JUEGO/JUEGO.app/Contents/Resources\</code>
+            </p> (<code className={emphasis}>JUEGO</code> debe ser reemplazado con el nombre de la carpeta del juego).</>,
+            <>Instala la traducción usando el comando el comando <code className={emphasis}>ditto</code>. Asumiendo que el archivo de la traducción está extraído en la carpeta de "Descargas" de tu equipo, usa el siguiente comando:</>,
+            <><p className={emphasis}>
+                <code>ditto ~/Downloads/PARCHE macos</code></p>
+                (<code className={emphasis}>PARCHE</code> debe ser reemplazado con el nombre del parche descargado)
+            </>,
 
-            "Método alternativo utilizando la consola de comandos (para usuarios experimentados):",
-
-            "Descarga y extrae el parche en la carpeta de \"Descargas\".Asegúrate que sea extraído en una carpeta con el mismo nombre del parche.",
-            "Accede por la terminal al directorio donde están los juegos. Para ello, una vez abierta la terminal se debe escribir el siguiente comando:",
-            "En Steam: \"cd ~/Library/Application\ Support/Steam/steamapps/common\"",
-            "En Epic Games Store: \"cd /Users/Shared/Epic\\ Games\"",
-            "Accede a la carpeta del Pack a traducir, utilizando el comando:",
-            "\"cd JUEGO/JUEGO.app/Contents/Resources\"",
-            "(JUEGO debe ser reemplazado con el nombre de la carpeta del juego).",
-            "Instala la traducción usando el comando el comando \"ditto\". Asumiendo que el archivo de la traducción está extraído en la carpeta de \"Descargas\" de tu equipo, usa el siguiente comando:",
-            "\"ditto ~/Downloads/PARCHE macos\"",
-            "(PARCHE debe ser reemplazado con el nombre del parche descargado).",
-
-            "NOTA: Para los parches de la sección \"Otros juegos\", el directorio \"macos\" debe reemplazarse por \"Data\".",
-            "NOTA 2: En el caso de Quiplash, para que el DLC \"Quip Pack 1\" sea traducido en esta plataforma, una vez reiniciada la consola se deben también ingresar estos comandos:",
-            "\"cd ~/Library/Application\\ Support/Steam/steamapps/common\"",
-            "\"cd Quiplash\"",
-            "\"ditto ~/Downloads/QUIP-ES/DLC DLC\"",
+            <><b>Aclaración para juegos no de Jackbox:</b> Para los parches de estos juegos (ver listado al final), el directorio <code className={emphasis}>macos</code> debe reemplazarse por <code className={emphasis}>Data</code>.</>,
+            <><b>Aclaración para Quiplash:</b> Para que el DLC "Quip Pack 1" sea traducido en esta plataforma, una vez reiniciada la consola se deben también ingresar estos comandos:</>,
+            <>
+                <p className={emphasis}><code>cd ~/Library/Application\ Support/Steam/steamapps/common\</code></p>
+                <p className={emphasis}><code>cd Quiplash</code></p>
+                <p className={emphasis}><code>ditto ~/Downloads/QUIP-ES/DLC DLC</code></p>
+            </>,
             "Con esto, se copiarán todos los archivos y directorios de forma recursiva, reemplazando aquellos que están repetidos y manteniendo los que no requieren ser reemplazados.",
+            <>Se listan debajo los juegos del proyecto que tienen parches y no son de Jackbox, a modo de referencia: <b>
+                <p>What the Dub?!</p>
+                <p>Use Your Words (Usa Tus Palabras)</p>
+                <p>RiffTrax: The Game</p></b></>
         ]
     },
     {
