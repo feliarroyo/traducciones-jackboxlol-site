@@ -28,7 +28,7 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
       />
       { /* Overlay icon if it's Spain translation*/ }
       {isSpain && (
-        <div className="absolute top-2 right-2 w-6 h-6 rounded-md overflow-hidden shadow-md flex items-center justify-center z-10 animate-fade-in">
+        <div className="absolute top-2 right-2 w-6 h-6 rounded-md overflow-hidden shadow-md flex items-center justify-center z-0 animate-fade-in">
           <Image
             src="/images/spain.webp" // Replace with your Spain flag asset path location
             alt="Variante de España"
