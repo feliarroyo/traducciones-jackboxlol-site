@@ -14,7 +14,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
         {/* Game Logo Container */}
         <div>
           <button
-            onClick={() => setIsOpen(true)} className="text-slate-200 hover:underline transition-colors block font-bold text-md">
+            onClick={() => setIsOpen(true)} className="text-slate-200 hover:underline transition-colors block font-bold text-md cursor-pointer">
             Ver créditos adicionales
           </button>
         </div>
@@ -32,7 +32,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
           >
             <div className="flex items-center justify-between border-b border-slate-800 pb-4">
               <div className="flex items-center gap-3">
-                <h3 className="text-lg font-black text-amber-400 uppercase tracking-wider pl-2 border-l border-slate-800">
+                <h3 className="text-lg items-center justify-center font-black text-amber-400 uppercase tracking-wider pl-2">
                   Créditos adicionales
                 </h3>
               </div>

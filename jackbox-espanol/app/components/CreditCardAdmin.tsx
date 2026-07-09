@@ -45,7 +45,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
                   href={admin.profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-100 hover:text-amber-400 group-hover:text-amber-400"
+                  className="text-slate-100 hover:text-amber-400 group-hover:text-amber-400 hover:underline transition-colors"
                 >
                   {admin.username}
                 </a>
