@@ -7,16 +7,13 @@ import CreditCardAdminContainer from "../components/CreditCardAdminContainer";
 import DubGameCardXL from "../components/DubGameCardXL";
 import DubGameCard from "../components/DubGameCard";
 import CreditCardList from "../components/CreditCardList";
-import CreditCardGame from "../components/CreditCardGame";
 import CreditCardText from "../components/CreditCardText";
+import { motion } from "framer-motion";
 
 type CreditView = "translations" | "dubs";
 
 export default function CreditsPage() {
   const [activeView, setActiveView] = useState<CreditView>("translations");
-  const admins = CREDITS_REGISTRY_ADMINS.filter(c => c.category === "administrator");
-  const techContributors = CREDITS_REGISTRY_ADMINS.filter(c => c.category === "techContributor");
-  const minorContributors = CREDITS_REGISTRY_ADMINS.filter(c => c.category === "minorContributor");
 
   return (
     <div className="max-w-6xl mx-auto py-12 px-4 space-y-4">
@@ -34,21 +31,34 @@ export default function CreditsPage() {
         <div className="bg-slate-950/60 p-1 rounded-2xl border border-slate-800/60 flex items-center gap-1">
           <button
             onClick={() => setActiveView("translations")}
-            className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-200 ${activeView === "translations"
-              ? "bg-amber-500 text-slate-950 shadow-md font-extrabold"
-              : "text-slate-400 hover:text-slate-200"
+            className={`relative px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-colors duration-200 z-10 ${activeView === "translations" ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"
               }`}
           >
             Traducciones
+
+            {/* Animation for Translations */}
+            {activeView === "translations" && (
+              <motion.div
+                layoutId="activeTabPill"
+                className="absolute inset-0 bg-amber-500 rounded-xl shadow-md -z-10"
+                transition={{ type: "spring", stiffness: 380, damping: 50 }}
+              />
+            )}
           </button>
           <button
             onClick={() => setActiveView("dubs")}
-            className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-200 ${activeView === "dubs"
-              ? "bg-amber-500 text-slate-950 shadow-md font-extrabold"
-              : "text-slate-400 hover:text-slate-200"
+            className={`relative px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider transition-colors duration-200 z-10 ${activeView === "dubs" ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"
               }`}
           >
             Doblajes
+            {/* Animation for Dubs */}
+            {activeView === "dubs" && (
+              <motion.div
+                layoutId="activeTabPill"
+                className="absolute inset-0 bg-amber-500 rounded-xl shadow-md -z-10"
+                transition={{ type: "spring", stiffness: 380, damping: 50 }}
+              />
+            )}
           </button>
         </div>
       </div>
@@ -60,7 +70,7 @@ export default function CreditsPage() {
             {/* 🟦 TRANSLATIONS RENDER TRACKS */}
             <CreditCardAdminContainer
               title="Administradores"
-              data={admins}
+              data={CREDITS_REGISTRY_ADMINS}
               titleClassName="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2"
             />
             <CreditCardContainer

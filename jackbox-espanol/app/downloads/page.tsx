@@ -4,17 +4,18 @@ import { useState } from "react";
 import { DOWNLOADS_REGISTRY, ENG_DOWNLOADS_REGISTRY, EXTRA_DOWNLOADS_REGISTRY } from "../data/downloadRegistry";
 import GameDownloadButton from "../components/GameDownloadButton";
 import JackboxUtilityCard from "../components/JackboxUtilityCard";
+import { motion } from "framer-motion";
 
 
 export default function DownloadsPage() {
-    // 2. TOGGLE FILTER STATES
+    // TOGGLE FILTER STATES
     const [platformFilter, setPlatformFilter] = useState("win-linux"); // win-linux, mac, switch
     const [storeFilter, setStoreFilter] = useState("default");       // default, epic, microsoft, nintendo
     const [langFilter, setLangFilter] = useState("latam");       // latam, spain
 
     const [showInstructions, setShowInstructions] = useState(false);
 
-    // 1. DYNAMIC TEXT GENERATOR BASED ON FILTERS
+    // DYNAMIC TEXT GENERATOR BASED ON FILTERS
     const getPlatformName = () => {
         if (platformFilter === "switch") return "Nintendo Switch";
         if (storeFilter === "microsoft") return "Microsoft Store";
@@ -22,7 +23,7 @@ export default function DownloadsPage() {
         return storeFilter === "epic" ? "EGS en Windows/Linux" : "Steam en Windows/Linux";
     };
 
-    // 2. STEP-BY-STEP INSTRUCTIONS DATA MATRIX
+    // STEP-BY-STEP INSTRUCTIONS DATA MATRIX
     const getInstructions = () => {
         if (platformFilter === "switch") {
             return [
@@ -128,10 +129,23 @@ export default function DownloadsPage() {
                     {/* PLATFORM TOGGLE */}
                     <div className="space-y-2">
                         <label className="text-amber-500 block text-center">Plataforma</label>
-                        <div className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+                        <div className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 relative">
                             {["win-linux", "mac", "switch"].map((p) => (
-                                <button key={p} onClick={() => setPlatformFilter(p)} className={`flex-1 py-1.5 rounded-lg capitalize transition-all ${platformFilter === p ? "bg-amber-500 text-slate-950" : "text-slate-400 hover:text-slate-200"}`}>
+                                <button
+                                    key={p}
+                                    onClick={() => setPlatformFilter(p)}
+                                    className={`relative flex-1 py-1.5 rounded-lg capitalize transition-colors duration-200 z-10 ${platformFilter === p ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
+                                >
                                     {p === "win-linux" ? "Win/Linux" : p}
+
+                                    {/* Animation for Platform */}
+                                    {platformFilter === p && (
+                                        <motion.div
+                                            layoutId="activePlatform"
+                                            className="absolute inset-0 bg-amber-500 rounded-lg -z-10"
+                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
                                 </button>
                             ))}
                         </div>
@@ -140,21 +154,29 @@ export default function DownloadsPage() {
                     {/* STOREFRONT TOGGLE */}
                     <div className="space-y-2">
                         <label className="text-amber-500 block text-center">Versión</label>
-                        <div className={`flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 transition-all ${platformFilter === "switch" ? "opacity-40 pointer-events-none" : ""}`}>
+                        <div className={`flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 transition-all duration-300 relative ${platformFilter === "switch" ? "opacity-40 pointer-events-none" : ""}`}>
                             {platformFilter === "switch" ? (
-                                // Hardcoded presentation when Switch is active
-                                <button className="flex-1 py-1.5 rounded-lg bg-slate-800 text-amber-500 cursor-not-allowed">
+                                // No interaction/animations on Switch
+                                <button className="relative flex-1 py-1.5 rounded-lg bg-slate-800 text-amber-500 cursor-not-allowed z-10">
                                     Nintendo eShop
                                 </button>
                             ) : (
-                                // Normal options for PC / Mac
                                 ["default", "epic", "microsoft"].map((s) => (
                                     <button
                                         key={s}
                                         onClick={() => setStoreFilter(s)}
-                                        className={`flex-1 py-1.5 rounded-lg capitalize transition-all ${storeFilter === s ? "bg-amber-500 text-slate-950" : "text-slate-400 hover:text-slate-200"}`}
+                                        className={`relative flex-1 py-1.5 rounded-lg capitalize transition-colors duration-200 z-10 ${storeFilter === s ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
                                     >
                                         {s === "default" ? "Steam" : s === "epic" ? "Epic" : "MS Store"}
+
+                                        {/* Animation for Storefront */}
+                                        {storeFilter === s && (
+                                            <motion.div
+                                                layoutId="activeStore"
+                                                className="absolute inset-0 bg-amber-500 rounded-lg -z-10"
+                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                            />
+                                        )}
                                     </button>
                                 ))
                             )}
@@ -164,13 +186,25 @@ export default function DownloadsPage() {
                     {/* C. LANGUAGE REGION TOGGLE */}
                     <div className="space-y-2">
                         <label className="text-amber-500 block text-center">¿Usar parche de España si hubiera uno?</label>
-                        <div className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
+                        <div className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 relative">
                             {[
                                 { id: "latam", label: "No" },
                                 { id: "spain", label: "Sí" }
                             ].map((l) => (
-                                <button key={l.id} onClick={() => setLangFilter(l.id)} className={`flex-1 py-1.5 rounded-lg transition-all ${langFilter === l.id ? "bg-amber-500 text-slate-950" : "text-slate-400 hover:text-slate-200"}`}>
+                                <button
+                                    key={l.id}
+                                    onClick={() => setLangFilter(l.id)}
+                                    className={`relative flex-1 py-1.5 rounded-lg transition-colors duration-200 z-10 ${langFilter === l.id ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
+                                >
                                     {l.label}
+                                    {/* Animation for Language */}
+                                    {langFilter === l.id && (
+                                        <motion.div
+                                            layoutId="activeLang"
+                                            className="absolute inset-0 bg-amber-500 rounded-lg -z-10"
+                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
                                 </button>
                             ))}
                         </div>
