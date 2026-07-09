@@ -50,7 +50,7 @@ export default function JackboxUtility({
                 alt={`Previsualización de Jackbox Utility ${idx + 1}`}
                 fill
                 priority={idx === 0} // High priority only on the initial frame load
-                className="object-contain drop-shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-500"
+                className="object-cover drop-shadow-2xl scale-full group-hover:scale-100 transition-transform duration-500"
               />
             </div>
           ))}
@@ -60,7 +60,7 @@ export default function JackboxUtility({
             href="https://youtu.be/YB6t5YfuMzo"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-red-700 hover:bg-red-800 text-white font-semibold rounded-xl transition-colors duration-200 shadow-lg shadow-red-900/20 text-sm"
+            className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-red-700 hover:bg-red-800 border border-red-800 text-white font-semibold rounded-xl transition-colors duration-200 shadow-lg shadow-red-900/20 text-sm"
           >
             <YouTubeIcon fill="#ffffff"/>
             Videotutorial de instalación
