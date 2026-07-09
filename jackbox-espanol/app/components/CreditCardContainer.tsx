@@ -42,8 +42,8 @@ export default function CreditCardContainer({
         )}
       </div>
       <div className="flex flex-col flex-wrap gap-4 w-full mx-auto">
-        {data.map((pack) => (
-          <div>
+        {data.map((pack, idx) => (
+          <div key={idx}>
             {pack.isText ? (
               <h3 className="text-xl font-bold text-slate-400 pb-2 mb-2">
                 {pack.packId}
