@@ -398,7 +398,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         targets: [
             {
                 name: "Default",
-                platforms: ["win-linux", "mac", "switch"],
+                platforms: ["win-linux", "switch"],
                 stores: ["default", "nintendo"],
                 lang: "latam",
                 notes: "Traducción de Quip Pack 1 incluida, compatible si el DLC está comprado e instalado.",
@@ -407,7 +407,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
             {
                 name: "Mac",
                 platforms: ["mac"],
-                stores: ["default", "nintendo"],
+                stores: ["default"],
                 lang: "latam",
                 notes: "Traducción de Quip Pack 1 incluida, compatible si el DLC está comprado e instalado. La carpeta DLC debe extraerse en el mismo directorio que se encuentra la app del juego.",
                 link: "https://github.com/AkiraArtuhaxis/Quiplash-Quip-Pack-1-Spanish/releases/latest/download/QUIP-ES.zip"
@@ -422,8 +422,8 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
             },
             {
                 name: "España (Mac)",
-                platforms: ["win-linux", "mac", "switch"],
-                stores: ["default", "nintendo"],
+                platforms: ["mac"],
+                stores: ["default",],
                 lang: "spain",
                 notes: "Traducción de Quip Pack 1 incluida, compatible si el DLC está comprado e instalado. La carpeta DLC debe extraerse en el mismo directorio que se encuentra la app del juego.",
                 link: "https://github.com/AkiraArtuhaxis/Quiplash-Quip-Pack-1-Spanish/releases/latest/download/QUIP-ES-SPAIN.zip"
