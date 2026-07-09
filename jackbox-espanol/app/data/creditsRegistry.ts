@@ -494,7 +494,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "teeko",
-                mainContributors: ["Akira896"],
+                mainContributors: ["Akira896", "Artuhaxis"],
                 roles: [
                     {
                         username: "Akira896",
@@ -565,7 +565,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "monster",
-                mainContributors: ["Artuhaxis"],
+                mainContributors: ["Artuhaxis", "Akira896"],
                 roles: [
                     {
                         username: "Artuhaxis y Akira896",
@@ -636,11 +636,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                         roles: ["Traducción principal"]
                     },
                     {
-                        username: "Akira896",
-                        roles: ["Traducción asistente"]
-                    },
-                    {
-                        username: "Marti005 y stefano30",
+                        username: "Akira896, Marti005 y stefano30",
                         roles: ["Traducción asistente"]
                     },
                     {
@@ -730,7 +726,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                 roles: [
                     {
                         username: "Artuhaxis",
-                        roles: ["Enunciados"]
+                        roles: ["Traducción de enunciados"]
                     },
                     {
                         username: "Fixed Fun",
@@ -815,7 +811,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "dictionarium",
-                mainContributors: ["LucastuFett", "Akira896"],
+                mainContributors: ["LucastuFett", "Fenixhim272", "Akira896"],
                 roles: [
                     {
                         username: "LucastuFett, Fenixhim272 y Akira896",
