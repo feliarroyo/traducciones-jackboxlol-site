@@ -39,7 +39,7 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
 
         <button
           onClick={() => setIsOpen(true)}
-          className="mt-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
+          className="mt-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 hover:underline transition-colors cursor-pointer"
         >
           Ver contribuciones
         </button>
