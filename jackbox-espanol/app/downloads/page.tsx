@@ -90,7 +90,7 @@ export default function DownloadsPage() {
                 <div className="max-w-md mx-auto mb-4 flex flex-col items-center">
                     <button
                         onClick={() => setShowInstructions(!showInstructions)}
-                        className={`w-full py-2.5 px-4 font-bold rounded-xl border transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider ${showInstructions
+                        className={`py-2.5 px-4 font-bold rounded-xl border transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider ${showInstructions
                             ? "bg-amber-500 text-slate-950 border-amber-400"
                             : "bg-slate-900 text-slate-200 border-slate-800 hover:border-slate-700 hover:bg-slate-850"
                             }`}
@@ -101,7 +101,10 @@ export default function DownloadsPage() {
                         >
                             <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                         </svg>
-                        Instrucciones de instalación ({getPlatformName()})
+                        <div>
+                            <p>Instrucciones de instalación</p>
+                            <p>({getPlatformName()})</p>
+                        </div>
                     </button>
                 </div>
                 <div className="mb-4 flex flex-col items-center">
@@ -215,7 +218,7 @@ export default function DownloadsPage() {
                                 altText={`Descargar parche para ${game.title}`}
                                 isSpain={target.lang === "spain"}
                                 noteTitle={game.title}
-                                notes={ target.notes }
+                                notes={target.notes}
                             />
                         ));
                     })}
