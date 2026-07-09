@@ -68,13 +68,31 @@ export default function CreditsPage() {
               subtitle="Se listan aquí los créditos de cada juego, en detalle."
               data={CREDITS_REGISTRY_GAMES}
             />
-            <CreditCardText extras={CREDITS_REGISTRY_EXTRAS} />
-            
-            <CreditCardList
-              title="Donaciones para mantener el dominio"
-              users={["Akira896", "Hanzel Translations", "Eleiber", "alexbg724", "MakaayX", "david.az.4","Tonycam21", "Erickelnd", "Erick López", "Sergio Junco", "Daniel Sánchez", "Juan Herranz","Mario Edher", "Alba Franganillo", "Erick Guerrero"]
-              }
-            />
+            <section className="space-y-6">
+              <div>
+                <h2 className="text-center text-2xl font-extrabold text-amber-400/90">
+                  Otros créditos
+                </h2>
+
+                <p className="text-center mt-2 text-sm text-slate-400 max-w-xl mx-auto">
+                  Aquí se listan aportes que van más allá de lo que fue el proceso de traducción de un juego en particular.
+                </p>
+
+              </div>
+              <div className="flex flex-row gap-6 justify-center items-center w-full mx-auto">
+                <CreditCardText extras={CREDITS_REGISTRY_EXTRAS} />
+                <CreditCardList
+                  title="Donaciones para mantener el dominio"
+                  users={["Akira896", "Hanzel Translations", "Eleiber", "alexbg724", "MakaayX", "david.az.4", "Tonycam21", "Erickelnd", "Erick López", "Sergio Junco", "Daniel Sánchez", "Juan Herranz", "Mario Edher", "Alba Franganillo", "Erick Guerrero"]
+                  }
+                />
+              </div>
+            </section>
+
+
+
+
+
           </>
         ) : (
           <>

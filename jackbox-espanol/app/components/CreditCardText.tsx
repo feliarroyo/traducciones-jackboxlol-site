@@ -9,23 +9,15 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <div className="flex flex-col w-36 bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 items-center justify-center gap-4 backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group">
+      <div className="flex bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 items-center justify-center gap-4 backdrop-blur-sm text-center transition-all duration-300 hover:border-amber-500/30 group">
 
         {/* Game Logo Container */}
-        <div className="border-b border-slate-500/40 pb-2 mb-2">
+        <div>
           <button
-            onClick={() => setIsOpen(true)} className="text-slate-200 hover:underline transition-colors block font-bold text-[10px] my-1 py-1">
+            onClick={() => setIsOpen(true)} className="text-slate-200 hover:underline transition-colors block font-bold text-md">
             Ver créditos adicionales
           </button>
         </div>
-
-
-        <button
-          onClick={() => setIsOpen(true)}
-          className="mt-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 "
-        >
-          Ver contribuciones
-        </button>
       </div>
 
       {/* Overlay Modal */}
