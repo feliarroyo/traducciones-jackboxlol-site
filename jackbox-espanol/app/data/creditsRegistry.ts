@@ -199,6 +199,7 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
     {
         username: "Eleiber",
         avatarUrl: "/images/avatars/eleiber.webp",
+        profileUrl: "https://x.com/Eleiber",
         category: "administrator",
         roles: [
             {
