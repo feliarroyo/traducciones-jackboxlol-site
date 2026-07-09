@@ -5,7 +5,7 @@ import Image from "next/image";
 import { GAME_ASSETS } from "../data/gameRegistry";
 
 // 🏷️ Define the strict TypeScript shape for the Admin data structure
-interface CreditCardXLProps {
+interface CreditCardAdminProps {
   admin: {
     username: string;
     avatarUrl?: string;
@@ -19,7 +19,7 @@ interface CreditCardXLProps {
   };
 }
 
-export default function CreditCardXL({ admin }: CreditCardXLProps) {
+export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

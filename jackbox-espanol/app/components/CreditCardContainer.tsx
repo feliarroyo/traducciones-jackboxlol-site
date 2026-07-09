@@ -1,5 +1,6 @@
 import React from "react";
 import CreditCard from "./CreditCard";
+import CreditCardGame from "./CreditCardGame";
 
 interface CreditCardContainerProps {
   title: string;
@@ -30,7 +31,7 @@ export default function CreditCardContainer({
       </div>
       <div className="flex flex-row flex-wrap gap-4 justify-center items-start w-full mx-auto">
         {data.map((user) => (
-          <CreditCard key={user.username} user={user} />
+          <CreditCardGame key={user.id} id={user.id} mainContributors={user.mainContributors} roles={user.roles} />
         ))}
       </div>
     </section>
