@@ -17,37 +17,41 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
     return (
         <>
             {/* 🟦 MAIN GAME SQUARE CARD */}
-            <div className="w-[calc(50%-12px)] sm:w-44 md:w-48 shrink-0 aspect-square bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center justify-between text-center backdrop-blur-sm transition-all duration-300 hover:border-amber-500/30 group">
+            <div className="shrink-0 aspect-square bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center py-4 justify-between text-center backdrop-blur-sm transition-all duration-300 hover:border-amber-500/30 group">
 
                 {/* Game Logo Container */}
-                <div className="w-full h-12 relative shrink-0 mt-2">
-                    <Image src={asset.src} alt={asset.alt} fill className="object-contain" />
+                <div className="w-full border-b border-slate-500/40 pb-2 mb-2">
+                    <div className="w-full h-16 relative shrink-0 mt-2 justify-center">
+                        <Image src={asset.src} alt={asset.alt} fill className="object-contain" />
+                    </div>
+                    {/* Game Details if available */}
+                    {game.details && (
+                        <p className="text-[10px] text-slate-400/80 font-medium tracking-wide mt-1 px-1">
+                            {game.details}
+                        </p>
+                    )}
                 </div>
-                {/* Game Details if available */}
-                {game.details && (
-                    <p className="text-[10px] text-slate-400/80 font-medium tracking-wide -mt-1 px-1">
-                        {game.details}
-                    </p>
-                )}
                 {/* Media Control Buttons */}
-                <div className="flex flex-col gap-1 w-full px-2">
-                    {game.demoUrl && (
-                        <a
-                            href={game.demoUrl} target="_blank" rel="noopener noreferrer"
-                            className="text-[10px] py-1 font-bold bg-slate-900 border border-slate-800 hover:border-red-500/30 hover:bg-red-950/20 text-slate-300 hover:text-red-400 rounded-lg transition-all whitespace-nowrap"
-                        >
-                            ▶ Ver muestra de doblaje
-                        </a>
-                    )}
-                    {game.songUrl && (
-                        <a
-                            href={game.songUrl} target="_blank" rel="noopener noreferrer"
-                            className="text-[10px] py-1 font-bold bg-slate-900 border border-slate-800 hover:border-amber-500/30 hover:bg-amber-950/20 text-slate-300 hover:text-amber-400 rounded-lg transition-all whitespace-nowrap"
-                        >
-                            🎵 Escuchar canción
-                        </a>
-                    )}
-                </div>
+                {(game.demoUrl || game.songUrl) ? (
+                    <div className="flex flex-col gap-1 w-full px-2 mb-2">
+                        {game.demoUrl && (
+                            <a
+                                href={game.demoUrl} target="_blank" rel="noopener noreferrer"
+                                className="text-[10px] py-1 px-2 font-bold bg-slate-900 border border-slate-800 hover:border-amber-500/30 hover:bg-amber-950/20 text-slate-300 hover:text-amber-400 rounded-lg transition-all whitespace-nowrap"
+                            >
+                                Ver muestra de doblaje
+                            </a>
+                        )}
+                        {game.songUrl && (
+                            <a
+                                href={game.songUrl} target="_blank" rel="noopener noreferrer"
+                                className="text-[10px] py-1 font-bold bg-slate-900 border border-slate-800 hover:border-amber-500/30 hover:bg-amber-950/20 text-slate-300 hover:text-amber-400 rounded-lg transition-all whitespace-nowrap"
+                            >
+                                🎵 Escuchar canción
+                            </a>
+                        )}
+                    </div>
+                ) : null}
 
                 {/* Read More Trigger Link Button */}
                 <button

@@ -1,23 +1,22 @@
 "use client";
 import { useState } from "react";
-import { CREDITS_REGISTRY } from "../data/creditsRegistry";
+import { CREDITS_REGISTRY_ADMINS, CREDITS_REGISTRY_EXTRAS, CREDITS_REGISTRY_GAMES } from "../data/creditsRegistry";
 import { DUB_CREDITS_REGISTRY } from "../data/dubCreditsRegistry";
 import CreditCardContainer from "../components/CreditCardContainer";
-import CreditCardXLContainer from "../components/CreditCardXLContainer";
+import CreditCardAdminContainer from "../components/CreditCardAdminContainer";
 import DubGameCardXL from "../components/DubGameCardXL";
 import DubGameCard from "../components/DubGameCard";
+import CreditCardList from "../components/CreditCardList";
+import CreditCardGame from "../components/CreditCardGame";
 import CreditCardText from "../components/CreditCardText";
 
 type CreditView = "translations" | "dubs";
 
 export default function CreditsPage() {
   const [activeView, setActiveView] = useState<CreditView>("translations");
-  const activeRegistry = activeView === "translations" ? CREDITS_REGISTRY : DUB_CREDITS_REGISTRY;
-  const admins = CREDITS_REGISTRY.filter(c => c.category === "administrator");
-  const majorContributors = CREDITS_REGISTRY.filter(c => c.category === "majorContributor");
-  const techContributors = CREDITS_REGISTRY.filter(c => c.category === "techContributor");
-  const minorContributors = CREDITS_REGISTRY.filter(c => c.category === "minorContributor");
-  const miscContributors = CREDITS_REGISTRY.filter(c => c.category === "minorContributor");
+  const admins = CREDITS_REGISTRY_ADMINS.filter(c => c.category === "administrator");
+  const techContributors = CREDITS_REGISTRY_ADMINS.filter(c => c.category === "techContributor");
+  const minorContributors = CREDITS_REGISTRY_ADMINS.filter(c => c.category === "minorContributor");
 
   return (
     <div className="max-w-6xl mx-auto py-12 px-4 space-y-4">
@@ -59,32 +58,23 @@ export default function CreditsPage() {
         {activeView === "translations" ? (
           <>
             {/* 🟦 TRANSLATIONS RENDER TRACKS */}
-            <CreditCardXLContainer
+            <CreditCardAdminContainer
               title="Administradores"
               subtitle="Los administradores realizaron una cantidad considerable de contribuciones al proyecto."
               data={admins}
             />
             <CreditCardContainer
-              title="Traductores notables"
-              subtitle="Se lista aquí a aquellas personas que han contribuido de manera significativa a la traducción de al menos un juego."
-              data={majorContributors}
+              title="Créditos por juego"
+              subtitle="Se listan aquí los créditos de cada juego, en detalle."
+              data={CREDITS_REGISTRY_GAMES}
             />
-            <CreditCardContainer
-              title="Colaboradores técnicos"
-              subtitle="Se lista aquí a aquellos que han contribuido de manera significativa con los pormenores artísticos y/o técnicos del proyecto."
-              data={techContributors}
-            />
-            <CreditCardContainer
-              title="Otros colaboradores"
-              subtitle="Se lista aquí a colaboradores que aportaron lo suficiente para ser acreditados en alguna de las traducciones del proyecto."
-              data={minorContributors}
-            />
-            <CreditCardText
+            <CreditCardText extras={CREDITS_REGISTRY_EXTRAS} />
+            
+            <CreditCardList
               title="Donaciones para mantener el dominio"
               users={["Akira896", "Hanzel Translations", "Eleiber", "alexbg724", "MakaayX", "david.az.4","Tonycam21", "Erickelnd", "Erick López", "Sergio Junco", "Daniel Sánchez", "Juan Herranz","Mario Edher", "Alba Franganillo", "Erick Guerrero"]
               }
-
-                />
+            />
           </>
         ) : (
           <>
