@@ -73,7 +73,7 @@ export const FAQ_REGISTRY: Faq[] = [
             <><b>Aclaración para juegos no de Jackbox:</b> Para los parches de estos juegos (ver listado al final), el directorio <code className={emphasis}>macos</code> debe reemplazarse por <code className={emphasis}>Data</code>.</>,
             <><b>Aclaración para Quiplash:</b> Para que el DLC "Quip Pack 1" sea traducido en esta plataforma, una vez reiniciada la consola se deben también ingresar estos comandos:</>,
             <>
-                <p className={emphasis}><code>cd ~/Library/Application\ Support/Steam/steamapps/common\</code></p>
+                <p className={emphasis}><code>cd ~/Library/Application\ Support/Steam/steamapps/common</code></p>
                 <p className={emphasis}><code>cd Quiplash</code></p>
                 <p className={emphasis}><code>ditto ~/Downloads/QUIP-ES/DLC DLC</code></p>
             </>,
