@@ -716,7 +716,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
         imageSrc: "/images/buttons/survey.webp",
         targets: [
             {
-                name: "Elimina doblaje de los audios restaurados",
+                name: "Elimina el doblaje de los audios restaurados",
                 notes: "Revierte los audios doblados por Akira896, que pasarán a sonar en inglés.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Survey-Scramble-Spanish/releases/download/540.1-ES/JSS-ES-ENGVOICES.zip"
             }
