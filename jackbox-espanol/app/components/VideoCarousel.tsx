@@ -3,17 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 
 const VIDEO_PLAYLIST = [
-  "/videos/fakinit1.webm",
-  "/videos/fakinit2.webm",
   "/videos/fakinit3.webm",
-  "/videos/fakinit4.webm",
-  "/videos/monster1.webm",
-  "/videos/monster2.webm",
   "/videos/monster3.webm",
-  "/videos/monster4.webm",
-  "/videos/ptb1.webm",
-  "/videos/ptb2.webm",
-  "/videos/ptb3.webm",
+  "/videos/ptb2.webm"
 ];
 
 export default function VideoCarousel() {
