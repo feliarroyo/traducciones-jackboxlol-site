@@ -30,6 +30,23 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                             {game.details}
                         </p>
                     )}
+                    <span className="text-slate-200 block font-bold text-[10px] my-1 py-1">
+                        {game.roles[0].isDuo ? "Voces principales" : "Voz principal"}
+                        <div className="text-center text-[11px] leading-snug mt-1 flex flex-col items-center justify-center gap-0.5">
+                            {game.roles[0].username instanceof Array ? (
+                                game.roles[0].username.map((name, nIdx) => (
+                                    <span key={nIdx} className="text-slate-400/80 font-medium tracking-wide block">
+                                        {name}
+                                    </span>
+                                ))
+                            ) : (
+                                <span className="text-slate-400/80 font-medium tracking-wide block">
+                                    {game.roles[0].username}
+                                </span>
+                            )}
+                        </div>
+
+                    </span>
                 </div>
                 {/* Media Control Buttons */}
                 {(game.demoUrl || game.songUrl) ? (
@@ -85,7 +102,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                             {game.roles.map((actor, idx) => (
                                 <div key={idx} className="flex flex-col gap-1">
                                     <div className="flex items-center justify-center gap-2 flex-wrap">
-                                        <span className="font-bold text-slate-100 text-sm">{actor.username}</span>
+                                        <span className="font-bold text-slate-100 text-sm">{actor.username instanceof Array ? actor.username.join(" y ") : actor.username}</span>
                                         {actor.tags && actor.tags.map((t, tIdx) => (
                                             <span key={tIdx} className="text-[8px] font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 uppercase">{t}</span>
                                         ))}

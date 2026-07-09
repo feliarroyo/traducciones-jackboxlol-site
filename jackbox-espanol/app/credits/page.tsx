@@ -120,8 +120,12 @@ export default function CreditsPage() {
                 Próximamente
               </h2>
               <div className="flex flex-row flex-wrap gap-6 justify-center items-center w-full mx-auto">
-                {DUB_CREDITS_REGISTRY.filter(g => g.category === "comingSoon").map((game) => (
-                  <DubGameCardXL key={game.id} game={game} />
+                {DUB_CREDITS_REGISTRY.filter(g => g.category === "comingSoon" || g.category === "comingSoonMinor").map((game) => (
+                  game.category === "comingSoonMinor" ? (
+                    <DubGameCard key={game.id} game={game} />
+                  ) : (
+                    <DubGameCardXL key={game.id} game={game} />
+                  )
                 ))}
               </div>
             </section>

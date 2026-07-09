@@ -43,7 +43,7 @@ export default function DubGameCard({ game }: DubGameCardProps) {
                 {game.roles.map((actor, idx) => (
                     <div key={idx} className="text-center text-[11px] leading-snug">
                         <span className="text-slate-200 block font-bold">
-                            {actor.username}:
+                            {actor.username}
                         </span>
                         <span className="text-slate-400 italic text-[10px]">
                             {actor.roles.join(", ")}

@@ -1,11 +1,12 @@
 export interface DubCreditItem {
     id: string;
-    category: "mainDub" | "minorDub" | "comingSoon";
+    category: "mainDub" | "minorDub" | "comingSoon" | "comingSoonMinor";
     details?: string;
     demoUrl?: string;
     songUrl?: string;
     roles: {
-        username: string;
+        username: string[] | string;
+        isDuo?: boolean;
         avatarUrl?: string;
         profileUrl?: string;
         roles: string[];
@@ -165,7 +166,8 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         songUrl: "https://youtu.be/u4KETOMbkdY?si=w9n6704patlseHJF",
         roles: [
             {
-                username: "BinaryPie y Ana Fernández",
+                username: ["BinaryPie", "Ana Fernández"],
+                isDuo: true,
                 roles: ["Anfitriones (Alcalde y Secretaria)"],
             },
             {
@@ -193,7 +195,8 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         songUrl: "https://youtu.be/lsCQM1bWEbg?si=NurdvpSa0KLyBApH",
         roles: [
             {
-                username: "Fausto Serra y Ana Fernández",
+                username: ["Fausto Serra", "Ana Fernández"],
+                isDuo: true,
                 roles: ["Anfitriones (Tobi y Lina)"],
             },
             {
@@ -471,7 +474,8 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         category: "comingSoon",
         roles: [
             {
-                username: "\"Lucho\" y Rocío Benítez Blasco",
+                username: ["\"Lucho\"", "Rocío Benítez Blasco"],
+                isDuo: true,
                 roles: ["Anfitriones (Shadow Master MC y DJ Raych)"]
             },
             {
@@ -533,7 +537,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "champdup",
         details: "(canción)",
-        category: "comingSoon",
+        category: "comingSoonMinor",
         roles: [
             {
                 username: "Nahuel Guidi",
