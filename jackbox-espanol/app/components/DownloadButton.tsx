@@ -10,7 +10,7 @@ export default function DownloadButton({ href, label, icon }: DownloadButtonProp
   return (
     <a 
       href={href}
-      target="_blank"
+      target="_self"
       rel="noreferrer"
       className="bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold rounded-2xl border border-slate-700/80 shadow-lg transition-all hover:scale-105 active:scale-95 flex flex-col items-center justify-center gap-2 w-24 h-24 text-center"
     >
