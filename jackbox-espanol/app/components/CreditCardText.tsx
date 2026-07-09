@@ -47,8 +47,12 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
                   <span className="font-bold text-slate-100 text-sm">
                     {extra.username}
                   </span>
-                  <span className="text-xs text-slate-400 italic leading-relaxed">
-                    {extra.roles.join(", ")}
+                  <span>
+                    {extra.roles.map((role, rIdx) => (
+                      <p key={rIdx} className="text-center text-xs text-slate-400 italic leading-relaxed">
+                        {role}
+                      </p>
+                    ))}
                   </span>
                 </div>
               ))}
