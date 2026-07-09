@@ -14,11 +14,11 @@ export const FAQ_REGISTRY: Faq[] = [
     },
     {
         question: "¿Se traduce también lo que aparece en el dispositivo?",
-        answer: ["Exceptuando algunos detalles menores, todo lo importante de jackbox.tv es traducido. Para ello, se utiliza una página diferente: “jackbox.lol”, que traduce todo su contenido al español. Todos los parches del proyecto muestran ese dominio, y recomendamos utilizarlo al jugar con las traducciones no oficiales."]
+        answer: ["Exceptuando algunos detalles menores, todo lo importante de jackbox.tv es traducido. Para lograr esto, se utiliza una página diferente: “jackbox.lol”, que traduce todo su contenido al español. Todos los parches del proyecto muestran ese dominio, y recomendamos utilizarlo al jugar con las traducciones no oficiales."]
     },
     {
         question: "¿Es una traducción oficial? ¿Es gratuita? ¿Puedo donarles de algún modo?",
-        answer: ["Esta es una traducción no oficial de los juegos sin fines de lucro. El contenido sigue siendo propiedad de Jackbox Games. Se aceptan donaciones con el fin de mantener el dominio de “jackbox.lol”, utilizado para alojar la página web y el controlador."]
+        answer: ["Esta es una traducción no oficial de los juegos sin fines de lucro. El contenido sigue siendo propiedad de Jackbox Games. Se aceptan donaciones con el fin de mantener el dominio de “Jackbox.LOL”, utilizado para alojar la página web y el controlador."]
     },
     {
         question: "¿Cómo hago para que un juego vuelva a estar en inglés? ¿Puedo cambiar fácilmente entre el inglés y el español?",
@@ -55,10 +55,10 @@ export const FAQ_REGISTRY: Faq[] = [
 
             "Descarga y extrae el parche en la carpeta de \"Descargas\".Asegúrate que sea extraído en una carpeta con el mismo nombre del parche.",
             "Accede por la terminal al directorio donde están los juegos. Para ello, una vez abierta la terminal se debe escribir el siguiente comando:",
-            "En Steam: \"cd ~/Library/Application\ Support / Steam / steamapps / common\"",
-            "En Epic Games Store: \"cd / Users / Shared / Epic\ Games\"",
+            "En Steam: \"cd ~/Library/Application\ Support/Steam/steamapps/common\"",
+            "En Epic Games Store: \"cd /Users/Shared/Epic\\ Games\"",
             "Accede a la carpeta del Pack a traducir, utilizando el comando:",
-            "\"cd JUEGO / JUEGO.app / Contents / Resources\"",
+            "\"cd JUEGO/JUEGO.app/Contents/Resources\"",
             "(JUEGO debe ser reemplazado con el nombre de la carpeta del juego).",
             "Instala la traducción usando el comando el comando \"ditto\". Asumiendo que el archivo de la traducción está extraído en la carpeta de \"Descargas\" de tu equipo, usa el siguiente comando:",
             "\"ditto ~/Downloads/PARCHE macos\"",
@@ -66,9 +66,9 @@ export const FAQ_REGISTRY: Faq[] = [
 
             "NOTA: Para los parches de la sección \"Otros juegos\", el directorio \"macos\" debe reemplazarse por \"Data\".",
             "NOTA 2: En el caso de Quiplash, para que el DLC \"Quip Pack 1\" sea traducido en esta plataforma, una vez reiniciada la consola se deben también ingresar estos comandos:",
-            "\"cd ~/Library/Application\ Support / Steam / steamapps / common\"",
+            "\"cd ~/Library/Application\\ Support/Steam/steamapps/common\"",
             "\"cd Quiplash\"",
-            "\"ditto ~/Downloads/QUIP - ES / DLC DLC\"",
+            "\"ditto ~/Downloads/QUIP-ES/DLC DLC\"",
             "Con esto, se copiarán todos los archivos y directorios de forma recursiva, reemplazando aquellos que están repetidos y manteniendo los que no requieren ser reemplazados.",
         ]
     },
