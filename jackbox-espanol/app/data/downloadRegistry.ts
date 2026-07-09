@@ -236,6 +236,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-9-Spanish/releases/latest/download/JPP9-ES.zip"
             },
             {
@@ -243,6 +244,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["epic", "nintendo"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-9-Spanish/releases/latest/download/JPP9-ES-EGS-SWITCH.zip"
             },
             {
@@ -250,6 +252,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-9-Spanish/releases/latest/download/JPP9-ES-MS.zip"
             }
         ]
@@ -265,6 +268,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-10-Spanish/releases/latest/download/JPP10-ES.zip"
             },
             {
@@ -272,6 +276,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-9-Spanish/releases/latest/download/JPP9-ES-EGS-MS-SWITCH.zip"
             }
         ]
@@ -309,6 +314,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Starter-Spanish/releases/latest/download/JPS-ES.zip"
             },
             {
@@ -316,6 +322,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Starter-Spanish/releases/latest/download/JPS-ES-MS.zip"
             }
         ]
@@ -331,6 +338,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Naughty-Pack-Spanish/releases/latest/download/JNP-ES.zip"
             },
             {
@@ -338,6 +346,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Naughty-Pack-Spanish/releases/latest/download/JNP-ES-MS.zip"
             }
         ]
@@ -353,6 +362,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Survey-Scramble-Spanish/releases/latest/download/JSS-ES.zip"
             },
             {
@@ -360,6 +370,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Survey-Scramble-Spanish/releases/latest/download/JSS-ES-MS.zip"
             }
         ]
@@ -390,6 +401,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "nintendo"],
                 lang: "latam",
+                notes: "Traducción de Quip Pack 1 incluida, compatible si el DLC está comprado e instalado.",
                 link: "https://github.com/AkiraArtuhaxis/Quiplash-Quip-Pack-1-Spanish/releases/latest/download/QUIP-ES.zip"
             },
             {
@@ -397,6 +409,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "spain",
+                notes: "Traducción de Quip Pack 1 incluida, compatible si el DLC está comprado e instalado. La carpeta DLC debe extraerse en el mismo directorio que se encuentra la app del juego.",
                 link: "https://github.com/AkiraArtuhaxis/Quiplash-Quip-Pack-1-Spanish/releases/latest/download/QUIP-ES-SPAIN.zip"
             }
         ]
@@ -419,6 +432,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "spain",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/Quiplash-2-InterLASHional-Latin-American-Spanish/releases/latest/download/Q2INT-ES-SPAIN.zip"
             }
         ]
@@ -455,6 +469,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "spain",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/Drawful-2-Latin-American-Spanish/releases/latest/download/DF2-ES-SPAIN.zip"
             },
             {
