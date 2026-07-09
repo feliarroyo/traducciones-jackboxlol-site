@@ -1,7 +1,7 @@
 export interface DownloadTarget {
     name: string;
-    platforms?: string[];
-    stores?: string[];
+    platforms: string[];
+    stores: string[];
     lang?: "latam" | "spain";
     notes?: string;
     link: string;
@@ -15,7 +15,7 @@ export interface GameRegistryItem {
     targets: DownloadTarget[];
 }
 
-export const DOWNLOADS_REGISTRY = [
+export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
     {
         id: "pp1",
         title: "The Jackbox Party Pack",
@@ -574,13 +574,13 @@ export const DOWNLOADS_REGISTRY = [
         title: "Cursed Points",
         imageSrc: "/images/buttons/cursedpoints.webp",
         hasSpain: false,
-        notes: "Mod para el Pack 7 que incorpora imágenes \"curseadas\" en Talking Points. Se debe jugar desde Capyparty.xyz.",
         targets: [
             {
                 name: "Default",
                 platforms: ["win-linux", "mac"],
                 stores: ["default"],
                 lang: "latam",
+                notes: "Mod para el Pack 7 que incorpora imágenes \"curseadas\" en Talking Points. Se debe jugar desde Capyparty.xyz.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/CursedPointsES-CapyV2-ES.zip"
             },
             {
@@ -588,6 +588,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux", "switch"],
                 stores: ["epic", "nintendo"],
                 lang: "latam",
+                notes: "Mod para el Pack 7 que incorpora imágenes \"curseadas\" en Talking Points. Se debe jugar desde Capyparty.xyz.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/CursedPointsES-CapyV2-ES-EGS-SWITCH.zip"
             },
             {
@@ -595,6 +596,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 lang: "latam",
+                notes: "Mod para el Pack 7 que incorpora imágenes \"curseadas\" en Talking Points. Se debe jugar desde Capyparty.xyz.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/CursedPointsES-CapyV2-ES-MS.zip"
             },
             {
@@ -602,6 +604,7 @@ export const DOWNLOADS_REGISTRY = [
                 platforms: ["mac"],
                 stores: ["epic"],
                 lang: "latam",
+                notes: "Mod para el Pack 7 que incorpora imágenes \"curseadas\" en Talking Points. Se debe jugar desde Capyparty.xyz.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-7-Spanish/releases/download/8.3-ES/CursedPointsES-CapyV2-ES-MAC-EGS.zip"
             },
         ]

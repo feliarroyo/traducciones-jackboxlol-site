@@ -215,7 +215,7 @@ export default function DownloadsPage() {
                                 altText={`Descargar parche para ${game.title}`}
                                 isSpain={target.lang === "spain"}
                                 noteTitle={game.title}
-                                notes={game.notes}
+                                notes={ target.notes }
                             />
                         ));
                     })}
