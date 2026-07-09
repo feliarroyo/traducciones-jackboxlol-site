@@ -1,5 +1,6 @@
 import React from "react";
 import CreditCard from "./CreditCard";
+import Image from "next/image";
 import CreditCardGame from "./CreditCardGame";
 
 interface CreditCardContainerProps {
@@ -29,9 +30,24 @@ export default function CreditCardContainer({
           </p>
         )}
       </div>
-      <div className="flex flex-row flex-wrap gap-4 justify-center items-start w-full mx-auto">
-        {data.map((user) => (
-          <CreditCardGame key={user.id} id={user.id} mainContributors={user.mainContributors} roles={user.roles} />
+      <div className="flex flex-col flex-wrap gap-4 w-full mx-auto">
+        {data.map((pack) => (
+          <div>
+            {pack.isText ? (
+              <h3 className="text-xl font-bold text-slate-400 pb-2 mb-2">
+                {pack.packId}
+              </h3>
+            ) : (
+              <div className="pb-4">
+                {<Image src={`/images/buttons/${pack.packId}.webp`} alt={pack.packId} width={96} height={96} className="group relative bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold rounded-2xl border border-slate-700/80 shadow-lg transition-all hover:scale-105 active:scale-95 flex flex-col items-start justify-center gap-2 w-18 h-18 text-center" />}
+              </div>)
+            }
+            <div className="flex flex-row flex-wrap gap-4 justify-center w-full mx-auto">
+              {pack.games.map((game) =>
+                <CreditCardGame key={game.id} id={game.id} isAdaptation={game.isAdaptation} mainContributors={game.mainContributors} roles={game.roles} />
+              )}
+            </div>
+          </div>
         ))}
       </div>
     </section>

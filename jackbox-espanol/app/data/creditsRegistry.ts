@@ -15,9 +15,24 @@ export interface AdminCreditItem {
 export interface GameCreditItem {
     id: string;
     mainContributors: string[];
+    isAdaptation?: boolean;
     roles: {
         username: string;
         roles: string[];
+    }[];
+}
+
+export interface PackCreditItem {
+    packId: string;
+    isText?: boolean;
+    games: {
+        id: string;
+        mainContributors: string[];
+        isAdaptation?: boolean;
+        roles: {
+            username: string;
+            roles: string[];
+        }[];
     }[];
 }
 
@@ -241,958 +256,1020 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
     }
 ];
 
-export const CREDITS_REGISTRY_GAMES: GameCreditItem[] = [
+export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
     {
-        id: "drawful",
-        mainContributors: ["Artuhaxis"],
-        roles: [
+        packId: "pp1",
+        games: [
             {
-                username: "Artuhaxis",
-                roles: ["Traducción principal"]
+                id: "drawful",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción asistente"]
+                    }
+                ]
             },
             {
-                username: "Akira896",
-                roles: ["Traducción asistente"]
-            }
-        ]
-    },
-    {
-        id: "wordspud",
-        mainContributors: ["Artuhaxis", "Akira896"],
-        roles: [
-            {
-                username: "Artuhaxis y Akira896",
-                roles: ["Traducción principal"]
+                id: "wordspud",
+                mainContributors: ["Artuhaxis", "Akira896"],
+                roles: [
+                    {
+                        username: "Artuhaxis y Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
             {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "lieswatter",
-        mainContributors: ["Hanzel Translations"],
-        roles: [
-            {
-                username: "Hanzel Translations",
-                roles: ["Traducción principal"]
+                id: "lieswatter",
+                mainContributors: ["Hanzel Translations"],
+                roles: [
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Nicolaselzorro2",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "UnrulyJuli3",
+                        roles: ["Imágenes adicionales"]
+                    }
+                ]
             },
-            {
-                username: "Akira896",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "Nicolaselzorro2",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "UnrulyJuli3",
-                roles: ["Imágenes adicionales"]
-            }
-        ]
-    },
 
+            {
+                id: "fibbagexl",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal", "Edición de imágenes y videos adicionales"]
+                    },
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Edición de imágenes adicionales"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Videos"]
+                    }
+                ]
+            }]
+    },
     {
-        id: "fibbagexl",
-        mainContributors: ["Akira896"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Traducción principal", "Edición de imágenes y videos adicionales"]
+        packId: "pp2",
+        games:
+            [{
+                id: "fibbage2",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal", "Edición de imágenes"]
+                    },
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Edición de imágenes adicionales"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de videos"]
+                    }
+                ]
             },
             {
-                username: "Hanzel Translations",
-                roles: ["Edición de imágenes adicionales"]
+                id: "earwax",
+                mainContributors: ["Radioactive Man"],
+                roles: [
+                    {
+                        username: "Radioactive Man",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896 y Artuhaxis",
+                        roles: ["Traducción asistente / Revisión"]
+                    }
+                ]
             },
             {
-                username: "Fixed Fun",
-                roles: ["Videos"]
+                id: "bidiots",
+                mainContributors: ["Radioactive Man"],
+                roles: [
+                    {
+                        username: "Radioactive Man",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción asistente / Revisión"]
+                    },
+                    {
+                        username: "Artuhaxis y Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
+            },
+            {
+                id: "quiplashXL",
+                mainContributors: ["Artuhaxis", "Radioactive Man"],
+                roles: [
+                    {
+                        username: "Radioactive Man",
+                        roles: ["Basado en su traducción de Quiplash"]
+                    },
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Asistencia", "Imágenes"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes de rondas"]
+                    }
+                ]
+            },
+            {
+                id: "bombcorp",
+                mainContributors: ["Markmtz90", "Akira896"],
+                roles: [
+                    {
+                        username: "Markmtz90",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal / Revisión"]
+                    },
+                    {
+                        username: "Artuhaxis y UnrulyJuli3",
+                        roles: ["Ayuda con cables y tutorial"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Título"]
+                    }
+                ]
             }
+            ]
+    },
+    {
+        packId: "pp3",
+        games: [
+            {
+                id: "quiplash2",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    }
+                ]
+            },
+            {
+                id: "tmp1",
+                mainContributors: ["Hanzel Translations", "Pachekin"],
+                roles: [
+                    {
+                        username: "Pachekin y Hanzel Translations",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes adicionales"]
+                    },
+                    {
+                        username: "Alomancia",
+                        roles: ["Edición de imágenes para Jackbox.lol"]
+                    },
+                    {
+                        username: "Eleiber",
+                        roles: ["Jackbox.lol"]
+                    }
+                ]
+            },
+            {
+                id: "guesspionage",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    }
+                ]
+            },
+            {
+                id: "fakinit",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Markmtz90",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
+            },
+            {
+                id: "teeko",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "El Tristanlaker2582",
+                        roles: ["Imágenes de Jackbox.lol"]
+                    }
+                ]
+            },
         ]
     },
     {
-        id: "fibbage2",
-        mainContributors: ["Akira896"],
-        roles: [
+        packId: "pp4",
+        games: [
             {
-                username: "Akira896",
-                roles: ["Traducción principal", "Edición de imágenes"]
+                id: "fibbage3",
+                mainContributors: ["Artuhaxis", "Hanzel Translations"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal (juego base y Mentiras sobre ti)"]
+                    },
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Traducción principal (juego base)"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal (Mentiras sobre ti)", "Traducción asistente (juego base)"]
+                    },
+                    {
+                        username: "damian29, diegoflg3, Markmtz90 y Alosinwhat",
+                        roles: ["Traducción asistente (juego base)"]
+                    },
+                    {
+                        username: "P4ND4_1100010",
+                        roles: ["Manejo de Crowdin"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
             {
-                username: "Hanzel Translations",
-                roles: ["Edición de imágenes adicionales"]
+                id: "survive",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Edición de imágenes adicionales"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
             {
-                username: "Fixed Fun",
-                roles: ["Edición de videos"]
-            }
-        ]
-    },
-    {
-        id: "earwax",
-        mainContributors: ["Radioactive Man"],
-        roles: [
-            {
-                username: "Radioactive Man",
-                roles: ["Traducción principal"]
+                id: "monster",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis y Akira896",
+                        roles: ["Traducción principal"],
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Alomancia",
+                        roles: ["Edición de imágenes para Jackbox.lol"]
+                    },
+                ]
             },
-            {
-                username: "Akira896 y Artuhaxis",
-                roles: ["Traducción asistente / Revisión"]
-            }
-        ]
-    },
-    {
-        id: "bidiots",
-        mainContributors: ["Radioactive Man"],
-        roles: [
-            {
-                username: "Radioactive Man",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción asistente / Revisión"]
-            },
-            {
-                username: "Artuhaxis y Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "quiplashXL",
-        mainContributors: ["Artuhaxis", "Radioactive Man"],
-        roles: [
-            {
-                username: "Radioactive Man",
-                roles: ["Basado en su traducción de Quiplash"]
-            },
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Asistencia", "Imágenes"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes de rondas"]
-            }
-        ]
-    },
-    {
-        id: "bombcorp",
-        mainContributors: ["Markmtz90", "Akira896"],
-        roles: [
-            {
-                username: "Markmtz90",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción principal / Revisión"]
-            },
-            {
-                username: "Artuhaxis y UnrulyJuli3",
-                roles: ["Ayuda con cables y tutorial"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Título"]
-            }
-        ]
-    },
-    {
-        id: "quiplash2",
-        mainContributors: ["Akira896"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Traducción principal"]
-            }
-        ]
-    },
-    {
-        id: "tmp1",
-        mainContributors: ["Hanzel Translations", "Pachekin"],
-        roles: [
-            {
-                username: "Pachekin y Hanzel Translations",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes adicionales"]
-            },
-            {
-                username: "Alomancia",
-                roles: ["Edición de imágenes para Jackbox.lol"]
-            },
-            {
-                username: "Eleiber",
-                roles: ["Jackbox.lol"]
-            }
-        ]
-    },
-    {
-        id: "guesspionage",
-        mainContributors: ["Akira896"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Traducción principal"]
-            }
-        ]
-    },
-    {
-        id: "fakinit",
-        mainContributors: ["Artuhaxis"],
-        roles: [
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Markmtz90",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "teeko",
-        mainContributors: ["Akira896"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "El Tristanlaker2582",
-                roles: ["Imágenes de Jackbox.lol"]
-            }
-        ]
-    },
-    {
-        id: "fibbage3",
-        mainContributors: ["Artuhaxis", "Hanzel Translations"],
-        roles: [
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal (juego base y Mentiras sobre ti)"]
-            },
-            {
-                username: "Hanzel Translations",
-                roles: ["Traducción principal (juego base)"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción principal (Mentiras sobre ti)", "Traducción asistente (juego base)"]
-            },
-            {
-                username: "damian29, diegoflg3, Markmtz90 y Alosinwhat",
-                roles: ["Traducción asistente (juego base)"]
-            },
-            {
-                username: "P4ND4_1100010",
-                roles: ["Manejo de Crowdin"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "survive",
-        mainContributors: ["Akira896"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Artuhaxis",
-                roles: ["Edición de imágenes adicionales"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "monster",
-        mainContributors: ["Artuhaxis"],
-        roles: [
-            {
-                username: "Artuhaxis y Akira896",
-                roles: ["Traducción principal"],
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "Alomancia",
-                roles: ["Edición de imágenes para Jackbox.lol"]
-            },
-        ]
-    },
 
-    {
-        id: "bracketeering",
-        mainContributors: ["Akira896"],
-        roles: [
             {
-                username: "Akira896",
-                roles: ["Traducción principal"]
+                id: "bracketeering",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Raúl Mora y Artuhaxis",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
             {
-                username: "Raúl Mora y Artuhaxis",
-                roles: ["Traducción asistente"]
+                id: "civic",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Edición de imágenes adicionales"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Alomancia",
+                        roles: ["Edición de imágenes para Jackbox.lol"]
+                    },
+                ]
             },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
         ]
     },
     {
-        id: "civic",
-        mainContributors: ["Akira896"],
-        roles: [
+        packId: "pp5",
+        games: [
             {
-                username: "Akira896",
-                roles: ["Traducción principal"]
+                id: "ydkjfs",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Marti005 y stefano30",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de videos e imágenes"]
+                    }
+                ]
             },
             {
-                username: "Artuhaxis",
-                roles: ["Edición de imágenes adicionales"]
+                id: "split",
+                mainContributors: ["Artuhaxis", "Akira896"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal", "Edición de imágenes"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal", "Edición de imágenes y videos"]
+                    },
+                    {
+                        username: "Eleiber, Raúl Mora, Nairoliv y Molonazo",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "Alomancia",
-                roles: ["Edición de imágenes para Jackbox.lol"]
-            },
-        ]
-    },
-    {
-        id: "ydkjfs",
-        mainContributors: ["Artuhaxis"],
-        roles: [
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Marti005 y stefano30",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de videos e imágenes"]
-            }
-        ]
-    },
-    {
-        id: "split",
-        mainContributors: ["Artuhaxis", "Akira896"],
-        roles: [
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal", "Edición de imágenes"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción principal", "Edición de imágenes y videos"]
-            },
-            {
-                username: "Eleiber, Raúl Mora, Nairoliv y Molonazo",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
 
-    {
-        id: "madverse",
-        mainContributors: ["Artuhaxis", "Hanzel Translations"],
-        roles: [
             {
-                username: "Artuhaxis",
-                roles: ["Traducción de rondas"]
+                id: "madverse",
+                mainContributors: ["Artuhaxis", "Hanzel Translations"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción de rondas"]
+                    },
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Traducción y revisión general"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción de otros archivos"]
+                    },
+                    {
+                        username: "Markmtz90",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "P4ND4_1100010",
+                        roles: ["Implementación de voces de robot"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Alomancia",
+                        roles: ["Edición de imágenes para Jackbox.lol"]
+                    },
+                ]
             },
             {
-                username: "Hanzel Translations",
-                roles: ["Traducción y revisión general"]
+                id: "zeeple",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "El Tristanlaker2582",
+                        roles: ["Imágenes de Jackbox.lol"]
+                    }
+                ]
             },
             {
-                username: "Akira896",
-                roles: ["Traducción de otros archivos"]
-            },
-            {
-                username: "Markmtz90",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "P4ND4_1100010",
-                roles: ["Implementación de voces de robot"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "Alomancia",
-                roles: ["Edición de imágenes para Jackbox.lol"]
+                id: "patently",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Enunciados"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
         ]
     },
     {
-        id: "zeeple",
-        mainContributors: ["Artuhaxis"],
-        roles: [
+        packId: "pp6",
+        games: [
             {
-                username: "Artuhaxis",
-                roles: ["Traducción principal"]
+                id: "tmp2",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal", "Edición de imágenes"]
+                    },
+                    {
+                        username: "Raúl Mora",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Edición de imágenes", "Asistencia en subtítulos"]
+                    },
+                    {
+                        username: "Hanzel Translations y Alomancia",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Pachekin",
+                        roles: ["Asistencia en subtítulos"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes y videos"]
+                    }
+                ]
             },
             {
-                username: "Akira896",
-                roles: ["Traducción asistente"]
+                id: "rolemodels",
+                mainContributors: ["Artuhaxis", "Raúl Mora", "Tejas", "Akira896"],
+                roles: [
+                    {
+                        username: "Artuhaxis, Raúl Mora y Tejas",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal", "Edición de video de tutorial"]
+                    },
+                    {
+                        username: "DanielMGC, MrCityWaffles, NatsukiZoe y diegoflg3",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "El Tristanlaker2582",
+                        roles: ["Imágenes de Jackbox.lol"]
+                    }
+                ]
             },
             {
-                username: "El Tristanlaker2582",
-                roles: ["Imágenes de Jackbox.lol"]
+                id: "jokeboat",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes adicionales y videos"]
+                    }
+                ]
+            },
+            {
+                id: "dictionarium",
+                mainContributors: ["LucastuFett", "Akira896"],
+                roles: [
+                    {
+                        username: "LucastuFett, Fenixhim272 y Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Roxas",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Animación de cronómetros"]
+                    }
+                ]
+            },
+            {
+                id: "ptb",
+                mainContributors: ["Markmtz90"],
+                roles: [
+                    {
+                        username: "Markmtz90",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Artuhaxis y Akira896",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             }
         ]
     },
     {
-        id: "patently",
-        mainContributors: ["Artuhaxis"],
-        roles: [
+        packId: "pp7",
+        games: [
             {
-                username: "Artuhaxis",
-                roles: ["Enunciados"]
+                id: "quiplash3",
+                mainContributors: ["Brody", "Suukiro", "Hanzel Translations"],
+                roles: [
+                    {
+                        username: "Brody, Suukiro y Hanzel Translations",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896, Tejas, Artuhaxis y Fenixhim272",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
             {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "tmp2",
-        mainContributors: ["Artuhaxis"],
-        roles: [
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal", "Edición de imágenes"]
+                id: "devils",
+                mainContributors: ["Hanzel Translations", "Alosinwhat", "Benelux", "Artuhaxis", "Akira896"],
+                roles: [
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Traducción principal", "Edición de imágenes"]
+                    },
+                    {
+                        username: "Alosinwhat, Benelux y Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal", "Testeo"]
+                    },
+                    {
+                        username: "MarioPereyra, NatsukiZoe e Inuzen",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "PauX",
+                        roles: ["SWFs y caracteres especiales en Jackbox.lol"]
+                    },
+                    {
+                        username: "P4ND4_1100010",
+                        roles: ["Manejo de Crowdin"]
+                    }
+                ]
             },
-            {
-                username: "Raúl Mora",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Edición de imágenes", "Asistencia en subtítulos"]
-            },
-            {
-                username: "Hanzel Translations y Alomancia",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "Pachekin",
-                roles: ["Asistencia en subtítulos"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes y videos"]
-            }
-        ]
-    },
-    {
-        id: "rolemodels",
-        mainContributors: ["Artuhaxis", "Raúl Mora", "Tejas", "Akira896"],
-        roles: [
-            {
-                username: "Artuhaxis, Raúl Mora y Tejas",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción principal", "Edición de video de tutorial"]
-            },
-            {
-                username: "DanielMGC, MrCityWaffles, NatsukiZoe y diegoflg3",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "El Tristanlaker2582",
-                roles: ["Imágenes de Jackbox.lol"]
-            }
-        ]
-    },
-    {
-        id: "jokeboat",
-        mainContributors: ["Akira896"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Artuhaxis",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes adicionales y videos"]
-            }
-        ]
-    },
-    {
-        id: "dictionarium",
-        mainContributors: ["LucastuFett", "Akira896"],
-        roles: [
-            {
-                username: "LucastuFett, Fenixhim272 y Akira896",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Roxas",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Animación de cronómetros"]
-            }
-        ]
-    },
-    {
-        id: "ptb",
-        mainContributors: ["Markmtz90"],
-        roles: [
-            {
-                username: "Markmtz90",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Artuhaxis y Akira896",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "quiplash3",
-        mainContributors: ["Brody", "Suukiro", "Hanzel Translations"],
-        roles: [
-            {
-                username: "Brody, Suukiro y Hanzel Translations",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896, Tejas, Artuhaxis y Fenixhim272",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "devils",
-        mainContributors: ["Hanzel Translations", "Alosinwhat", "Benelux", "Artuhaxis", "Akira896"],
-        roles: [
-            {
-                username: "Hanzel Translations",
-                roles: ["Traducción principal", "Edición de imágenes"]
-            },
-            {
-                username: "Alosinwhat, Benelux y Artuhaxis",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción principal", "Testeo"]
-            },
-            {
-                username: "MarioPereyra, NatsukiZoe e Inuzen",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "PauX",
-                roles: ["SWFs y caracteres especiales en Jackbox.lol"]
-            },
-            {
-                username: "P4ND4_1100010",
-                roles: ["Manejo de Crowdin"]
-            }
-        ]
-    },
 
-    {
-        id: "champdup",
-        mainContributors: ["Artuhaxis", "Akira896"],
-        roles: [
             {
-                username: "Artuhaxis",
-                roles: ["Traducción principal", "Edición de imágenes"]
+                id: "champdup",
+                mainContributors: ["Artuhaxis", "Akira896"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal", "Edición de imágenes"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Alomancia",
+                        roles: ["Edición de imágenes para Jackbox.lol"]
+                    },
+                    {
+                        username: "El Tristanlaker2582",
+                        roles: ["Imágenes de Jackbox.lol"]
+                    }
+                ]
             },
             {
-                username: "Akira896",
-                roles: ["Traducción principal"]
+                id: "talkingpoints",
+                mainContributors: ["Zants69", "Akira896", "Eleiber"],
+                roles: [
+                    {
+                        username: "Zants69, Akira896 y Eleiber",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Artuhaxis, Fixed Fun, Hanzel Translations y YosY",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Alomancia",
+                        roles: ["Edición de imágenes para Jackbox.lol"]
+                    },
+                ]
             },
             {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
+                id: "blather",
+                mainContributors: ["Markmtz90"],
+                roles: [
+                    {
+                        username: "Markmtz90",
+                        roles: ["Traducción principal", "SWFs", "Testeo"]
+                    },
+                    {
+                        username: "Eleiber y Ker",
+                        roles: ["Traducción de subtítulos"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción de subtítulos", "Testeo"]
+                    },
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Testeo"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Video del tutorial"]
+                    },
+                    {
+                        username: "UnrulyJuli3",
+                        roles: ["Ayuda con descriptores para enunciados"]
+                    }
+                ]
             },
-            {
-                username: "Alomancia",
-                roles: ["Edición de imágenes para Jackbox.lol"]
-            },
-            {
-                username: "El Tristanlaker2582",
-                roles: ["Imágenes de Jackbox.lol"]
-            }
         ]
     },
     {
-        id: "talkingpoints",
-        mainContributors: ["Zants69", "Akira896", "Eleiber"],
-        roles: [
+        packId: "pp8",
+        games: [
             {
-                username: "Zants69, Akira896 y Eleiber",
-                roles: ["Traducción principal"]
+                id: "drawfulanimate",
+                mainContributors: ["Fixed Fun", "Artuhaxis", "Akira896"],
+                roles: [
+                    {
+                        username: "Fixed Fun, Artuhaxis y Pepe Pepo",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal", "Edición de imágenes"]
+                    },
+                    {
+                        username: "Pepe Pepo",
+                        roles: ["Traducción asistente"]
+                    }
+                ]
             },
             {
-                username: "Artuhaxis, Fixed Fun, Hanzel Translations y YosY",
-                roles: ["Edición de imágenes"]
+                id: "wheel",
+                mainContributors: ["Ker"],
+                roles: [
+                    {
+                        username: "Ker",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Marti005, Artuhaxis y Akira896",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Neep",
+                        roles: ["SVGs de Jackbox.lol"]
+                    },
+                    {
+                        username: "UnrulyJuli3",
+                        roles: ["Ayuda con términos especiales"]
+                    }
+                ]
             },
             {
-                username: "Alomancia",
-                roles: ["Edición de imágenes para Jackbox.lol"]
+                id: "jobjob",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896 y Pepe Pepo",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
+            },
+            {
+                id: "pollmine",
+                mainContributors: ["Hanzel Translations", "Artuhaxis"],
+                roles: [
+                    {
+                        username: "Hanzel Translations y Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción asistente", "Edición de imágenes"]
+                    },
+                    {
+                        username: "Pepe Pepo",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "El Tristanlaker2582",
+                        roles: ["Edición de imágen adicional"]
+                    }
+                ]
+            },
+            {
+                id: "weapons",
+                mainContributors: ["Hanzel Translations"],
+                roles: [
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
         ]
     },
     {
-        id: "blather",
-        mainContributors: ["Markmtz90"],
-        roles: [
+        packId: "pp11",
+        games: [
             {
-                username: "Markmtz90",
-                roles: ["Traducción principal", "SWFs", "Testeo"]
+                id: "doominate",
+                mainContributors: ["Hanzel Translations"],
+                roles: [
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896 y Artuhaxis",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
             {
-                username: "Eleiber y Ker",
-                roles: ["Traducción de subtítulos"]
+                id: "hearsay",
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Hanzel Translations y Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
             {
-                username: "Akira896",
-                roles: ["Traducción de subtítulos", "Testeo"]
+                id: "cookiehaus",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
             {
-                username: "Hanzel Translations",
-                roles: ["Testeo"]
+                id: "suspectives",
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Lafufu",
+                        roles: ["Traducción asistente"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
             },
-            {
-                username: "Fixed Fun",
-                roles: ["Video del tutorial"]
-            },
-            {
-                username: "UnrulyJuli3",
-                roles: ["Ayuda con descriptores para enunciados"]
-            }
         ]
     },
     {
-        id: "drawfulanimate",
-        mainContributors: ["Fixed Fun", "Artuhaxis", "Akira896", "Pepe Pepo"],
-        roles: [
+        packId: "Otros juegos de Jackbox",
+        isText: true,
+        games: [
             {
-                username: "Fixed Fun, Artuhaxis y Pepe Pepo",
-                roles: ["Traducción principal"]
+                id: "quiplash",
+                mainContributors: ["Radioactive Man", "Artuhaxis", "hectorflipi", "lau_fleur", "exviolinista13"],
+                roles: [
+                    {
+                        username: "Radioactive Man y Artuhaxis",
+                        roles: ["Traducción principal (versión de Latinoamérica)"]
+                    },
+                    {
+                        username: "hectorflipi, lau_fleur y exviolinista13",
+                        roles: ["Traducción principal (versión de España)"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción asistente (versión de Latinoamérica)", "Edición de imágenes"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes de rondas"]
+                    }
+                ]
             },
             {
-                username: "Akira896",
-                roles: ["Traducción principal", "Edición de imágenes"]
-            }
+                id: "interlashional",
+                isAdaptation: true,
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Adaptación para versión latinoamericana"]
+                    }
+                ]
+            },
+            {
+                id: "drawful2",
+                isAdaptation: true,
+                mainContributors: ["Akira896"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Adaptación para versión latinoamericana"]
+                    },
+                    {
+                        username: "hectorflipi, lau_fleur y exviolinista13",
+                        roles: ["Traducción principal (versión de España antes de la oficial)"]
+                    }
+                ]
+            },
         ]
     },
     {
-        id: "wheel",
-        mainContributors: ["Ker"],
-        roles: [
+        packId: "Juegos adicionales",
+        isText: true,
+        games: [
             {
-                username: "Ker",
-                roles: ["Traducción principal"]
+                id: "useyourwords",
+                mainContributors: ["Hanzel Translations", "Radioactive Man"],
+                roles: [
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Radioactive Man",
+                        roles: ["Traducción de videos de Sub Titu Lados"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de videos de tutorial de Sub Titu Lados"]
+                    }
+                ]
             },
             {
-                username: "Marti005, Artuhaxis y Akira896",
-                roles: ["Traducción asistente"]
+                id: "wtd",
+                mainContributors: ["Akira896", "Hanzel Translations", "Danda"],
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Traducción para videos de actualizaciones", "Edición de imágenes"]
+                    },
+                    {
+                        username: "Danda",
+                        roles: ["Traducción principal (versión de España)"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes adicionales"]
+                    }
+                ]
             },
             {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            },
-            {
-                username: "Neep",
-                roles: ["SVGs de Jackbox.lol"]
-            },
-            {
-                username: "UnrulyJuli3",
-                roles: ["Ayuda con términos especiales"]
-            }
-        ]
-    },
-    {
-        id: "jobjob",
-        mainContributors: ["Artuhaxis"],
-        roles: [
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896 y Pepe Pepo",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "pollmine",
-        mainContributors: ["Hanzel Translations", "Artuhaxis"],
-        roles: [
-            {
-                username: "Hanzel Translations y Artuhaxis",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción asistente", "Edición de imágenes"]
-            },
-            {
-                username: "Pepe Pepo",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "El Tristanlaker2582",
-                roles: ["Edición de imágen adicional"]
-            }
-        ]
-    },
-    {
-        id: "weapons",
-        mainContributors: ["Hanzel Translations"],
-        roles: [
-            {
-                username: "Hanzel Translations",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "doominate",
-        mainContributors: ["Hanzel Translations"],
-        roles: [
-            {
-                username: "Hanzel Translations",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896 y Artuhaxis",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "hearsay",
-        mainContributors: ["Akira896"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Hanzel Translations y Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "cookiehaus",
-        mainContributors: ["Artuhaxis"],
-        roles: [
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "suspectives",
-        mainContributors: ["Artuhaxis"],
-        roles: [
-            {
-                username: "Artuhaxis",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Lafufu",
-                roles: ["Traducción asistente"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes"]
-            }
-        ]
-    },
-    {
-        id: "quiplash",
-        mainContributors: ["Radioactive Man", "Artuhaxis", "hectorflipi", "lau_fleur", "exviolinista13"],
-        roles: [
-            {
-                username: "hectorflipi, lau_fleur y exviolinista13",
-                roles: ["Traducción principal (versión de España)"]
-            },
-            {
-                username: "Radioactive Man y Artuhaxis",
-                roles: ["Traducción principal (versión de Latinoamérica)"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción asistente (versión de Latinoamérica)", "Edición de imágenes"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes de rondas"]
-            }
-        ]
-    },
-    {
-        id: "interlashional",
-        mainContributors: ["Akira896"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Adaptación para versión latinoamericana"]
-            }
-        ]
-    },
-    {
-        id: "drawful2",
-        mainContributors: ["Akira896", "hectorflipi", "lau_fleur", "exviolinista13"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Adaptación para versión latinoamericana"]
-            },
-            {
-                username: "hectorflipi, lau_fleur y exviolinista13",
-                roles: ["Traducción principal (versión de España extraoficial)"]
-            }
-        ]
-    },
-    {
-        id: "useyourwords",
-        mainContributors: ["Hanzel Translations", "Radioactive Man"],
-        roles: [
-            {
-                username: "Hanzel Translations",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Radioactive Man",
-                roles: ["Traducción de videos de Sub Titu Lados"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de videos de tutorial de Sub Titu Lados"]
-            }
-        ]
-    },
-    {
-        id: "wtd",
-        mainContributors: ["Akira896", "Hanzel Translations", "Danda"],
-        roles: [
-            {
-                username: "Akira896",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Hanzel Translations",
-                roles: ["Traducción para videos de actualizaciones", "Edición de imágenes"]
-            },
-            {
-                username: "Danda",
-                roles: ["Traducción principal (versión de España)"]
-            },
-            {
-                username: "Fixed Fun",
-                roles: ["Edición de imágenes adicionales"]
-            }
-        ]
-    },
-    {
-        id: "rifftrax",
-        mainContributors: ["Hanzel Translations"],
-        roles: [
-            {
-                username: "Hanzel Translations",
-                roles: ["Traducción principal"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Traducción asistente"]
+                id: "rifftrax",
+                mainContributors: ["Hanzel Translations"],
+                roles: [
+                    {
+                        username: "Hanzel Translations",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción asistente"]
+                    }
+                ]
             }
         ]
     }
-];
+]
 
 export const CREDITS_REGISTRY_EXTRAS: ExtraCreditItem[] = [
     {

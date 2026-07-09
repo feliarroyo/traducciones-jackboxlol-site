@@ -60,23 +60,19 @@ export default function CreditsPage() {
             {/* 🟦 TRANSLATIONS RENDER TRACKS */}
             <CreditCardAdminContainer
               title="Administradores"
-              subtitle="Los administradores realizaron una cantidad considerable de contribuciones al proyecto."
               data={admins}
+              titleClassName="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2"
             />
             <CreditCardContainer
               title="Créditos por juego"
-              subtitle="Se listan aquí los créditos de cada juego, en detalle."
               data={CREDITS_REGISTRY_GAMES}
+              titleClassName="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2"
             />
             <section className="space-y-6">
               <div>
-                <h2 className="text-center text-2xl font-extrabold text-amber-400/90">
-                  Otros créditos
+                <h2 className="text-2xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">
+                  Aportes adicionales
                 </h2>
-
-                <p className="text-center mt-2 text-sm text-slate-400 max-w-xl mx-auto">
-                  Aquí se listan aportes que van más allá de lo que fue el proceso de traducción de un juego en particular.
-                </p>
 
               </div>
               <div className="flex flex-row gap-6 justify-center items-center w-full mx-auto">

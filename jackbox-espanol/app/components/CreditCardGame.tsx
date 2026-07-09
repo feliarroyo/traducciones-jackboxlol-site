@@ -5,7 +5,7 @@ import Image from "next/image";
 import { GAME_ASSETS } from "../data/gameRegistry";
 import { GameCreditItem } from "../data/creditsRegistry";
 
-export default function CreditCardGame({ id, mainContributors, roles }: GameCreditItem) {
+export default function CreditCardGame({ id, isAdaptation, mainContributors, roles }: GameCreditItem) {
   const [isOpen, setIsOpen] = useState(false);
   const asset = GAME_ASSETS[id] || { src: "/images/placeholder.png", alt: id };
 
@@ -23,7 +23,7 @@ export default function CreditCardGame({ id, mainContributors, roles }: GameCred
           }
           {mainContributors.length > 0 && (
             <span className="text-slate-200 block font-bold text-[10px] my-1 py-1">
-              Traducción principal
+              {isAdaptation? "Adaptación" : "Traducción"} principal
               {mainContributors.map((user, idx) => (
                 <div key={idx} className="text-center text-[11px] leading-snug">
                   <p className="text-slate-400/80 font-medium tracking-wide ">
