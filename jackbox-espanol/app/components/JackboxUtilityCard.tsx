@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import DownloadButton from "./DownloadButton";
 import { WindowsIcon, MacIcon, LinuxIcon, SwitchIcon, EpicIcon, MicrosoftIcon, YouTubeIcon } from "./Icons";
+import Link from "next/dist/client/link";
 
 interface JackboxUtilityProps {
   footerText?: React.ReactNode; // ReactNode allows you to pass both plain text or text with links (JSX)
@@ -55,26 +56,32 @@ export default function JackboxUtility({
             </div>
           ))}
         </div>
-          {/* YouTube Video Button */}
-          <a
-            href="https://youtu.be/YB6t5YfuMzo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-red-700 hover:bg-red-800 border border-red-800 text-white font-semibold rounded-xl transition-colors duration-200 shadow-lg shadow-red-900/20 text-sm"
-          >
-            <YouTubeIcon fill="#ffffff"/>
-            Videotutorial de instalación
-          </a>
-        
+        {/* YouTube Video Button */}
+        <a
+          href="https://youtu.be/YB6t5YfuMzo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-red-700 hover:bg-red-800 border border-red-800 text-white font-semibold rounded-xl transition-colors duration-200 shadow-lg shadow-red-900/20 text-sm"
+        >
+          <YouTubeIcon fill="#ffffff" />
+          Videotutorial de instalación
+        </a>
+
       </div>
 
       {/* Right Side: Text and Download Buttons */}
       <div className="flex-1 max-w-3xl mx-auto text-center space-y-6">
         <div className="space-y-3">
           {/* <Image src="/images/jackboxutility.webp" alt="Logo de Jackbox Utility" width={120} height={120} className="mx-auto w-24 h-auto object-contain drop-shadow-[0_10px_20px_rgba(48,140,231,0.5)]" /> */}
-          <h2 className="text-3xl font-extrabold text-amber-400 tracking-tight">
-            Jackbox Utility
-          </h2>
+          <div>
+            <h2 className="text-3xl font-extrabold text-amber-400 tracking-tight">
+              Jackbox Utility
+            </h2>
+            <p className="text-sm text-center text-slate-400">
+              Creada por <Link href="https://alexisl.fr/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Alexis</Link>
+              . Versión de Mac por <Link href="https://github.com/greiner-petter" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Oliver</Link>.
+            </p>
+          </div>
           <p className="text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Esta aplicación permite acceder directamente a los juegos de todos los packs instalados, y facilita la instalación de las traducciones no oficiales.
           </p>
