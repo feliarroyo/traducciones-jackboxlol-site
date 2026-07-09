@@ -3,7 +3,7 @@ import PackShowcase from "./components/PackShowcase";
 import SinglePackShowcase from "./components/SinglePackShowcase";
 import PackTicker from "./components/PackTicker";
 import Link from "next/link";
-import VideoCarousel from "./components/VideoCarousel";
+import VideoDisplay from "./components/VideoDisplay";
 
 export default function Home() {
   const pp1dubs = ["drawful"];
@@ -43,7 +43,7 @@ export default function Home() {
 
         {/* Right Side: Showcase Character graphic */}
         <div className="w-full flex-1 flex items-center justify-center">
-          <VideoCarousel />
+          <VideoDisplay />
         </div>
       </section>
 
