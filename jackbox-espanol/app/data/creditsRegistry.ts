@@ -30,7 +30,7 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
     {
         username: "Akira896",
         avatarUrl: "/images/avatars/akira896.webp",
-        profileUrl: "https://www.youtube.com/@Akira896",
+        profileUrl: "https://www.youtube.com/@Akira896_",
         tags: ["Creador del proyecto"],
         category: "administrator",
         roles: [
@@ -489,11 +489,11 @@ export const CREDITS_REGISTRY_GAMES: GameCreditItem[] = [
         roles: [
             {
                 username: "Artuhaxis",
-                roles: ["Traducción principal (juego principal y Mentiras sobre ti"]
+                roles: ["Traducción principal (juego base y Mentiras sobre ti)"]
             },
             {
                 username: "Hanzel Translations",
-                roles: ["Traducción principal (Juego principal"]
+                roles: ["Traducción principal (juego base)"]
             },
             {
                 username: "Akira896",
