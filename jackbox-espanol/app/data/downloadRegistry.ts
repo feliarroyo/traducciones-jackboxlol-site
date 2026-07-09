@@ -441,6 +441,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
                 platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic", "nintendo"],
                 lang: "latam",
+                notes: "Adaptación latina textual (Elimina enunciados de España)",
                 link: "https://github.com/AkiraArtuhaxis/Quiplash-2-InterLASHional-Latin-American-Spanish/releases/latest/download/Q2INT-LAT.zip"
             },
             {
@@ -493,6 +494,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
                 platforms: ["mac"],
                 stores: ["default"],
                 lang: "spain",
+                notes: "Cambio de dominio a Jackbox.lol",
                 link: "https://github.com/AkiraArtuhaxis/Drawful-2-Latin-American-Spanish/releases/latest/download/DF2-ES-SPAIN.zip"
             },
             {
