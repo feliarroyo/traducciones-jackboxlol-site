@@ -25,50 +25,52 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <div className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 flex flex-col items-center justify-center gap-4 backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group">
+      <div className="relative overflow-hidden bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center justify-between gap-3 backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group w-full h-full">
+        <div className="flex flex-col items-center gap-2 w-full flex-1 justify-center">
+          {admin.avatarUrl && (
+            <div className="w-20 h-20 relative rounded-2xl overflow-hidden border-2 border-amber-500/10 bg-slate-900 group-hover:border-amber-500/30 transition-colors shrink-0">
+              <Image
+                src={admin.avatarUrl}
+                alt={admin.username}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
 
-        {admin.avatarUrl && (
-          <div className="w-24 h-24 relative rounded-2xl overflow-hidden border-2 border-amber-500/10 bg-slate-900 group-hover:border-amber-500/30 transition-colors shrink-0">
-            <Image
-              src={admin.avatarUrl}
-              alt={admin.username}
-              fill
-              className="object-cover"
-            />
+          <div className="space-y-1 w-full max-w-full px-1 shrink min-w-0">
+            <h3 className="text-base md:text-lg text-nowrap font-bold transition-colors block">
+              {admin.profileUrl ? (
+                <a
+                  href={admin.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-100 hover:text-amber-400 group-hover:text-amber-400"
+                >
+                  {admin.username}
+                </a>
+              ) : (
+                <span className="text-slate-100 group-hover:text-amber-400">{admin.username}</span>
+              )}
+              {/* TAGS (if present) */}
+              {(admin.tags && admin.tags.length > 0) ? (
+                <div className="flex flex-wrap gap-1 justify-center max-w-full">
+                  {admin.tags.map((tag, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 whitespace-nowrap tracking-wide uppercase"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-[9px] py-0.5 opacity-0 pointer-events-none select-none whitespace-nowrap">&nbsp;</div>
+              )}
+            </h3>
           </div>
-        )}
-
-        <div className="space-y-1">
-          <h3 className="text-xl font-bold transition-colors">
-            {admin.profileUrl ? (
-              <a
-                href={admin.profileUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-100 hover:text-amber-400 group-hover:text-amber-400"
-              >
-                {admin.username}
-              </a>
-            ) : (
-              <span className="text-slate-100 group-hover:text-amber-400">{admin.username}</span>
-            )}
-            {/* TAGS (if present) */}
-        {admin.tags && admin.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 justify-center max-w-full my-1 px-1">
-            {admin.tags.map((tag, tIdx) => (
-              <span
-                key={tIdx}
-                className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 whitespace-nowrap tracking-wide uppercase"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-          </h3>
         </div>
 
-        
 
         <button
           onClick={() => setIsOpen(true)}
@@ -105,13 +107,13 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
                     <span className="text-amber-400">{admin.username}</span>
                   )}
                   {/* TAGS */}
-                    {admin.tags && admin.tags.map((tag, tIdx) => (
-                      <span key={tIdx} className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 uppercase tracking-wider">
-                        {tag}
-                      </span>
-                    ))}
+                  {admin.tags && admin.tags.map((tag, tIdx) => (
+                    <span key={tIdx} className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 uppercase tracking-wider">
+                      {tag}
+                    </span>
+                  ))}
                 </h3>
-                
+
               </div>
 
               <button

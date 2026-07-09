@@ -1,4 +1,3 @@
-// src/components/CreditCardXLContainer.tsx
 import React from "react";
 import CreditCardAdmin from "./CreditCardAdmin";
 
@@ -28,9 +27,9 @@ export default function CreditCardAdminContainer({
                     </p>
                 )}
             </div>
-            <div className="flex flex-row flex-wrap gap-6 justify-center items-center w-full mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 max-w-2xl w-full gap-6 justify-center mx-auto">
                 {data.map((user) => (
-                    <div className="w-[calc(50%-12px)] sm:w-44 md:w-48 shrink-0 aspect-square" key={user.username}>
+                    <div className="w-full aspect-square" key={user.username}>
                         <CreditCardAdmin key={user.username} admin={user} />
                     </div>
                 ))}
