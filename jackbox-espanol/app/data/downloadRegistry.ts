@@ -414,7 +414,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
             },
             {
                 name: "España",
-                platforms: ["win-linux", "mac", "switch"],
+                platforms: ["win-linux", "switch"],
                 stores: ["default", "nintendo"],
                 lang: "spain",
                 notes: "Traducción de Quip Pack 1 incluida, compatible si el DLC está comprado e instalado.",

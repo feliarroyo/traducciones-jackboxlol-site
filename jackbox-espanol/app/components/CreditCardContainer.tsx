@@ -3,10 +3,23 @@ import CreditCard from "./CreditCard";
 import Image from "next/image";
 import CreditCardGame from "./CreditCardGame";
 
+interface GamePackItem {
+  packId: string;
+  isText?: boolean;
+  games: {
+    id: string;
+    mainContributors: string[];
+    isAdaptation?: boolean;
+    roles: {
+      username: string;
+      roles: string[];
+    }[];
+  }[];
+}
 interface CreditCardContainerProps {
   title: string;
   subtitle?: string;
-  data: any[];
+  data: GamePackItem[];
   titleClassName?: string; // Allows fine-tuning headers hierarchy if needed
 }
 
@@ -16,8 +29,6 @@ export default function CreditCardContainer({
   data,
   titleClassName = "text-center text-2xl font-extrabold text-amber-400/90"
 }: CreditCardContainerProps) {
-  if (data.length === 0) return null;
-
   return (
     <section className="space-y-6">
       <div>
