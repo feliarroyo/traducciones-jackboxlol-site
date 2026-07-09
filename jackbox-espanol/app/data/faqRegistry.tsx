@@ -62,7 +62,7 @@ export const FAQ_REGISTRY: Faq[] = [
             <p><b>En Steam:</b></p> <p className={emphasis}><code>cd ~/Library/Application\ Support/Steam/steamapps/common</code></p>
             <b>En Epic Games Store:</b> <p className={emphasis}><code>cd /Users/Shared/Epic\ Games</code></p></>,
             <>Accede a la carpeta del Pack a traducir, utilizando el comando: <p className={emphasis}>
-                <code>cd JUEGO/JUEGO.app/Contents/Resources\</code>
+                <code>cd JUEGO/JUEGO.app/Contents/Resources</code>
             </p> (<code className={emphasis}>JUEGO</code> debe ser reemplazado con el nombre de la carpeta del juego).</>,
             <>Instala la traducción usando el comando el comando <code className={emphasis}>ditto</code>. Asumiendo que el archivo de la traducción está extraído en la carpeta de "Descargas" de tu equipo, usa el siguiente comando:</>,
             <><p className={emphasis}>
