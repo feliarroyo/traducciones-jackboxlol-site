@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { GAME_ASSETS } from "../data/gameRegistry";
+import { createPortal } from "react-dom";
 
 // 🏷️ Define the strict TypeScript shape for the Admin data structure
 interface CreditCardAdminProps {
@@ -21,6 +22,11 @@ interface CreditCardAdminProps {
 
 export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
@@ -81,7 +87,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
       </div>
 
       {/* Overlay Modal */}
-      {isOpen && (
+      {isOpen && mounted && createPortal((
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
           onClick={() => setIsOpen(false)}
@@ -154,7 +160,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
             </div>
           </div>
         </div>
-      )}
+      ), document.body)}
     </>
   );
 }

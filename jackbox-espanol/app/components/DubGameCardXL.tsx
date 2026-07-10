@@ -1,10 +1,11 @@
 // src/components/DubGameCardXL.tsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { GAME_ASSETS } from "../data/gameRegistry";
 import { DubCreditItem } from "../data/dubCreditsRegistry";
+import { createPortal } from "react-dom";
 
 interface DubGameCardXLProps {
     game: DubCreditItem;
@@ -13,6 +14,11 @@ interface DubGameCardXLProps {
 export default function DubGameCardXL({ game }: DubGameCardXLProps) {
     const [isOpen, setIsOpen] = useState(false);
     const asset = GAME_ASSETS[game.id as string] || { src: "/images/placeholder.png", alt: game.id };
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     return (
         <>
@@ -20,7 +26,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
             <div className="shrink-0 aspect-square bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center py-4 justify-between text-center backdrop-blur-sm transition-all duration-300 hover:border-amber-500/30 group">
 
                 {/* Game Logo Container */}
-                <div className="w-full border-b border-slate-500/40 pb-2 mb-2">
+                <div className="w-full">
                     <div className="w-full h-16 relative shrink-0 mt-2 justify-center">
                         <Image src={asset.src} alt={asset.alt} fill className="object-contain" />
                     </div>
@@ -80,7 +86,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
             </div>
 
             {/* 🚀 CAST OVERLAY MODAL LIST WINDOW */}
-            {isOpen && (
+            {isOpen && mounted && createPortal((
                 <div className="text-center fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md" onClick={() => setIsOpen(false)}>
                     <div className="bg-slate-900 border border-slate-800 w-full max-w-lg max-h-[75vh] overflow-y-auto rounded-3xl p-6 space-y-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
 
@@ -118,7 +124,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
 
                     </div>
                 </div>
-            )}
+            ), document.body)}
         </>
     );
 }

@@ -1,10 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ExtraCreditItem } from "../data/creditsRegistry";
+import { createPortal } from "react-dom";
 
 export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
+    useEffect(() => {
+      setMounted(true);
+    }, []);
+  
 
   return (
     <>
@@ -21,7 +28,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
       </div>
 
       {/* Overlay Modal */}
-      {isOpen && (
+      {isOpen && mounted && createPortal( (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
           onClick={() => setIsOpen(false)}
@@ -59,7 +66,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
             </div>
           </div>
         </div>
-      )
+      ), document.body)
       }
     </>
   );
