@@ -17,7 +17,7 @@ export const FAQ_REGISTRY: Faq[] = [
     },
     {
         question: "¿Se traduce también lo que aparece en el dispositivo?",
-        answer: [<>Exceptuando algunos detalles menores, <b>todo lo importante que se muestra en el dispositivo es traducido</b>. Para lograr esto, se utiliza una página diferente: “Jackbox.lol”, que traduce todo su contenido al español. Todos los parches del proyecto muestran ese dominio, y recomendamos utilizarlo al jugar con las traducciones no oficiales.</>]
+        answer: [<>Exceptuando algunos detalles menores, <b>todo lo importante que se muestra en el dispositivo es traducido</b>. Para lograr esto, se utiliza una página diferente: “Jackbox.lol”, que traduce todo su contenido al español. Todos los parches del proyecto para los juegos de Jackbox muestran ese dominio, y recomendamos utilizarlo al jugar con las traducciones no oficiales.</>]
     },
     {
         question: "¿Es una traducción oficial? ¿Es gratuita? ¿Puedo donarles de algún modo?",
