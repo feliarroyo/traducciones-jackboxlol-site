@@ -89,7 +89,7 @@ export default function CreditsPage() {
                 <CreditCardText extras={CREDITS_REGISTRY_EXTRAS} />
                 <CreditCardList
                   title="Donaciones para mantener el dominio"
-                  users={["Akira896", "Hanzel Translations", "Eleiber", "alexbg724", "MakaayX", "david.az.4", "Tonycam21", "Erickelnd", "Erick López", "Sergio Junco", "Daniel Sánchez", "Juan Herranz", "Mario Edher", "Alba Franganillo", "Erick Guerrero"]
+                  users={["Akira896", "Hanzel Translations", "Eleiber", "alexbg724", "MakaayX", "david.az.4", "Tonycam21", "Erickelnd", "Erick López", "Sergio Junco", "Daniel Sánchez", "Juan Herranz", "Mario Edher", "Alba Franganillo", "Erick Guerrero", "FedVer"]
                   }
                 />
               </div>
