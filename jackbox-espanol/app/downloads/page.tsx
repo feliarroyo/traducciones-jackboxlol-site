@@ -12,8 +12,8 @@ export default function DownloadsPage() {
     const [platformFilter, setPlatformFilter] = useState("win-linux"); // win-linux, mac, switch
     const [storeFilter, setStoreFilter] = useState("default");       // default, epic, microsoft, nintendo
     const [langFilter, setLangFilter] = useState("latam");       // latam, spain
-
     const [showInstructions, setShowInstructions] = useState(false);
+    const animationOpen = 0.25;
 
     // DYNAMIC TEXT GENERATOR BASED ON FILTERS
     const getPlatformName = () => {
@@ -89,14 +89,14 @@ export default function DownloadsPage() {
 
                 {/* DYNAMIC INSTRUCTION ACCORDION AREA */}
                 <div className="w-full max-w-2xl mx-auto mb-4 flex flex-col items-center">
-
+                    
                     {/* INSTRUCTION BUTTON */}
                     <motion.button
                         onClick={() => setShowInstructions(!showInstructions)}
                         initial={false}
                         animate={{ width: showInstructions ? "100%" : "fit-content" }}
                         transition={{
-                            duration: 0.3,
+                            duration: 0.15,
                             ease: "easeInOut",
                             delay: showInstructions ? 0 : 0.1
                         }}
@@ -107,7 +107,7 @@ export default function DownloadsPage() {
                     >
                         <motion.svg
                             animate={{ rotate: showInstructions ? 180 : 0 }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration: animationOpen }}
                             className="w-4 h-4 fill-current shrink-0"
                             viewBox="0 0 20 20"
                         >
@@ -129,9 +129,9 @@ export default function DownloadsPage() {
                                     opacity: 1,
                                     marginTop: -10,
                                     transition: {
-                                        duration: 0.3,
+                                        duration: animationOpen,
                                         ease: "easeOut",
-                                        delay: 0.3
+                                        delay: animationOpen/3
                                     }
                                 }}
                                 exit={{
@@ -139,7 +139,7 @@ export default function DownloadsPage() {
                                     opacity: 0,
                                     marginTop: 0,
                                     transition: {
-                                        duration: 0.2,
+                                        duration: animationOpen,
                                         ease: "easeIn",
                                         delay: 0
                                     }
