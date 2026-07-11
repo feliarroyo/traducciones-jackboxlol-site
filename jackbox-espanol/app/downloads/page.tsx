@@ -4,7 +4,7 @@ import { useState } from "react";
 import { DOWNLOADS_REGISTRY, ENG_DOWNLOADS_REGISTRY, EXTRA_DOWNLOADS_REGISTRY } from "../data/downloadRegistry";
 import GameDownloadButton from "../components/GameDownloadButton";
 import JackboxUtilityCard from "../components/JackboxUtilityCard";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 export default function DownloadsPage() {
@@ -87,40 +87,78 @@ export default function DownloadsPage() {
                     <p className="text-sm text-center text-slate-400">Filtra según tu plataforma, tienda de compra y localización preferida.</p>
                 </div>
 
-                {/* DYNAMIC INSTRUCTION ACCORDION BUTTON (Upper Side of Toggles) */}
-                <div className="max-w-md mx-auto mb-4 flex flex-col items-center">
-                    <button
+                {/* DYNAMIC INSTRUCTION ACCORDION AREA */}
+                <div className="w-full max-w-2xl mx-auto mb-4 flex flex-col items-center">
+
+                    {/* INSTRUCTION BUTTON */}
+                    <motion.button
                         onClick={() => setShowInstructions(!showInstructions)}
-                        className={`py-2.5 px-4 font-bold rounded-xl border transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider ${showInstructions
-                            ? "bg-amber-500 text-slate-950 border-amber-400"
-                            : "bg-slate-900 text-slate-200 border-slate-800 hover:border-slate-700 hover:bg-slate-850"
+                        initial={false}
+                        animate={{ width: showInstructions ? "100%" : "fit-content" }}
+                        transition={{
+                            duration: 0.3,
+                            ease: "easeInOut",
+                            delay: showInstructions ? 0 : 0.1
+                        }}
+                        className={`relative overflow-hidden py-2.5 px-6 font-bold rounded-xl border transition-colors flex items-center justify-center gap-3 text-xs uppercase tracking-wider whitespace-nowrap z-10 ${showInstructions
+                                ? "bg-amber-500 text-slate-950 border-amber-400"
+                                : "bg-slate-900 text-slate-200 border-slate-800 hover:border-slate-700 hover:bg-slate-850"
                             }`}
                     >
-                        <svg
-                            className={`w-4 h-4 fill-current transition-transform duration-200 ${showInstructions ? "rotate-180" : ""}`}
+                        <motion.svg
+                            animate={{ rotate: showInstructions ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="w-4 h-4 fill-current shrink-0"
                             viewBox="0 0 20 20"
                         >
                             <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                        </svg>
-                        <div>
+                        </motion.svg>
+                        <div className="flex items-center gap-1 flex-col">
                             <p>Instrucciones de instalación</p>
-                            <p>({getPlatformName()})</p>
+                            <p className="opacity-80">({getPlatformName()})</p>
                         </div>
-                    </button>
-                </div>
-                <div className="mb-4 flex flex-col items-center">
-                    {/* EXPANDABLE INSTRUCTIONS ACCORDION DRAWER */}
-                    {showInstructions && (
-                        <div className="w-auto mt-2 p-5 bg-slate-950/80 border border-amber-500/30 rounded-xl text-center text-sm text-slate-300 shadow-xl animate-fadeIn space-y-3">
-                            <ol className="list-inside space-y-2 leading-relaxed text-xs">
-                                {currentInstructions.map((step, index) => (
-                                    <li key={index} className="pl-1">
-                                        <span className="text-slate-300">{step}</span>
-                                    </li>
-                                ))}
-                            </ol>
-                        </div>
-                    )}
+                    </motion.button>
+
+                    {/* INSTRUCTION TEXT */}
+                    <AnimatePresence>
+                        {showInstructions && (
+                            <motion.div
+                                initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                                animate={{
+                                    height: "auto",
+                                    opacity: 1,
+                                    marginTop: -10,
+                                    transition: {
+                                        duration: 0.3,
+                                        ease: "easeOut",
+                                        delay: 0.3
+                                    }
+                                }}
+                                exit={{
+                                    height: 0,
+                                    opacity: 0,
+                                    marginTop: 0,
+                                    transition: {
+                                        duration: 0.2,
+                                        ease: "easeIn",
+                                        delay: 0
+                                    }
+                                }}
+                                className="w-full overflow-hidden bg-slate-950/80 border border-amber-500/30 rounded-b-xl text-center text-sm text-slate-300 shadow-xl"
+                            >
+                                <div className="p-5 space-y-3">
+                                    <ol className="list-inside space-y-2 leading-relaxed text-xs">
+                                        {currentInstructions.map((step, index) => (
+                                            <li key={index} className="pl-1">
+                                                <span className="text-slate-300">{step}</span>
+                                            </li>
+                                        ))}
+                                    </ol>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
                 </div>
 
                 {/* THREE INTERACTIVE TOGGLE BARS */}
