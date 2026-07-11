@@ -98,7 +98,7 @@ export default function DownloadsPage() {
                         transition={{
                             duration: 0.15,
                             ease: "easeInOut",
-                            delay: showInstructions ? 0 : 0.1
+                            delay: showInstructions ? 0 : animationOpen
                         }}
                         className={`relative overflow-hidden py-2.5 px-6 font-bold rounded-xl border transition-colors flex items-center justify-center gap-3 text-xs uppercase tracking-wider whitespace-nowrap z-10 ${showInstructions
                             ? "bg-amber-500 text-slate-950 border-amber-400"
