@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { GAME_ASSETS } from "../data/gameRegistry";
 import { GameCreditItem } from "../data/creditsRegistry";
@@ -8,14 +9,19 @@ import { GameCreditItem } from "../data/creditsRegistry";
 export default function CreditCardGame({ id, isAdaptation, isSolo, mainContributors, roles }: GameCreditItem) {
   const [isOpen, setIsOpen] = useState(false);
   const asset = GAME_ASSETS[id] || { src: "/images/placeholder.png", alt: id };
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <div className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 flex flex-col items-center justify-center gap-4 backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group">
+      <div className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center justify-center gap-2 backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group">
 
         {/* Game Logo Container */}
-        <div className="flex flex-col w-full border-b border-slate-500/40 pb-2 mb-2">
+        <div className="flex flex-col w-full">
           {
             <div className=" w-full h-16 relative shrink-0 mt-2 justify-center items-center">
               <Image src={asset.src} alt={id} fill className="object-contain" />
@@ -39,14 +45,14 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
 
         <button
           onClick={() => setIsOpen(true)}
-          className="mt-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 hover:underline transition-colors cursor-pointer"
+          className="text-xs font-bold text-cyan-400 hover:text-cyan-300 hover:underline transition-colors cursor-pointer"
         >
           Ver contribuciones
         </button>
       </div>
 
       {/* Overlay Modal */}
-      {isOpen && (
+      {isOpen && mounted && createPortal((
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
           onClick={() => setIsOpen(false)}
@@ -83,7 +89,7 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
             </div>
           </div>
         </div>
-      )
+      ), document.body)
       }
     </>
   );
