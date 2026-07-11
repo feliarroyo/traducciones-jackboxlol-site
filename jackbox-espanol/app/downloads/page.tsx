@@ -101,8 +101,8 @@ export default function DownloadsPage() {
                             delay: showInstructions ? 0 : 0.1
                         }}
                         className={`relative overflow-hidden py-2.5 px-6 font-bold rounded-xl border transition-colors flex items-center justify-center gap-3 text-xs uppercase tracking-wider whitespace-nowrap z-10 ${showInstructions
-                                ? "bg-amber-500 text-slate-950 border-amber-400"
-                                : "bg-slate-900 text-slate-200 border-slate-800 hover:border-slate-700 hover:bg-slate-850"
+                            ? "bg-amber-500 text-slate-950 border-amber-400"
+                            : "bg-slate-900 text-slate-200 border-slate-800 hover:border-slate-700 hover:bg-slate-850"
                             }`}
                     >
                         <motion.svg
@@ -252,6 +252,9 @@ export default function DownloadsPage() {
 
                 {/* DATA GRID DRAWER ELEMENT */}
                 <div className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
+                    {(storeFilter === "microsoft" && platformFilter === "mac") && (
+                        <p>Microsoft Store no está disponible en Mac.</p>
+                    )}
                     {DOWNLOADS_REGISTRY.map((game) => {
                         // Determine the active storefront parameter to match against
                         const targetStoreToMatch = platformFilter === "switch" ? "nintendo" : storeFilter;
@@ -279,7 +282,7 @@ export default function DownloadsPage() {
                         }
 
                         // If no patches are available for this specific selection, hide the game card
-                        if (matchingTargets.length === 0) return null;
+                        if (matchingTargets.length === 0) return
 
                         return matchingTargets.map((target, idx) => (
                             <GameDownloadButton
