@@ -253,7 +253,7 @@ export default function DownloadsPage() {
                 {/* DATA GRID DRAWER ELEMENT */}
                 <div className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
                     {(storeFilter === "microsoft" && platformFilter === "mac") && (
-                        <p>Microsoft Store no está disponible en Mac.</p>
+                        <p>Microsoft Store no está disponible en Mac <img src="/images/crazy.webp" alt="Burbujas de Job Job con cara chistosa" className="inline align-middle h-8 w-8" /></p>
                     )}
                     {DOWNLOADS_REGISTRY.map((game) => {
                         // Determine the active storefront parameter to match against
