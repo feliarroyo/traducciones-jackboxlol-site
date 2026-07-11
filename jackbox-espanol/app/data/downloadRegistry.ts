@@ -722,8 +722,8 @@ export const ENG_DOWNLOADS_REGISTRY = [
         imageSrc: "/images/buttons/pp8.webp",
         targets: [
             {
-                name: "Canción de La Ruleta en inglés",
-                notes: "Revierte la versión adaptada de la canción de este juego.",
+                name: "Canción en inglés",
+                notes: "Revierte la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-8-Spanish/releases/download/437.12-ES/TemaCreditosOriginalesRuleta.zip"
             }
         ]
