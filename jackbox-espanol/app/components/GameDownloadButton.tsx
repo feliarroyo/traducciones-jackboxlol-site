@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import VersionBadge from "./VersionBadge";
 
 interface GameDownloadButtonProps {
   href: string;
@@ -9,11 +10,13 @@ interface GameDownloadButtonProps {
   isSpain?: boolean;
   noteTitle?: string;
   notes?: string;
+  version_file?: string;
+  version_property?: string;
 }
 
-export default function GameDownloadButton({ href, altText, imageSrc, isSpain = false, noteTitle, notes }: GameDownloadButtonProps) {
+export default function GameDownloadButton({ href, altText, imageSrc, isSpain = false, noteTitle, notes, version_file, version_property }: GameDownloadButtonProps) {
   return (
-    <a 
+    <a
       href={href}
       target="_blank"
       rel="noreferrer"
@@ -26,7 +29,7 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
         fill
         className="object-cover transition-transform duration-500 rounded-2xl group-hover:scale-110"
       />
-      { /* Overlay icon if it's Spain translation*/ }
+      { /* Overlay icon if it's Spain translation */ }
       {isSpain && (
         <div className="absolute top-2 right-2 w-6 h-6 rounded-md overflow-hidden shadow-md flex items-center justify-center z-0 animate-fade-in">
           <Image
@@ -46,6 +49,10 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
           <p className="font-medium text-amber-400 mb-0.5 uppercase tracking-wider text-[8px]">
             {noteTitle}
           </p>
+          {version_file && version_property && (
+              <div><VersionBadge url={version_file} property={version_property} /></div>
+            )}
+
           {notes && (<p className="italic text-slate-300">
             {notes}
           </p>)}

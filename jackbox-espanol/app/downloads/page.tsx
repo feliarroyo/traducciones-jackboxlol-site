@@ -294,6 +294,8 @@ export default function DownloadsPage() {
                                 isSpain={target.lang === "spain"}
                                 noteTitle={game.title}
                                 notes={target.notes}
+                                version_file={target.version_file}
+                                version_property={target.version_property}
                             />
                         ));
                     })}
