@@ -18,7 +18,7 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
   return (
     <a
       href={href}
-      target="_blank"
+      target="_self"
       rel="noreferrer"
       className="group relative bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold rounded-2xl border border-slate-700/80 shadow-lg transition-all hover:scale-105 active:scale-95 flex flex-col items-center justify-center gap-2 w-24 h-24 text-center"
     >
@@ -31,7 +31,7 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
       />
       { /* Overlay icon if it's Spain translation */ }
       {isSpain && (
-        <div className="absolute top-2 right-2 w-6 h-6 rounded-md overflow-hidden shadow-md flex items-center justify-center z-0 animate-fade-in">
+        <div className="absolute top-2 right-2 w-6 h-6 rounded-md overflow-hidden shadow-md flex items-center justify-center animate-fade-in">
           <Image
             src="/images/spain.webp" // Replace with your Spain flag asset path location
             alt="Variante de España"
