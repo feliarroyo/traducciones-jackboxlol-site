@@ -172,7 +172,7 @@ export default function DownloadsPage() {
                                 <button
                                     key={p}
                                     onClick={() => setPlatformFilter(p)}
-                                    className={`relative flex-1 py-1.5 rounded-lg capitalize transition-colors duration-200 z-10 ${platformFilter === p ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
+                                    className={`relative flex-1 py-1.5 rounded-lg capitalize transition-colors duration-200 z-0 ${platformFilter === p ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
                                 >
                                     {p === "win-linux" ? "Win/Linux" : p}
 
@@ -203,7 +203,7 @@ export default function DownloadsPage() {
                                     <button
                                         key={s}
                                         onClick={() => setStoreFilter(s)}
-                                        className={`relative flex-1 py-1.5 rounded-lg capitalize transition-colors duration-200 z-10 ${storeFilter === s ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
+                                        className={`relative flex-1 py-1.5 rounded-lg capitalize transition-colors duration-200 z-0 ${storeFilter === s ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
                                     >
                                         {s === "default" ? "Steam" : s === "epic" ? "Epic" : "MS Store"}
 
@@ -232,7 +232,7 @@ export default function DownloadsPage() {
                                 <button
                                     key={l.id}
                                     onClick={() => setLangFilter(l.id)}
-                                    className={`relative flex-1 py-1.5 rounded-lg transition-colors duration-200 z-10 ${langFilter === l.id ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
+                                    className={`relative flex-1 py-1.5 rounded-lg transition-colors duration-200 z-0 ${langFilter === l.id ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
                                 >
                                     {l.label}
                                     {/* Animation for Language */}
