@@ -5,6 +5,7 @@ import { DOWNLOADS_REGISTRY, ENG_DOWNLOADS_REGISTRY, EXTRA_DOWNLOADS_REGISTRY } 
 import GameDownloadButton from "../components/GameDownloadButton";
 import JackboxUtilityCard from "../components/JackboxUtilityCard";
 import { motion, AnimatePresence } from "framer-motion";
+import { getPatchReleaseDate } from "../lib/getBuildVersion";
 
 
 export default function DownloadsPage() {

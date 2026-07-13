@@ -1,27 +1,42 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getBuildVersion } from "../lib/getBuildVersion";
+import { getBuildVersion, getPatchReleaseDate } from "../lib/getBuildVersion";
 
 interface VersionBadgeProps {
   url: string;
   property: string;
+  patchUrl: string;
 }
 
-export default function VersionBadge({ url, property }: VersionBadgeProps) {
+export default function VersionBadge({ url, property, patchUrl }: VersionBadgeProps) {
   const [version, setVersion] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [date, setDate] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchVersion = async () => {
+    const fetchAllData = async () => {
+      setLoading(true);
       const noCacheUrl = `${url}?t=${Date.now()}`;
-      const result = await getBuildVersion(noCacheUrl, property);
-      setVersion(result);
-      setLoading(false);
+
+      try {
+        const [versionResult, dateResult] = await Promise.all([
+          getBuildVersion(noCacheUrl, property),
+          getPatchReleaseDate(patchUrl)
+        ]);
+
+        setVersion(versionResult);
+        setDate(dateResult);
+      } catch (error) {
+        console.error("Error al cargar los datos del parche:", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    fetchVersion();
-  }, [url, property]);
+    fetchAllData();
+  }, [url, property, patchUrl]);
+
 
   if (loading) {
     return <span className="text-slate-500 animate-pulse text-[10px] ml-2">Buscando versión...</span>;
@@ -31,7 +46,7 @@ export default function VersionBadge({ url, property }: VersionBadgeProps) {
 
   return (
     <span className="inline-block px-2 py-0.5 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[8px] rounded-full uppercase tracking-wider">
-      {version}
+      {version} ({date})
     </span>
   );
 }

@@ -50,7 +50,7 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
             {noteTitle}
           </p>
           {version_file && version_property && (
-              <div><VersionBadge url={version_file} property={version_property} /></div>
+              <div><VersionBadge url={version_file} property={version_property} patchUrl={href} /></div>
             )}
 
           {notes && (<p className="italic text-slate-300">
