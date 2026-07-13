@@ -14,7 +14,7 @@ export default function CreditCardList({ title, users }: CreditCardListProps) {
         >
             <div className="w-full">
                 {/* Centered Username */}
-                <h3 className="font-bold text-slate-100 text-sm text-center px-1 border-b border-slate-500/40 pb-2 mb-2">
+                <h3 className="font-bold text-slate-100 text-sm text-center px-1 border-b border-slate-300/40 pb-2 mb-2">
                     {title}
                 </h3>
                 {/* Contributions Matrix — Always Visible */}
