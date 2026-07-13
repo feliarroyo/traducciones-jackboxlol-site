@@ -68,7 +68,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         roles: [
             {
                 username: "Fixed Fun",
-                roles: ["Anfitrión"]
+                roles: ["Anfitrión", "Supervisión del doblaje", "Redacción del guion", "Recorte y ecualización del audio"]
             },
             {
                 username: "Rocío Benítez Blasco",
@@ -79,8 +79,16 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
                 roles: ["Cantante de jingles de Crédito Feroz"]
             },
             {
+                username: "Artuhaxis",
+                roles: ["Voz de jugador", "Transcripción de algunos diálogos originales"]
+            },
+            {
+                username: "What If?",
+                roles: ["Aporte de transcripción de diálogos originales"]
+            },
+            {
                 username: "Akira896, Artuhaxis, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
-                roles: ["Voces de subastadores"]
+                roles: ["Voces de jugadores"]
             },
         ]
     },
@@ -461,10 +469,18 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Voz de Kent el perro"],
+                roles: ["Voz de Kent el perro", "Redacción de guion (diálogos del tipo viejo)"],
             },
             {
-                username: "Mila Tapia, Artuhaxis y maritomomomemardo",
+                username: "Artuhaxis",
+                roles: ["Transcripción de diálogos", "Redacción de guion", "Voz de interno"],
+            },
+            {
+                username: "What If?",
+                roles: ["Transcripción de diálogos"],
+            },
+            {
+                username: "Mila Tapia y maritomomomemardo",
                 roles: ["Voces de internos"],
             },
         ]
@@ -479,11 +495,19 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
                 roles: ["Anfitriones (Shadow Master MC y DJ Raych)"]
             },
             {
-                username: "Artuhaxis",
-                roles: ["Voz de Gene"]
+                username: "Akira896",
+                roles: ["Supervisión del doblaje", "Transcripción de diálogos", "Redacción de guiones"]
             },
             {
-                username: "Trinidad González, Akira896, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
+                username: "Artuhaxis",
+                roles: ["Voz de Gene", "Redacción de guiones"]
+            },
+            {
+                username: "EinfachEddi (German Jackbox Translations)",
+                roles: ["Asistencia en transcripción de diálogos"]
+            },
+            {
+                username: "Trinidad González, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
                 roles: ["Voces de hinchada"]
             }
         ]
@@ -499,24 +523,14 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             {
                 username: "Ana Fernández",
                 roles: ["Cantante"]
-            }
-        ]
-    },
-        {
-        id: "drawfulanimate",
-        category: "comingSoon",
-        roles: [
-            {
-                username: "Mila Tapia",
-                roles: ["Anfitriona"]
             },
             {
                 username: "Akira896",
-                roles: ["Voz extra"]
+                roles: ["Supervisión del doblaje", "Transcripción de diálogos", "Traducción de subtítulos (usados como guion)"]
             },
             {
-                username: "Nahuel Guidi",
-                roles: ["Cantante"]
+                username: "Eleiber y Ker",
+                roles: ["Traducción de subtítulos (usados como guion)"]
             }
         ]
     },
@@ -531,6 +545,36 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             {
                 username: "???",
                 roles: ["Voz del fax"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Transcripción de diálogos", "Traducción de subtítulos (usados como guion)"]
+            },
+            {
+                username: "Artuhaxis y Pepe Pepo",
+                roles: ["Traducción de subtítulos (usados como guion)"]
+            },
+            {
+                username: "EinfachEddi (German Jackbox Translations)",
+                roles: ["Transcripción de diálogos"]
+            }
+        ]
+    },
+    {
+        id: "pollmine",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "María Eugenia Suárez",
+                roles: ["Anfitriona (Laverna Caverna)", "Cantante"]
+            },
+            {
+                username: "Erizzle (Team Gamechanger)",
+                roles: ["Transcripción de diálogos"]
+            },
+            {
+                username: "Hanzel Translations y Artuhaxis",
+                roles: ["Traducción de subtítulos (usados como guion)"]
             }
         ]
     },
@@ -545,4 +589,15 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             }
         ]
     },
+    {
+        id: "drawfulanimate",
+        details: "(canción)",
+        category: "comingSoonMinor",
+        roles: [
+            {
+                username: "Nahuel Guidi",
+                roles: ["Cantante"]
+            }
+        ]
+    }
 ];
