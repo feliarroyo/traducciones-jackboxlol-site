@@ -19,7 +19,7 @@ export default function CreditCardList({ title, users }: CreditCardListProps) {
                 <div className="flex flex-wrap gap-5 items-center justify-center">
                     {users.map((user, idx) => (
                         <div key={user} className="text-[11px] text-center">
-                            <span className="text-slate-400 font-semibold">
+                            <span className="text-amber-400 font-semibold">
                                 {user}
                             </span>
                         </div>
