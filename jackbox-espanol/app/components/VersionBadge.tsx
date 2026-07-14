@@ -46,7 +46,7 @@ export default function VersionBadge({ url, property, patchUrl }: VersionBadgePr
 
   return (
     <span className="inline-block px-2 py-0.5 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[8px] rounded-full uppercase tracking-wider">
-      {version} ({date})
+      {version} {date && `(${date})`}
     </span>
   );
 }
