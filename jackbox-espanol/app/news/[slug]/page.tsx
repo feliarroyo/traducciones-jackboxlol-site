@@ -33,11 +33,11 @@ export default async function IndividualPostPage({ params }: PostPageProps) {
       )}
 
       {/* ARTICLE METADATA PANEL */}
-      <div className="space-y-3 border-b border-slate-800/60 pb-6">
+      <div className="space-y-3 border-b border-slate-500/60 pb-4">
         <h1 className="text-3xl md:text-4xl font-black text-slate-100 tracking-tight">
           {metadata.title}
         </h1>
-        <p className="text-xs text-slate-500">
+        <p className="text-xs font-semibold text-slate-400">
           Publicado el {new Date(metadata.date).toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" })}
         </p>
       </div>
