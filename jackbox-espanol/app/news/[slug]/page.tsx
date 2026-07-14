@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "../../lib/markdownParser";
 import Image from "next/image";
+import BackButton from "@/app/components/BackButton";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
@@ -11,13 +12,14 @@ export default async function IndividualPostPage({ params }: PostPageProps) {
   const post = await getPostBySlug(resolvedParams.slug);
 
   if (!post) {
-    notFound(); // Triggers your standard 404 handler gracefully
+    notFound();
   }
 
   const { metadata, htmlContent } = post;
 
   return (
     <article className="max-w-3xl mx-auto py-8 space-y-6">
+      <BackButton />
       {/* 📸 HERO FEATURED IMAGE */}
       {metadata.image && (
         <div className="w-full h-48 md:h-80 relative rounded-3xl overflow-hidden bg-slate-950/40 border border-slate-800/80 shadow-2xl">
@@ -43,7 +45,6 @@ export default async function IndividualPostPage({ params }: PostPageProps) {
       </div>
 
       {/* RENDER DYNAMIC MARKDOWN BODY CONTENTS */}
-      {/* Tailwind's 'prose' layer handles styling raw HTML markup strings beautifully */}
       <div 
         className="prose prose-invert prose-amber max-w-none text-slate-300 text-sm md:text-base leading-relaxed space-y-4
           prose-headings:text-slate-100 prose-headings:font-extrabold prose-headings:tracking-tight

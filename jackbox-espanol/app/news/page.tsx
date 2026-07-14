@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllNewsPosts } from "../lib/markdownParser";
+import NewsLink from "../components/NewsLink";
 
 export default function NewsHubPage() {
     const posts = getAllNewsPosts();
@@ -33,42 +34,42 @@ export default function NewsHubPage() {
                                 {/* Conditional Thumbnail Box */}
                                 {post.image && (
                                     <div className="w-full aspect-video relative bg-slate-900 shrink-0 border-b border-slate-800/50 overflow-hidden">
-                                        <Link href={`/news/${post.slug}`} className="relative block w-full h-full">
-                                            <Image
-                                                src={post.image}
-                                                alt={post.title}
-                                                fill
-                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 440px"
-                                                className="object-cover"
-                                            />
-                                        </Link>
+                                        <NewsLink href={`/news/${post.slug}`} className="relative block w-full h-full">
+                                                <Image
+                                                    src={post.image}
+                                                    alt={post.title}
+                                                    fill
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 440px"
+                                                    className="object-cover"
+                                                />
+                                        </NewsLink>
                                     </div>
-                                )}
+                        )}
 
-                                {/* Post Metadata Text Elements */}
-                                <div className="flex-1 flex flex-col justify-between space-y-4 p-4">
-                                    <div className="space-y-2">
-                                        <h2 className="text-xl font-bold text-slate-100 hover:text-amber-400 transition-colors">
-                                            <Link href={`/news/${post.slug}`}>
-                                                {post.title}
-                                            </Link>
-                                        </h2>
-                                        <div className="flex items-center gap-3 text-xs">
-                                            <span className="font-semibold text-slate-400">
-                                                {new Date(post.date).toLocaleDateString("es-ES", {
-                                                    year: "numeric",
-                                                    month: "long",
-                                                    day: "numeric",
-                                                })}
-                                            </span>
-                                        </div>
-                                    </div>
+                        {/* Post Metadata Text Elements */}
+                        <div className="flex-1 flex flex-col justify-between space-y-4 p-4">
+                            <div className="space-y-2">
+                                <h2 className="text-xl font-bold text-slate-100 hover:text-amber-400 transition-colors">
+                                    <Link href={`/news/${post.slug}`}>
+                                        {post.title}
+                                    </Link>
+                                </h2>
+                                <div className="flex items-center gap-3 text-xs">
+                                    <span className="font-semibold text-slate-400">
+                                        {new Date(post.date).toLocaleDateString("es-ES", {
+                                            year: "numeric",
+                                            month: "long",
+                                            day: "numeric",
+                                        })}
+                                    </span>
                                 </div>
-                            </article>
-                        ))}
-                    </div>
-                )}
+                            </div>
+                        </div>
+                    </article>
+                ))}
             </div>
+                )}
         </div>
+        </div >
     );
 }
