@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { GAME_ASSETS } from "../data/gameRegistry";
 import { createPortal } from "react-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 // 🏷️ Define the strict TypeScript shape for the Admin data structure
 interface CreditCardAdminProps {
@@ -88,80 +89,95 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
       </div>
 
       {/* Overlay Modal */}
-      {isOpen && mounted && createPortal((
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
-          onClick={() => setIsOpen(false)}
-        >
-          <div
-            className="bg-slate-900 border border-slate-800 w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-              <div className="flex items-center gap-4">
-                {admin.avatarUrl !== undefined && (
-                  <div className="w-12 h-12 relative rounded-xl overflow-hidden border border-amber-500/20 bg-slate-950">
-                    <Image src={admin.avatarUrl} alt={admin.username} fill sizes="48px" className="object-cover" />
-                  </div>
-                )}
-                <h3 className="flex flex-col text-2xl font-black">
-                  {admin.profileUrl ? (
-                    <a href={admin.profileUrl} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">
-                      {admin.username}
-                    </a>
-                  ) : (
-                    <span className="text-amber-400">{admin.username}</span>
-                  )}
-                  {/* TAGS */}
-                  {admin.tags && admin.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 uppercase tracking-wider">
-                      {tag}
-                    </span>
-                  ))}
-                </h3>
-
-              </div>
-
-              <button
-                onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 text-lg transition-colors"
+      {mounted && createPortal(
+        <AnimatePresence mode="wait"> {/* 🎯 Añadido mode="wait" para estabilizar el ciclo de vida */}
+          {isOpen && (
+            // 🖤 FONDO OSCURO (Fades In / Fades Out)
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
+              onClick={() => setIsOpen(false)}
+            >
+              {/* 📦 TARJETA DEL MODAL */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 15 }}
+                transition={{ type: "spring", duration: 0.4, bounce: 0.15 }}
+                className="bg-slate-900 border border-slate-800 w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
               >
-                ✕
-              </button>
-            </div>
-
-            {/* Roles Matrix content */}
-            <div className="space-y-6 pr-2">
-              {admin.roles.map((role, idx) => (
-                <div key={idx} className="space-y-3">
-                  <h4 className="text-xs font-black uppercase tracking-widest text-slate-400 border-l-2 border-amber-500/50 pl-2">
-                    {role.roleName}
-                  </h4>
-
-                  {role.games && (
-                    <div className="flex flex-wrap gap-3 items-center bg-slate-950/40 p-3 rounded-xl border border-slate-800/40">
-                      {role.games.map((game, gIdx) => (
-                        <div key={gIdx} className="w-28 h-14 relative shrink-0" title={GAME_ASSETS[game]?.alt}>
-                          <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill sizes="112px" className="object-contain" />
-                        </div>
+                {/* Modal Header */}
+                <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+                  <div className="flex items-center gap-4">
+                    {admin.avatarUrl !== undefined && (
+                      <div className="w-12 h-12 relative rounded-xl overflow-hidden border border-amber-500/20 bg-slate-950">
+                        <Image src={admin.avatarUrl} alt={admin.username} fill sizes="48px" className="object-cover" />
+                      </div>
+                    )}
+                    <h3 className="flex flex-col text-2xl font-black">
+                      {admin.profileUrl ? (
+                        <a href={admin.profileUrl} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">
+                          {admin.username}
+                        </a>
+                      ) : (
+                        <span className="text-amber-400">{admin.username}</span>
+                      )}
+                      {/* TAGS */}
+                      {admin.tags && admin.tags.map((tag, tIdx) => (
+                        <span key={tIdx} className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 uppercase tracking-wider">
+                          {tag}
+                        </span>
                       ))}
-                    </div>
-                  )}
+                    </h3>
 
-                  {role.textNotes && (
-                    <ul className="list-disc pl-5 text-sm text-slate-300 space-y-1">
-                      {role.textNotes.map((note, nIdx) => (
-                        <li key={nIdx} className="leading-relaxed">{note}</li>
-                      ))}
-                    </ul>
-                  )}
+                  </div>
+
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 text-lg transition-colors"
+                  >
+                    ✕
+                  </button>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      ), document.body)}
+
+                {/* Roles Matrix content */}
+                <div className="space-y-6 pr-2">
+                  {admin.roles.map((role, idx) => (
+                    <div key={idx} className="space-y-3">
+                      <h4 className="text-xs font-black uppercase tracking-widest text-slate-400 border-l-2 border-amber-500/50 pl-2">
+                        {role.roleName}
+                      </h4>
+
+                      {role.games && (
+                        <div className="flex flex-wrap gap-3 items-center bg-slate-950/40 p-3 rounded-xl border border-slate-800/40">
+                          {role.games.map((game, gIdx) => (
+                            <div key={gIdx} className="w-28 h-14 relative shrink-0" title={GAME_ASSETS[game]?.alt}>
+                              <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill sizes="112px" className="object-contain" />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {role.textNotes && (
+                        <ul className="list-disc pl-5 text-sm text-slate-300 space-y-1">
+                          {role.textNotes.map((note, nIdx) => (
+                            <li key={nIdx} className="leading-relaxed">{note}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 }
