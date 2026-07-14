@@ -54,7 +54,7 @@ export default function NewsHubPage() {
                                             </Link>
                                         </h2>
                                         <div className="flex items-center gap-3 text-xs">
-                                            <span className="text-slate-500 font-medium">
+                                            <span className="font-semibold text-slate-400">
                                                 {new Date(post.date).toLocaleDateString("es-ES", {
                                                     year: "numeric",
                                                     month: "long",
