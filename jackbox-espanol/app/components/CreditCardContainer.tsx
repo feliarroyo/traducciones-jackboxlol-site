@@ -42,18 +42,18 @@ export default function CreditCardContainer({
           </p>
         )}
       </div>
-      <div className="flex flex-col flex-wrap gap-4 w-full mx-auto">
+      <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full mx-auto">
         {data.map((pack, idx) => (
           <div key={idx} className="flex flex-col gap-4 w-full">
             {pack.isText && (
-              <h3 className="text-xl font-bold text-slate-400 pb-2 mb-2">
+              <h3 className="text-xl text-center sm:text-left font-bold text-slate-400 pb-2 mb-2">
                 {pack.packId}
               </h3>
             )}
-            <div className="flex flex-row flex-wrap gap-4 justify-center w-full mx-auto">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start flex-wrap gap-4 justify-center w-full mx-auto">
               {!pack.isText && (
                 <div className="pb-4">
-                  {<Image src={`/images/buttons/${pack.packId}.webp`} alt={pack.packId} width={96} height={96} className="group relative bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold rounded-2xl border border-slate-700/80 shadow-lg transition-all hover:scale-105 flex flex-col items-start justify-center gap-2 w-18 h-18 text-center" />}
+                  {<Image src={`/images/buttons/${pack.packId}.webp`} alt={pack.packId} width={96} height={96} className="group relative bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold rounded-2xl border border-slate-700/80 shadow-lg transition-all hover:scale-105 flex flex-col sm:flex-row items-center sm:items-start justify-center gap-2 w-18 h-18 text-center" />}
                 </div>)
               }
               {pack.games.map((game) =>

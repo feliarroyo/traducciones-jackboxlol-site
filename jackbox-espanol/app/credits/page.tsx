@@ -85,7 +85,7 @@ export default function CreditsPage() {
                 </h2>
 
               </div>
-              <div className="flex flex-row gap-6 justify-center items-center w-full mx-auto">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full mx-auto">
                 <CreditCardText extras={CREDITS_REGISTRY_EXTRAS} />
                 <CreditCardList
                   title="Donaciones para mantener el dominio"
@@ -94,11 +94,6 @@ export default function CreditsPage() {
                 />
               </div>
             </section>
-
-
-
-
-
           </>
         ) : (
           <>
