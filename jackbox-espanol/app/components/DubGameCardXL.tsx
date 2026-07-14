@@ -6,6 +6,7 @@ import Image from "next/image";
 import { GAME_ASSETS } from "../data/gameRegistry";
 import { DubCreditItem } from "../data/dubCreditsRegistry";
 import { createPortal } from "react-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface DubGameCardXLProps {
     game: DubCreditItem;
@@ -86,45 +87,66 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
             </div>
 
             {/* 🚀 CAST OVERLAY MODAL LIST WINDOW */}
-            {isOpen && mounted && createPortal((
-                <div className="text-center fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md" onClick={() => setIsOpen(false)}>
-                    <div className="bg-slate-900 border border-slate-800 w-full max-w-lg max-h-[75vh] overflow-y-auto rounded-3xl p-6 space-y-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            {mounted && createPortal(
+                <AnimatePresence mode="wait"> {/* 🎯 Añadido mode="wait" para estabilizar el ciclo de vida */}
+                    {isOpen && (
+                        // 🖤 FONDO OSCURO (Fades In / Fades Out)
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {/* 📦 TARJETA DEL MODAL */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9, y: 15 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.9, y: 15 }}
+                                transition={{ type: "spring", duration: 0.4, bounce: 0.15 }}
+                                className="bg-slate-900 border border-slate-800 w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl"
+                                onClick={(e) => e.stopPropagation()}
+                            >
 
-                        {/* Modal Header */}
-                        <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                            <div className="flex items-center gap-3">
-                                <div className="w-20 h-10 relative">
-                                    <Image src={asset.src} alt={asset.alt} fill sizes="80px" className="object-contain" />
-                                </div>
-                                <h3 className="text-lg font-black text-amber-400 uppercase tracking-wider pl-2 border-l border-slate-800">
-                                    Créditos de doblaje
-                                </h3>
-                            </div>
-                            <button onClick={() => setIsOpen(false)} className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition-colors">✕</button>
-                        </div>
-
-                        {/* Loop Over All Contributed Talent/Roles for this specific game */}
-                        <div className="space-y-4 divider-y divider-slate-800">
-                            {game.roles.map((actor, idx) => (
-                                <div key={idx} className="flex flex-col gap-1">
-                                    <div className="flex items-center justify-center gap-2 flex-wrap">
-                                        <span className="font-bold text-slate-100 text-sm">{actor.username instanceof Array ? actor.username.join(" y ") : actor.username}</span>
-                                        {actor.tags && actor.tags.map((t, tIdx) => (
-                                            <span key={tIdx} className="text-[8px] font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 uppercase">{t}</span>
-                                        ))}
+                                {/* Modal Header */}
+                                <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-20 h-10 relative">
+                                            <Image src={asset.src} alt={asset.alt} fill sizes="80px" className="object-contain" />
+                                        </div>
+                                        <h3 className="text-lg font-black text-amber-400 uppercase tracking-wider pl-2 border-l border-slate-800">
+                                            Créditos de doblaje
+                                        </h3>
                                     </div>
-                                    {actor.roles.map((role, rIdx) => (
-                                        <p key={rIdx} className="text-xs text-slate-400 italic leading-relaxed">
-                                            {role}
-                                        </p>
+                                    <button onClick={() => setIsOpen(false)} className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition-colors">✕</button>
+                                </div>
+
+                                {/* Loop Over All Contributed Talent/Roles for this specific game */}
+                                <div className="text-center space-y-4 divider-y divider-slate-800">
+                                    {game.roles.map((actor, idx) => (
+                                        <div key={idx} className="flex flex-col gap-1">
+                                            <div className="flex items-center justify-center gap-2 flex-wrap">
+                                                <span className="font-bold text-slate-100 text-sm">{actor.username instanceof Array ? actor.username.join(" y ") : actor.username}</span>
+                                                {actor.tags && actor.tags.map((t, tIdx) => (
+                                                    <span key={tIdx} className="text-[8px] font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 uppercase">{t}</span>
+                                                ))}
+                                            </div>
+                                            {actor.roles.map((role, rIdx) => (
+                                                <p key={rIdx} className="text-xs text-slate-400 italic leading-relaxed">
+                                                    {role}
+                                                </p>
+                                            ))}
+                                        </div>
                                     ))}
                                 </div>
-                            ))}
-                        </div>
 
-                    </div>
-                </div>
-            ), document.body)}
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </>
     );
 }
