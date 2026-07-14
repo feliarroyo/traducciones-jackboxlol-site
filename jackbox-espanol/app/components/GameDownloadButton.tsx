@@ -27,6 +27,7 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
         src={imageSrc}
         alt={altText}
         fill
+        sizes="96px"
         className="object-cover transition-transform duration-500 rounded-2xl group-hover:scale-110"
       />
       { /* Overlay icon if it's Spain translation */ }

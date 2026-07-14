@@ -18,7 +18,7 @@ export default function SinglePackShowcase({
                         key={index}
                         className="w-28 h-20 relative transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
                     >
-                        <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain" draggable={false}/>
+                        <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill sizes="112px" className="object-contain" draggable={false}/>
                     </div>
                 ))}
             </div>

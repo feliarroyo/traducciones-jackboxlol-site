@@ -72,11 +72,11 @@ export default function RootLayout({
             <span>
               <Image
                 src="/images/money.svg"
-                alt="Mascota de Jackbox asomándose desde una caja"
+                alt="Personaje billete de Patentes Dementes saltando alegremente"
                 width={40}
                 height={40}
                 priority={true}
-                className="object-contain drop-shadow-[0_10px_20px_rgba(245,158,11,0.15)]"
+                className="object-contain h-auto drop-shadow-[0_10px_20px_rgba(245,158,11,0.15)]"
               />
             </span>
             <span>Donar</span>

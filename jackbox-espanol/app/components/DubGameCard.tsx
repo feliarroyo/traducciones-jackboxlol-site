@@ -1,5 +1,3 @@
-// src/components/DubGameCard.tsx
-import React from "react";
 import Image from "next/image";
 import { GAME_ASSETS } from "../data/gameRegistry";
 import { DubCreditItem } from "../data/dubCreditsRegistry";
@@ -17,7 +15,7 @@ export default function DubGameCard({ game }: DubGameCardProps) {
             {/* Game Logo Header */}
             <div className="w-full border-b border-slate-500/40 pb-2 mb-2">
                 <div className="w-full h-16 relative shrink-0 mt-2 justify-center">
-                    <Image src={asset.src} alt={asset.alt} fill className="object-contain" />
+                    <Image src={asset.src} alt={asset.alt} fill sizes="(max-width: 640px) 50vw, 192px" className="object-contain" />
                 </div>
                 {/* Game Details if available */}
                 {game.details && (

@@ -29,6 +29,7 @@ export default function CreditCard({ user }: CreditCardProps) {
                             src={user.avatarUrl}
                             alt={user.username}
                             fill
+                            sizes="96px"
                             className="object-cover"
                         />
                     </div>
@@ -86,7 +87,7 @@ export default function CreditCard({ user }: CreditCardProps) {
                                 <div className="flex flex-wrap gap-2 items-center justify-center mt-1.5">
                                     {role.games.map((game, gIdx) => (
                                         <div key={gIdx} className="w-28 h-14 relative shrink-0" title={GAME_ASSETS[game]?.alt}>
-                                            <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain" />
+                                            <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill sizes="112px" className="object-contain" />
                                         </div>
                                     ))}
                                 </div>

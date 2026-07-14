@@ -50,6 +50,7 @@ export default function JackboxUtility({
                 src={src}
                 alt={`Previsualización de Jackbox Utility ${idx + 1}`}
                 fill
+                sizes="(max-width: 768px) 100vw, 576px"
                 priority={idx === 0} // High priority only on the initial frame load
                 className="object-cover drop-shadow-2xl scale-full group-hover:scale-100 transition-transform duration-500"
               />

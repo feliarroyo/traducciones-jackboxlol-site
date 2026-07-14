@@ -28,7 +28,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                 {/* Game Logo Container */}
                 <div className="w-full">
                     <div className="w-full h-16 relative shrink-0 mt-2 justify-center">
-                        <Image src={asset.src} alt={asset.alt} fill className="object-contain" />
+                        <Image src={asset.src} alt={asset.alt} fill sizes="(max-width: 640px) 100vw, 300px" className="object-contain" />
                     </div>
                     {/* Game Details if available */}
                     {game.details && (
@@ -94,7 +94,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                         <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                             <div className="flex items-center gap-3">
                                 <div className="w-20 h-10 relative">
-                                    <Image src={asset.src} alt={asset.alt} fill className="object-contain" />
+                                    <Image src={asset.src} alt={asset.alt} fill sizes="80px" className="object-contain" />
                                 </div>
                                 <h3 className="text-lg font-black text-amber-400 uppercase tracking-wider pl-2 border-l border-slate-800">
                                     Créditos de doblaje

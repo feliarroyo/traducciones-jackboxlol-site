@@ -39,6 +39,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
                 src={admin.avatarUrl}
                 alt={admin.username}
                 fill
+                sizes="80px"
                 className="object-cover"
               />
             </div>
@@ -101,7 +102,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
               <div className="flex items-center gap-4">
                 {admin.avatarUrl !== undefined && (
                   <div className="w-12 h-12 relative rounded-xl overflow-hidden border border-amber-500/20 bg-slate-950">
-                    <Image src={admin.avatarUrl} alt={admin.username} fill className="object-cover" />
+                    <Image src={admin.avatarUrl} alt={admin.username} fill sizes="48px" className="object-cover" />
                   </div>
                 )}
                 <h3 className="flex flex-col text-2xl font-black">
@@ -142,7 +143,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
                     <div className="flex flex-wrap gap-3 items-center bg-slate-950/40 p-3 rounded-xl border border-slate-800/40">
                       {role.games.map((game, gIdx) => (
                         <div key={gIdx} className="w-28 h-14 relative shrink-0" title={GAME_ASSETS[game]?.alt}>
-                          <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill className="object-contain" />
+                          <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill sizes="112px" className="object-contain" />
                         </div>
                       ))}
                     </div>

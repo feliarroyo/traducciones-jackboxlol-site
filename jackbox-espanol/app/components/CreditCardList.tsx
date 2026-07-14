@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import { GAME_ASSETS } from "../data/gameRegistry";
 
 interface CreditCardListProps {
     title: string;

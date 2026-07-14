@@ -33,11 +33,12 @@ export default function NewsHubPage() {
                                 {/* Conditional Thumbnail Box */}
                                 {post.image && (
                                     <div className="w-full aspect-video relative bg-slate-900 shrink-0 border-b border-slate-800/50 overflow-hidden">
-                                        <Link href={`/news/${post.slug}`}>
+                                        <Link href={`/news/${post.slug}`} className="relative block w-full h-full">
                                             <Image
                                                 src={post.image}
                                                 alt={post.title}
                                                 fill
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 440px"
                                                 className="object-cover"
                                             />
                                         </Link>
