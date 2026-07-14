@@ -16,7 +16,8 @@ export async function getBuildVersion(url: string, property: string): Promise<st
     const jsonData = JSON.parse(textContent);
 
     // Return property value, or null if it doesn't exist
-    return jsonData[property] || null;
+    const trimmedData = jsonData[property]?.replace("Build: ", "")
+    return trimmedData || null;
 
   } catch (error) {
     console.error("Error al obtener la versión de build:", error);
