@@ -4,7 +4,7 @@ import { useState } from "react";
 import { DOWNLOADS_REGISTRY, ENG_DOWNLOADS_REGISTRY, EXTRA_DOWNLOADS_REGISTRY } from "../data/downloadRegistry";
 import GameDownloadButton from "../components/GameDownloadButton";
 import JackboxUtilityCard from "../components/JackboxUtilityCard";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { getPatchReleaseDate } from "../lib/getBuildVersion";
 
 
@@ -90,7 +90,7 @@ export default function DownloadsPage() {
 
                 {/* DYNAMIC INSTRUCTION ACCORDION AREA */}
                 <div className="w-full max-w-2xl mx-auto mb-4 flex flex-col items-center">
-                    
+
                     {/* INSTRUCTION BUTTON */}
                     <motion.button
                         onClick={() => setShowInstructions(!showInstructions)}
@@ -132,7 +132,7 @@ export default function DownloadsPage() {
                                     transition: {
                                         duration: animationOpen,
                                         ease: "easeOut",
-                                        delay: animationOpen/3
+                                        delay: animationOpen / 3
                                     }
                                 }}
                                 exit={{
@@ -163,7 +163,7 @@ export default function DownloadsPage() {
                 </div>
 
                 {/* THREE INTERACTIVE TOGGLE BARS */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-950/40 p-4 rounded-2xl border border-slate-800/80 text-xs font-bold">
+                <LayoutGroup><div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-950/40 p-4 rounded-2xl border border-slate-800/80 text-xs font-bold">
 
                     {/* PLATFORM TOGGLE */}
                     <div className="space-y-2">
@@ -250,6 +250,7 @@ export default function DownloadsPage() {
                     </div>
 
                 </div>
+                </LayoutGroup>
 
                 {/* DATA GRID DRAWER ELEMENT */}
                 <div className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
@@ -301,15 +302,15 @@ export default function DownloadsPage() {
                         ));
                     })}
                 </div>
-            </section>
+            </section >
             {/* OTHER DOWNLOADS */}
-            <section className="mt-8">
+            < section className="mt-8" >
                 <div className="space-y-2">
                     <h2 className="text-center text-3xl font-black text-amber-400">Descargas adicionales</h2>
                     <p className="text-center text-sm text-slate-400">El contenido de estas descargas debe instalarse <b>luego de instalar o actualizar los parches de traducción correspondientes</b>.
                     </p>
                 </div>
-            </section>
+            </section >
             <section className="mt-8">
                 <div className="space-y-2">
                     <h3 className="text-center text-2xl font-black text-amber-400">Voces en inglés</h3>
@@ -354,7 +355,7 @@ export default function DownloadsPage() {
                     })}
                 </div>
             </section>
-        </div>
+        </div >
 
     );
 }
