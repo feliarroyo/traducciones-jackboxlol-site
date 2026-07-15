@@ -49,7 +49,7 @@ export default async function IndividualPostPage({ params }: PostPageProps) {
         className="prose prose-invert prose-amber max-w-none text-slate-300 text-sm md:text-base leading-relaxed space-y-4
           prose-headings:text-slate-100 prose-headings:font-extrabold prose-headings:tracking-tight
           prose-strong:text-amber-400 prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline
-          prose-ul:list-disc prose-ul:pl-5 prose-ol:list-decimal prose-ol:pl-5"
+          prose-ul:list-disc prose-ul:marker:text-slate-300 prose-ul:pl-5 prose-ol:list-decimal prose-ol:pl-5"
         dangerouslySetInnerHTML={{ __html: htmlContent }} 
       />
 
