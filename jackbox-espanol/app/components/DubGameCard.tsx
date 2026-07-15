@@ -10,7 +10,7 @@ export default function DubGameCard({ game }: DubGameCardProps) {
     const asset = GAME_ASSETS[game.id as string] || { src: "/images/placeholder.png", alt: game.id };
 
     return (
-        <div className="w-[calc(50%-12px)] sm:w-44 md:w-48 shrink-0 aspect-square bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center justify-evenly text-center backdrop-blur-sm transition-all duration-300 hover:border-amber-500/30 group">
+        <div className="w-[calc(50%-12px)] sm:w-44 md:w-48 shrink-0 aspect-square bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center justify-evenly text-center md:backdrop-blur-sm transition-all duration-300 hover:border-amber-500/30 group">
 
             {/* Game Logo Header */}
             <div className="w-full border-b border-slate-500/40 pb-2 mb-2">

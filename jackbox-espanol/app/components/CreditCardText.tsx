@@ -17,7 +17,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <div className="flex bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 items-center justify-center gap-4 backdrop-blur-sm text-center transition-all duration-300 hover:border-amber-500/30 group">
+      <div className="flex bg-slate-950/40 border border-slate-800/80 rounded-3xl p-6 items-center justify-center gap-4 md:backdrop-blur-sm text-center transition-all duration-300 hover:border-amber-500/30 group">
 
         {/* Game Logo Container */}
         <div>
@@ -38,7 +38,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 md:backdrop-blur-md"
               onClick={() => setIsOpen(false)}
             >
               {/* 📦 TARJETA DEL MODAL */}

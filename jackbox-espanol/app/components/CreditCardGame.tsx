@@ -19,7 +19,7 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <div className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center justify-center gap-2 backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group">
+      <div className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center justify-center gap-2 md:backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group">
 
         {/* Game Logo Container */}
         <div className="flex flex-col w-full">
@@ -61,7 +61,7 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 md:backdrop-blur-md"
               onClick={() => setIsOpen(false)}
             >
               {/* 📦 TARJETA DEL MODAL */}

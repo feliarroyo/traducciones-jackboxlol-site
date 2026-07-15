@@ -24,7 +24,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
     return (
         <>
             {/* 🟦 MAIN GAME SQUARE CARD */}
-            <div className="shrink-0 aspect-square bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center py-4 justify-between text-center backdrop-blur-sm transition-all duration-300 hover:border-amber-500/30 group">
+            <div className="shrink-0 aspect-square bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center py-4 justify-between text-center md:backdrop-blur-sm transition-all duration-300 hover:border-amber-500/30 group">
 
                 {/* Game Logo Container */}
                 <div className="w-full">
@@ -96,7 +96,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.25, ease: "easeInOut" }}
-                            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
+                            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 md:backdrop-blur-md"
                             onClick={() => setIsOpen(false)}
                         >
                             {/* 📦 TARJETA DEL MODAL */}

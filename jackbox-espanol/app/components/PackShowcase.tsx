@@ -15,7 +15,7 @@ export default function PackShowcase({
 }: PackShowcaseProps) {
     return (
         <div
-            className="min-w-50 bg-slate-950/30 border border-slate-800/60 rounded-3xl p-6 flex flex-col items-center justify-center gap-4 backdrop-blur-sm transition-all duration-300 hover:border-slate-700/60"
+            className="min-w-50 bg-slate-950/30 border border-slate-800/60 rounded-3xl p-6 flex flex-col items-center justify-center gap-4 md:backdrop-blur-sm transition-all duration-300 hover:border-slate-700/60"
         >
 
             {/* PACK ICON */}

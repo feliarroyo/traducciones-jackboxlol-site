@@ -13,7 +13,7 @@ export default function FaqItem({ question, answer }: FaqItemProps) {
 
   return (
     <div
-      className={`bg-slate-950/30 border border-slate-800/60 rounded-2xl overflow-hidden backdrop-blur-sm transition-all duration-300 ${
+      className={`bg-slate-950/30 border border-slate-800/60 rounded-2xl overflow-hidden md:backdrop-blur-sm transition-all duration-300 ${
         isOpen ? "border-amber-500/30 bg-slate-950/50" : ""
       }`}
     >

@@ -36,7 +36,7 @@ export default function RootLayout({
         </div>
 
         {/* HEADER */}
-        <header className="sticky top-0 z-50 bg-indigo-950/60 backdrop-blur-md border-b border-indigo-800 px-6 py-4 flex items-center justify-between">
+        <header className="sticky top-0 z-50 bg-indigo-950/60 md:backdrop-blur-md border-b border-indigo-800 px-6 py-4 flex items-center justify-between">
           {/* Header Title */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl hover:opacity-90 transition-opacity">
             <span className="text-2xl">

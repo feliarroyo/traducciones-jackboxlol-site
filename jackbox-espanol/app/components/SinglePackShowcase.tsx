@@ -10,7 +10,7 @@ export default function SinglePackShowcase({
     gameLogos
 }: SinglePackShowcaseProps) {
     return (
-        <div className="flex-initial min-w-50 bg-slate-950/30 border border-slate-800/60 rounded-3xl p-6 flex items-center gap-4 backdrop-blur-sm transition-all duration-300 hover:border-slate-700/60">
+        <div className="flex-initial min-w-50 bg-slate-950/30 border border-slate-800/60 rounded-3xl p-6 flex items-center gap-4 md:backdrop-blur-sm transition-all duration-300 hover:border-slate-700/60">
             {/* INNER GAME LOGOS ROW */}
             <div className="flex flex-row items-center justify-center gap-6 w-full py-2">
                 {gameLogos.map((game, index) => (

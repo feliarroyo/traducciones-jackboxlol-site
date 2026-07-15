@@ -32,7 +32,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <div className="relative overflow-hidden bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center justify-between gap-3 backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group w-full h-full">
+      <div className="relative overflow-hidden bg-slate-950/40 border border-slate-800/80 rounded-3xl p-4 flex flex-col items-center justify-between gap-3 md:backdrop-blur-sm aspect-square text-center transition-all duration-300 hover:border-amber-500/30 group w-full h-full">
         <div className="flex flex-col items-center gap-2 w-full flex-1 justify-center">
           {admin.avatarUrl && (
             <div className="w-20 h-20 relative rounded-2xl overflow-hidden border-2 border-amber-500/10 bg-slate-900 group-hover:border-amber-500/30 transition-colors shrink-0">
@@ -98,7 +98,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 ,md:backdrop-blur-md"
               onClick={() => setIsOpen(false)}
             >
               {/* 📦 TARJETA DEL MODAL */}
