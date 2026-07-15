@@ -7,6 +7,7 @@ interface GameDownloadButtonProps {
   href: string;
   altText: string;
   imageSrc: string;
+  isAdaptation?: boolean;
   isSpain?: boolean;
   noteTitle?: string;
   notes?: string;
@@ -14,7 +15,7 @@ interface GameDownloadButtonProps {
   version_property?: string;
 }
 
-export default function GameDownloadButton({ href, altText, imageSrc, isSpain = false, noteTitle, notes, version_file, version_property }: GameDownloadButtonProps) {
+export default function GameDownloadButton({ href, altText, imageSrc, isAdaptation = false,isSpain = false, noteTitle, notes, version_file, version_property }: GameDownloadButtonProps) {
   return (
     <a
       href={href}
@@ -36,6 +37,18 @@ export default function GameDownloadButton({ href, altText, imageSrc, isSpain = 
           <Image
             src="/images/spain.webp" // Replace with your Spain flag asset path location
             alt="Variante de España"
+            width={36}
+            height={24}
+            className="object-contain w-full h-full"
+          />
+        </div>
+      )}
+      { /* Overlay icon if it's Spain translation */ }
+      {isAdaptation && (
+        <div className="absolute top-2 right-2 w-6 h-6 rounded-md overflow-hidden shadow-md flex items-center justify-center animate-fade-in">
+          <Image
+            src="/images/latam.webp" // Replace with your Latin America flag asset path location
+            alt="Variante latinoamericana"
             width={36}
             height={24}
             className="object-contain w-full h-full"

@@ -14,6 +14,7 @@ export interface GameRegistryItem {
     title: string;
     imageSrc: string;
     hasSpain?: boolean;
+    hasAdaptation?: boolean;
     targets: DownloadTarget[];
 }
 
@@ -517,6 +518,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         title: "Quiplash 2 InterLASHional",
         imageSrc: "/images/buttons/interlashional.webp",
         hasSpain: true,
+        hasAdaptation: true,
         targets: [
             {
                 name: "Default",
@@ -545,6 +547,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         title: "Drawful 2",
         imageSrc: "/images/buttons/drawful2.webp",
         hasSpain: true,
+        hasAdaptation: true,
         targets: [
             {
                 name: "Default",

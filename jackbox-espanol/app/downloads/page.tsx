@@ -293,6 +293,7 @@ export default function DownloadsPage() {
                                 // Pass the game or pack image asset down instead of text labels
                                 imageSrc={game.imageSrc || "/images/covers/default-pack.webp"}
                                 altText={`Descargar parche para ${game.title}`}
+                                isAdaptation={target.lang === "latam" && game.hasAdaptation}
                                 isSpain={target.lang === "spain"}
                                 noteTitle={game.title}
                                 notes={target.notes}
