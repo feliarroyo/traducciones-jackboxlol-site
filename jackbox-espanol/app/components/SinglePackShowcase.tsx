@@ -22,7 +22,6 @@ export default function SinglePackShowcase({
                     </div>
                 ))}
             </div>
-
         </div>
     )
 }

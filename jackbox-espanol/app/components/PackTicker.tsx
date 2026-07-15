@@ -1,4 +1,3 @@
-// src/components/PackTicker.tsx
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
@@ -18,7 +17,7 @@ export default function PackTicker({ children }: PackTickerProps) {
     if (!el) return;
 
     let animationFrameId: number;
-    const speed = 1; // 🚀 Speed factor of the auto-scroll loop (adjust higher or lower)
+    const speed = 1; // Speed factor of the auto-scroll loop
 
     const updateAutoScroll = () => {
       // Only auto-scroll if the user isn't actively interacting with it
