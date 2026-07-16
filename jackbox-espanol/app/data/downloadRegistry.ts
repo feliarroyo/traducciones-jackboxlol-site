@@ -610,7 +610,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
 
     {
         id: "useyourwords",
-        title: "Use Your Words",
+        title: "Usa Tus Palabras (Use Your Words)",
         imageSrc: "/images/buttons/useyourwords.webp",
         hasSpain: false,
         targets: [
@@ -629,6 +629,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
                 stores: ["default"],
                 lang: "latam",
                 link: "https://github.com/AkiraArtuhaxis/Use-Your-Words-Spanish/releases/latest/download/UYW-ES-MAC.zip",
+                notes: "Doblaje no implementado en esta plataforma, algunos detalles no están traducidos.",
                 "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Use-Your-Words-Spanish/main/Main/config.dat",
                 "version_property": "buildVersion"
             }
