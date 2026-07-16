@@ -39,7 +39,7 @@ export default function GameDownloadButton({ href, altText, imageSrc, isAdaptati
             alt="Variante de España"
             width={36}
             height={24}
-            className="object-contain w-full h-full"
+            className="object-contain w-auto h-auto"
           />
         </div>
       )}
@@ -51,7 +51,7 @@ export default function GameDownloadButton({ href, altText, imageSrc, isAdaptati
             alt="Variante latinoamericana"
             width={36}
             height={24}
-            className="object-contain w-full h-full"
+            className="object-contain w-auto h-auto"
           />
         </div>
       )}

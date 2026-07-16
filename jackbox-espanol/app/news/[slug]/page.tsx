@@ -28,7 +28,7 @@ export default async function IndividualPostPage({ params }: PostPageProps) {
             alt={`Banner para ${metadata.title}`}
             fill
             sizes="(max-width: 768px) 100vw, 768px"
-            priority // Tells Next.js to load this instantly since it's above the fold
+            preload={true} // Tells Next.js to load this instantly since it's above the fold
             className="object-cover"
           />
         </div>
