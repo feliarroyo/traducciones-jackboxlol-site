@@ -7,6 +7,12 @@ import JackboxUtilityCard from "../components/JackboxUtilityCard";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { getPatchReleaseDate } from "../lib/getBuildVersion";
 
+// import type { Metadata } from "next";
+
+// export const metadata: Metadata = {
+//     title: "Descargas",
+//     description: "Descarga el parcheador, los parches de traducción y otros recursos útiles.",
+// };
 
 export default function DownloadsPage() {
     // TOGGLE FILTER STATES
@@ -253,56 +259,70 @@ export default function DownloadsPage() {
                 </LayoutGroup>
 
                 {/* DATA GRID DRAWER ELEMENT */}
-                <div className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
+                <motion.div layout className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
                     {(storeFilter === "microsoft" && platformFilter === "mac") && (
-                        <p>Microsoft Store no está disponible en Mac <img src="/images/crazy.webp" alt="Burbujas de Job Job con cara chistosa" fetchPriority="high" className="inline align-middle h-8 w-8" /></p>
+                        <p>Microsoft Store no está disponible en Mac <img src="/images/crazy.webp" alt="Burbujas de Bajo Trabajo con cara chistosa" fetchPriority="high" className="inline align-middle h-8 w-8" /></p>
                     )}
-                    {DOWNLOADS_REGISTRY.map((game) => {
-                        // Determine the active storefront parameter to match against
-                        const targetStoreToMatch = platformFilter === "switch" ? "nintendo" : storeFilter;
 
-                        // Filter targets based on the user's active selections
-                        const environmentMatches = game.targets.filter((t) =>
-                            t.platforms.includes(platformFilter) && t.stores.includes(targetStoreToMatch)
-                        );
+                    <AnimatePresence mode="popLayout">
+                        {DOWNLOADS_REGISTRY.flatMap((game) => {
+                            // Determine the active storefront parameter to match against
+                            const targetStoreToMatch = platformFilter === "switch" ? "nintendo" : storeFilter;
 
-                        // See if has spain patches for this game, and if so, use them. Otherwise, fallback to LatAm.
-                        let matchingTargets = [];
-                        if (langFilter === "spain") {
+                            // Filter targets based on the user's active selections
+                            const environmentMatches = game.targets.filter((t) =>
+                                t.platforms.includes(platformFilter) && t.stores.includes(targetStoreToMatch)
+                            );
 
-                            const spainTargets = environmentMatches.filter(t => t.lang === "spain");
-
-                            if (spainTargets.length > 0) {
-                                matchingTargets = spainTargets;
+                             // See if has spain patches for this game, and if so, use them. Otherwise, fallback to LatAm.
+                            let matchingTargets = [];
+                            if (langFilter === "spain") {
+                                const spainTargets = environmentMatches.filter(t => t.lang === "spain");
+                                if (spainTargets.length > 0) {
+                                    matchingTargets = spainTargets;
+                                } else {
+                                    // if no Spain files exist, display Latam version instead
+                                    matchingTargets = environmentMatches.filter(t => t.lang === "latam");
+                                }
                             } else {
-                                // FALLBACK: If no Spain files exist, display Latam version instead
+                                // Display Latam version
                                 matchingTargets = environmentMatches.filter(t => t.lang === "latam");
                             }
-                        } else {
-                            // Display Latam version
-                            matchingTargets = environmentMatches.filter(t => t.lang === "latam");
-                        }
 
-                        // If no patches are available for this specific selection, hide the game card
-                        if (matchingTargets.length === 0) return
+                            // Return wrapped motion elements to create the flat array
+                            return matchingTargets.map((target) => {
+                                // Key based on the gameID only
+                                const uniqueKey = game.id;
 
-                        return matchingTargets.map((target, idx) => (
-                            <GameDownloadButton
-                                key={`${game.id}-${idx}`}
-                                href={target.link}
-                                // Pass the game or pack image asset down instead of text labels
-                                imageSrc={game.imageSrc || "/images/covers/default-pack.webp"}
-                                altText={`Descargar parche para ${game.title}`}
-                                isAdaptation={target.lang === "latam" && game.hasAdaptation}
-                                isSpain={target.lang === "spain"}
-                                noteTitle={game.title}
-                                notes={target.notes}
-                                version_file={target.version_file}
-                                version_property={target.version_property}
-                            />
-                        ));
-                    })}
-                </div>
+                                return (
+                                    <motion.div
+                                        layout
+                                        key={uniqueKey}
+                                        initial={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+                                        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                                        exit={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+                                        transition={{
+                                            duration: 0.3,
+                                            ease: "easeInOut"
+                                        }}
+                                    >
+                                        <GameDownloadButton
+                                            href={target.link}
+                                            imageSrc={game.imageSrc || "/images/covers/default-pack.webp"}
+                                            altText={`Descargar parche para ${game.title}`}
+                                            isAdaptation={target.lang === "latam" && game.hasAdaptation}
+                                            isSpain={target.lang === "spain"}
+                                            noteTitle={game.title}
+                                            notes={target.notes}
+                                            version_file={target.version_file}
+                                            version_property={target.version_property}
+                                        />
+                                    </motion.div>
+                                );
+                            });
+                        })}
+                    </AnimatePresence>
+                </motion.div>
             </section >
             {/* OTHER DOWNLOADS */}
             < section className="mt-8" >
