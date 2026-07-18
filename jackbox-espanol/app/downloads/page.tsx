@@ -274,7 +274,7 @@ export default function DownloadsPage() {
                                 t.platforms.includes(platformFilter) && t.stores.includes(targetStoreToMatch)
                             );
 
-                             // See if has spain patches for this game, and if so, use them. Otherwise, fallback to LatAm.
+                            // See if has spain patches for this game, and if so, use them. Otherwise, fallback to LatAm.
                             let matchingTargets = [];
                             if (langFilter === "spain") {
                                 const spainTargets = environmentMatches.filter(t => t.lang === "spain");
@@ -296,15 +296,19 @@ export default function DownloadsPage() {
 
                                 return (
                                     <motion.div
-                                        layout
+                                        layout="position"
                                         key={uniqueKey}
-                                        initial={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
-                                        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                                        exit={{ opacity: 0, scale: 0.8, filter: "blur(4px)" }}
+
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.9 }}
+
                                         transition={{
-                                            duration: 0.3,
+                                            duration: 0.25,
                                             ease: "easeInOut"
                                         }}
+                                        
+                                        style={{ willChange: "opacity, transform" }}
                                     >
                                         <GameDownloadButton
                                             href={target.link}
