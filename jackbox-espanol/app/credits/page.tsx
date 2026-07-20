@@ -12,6 +12,13 @@ import { motion } from "framer-motion";
 
 type CreditView = "translations" | "dubs";
 
+// import type { Metadata } from "next";
+
+// export const metadata: Metadata = {
+//   title: "Créditos",
+//   description: "Descubre quiénes han contribuido al proyecto de traducción y doblaje de juegos de Jackbox.",
+// };
+
 export default function CreditsPage() {
   const [activeView, setActiveView] = useState<CreditView>("translations");
 

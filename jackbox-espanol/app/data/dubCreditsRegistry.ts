@@ -197,6 +197,52 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         ]
     },
     {
+        id: "madverse",
+        category: "mainDub",
+        roles: [
+            {
+                username: ["\"Lucho\"", "Rocío Benítez Blasco"],
+                isDuo: true,
+                roles: ["Anfitriones (Shadow Master MC y DJ Raych)"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Supervisión del doblaje", "Transcripción de diálogos", "Redacción de guiones"]
+            },
+            {
+                username: "Artuhaxis",
+                roles: ["Voz de Gene", "Redacción de guiones", "Recorte y ecualización de audio"]
+            },
+            {
+                username: "EinfachEddi (German Jackbox Translations)",
+                roles: ["Asistencia en transcripción de diálogos"]
+            },
+            {
+                username: "Trinidad González, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
+                roles: ["Voces de hinchada"]
+            }
+        ]
+    },
+    {
+        id: "zeeple",
+        category: "mainDub",
+        demoUrl: "https://youtu.be/AiiqC22f-vw?si=AYHN2HXFXTwuyHOi",
+        roles: [
+            {
+                username: "Walter Tassi",
+                roles: ["Anfitrión (Glargan O' Toe)"]
+            },
+            {
+                username: "Nahuel Guidi",
+                roles: ["Voz de introducción"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Supervisión del doblaje", "Redacción de guiones", "Recorte y ecualización de audio"]
+            }
+        ]
+    },
+    {
         id: "patently",
         category: "mainDub",
         demoUrl: "https://youtu.be/Q5mdJA_UTAs?si=KMoMGk0ZJP32buDs",
@@ -255,25 +301,6 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
                 username: "Erizzle (Team Gamechanger)",
                 roles: ["Aporte de transcripción de diálogos originales"]
             },
-        ]
-    },
-    {
-        id: "zeeple",
-        category: "mainDub",
-        demoUrl: "https://youtu.be/AiiqC22f-vw?si=AYHN2HXFXTwuyHOi",
-        roles: [
-            {
-                username: "Walter Tassi",
-                roles: ["Anfitrión (Glargan O' Toe)"]
-            },
-            {
-                username: "Nahuel Guidi",
-                roles: ["Voz de introducción"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Supervisión del doblaje", "Redacción de guiones", "Recorte y ecualización de audio"]
-            }
         ]
     },
     {
@@ -348,6 +375,32 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             {
                 username: "Fixed Fun",
                 roles: ["Letra"]
+            }
+        ]
+    },
+    {
+        id: "jobjob",
+        category: "mainDub",
+        roles: [
+            {
+                username: "Valentina Dogovich",
+                roles: ["Voz de M. Burbujas", "Cantante"]
+            },
+            {
+                username: "Artuhaxis",
+                roles: ["Voz del fax", "Recorte y ecualización de audios", "Traducción de subtítulos (usados como guion)"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Voces adicionales", "Transcripción de diálogos", "Traducción de subtítulos (usados como guion)"]
+            },
+            {
+                username: "Pepe Pepo",
+                roles: ["Traducción de subtítulos (usados como guion)"]
+            },
+            {
+                username: "EinfachEddi (German Jackbox Translations)",
+                roles: ["Transcripción de diálogos"]
             }
         ]
     },
@@ -486,33 +539,6 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         ]
     },
     {
-        id: "madverse",
-        category: "comingSoon",
-        roles: [
-            {
-                username: ["\"Lucho\"", "Rocío Benítez Blasco"],
-                isDuo: true,
-                roles: ["Anfitriones (Shadow Master MC y DJ Raych)"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Supervisión del doblaje", "Transcripción de diálogos", "Redacción de guiones"]
-            },
-            {
-                username: "Artuhaxis",
-                roles: ["Voz de Gene", "Redacción de guiones"]
-            },
-            {
-                username: "EinfachEddi (German Jackbox Translations)",
-                roles: ["Asistencia en transcripción de diálogos"]
-            },
-            {
-                username: "Trinidad González, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
-                roles: ["Voces de hinchada"]
-            }
-        ]
-    },
-    {
         id: "blather",
         category: "comingSoon",
         roles: [
@@ -531,32 +557,6 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             {
                 username: "Eleiber y Ker",
                 roles: ["Traducción de subtítulos (usados como guion)"]
-            }
-        ]
-    },
-    {
-        id: "jobjob",
-        category: "comingSoon",
-        roles: [
-            {
-                username: "Valentina Dogovich",
-                roles: ["Voz de M. Burbujas", "Cantante"]
-            },
-            {
-                username: "???",
-                roles: ["Voz del fax"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Transcripción de diálogos", "Traducción de subtítulos (usados como guion)"]
-            },
-            {
-                username: "Artuhaxis y Pepe Pepo",
-                roles: ["Traducción de subtítulos (usados como guion)"]
-            },
-            {
-                username: "EinfachEddi (German Jackbox Translations)",
-                roles: ["Transcripción de diálogos"]
             }
         ]
     },
