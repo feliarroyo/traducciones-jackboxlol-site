@@ -207,7 +207,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Akira896",
-                roles: ["Supervisión del doblaje", "Transcripción de diálogos", "Redacción de guiones"]
+                roles: ["Voz de hinchada", "Supervisión del doblaje", "Transcripción de diálogos", "Redacción de guiones"]
             },
             {
                 username: "Artuhaxis",

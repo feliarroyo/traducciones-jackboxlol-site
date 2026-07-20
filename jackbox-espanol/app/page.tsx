@@ -10,9 +10,10 @@ export default function Home() {
   const pp2dubs = ["earwax", "bidiots"]
   const pp3dubs = ["fakinit"];
   const pp4dubs = ["survive", "monster", "civic"];
-  const pp5dubs = ["zeeple", "patently"];
+  const pp5dubs = ["madverse", "zeeple", "patently"];
   const pp6dubs = ["ptb"];
   const pp7dubs = ["devils", "talkingpoints"];
+  const pp8dubs = ["jobjob"];
   const drawful2 = ["drawful2"];
   const uyw = ["useyourwords"];
 
@@ -84,6 +85,7 @@ export default function Home() {
             <PackShowcase packLogoSrc={"/images/games/pp5.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 5"} gameLogos={pp5dubs}></PackShowcase>
             <PackShowcase packLogoSrc={"/images/games/pp6.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 6"} gameLogos={pp6dubs}></PackShowcase>
             <PackShowcase packLogoSrc={"/images/games/pp7.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 7"} gameLogos={pp7dubs}></PackShowcase>
+            <PackShowcase packLogoSrc={"/images/games/pp8.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 8"} gameLogos={pp8dubs}></PackShowcase>
             <SinglePackShowcase gameLogos={drawful2}></SinglePackShowcase>
             <SinglePackShowcase gameLogos={uyw}></SinglePackShowcase>
           </PackTicker>
