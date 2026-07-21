@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import Link from "next/link"
 import Image from "next/image";
@@ -10,9 +10,55 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#312e81", // Color indigo-900 de tu fondo para la barra del navegador móvil
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5, // Permite zoom por accesibilidad pero controlado
+};
+
 export const metadata: Metadata = {
-  title: "Jackbox en español",
+  metadataBase: new URL("https://traducciones.jackbox.lol"),
+  title: {
+    default: "Jackbox en español",
+    template: "%s | Jackbox en español"
+  },
   description: "Traducciones no oficiales al español para los juegos de Jackbox Games.",
+  keywords: ["Jackbox", "Traduccion", "Español", "Party Pack", "Jackbox.lol", "Parche"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Jackbox en español",
+    description: "Traducciones no oficiales al español para los juegos de Jackbox Games.",
+    url: "https://traducciones.jackbox.lol",
+    siteName: "Jackbox en español",
+    images: [
+      {
+        url: "/images/og-image.png", // Crea una imagen de 1200x630 para el preview global
+        width: 1200,
+        height: 630,
+        alt: "Logo de Jackbox en español",
+      },
+    ],
+    locale: "es_LA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@esjackbox",
+    title: "Jackbox en español",
+    description: "Traducciones no oficiales al español para los juegos de Jackbox Games.",
+    images: ["/images/og-image.png"],
+  },
 };
 
 
@@ -22,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" data-scroll-behavior="smooth" className="scroll-smooth">
+    <html lang="es-419" data-scroll-behavior="smooth" className="scroll-smooth">
       <body className={`${geistSans.className} bg-indigo-900 text-slate-100 flex flex-col min-h-screen relative`}>
         {/* BACKGROUND IMAGE */}
         <div className="fixed h-screen inset-0 -z-50">
