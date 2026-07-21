@@ -199,6 +199,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "madverse",
         category: "mainDub",
+        demoUrl: "PLACEHOLDER",
         roles: [
             {
                 username: ["\"Lucho\"", "Rocío Benítez Blasco"],
@@ -381,6 +382,8 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "jobjob",
         category: "mainDub",
+        demoUrl: "PLACEHOLDER",
+        songUrl: "PLACEHOLDER",
         roles: [
             {
                 username: "Valentina Dogovich",
