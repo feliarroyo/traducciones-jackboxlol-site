@@ -391,11 +391,15 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Artuhaxis",
-                roles: ["Voz del fax", "Recorte y ecualización de audios", "Traducción de subtítulos (usados como guion)"]
+                roles: ["Voz del fax", "Recorte y ecualización de audios", "Traducción de subtítulos (usados como guion)", "Letra"]
             },
             {
                 username: "Akira896",
-                roles: ["Voces adicionales", "Transcripción de diálogos", "Traducción de subtítulos (usados como guion)"]
+                roles: ["Voces adicionales", "Transcripción de diálogos", "Traducción de subtítulos (usados como guion)", "Mezcla de canción", "Letra"]
+            },
+            {
+                username: "Fixed Fun",
+                roles: ["Letra"]
             },
             {
                 username: "Pepe Pepo",
