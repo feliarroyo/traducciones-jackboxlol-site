@@ -4,9 +4,22 @@
 import { useState } from "react";
 import Link from "next/link";
 import { CloseIcon, DiscordIcon, MenuIcon, TwitterIcon, YouTubeIcon } from "./Icons";
+import { usePathname } from "next/navigation";
 
 export default function HeaderNavbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        setIsOpen(false)
+        if (pathname === href) {
+            e.preventDefault(); // Prevents Next.js from ignoring or re-triggering route navigation
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth", // 🌊 Smooth scroll back to top
+            });
+        }
+    };
 
     return (
         <div className="flex items-center">
@@ -26,10 +39,10 @@ export default function HeaderNavbar() {
 
                 {/* Navigation Section */}
                 <div className="flex flex-col md:flex-row items-center gap-3 text-sm font-medium md:border-r md:border-slate-600 md:pr-5 w-full md:w-auto text-center md:text-left">
-                    <Link href="/downloads" onClick={() => setIsOpen(false)} className="hover:text-amber-400 transition-colors py-1.5 md:py-0 block w-full whitespace-nowrap">Descargas</Link>
-                    <Link href="/news" onClick={() => setIsOpen(false)} className="hover:text-amber-400 transition-colors py-1.5 md:py-0 block w-full whitespace-nowrap">Novedades</Link>
-                    <Link href="/help" onClick={() => setIsOpen(false)} className="hover:text-amber-400 transition-colors py-1.5 md:py-0 block w-full whitespace-nowrap">Ayuda</Link>
-                    <Link href="/credits" onClick={() => setIsOpen(false)} className="hover:text-amber-400 transition-colors py-1.5 md:py-0 block w-full whitespace-nowrap">Créditos</Link>
+                    <Link href="/downloads" onClick={(event) => handleNavClick(event, "/downloads")} className="hover:text-amber-400 transition-colors py-1.5 md:py-0 block w-full whitespace-nowrap">Descargas</Link>
+                    <Link href="/news" onClick={(event) => handleNavClick(event, "/news")} className="hover:text-amber-400 transition-colors py-1.5 md:py-0 block w-full whitespace-nowrap">Novedades</Link>
+                    <Link href="/help" onClick={(event) => handleNavClick(event, "/help")} className="hover:text-amber-400 transition-colors py-1.5 md:py-0 block w-full whitespace-nowrap">Ayuda</Link>
+                    <Link href="/credits" onClick={(event) => handleNavClick(event, "/credits")} className="hover:text-amber-400 transition-colors py-1.5 md:py-0 block w-full whitespace-nowrap">Créditos</Link>
                 </div>
 
                 {/* Social Icons Section */}
