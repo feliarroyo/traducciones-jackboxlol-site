@@ -56,6 +56,10 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
                 roles: ["Redacción de guiones"]
             },
             {
+                username: "Ernesto Fernández, Santiago Giordani, Rocío Benítez Blasco, Valentina Dogovich y Olivia Vulcano",
+                roles: ["Voces de audios (multitud)"]
+            },
+            {
                 username: "Romnickol (What If?)",
                 roles: ["Aporte de transcripción de diálogos originales"]
             }
@@ -83,11 +87,15 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
                 roles: ["Voz de jugador", "Transcripción de algunos diálogos originales"]
             },
             {
+                username: "Akira896",
+                roles: ["Voz de jugador", "Mezcla de jingles de Crédito Feroz"]
+            },
+            {
                 username: "What If?",
                 roles: ["Aporte de transcripción de diálogos originales"]
             },
             {
-                username: "Akira896, Artuhaxis, maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
+                username: "maritomomomemardo, Tomás Serio, ner0 y Ernesto Fernández",
                 roles: ["Voces de jugadores"]
             },
         ]
