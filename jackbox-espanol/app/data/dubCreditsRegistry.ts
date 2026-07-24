@@ -68,7 +68,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "bidiots",
         category: "mainDub",
-        demoUrl: "PLACEHOLDER",
+        demoUrl: "https://www.youtube.com/watch?v=C-ISJVTboiw",
         roles: [
             {
                 username: "Fixed Fun",
@@ -207,7 +207,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "madverse",
         category: "mainDub",
-        demoUrl: "PLACEHOLDER",
+        demoUrl: "https://www.youtube.com/watch?v=vZ8IJwA0TVg",
         roles: [
             {
                 username: ["\"Lucho\"", "Rocío Benítez Blasco"],
@@ -390,7 +390,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "jobjob",
         category: "mainDub",
-        demoUrl: "PLACEHOLDER",
+        demoUrl: "https://www.youtube.com/watch?v=AiLzb5gn3fQ",
         songUrl: "PLACEHOLDER",
         roles: [
             {
