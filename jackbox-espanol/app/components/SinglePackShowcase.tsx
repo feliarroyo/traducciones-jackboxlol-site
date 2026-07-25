@@ -16,7 +16,7 @@ export default function SinglePackShowcase({
                 {gameLogos.map((game, index) => (
                     <div
                         key={index}
-                        className="w-28 h-20 relative transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
+                        className="w-28 h-20 relative"
                     >
                         <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill sizes="112px" className="object-contain" draggable={false}/>
                     </div>

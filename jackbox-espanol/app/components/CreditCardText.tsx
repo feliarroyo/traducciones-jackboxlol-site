@@ -4,7 +4,7 @@ import { ExtraCreditItem } from "../data/creditsRegistry";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useModal } from "./hooks/useModal";
-import { BaseCreditCard } from "./ui/BaseCreditCard";
+import { BaseCard } from "./ui/BaseCard";
 import { CreditModal } from "./ui/CreditModal";
 
 export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }) {
@@ -13,7 +13,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <BaseCreditCard className="p-6 gap-4">
+      <BaseCard className="p-6 gap-4">
         {/* Game Logo Container */}
         <div>
           <button
@@ -21,7 +21,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
             Ver créditos adicionales
           </button>
         </div>
-      </BaseCreditCard>
+      </BaseCard>
 
       {/* Overlay Modal */}
       {mounted && (

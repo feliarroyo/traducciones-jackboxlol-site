@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { GAME_ASSETS } from "../data/gameRegistry";
+import { BaseCard } from "./ui/BaseCard";
 
 interface PackShowcaseProps {
     packLogoSrc: string;
@@ -14,12 +15,12 @@ export default function PackShowcase({
     gameLogos
 }: PackShowcaseProps) {
     return (
-        <div
-            className="min-w-50 bg-slate-950/30 border border-slate-800/60 rounded-3xl p-6 flex flex-col items-center justify-center gap-4 md:backdrop-blur-sm transition-all duration-300 hover:border-slate-700/60"
+        <BaseCard
+            className="min-w-50 bg-slate-950/30 border border-slate-800/60 p-6 justify-center gap-4 hover:border-slate-700/60"
         >
 
             {/* PACK ICON */}
-            <div className="w-full h-18 relative opacity-60 hover:opacity-100 transition-opacity shrink-0">
+            <div className="w-full h-18 relative shrink-0">
                 <Image 
                     src={packLogoSrc} 
                     alt={packLogoAlt} 
@@ -37,7 +38,7 @@ export default function PackShowcase({
                 {gameLogos.map((game, index) => (
                     <div
                         key={index}
-                        className="w-28 h-20 relative transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
+                        className="w-28 h-20 relative"
                     >
                         <Image 
                             src={GAME_ASSETS[game]?.src} 
@@ -51,6 +52,6 @@ export default function PackShowcase({
                 ))}
             </div>
 
-        </div>
+        </BaseCard>
     );
 }

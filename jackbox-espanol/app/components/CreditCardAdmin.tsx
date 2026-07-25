@@ -5,7 +5,7 @@ import { GAME_ASSETS } from "../data/gameRegistry";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useModal } from "./hooks/useModal";
-import { BaseCreditCard } from "./ui/BaseCreditCard";
+import { BaseCard } from "./ui/BaseCard";
 import { CreditModal } from "./ui/CreditModal";
 
 // 🏷️ Define the strict TypeScript shape for the Admin data structure
@@ -29,7 +29,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <BaseCreditCard className="aspect-square w-full h-full">
+      <BaseCard className="aspect-square w-full h-full">
         <div className="flex flex-col items-center gap-2 w-full flex-1 justify-center">
           {admin.avatarUrl && (
             <div className="w-20 h-20 relative rounded-2xl overflow-hidden border-2 border-amber-500/10 bg-slate-900 group-hover:border-amber-500/30 transition-colors shrink-0">
@@ -83,7 +83,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
         >
           Ver contribuciones
         </button>
-      </BaseCreditCard>
+      </BaseCard>
 
       {/* Overlay Modal */}
       {mounted && (

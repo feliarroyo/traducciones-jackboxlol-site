@@ -7,7 +7,7 @@ import { GAME_ASSETS } from "../data/gameRegistry";
 import { GameCreditItem } from "../data/creditsRegistry";
 import { AnimatePresence, motion } from "framer-motion";
 import { useModal } from "./hooks/useModal";
-import { BaseCreditCard } from "./ui/BaseCreditCard";
+import { BaseCard } from "./ui/BaseCard";
 import { CreditModal } from "./ui/CreditModal";
 
 export default function CreditCardGame({ id, isAdaptation, isSolo, mainContributors, roles }: GameCreditItem) {
@@ -17,7 +17,7 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <BaseCreditCard className="justify-center aspect-square">
+      <BaseCard className="justify-center aspect-square">
         {/* Game Logo Container */}
         <div className="flex flex-col w-full">
           {
@@ -47,7 +47,7 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
         >
           Ver contribuciones
         </button>
-      </BaseCreditCard>
+      </BaseCard>
 
       {mounted && (
         <CreditModal isOpen={isOpen} onClose={() => setIsOpen(false)}>

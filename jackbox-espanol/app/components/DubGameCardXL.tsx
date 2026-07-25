@@ -7,7 +7,7 @@ import { DubCreditItem } from "../data/dubCreditsRegistry";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useModal } from "./hooks/useModal";
-import { BaseCreditCard } from "./ui/BaseCreditCard";
+import { BaseCard } from "./ui/BaseCard";
 import { CreditModal } from "./ui/CreditModal";
 
 interface DubGameCardXLProps {
@@ -21,7 +21,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
     return (
         <>
             {/* 🟦 MAIN GAME SQUARE CARD */}
-            <BaseCreditCard className="shrink-0 aspect-square py-4">
+            <BaseCard className="shrink-0 aspect-square py-4">
                 {/* Game Logo Container */}
                 <div className="w-full">
                     <div className="w-full h-16 relative shrink-0 mt-2 justify-center">
@@ -80,7 +80,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                 >
                     Ver créditos de doblaje
                 </button>
-            </BaseCreditCard>
+            </BaseCard>
 
             {/* 🚀 CAST OVERLAY MODAL LIST WINDOW */}
             {mounted && (
