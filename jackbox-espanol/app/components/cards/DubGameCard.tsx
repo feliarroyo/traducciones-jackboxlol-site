@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { GAME_ASSETS } from "../data/gameRegistry";
-import { DubCreditItem } from "../data/dubCreditsRegistry";
-import { BaseCard } from "./ui/BaseCard";
+import { GAME_ASSETS } from "../../data/gameRegistry";
+import { DubCreditItem } from "../../data/dubCreditsRegistry";
+import { BaseCard } from "../ui/BaseCard";
 
 interface DubGameCardProps {
     game: DubCreditItem;

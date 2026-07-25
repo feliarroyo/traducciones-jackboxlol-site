@@ -1,11 +1,11 @@
 "use client";
 
-import { ExtraCreditItem } from "../data/creditsRegistry";
+import { ExtraCreditItem } from "../../data/creditsRegistry";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { useModal } from "./hooks/useModal";
-import { BaseCard } from "./ui/BaseCard";
-import { CreditModal } from "./ui/CreditModal";
+import { useModal } from "../hooks/useModal";
+import { BaseCard } from "../ui/BaseCard";
+import { CreditModal } from "../ui/CreditModal";
 
 export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }) {
   const { isOpen, setIsOpen, mounted } = useModal();

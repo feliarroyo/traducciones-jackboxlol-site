@@ -2,13 +2,13 @@
 "use client";
 
 import Image from "next/image";
-import { GAME_ASSETS } from "../data/gameRegistry";
-import { DubCreditItem } from "../data/dubCreditsRegistry";
+import { GAME_ASSETS } from "../../data/gameRegistry";
+import { DubCreditItem } from "../../data/dubCreditsRegistry";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { useModal } from "./hooks/useModal";
-import { BaseCard } from "./ui/BaseCard";
-import { CreditModal } from "./ui/CreditModal";
+import { useModal } from "../hooks/useModal";
+import { BaseCard } from "../ui/BaseCard";
+import { CreditModal } from "../ui/CreditModal";
 
 interface DubGameCardXLProps {
     game: DubCreditItem;

@@ -48,11 +48,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Jackbox Utility section */}
-      {/* <section className="bg-slate-950/40 border border-slate-800/80 rounded-3xl p-8 md:p-12 shadow-xl">
-        <JackboxUtilityCard />
-      </section> */}
-
       {/* 3. PROJECT OVERVIEW */}
       <section className="space-y-4">
         <div className="text-center space-y-2">
@@ -92,6 +87,6 @@ export default function Home() {
         </div>
       </section>
 
-    </div >
+    </div>
   );
 }

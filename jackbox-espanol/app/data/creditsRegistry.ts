@@ -1322,3 +1322,5 @@ export const CREDITS_REGISTRY_EXTRAS: ExtraCreditItem[] = [
         roles: ["Ayuda con la instalación de los parches en Nintendo Switch"]
     }
 ]
+
+export const CREDITS_DONORS = ["Akira896", "Hanzel Translations", "Eleiber", "alexbg724", "MakaayX", "david.az.4", "Tonycam21", "Erickelnd", "Erick López", "Sergio Junco", "Daniel Sánchez", "Juan Herranz", "Mario Edher", "Alba Franganillo", "Erick Guerrero", "FedVer"]

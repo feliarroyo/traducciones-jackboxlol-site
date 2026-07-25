@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { GAME_ASSETS } from "../data/gameRegistry";
+import { GAME_ASSETS } from "../../data/gameRegistry";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useModal } from "./hooks/useModal";
-import { BaseCard } from "./ui/BaseCard";
-import { CreditModal } from "./ui/CreditModal";
+import { useModal } from "../hooks/useModal";
+import { BaseCard } from "../ui/BaseCard";
+import { CreditModal } from "../ui/CreditModal";
 
 // 🏷️ Define the strict TypeScript shape for the Admin data structure
 interface CreditCardAdminProps {

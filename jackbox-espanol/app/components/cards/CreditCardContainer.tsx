@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CreditCardGame from "./CreditCardGame";
+import CreditCardGame from "../cards/CreditCardGame";
 
 interface GamePackItem {
   packId: string;

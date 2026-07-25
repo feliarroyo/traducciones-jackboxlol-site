@@ -2,6 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllNewsPosts } from "../lib/markdownParser";
 import NewsLink from "../components/NewsLink";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Novedades",
+  description: "Descubre las últimas noticias y actualizaciones sobre el proyecto de traducción al español de los juegos de Jackbox.",
+};
 
 export default function NewsHubPage() {
     const posts = getAllNewsPosts();

@@ -2,9 +2,35 @@ import { notFound } from "next/navigation";
 import { getPostBySlug } from "../../lib/markdownParser";
 import Image from "next/image";
 import BackButton from "@/app/components/BackButton";
+import { Metadata } from "next";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const post = await getPostBySlug(resolvedParams.slug);
+  if (!post) {
+    return { title: "Noticia no encontrada" };
+  }
+  const { metadata } = post;
+  return {
+    title: metadata.title,
+    description: `Lee las últimas novedades sobre el parche de la fecha.`,
+    openGraph: {
+      title: metadata.title,
+      description: metadata.excerpt,
+      type: "article",
+      publishedTime: metadata.date,
+      images: [
+        {
+          url: metadata.image || "/images/og-image.png",
+          alt: metadata.title,
+        },
+      ],
+    },
+  };
 }
 
 export default async function IndividualPostPage({ params }: PostPageProps) {
@@ -45,12 +71,12 @@ export default async function IndividualPostPage({ params }: PostPageProps) {
       </div>
 
       {/* RENDER DYNAMIC MARKDOWN BODY CONTENTS */}
-      <div 
+      <div
         className="prose prose-invert prose-amber max-w-none text-slate-300 text-sm md:text-base leading-relaxed space-y-4
           prose-headings:text-slate-100 prose-headings:font-extrabold prose-headings:tracking-tight
           prose-strong:text-amber-400 prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline
           prose-ul:list-disc prose-ul:marker:text-slate-300 prose-ul:pl-5 prose-ol:list-decimal prose-ol:pl-5"
-        dangerouslySetInnerHTML={{ __html: htmlContent }} 
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
 
     </article>

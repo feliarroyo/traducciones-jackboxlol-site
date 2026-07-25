@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import { GAME_ASSETS } from "../data/gameRegistry";
-import { GameCreditItem } from "../data/creditsRegistry";
+import { GAME_ASSETS } from "../../data/gameRegistry";
+import { GameCreditItem } from "../../data/creditsRegistry";
 import { AnimatePresence, motion } from "framer-motion";
-import { useModal } from "./hooks/useModal";
-import { BaseCard } from "./ui/BaseCard";
-import { CreditModal } from "./ui/CreditModal";
+import { useModal } from "../hooks/useModal";
+import { BaseCard } from "../ui/BaseCard";
+import { CreditModal } from "../ui/CreditModal";
 
 export default function CreditCardGame({ id, isAdaptation, isSolo, mainContributors, roles }: GameCreditItem) {
   const { isOpen, setIsOpen, mounted } = useModal();

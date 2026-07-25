@@ -2,6 +2,12 @@
 import Link from "next/link";
 import { FAQ_REGISTRY } from "../data/faqRegistry"; // Ajusta la ruta según tu estructura de carpetas
 import FaqItem from "../components/FaqItem";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ayuda",
+  description: "Preguntas frecuentes sobre cómo instalar los parches de traducción.",
+};
 
 export default async function HelpPage() {
   return (
