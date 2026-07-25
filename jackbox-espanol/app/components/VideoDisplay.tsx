@@ -18,6 +18,7 @@ export default function VideoDisplay() {
         playsInline
         autoPlay
         loop
+        preload="auto"
         className="w-full h-full object-cover absolute inset-0"
       />
       
