@@ -1,5 +1,3 @@
-import React from "react";
-import CreditCard from "./CreditCard";
 import Image from "next/image";
 import CreditCardGame from "./CreditCardGame";
 
