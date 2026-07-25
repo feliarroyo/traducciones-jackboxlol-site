@@ -4,11 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 interface CreditModalProps {
   isOpen: boolean;
   onClose: () => void;
-  isReady?: boolean;
   children: React.ReactNode;
 }
 
-export function CreditModal({ isOpen, onClose, isReady = true, children }: CreditModalProps) {
+export function CreditModal({ isOpen, onClose, children }: CreditModalProps) {
   if (typeof document === "undefined") return null; // Fallback for SSR
 
   return createPortal(
@@ -31,16 +30,7 @@ export function CreditModal({ isOpen, onClose, isReady = true, children }: Credi
             className="bg-slate-900 border border-slate-800 w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl p-6 md:p-8 shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Invisible until all images call onLoad */}
-            <div
-              className={`transition-opacity duration-200 ${
-                isReady
-                  ? "opacity-100 h-auto"
-                  : "opacity-0 h-0 overflow-hidden pointer-events-none"
-              }`}
-            >
               {children}
-            </div>
           </motion.div>
         </motion.div>
       )}
