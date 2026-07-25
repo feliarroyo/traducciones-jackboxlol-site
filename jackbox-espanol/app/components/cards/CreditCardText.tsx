@@ -32,7 +32,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
                 Créditos adicionales
               </h3>
             </div>
-            <button onClick={() => setIsOpen(false)} className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition-colors">✕</button>
+            <button onClick={() => setIsOpen(false)} className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition-colors shrink-0">✕</button>
           </div>
 
 

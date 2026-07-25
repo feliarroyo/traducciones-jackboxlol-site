@@ -118,7 +118,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
 
             <button
               onClick={() => setIsOpen(false)}
-              className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 text-lg transition-colors"
+              className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 text-lg transition-colors shrink-0"
             >
               ✕
             </button>
