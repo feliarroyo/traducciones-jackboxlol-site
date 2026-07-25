@@ -46,7 +46,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
           )}
 
           <div className="space-y-1 w-full max-w-full px-1 shrink min-w-0">
-            <h3 className="text-sm sm:text-base md:text-lg font-bold transition-colors block">
+            <h3 className="text-[9px] xs:text-sm sm:text-base md:text-lg font-bold transition-colors block">
               {admin.profileUrl ? (
                 <a
                   href={admin.profileUrl}
@@ -65,14 +65,14 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
                   {admin.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="text-[7.5px] sm:text-[9px] md:text-[10px] leading-tight font-bold px-1.5 sm:px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 truncate max-w-full tracking-wide uppercase shrink-0"
+                      className="text-[5px] sm:text-[9px] md:text-[10px] leading-tight font-bold px-1.5 sm:px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 truncate max-w-full tracking-wide uppercase shrink-0"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               ) : (
-                <div className="text-[9px] py-0.5 opacity-0 pointer-events-none select-none whitespace-nowrap">&nbsp;</div>
+                <div className="text-[5px] sm:text-[9px] md:text-[10px] leading-tight font-bold px-1.5 sm:px-2 py-0.5 rounded-full text-amber-400 truncate max-w-full tracking-wide uppercase shrink-0">&nbsp;</div>
               )}
             </h3>
           </div>
@@ -81,7 +81,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
 
         <button
           onClick={() => setIsOpen(true)}
-          className="mt-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 hover:underline transition-colors cursor-pointer"
+          className="mt-2 text-[9px] sm:text-xs font-bold text-cyan-400 hover:text-cyan-300 hover:underline transition-colors cursor-pointer"
         >
           Ver contribuciones
         </button>
