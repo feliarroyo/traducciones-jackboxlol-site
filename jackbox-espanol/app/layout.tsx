@@ -18,8 +18,15 @@ export const viewport: Viewport = {
   maximumScale: 5, // Permite zoom por accesibilidad pero controlado
 };
 
+const getBaseUrl = () => {
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return "http://localhost:3000";
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://traducciones.jackbox.lol"),
+  metadataBase: new URL(getBaseUrl()),
   title: {
     default: "Jackbox en español",
     template: "%s | Jackbox en español"
@@ -40,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jackbox en español",
     description: "Traducciones no oficiales al español para los juegos de Jackbox Games.",
-    url: "https://traducciones.jackbox.lol",
+    url: getBaseUrl(),
     siteName: "Jackbox en español",
     locale: "es_LA",
     type: "website",
