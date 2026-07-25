@@ -30,7 +30,7 @@ export function CreditModal({ isOpen, onClose, children }: CreditModalProps) {
             className="bg-slate-900 border border-slate-800 w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-3xl p-6 md:p-8 shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
-              {children}
+            {children}
           </motion.div>
         </motion.div>
       )}

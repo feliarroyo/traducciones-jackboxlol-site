@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useModal } from "../hooks/useModal";
 import { BaseCard } from "../ui/BaseCard";
 import { CreditModal } from "../ui/CreditModal";
+import { FadeImage } from "../ui/FadeImage";
 
 interface DubGameCardXLProps {
     game: DubCreditItem;
@@ -90,7 +91,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                     <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                         <div className="flex items-center gap-3">
                             <div className="w-20 h-10 relative">
-                                <Image src={asset.src} alt={asset.alt} fill sizes="80px" className="object-contain" />
+                                <FadeImage src={asset.src} alt={asset.alt} fill sizes="80px" className="object-contain" />
                             </div>
                             <h3 className="text-lg font-black text-amber-400 uppercase tracking-wider pl-2 border-l border-slate-800">
                                 Créditos de doblaje
