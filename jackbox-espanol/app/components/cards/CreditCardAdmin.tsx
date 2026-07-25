@@ -31,22 +31,22 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
   return (
     <>
       {/* 🟦 MAIN SQUARE CARD */}
-      <BaseCard className="aspect-square w-full h-full">
-        <div className="flex flex-col items-center gap-2 w-full flex-1 justify-center">
+      <BaseCard className="aspect-square w-full h-full p-3 sm:p-4 overflow-hidden">
+        <div className="flex flex-col items-center gap-1.5 sm:gap-2 w-full flex-1 justify-center min-h-0">
           {admin.avatarUrl && (
-            <div className="w-20 h-20 relative rounded-2xl overflow-hidden border-2 border-amber-500/10 bg-slate-900 group-hover:border-amber-500/30 transition-colors shrink-0">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 relative rounded-2xl overflow-hidden border-2 border-amber-500/10 bg-slate-900 group-hover:border-amber-500/30 transition-colors shrink-0">
               <Image
                 src={admin.avatarUrl}
                 alt={admin.username}
                 fill
-                sizes="80px"
+                sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 80px"
                 className="object-cover"
               />
             </div>
           )}
 
           <div className="space-y-1 w-full max-w-full px-1 shrink min-w-0">
-            <h3 className="text-base md:text-lg text-nowrap font-bold transition-colors block">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold transition-colors block">
               {admin.profileUrl ? (
                 <a
                   href={admin.profileUrl}
@@ -61,11 +61,11 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
               )}
               {/* TAGS (if present) */}
               {(admin.tags && admin.tags.length > 0) ? (
-                <div className="flex flex-wrap gap-1 justify-center max-w-full">
+                <div className="flex flex-wrap gap-1 justify-center w-full overflow-hidden max-h-4 sm:max-h-full">
                   {admin.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 whitespace-nowrap tracking-wide uppercase"
+                      className="text-[7.5px] sm:text-[9px] md:text-[10px] leading-tight font-bold px-1.5 sm:px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 truncate max-w-full tracking-wide uppercase shrink-0"
                     >
                       {tag}
                     </span>

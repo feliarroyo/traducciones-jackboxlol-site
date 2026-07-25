@@ -21,7 +21,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
 
     return (
         <>
-            {/* 🟦 MAIN GAME SQUARE CARD */}
+            {/* MAIN GAME SQUARE CARD */}
             <BaseCard className="shrink-0 aspect-square py-4">
                 {/* Game Logo Container */}
                 <div className="w-full">
@@ -83,7 +83,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                 </button>
             </BaseCard>
 
-            {/* 🚀 CAST OVERLAY MODAL LIST WINDOW */}
+            {/* CAST OVERLAY MODAL LIST WINDOW */}
             {mounted && (
                 <CreditModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
 
