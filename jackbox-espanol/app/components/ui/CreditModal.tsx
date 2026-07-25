@@ -1,5 +1,6 @@
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 interface CreditModalProps {
   isOpen: boolean;
@@ -8,6 +9,22 @@ interface CreditModalProps {
 }
 
 export function CreditModal({ isOpen, onClose, children }: CreditModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      // Save original style in case
+      const originalStyle = window.getComputedStyle(document.body).overflow;
+      
+      // Block scrolling
+      document.body.style.overflow = "hidden";
+
+      // Restore scrolling on closeup/unmount
+      return () => {
+        document.body.style.overflow = originalStyle;
+      };
+    }
+  }, [isOpen]);
+
+  
   if (typeof document === "undefined") return null; // Fallback for SSR
 
   return createPortal(
