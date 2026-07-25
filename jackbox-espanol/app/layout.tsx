@@ -42,14 +42,6 @@ export const metadata: Metadata = {
     description: "Traducciones no oficiales al español para los juegos de Jackbox Games.",
     url: "https://traducciones.jackbox.lol",
     siteName: "Jackbox en español",
-    images: [
-      {
-        url: "/images/og-image.png", // Crea una imagen de 1200x630 para el preview global
-        width: 1200,
-        height: 630,
-        alt: "Logo de Jackbox en español",
-      },
-    ],
     locale: "es_LA",
     type: "website",
   },
@@ -58,7 +50,6 @@ export const metadata: Metadata = {
     site: "@esjackbox",
     title: "Jackbox en español",
     description: "Traducciones no oficiales al español para los juegos de Jackbox Games.",
-    images: ["/images/og-image.png"],
   },
 };
 
