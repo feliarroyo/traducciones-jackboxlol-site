@@ -66,7 +66,7 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
 
 
           {/* Roles Matrix content */}
-          <div className="space-y-6 pr-2">
+          <div className="space-y-6 pr-2 mt-6">
             {roles.map((role, idx) => (
               <div key={idx} className="flex flex-col items-center justify-center gap-1 flex-wrap">
                 <span className="font-bold text-slate-100 text-sm">

@@ -37,7 +37,7 @@ export default function CreditCardText({ extras }: { extras: ExtraCreditItem[] }
 
 
           {/* Roles Matrix content */}
-          <div className="flex flex-col space-y-6 pr-2">
+          <div className="flex flex-col space-y-6 pr-2 mt-6">
             {extras.map((extra, idx) => (
               <div key={idx} className="flex flex-col items-center justify-center gap-1 flex-wrap">
                 <span className="font-bold text-slate-100 text-sm">

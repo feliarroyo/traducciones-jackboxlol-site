@@ -101,7 +101,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                     </div>
 
                     {/* Loop Over All Contributed Talent/Roles for this specific game */}
-                    <div className="text-center space-y-4 divider-y divider-slate-800">
+                    <div className="text-center space-y-4 divider-y divider-slate-800 mt-6">
                         {game.roles.map((actor, idx) => (
                             <div key={idx} className="flex flex-col gap-1">
                                 <div className="flex items-center justify-center gap-2 flex-wrap">

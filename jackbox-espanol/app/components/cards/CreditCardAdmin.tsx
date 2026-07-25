@@ -125,7 +125,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
           </div>
 
           {/* Roles Matrix content */}
-          <div className="space-y-6 pr-2">
+          <div className="space-y-6 pr-2 mt-6">
             {admin.roles.map((role, idx) => (
               <div key={idx} className="space-y-3">
                 <h4 className="text-xs font-black uppercase tracking-widest text-slate-400 border-l-2 border-amber-500/50 pl-2">
