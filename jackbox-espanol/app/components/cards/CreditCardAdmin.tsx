@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useModal } from "../hooks/useModal";
 import { BaseCard } from "../ui/BaseCard";
 import { CreditModal } from "../ui/CreditModal";
+import { useEffect, useMemo, useState } from "react";
 
 // 🏷️ Define the strict TypeScript shape for the Admin data structure
 interface CreditCardAdminProps {
@@ -25,6 +26,19 @@ interface CreditCardAdminProps {
 
 export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
   const { isOpen, setIsOpen, mounted } = useModal();
+  const [loadedImages, setLoadedImages] = useState(0);
+  const handleImageLoad = () => setLoadedImages((prev) => prev + 1);
+  const totalImages = useMemo(() => {
+    let count = admin.avatarUrl ? 1 : 0;
+    admin.roles.forEach((role) => {
+      if (role.games) count += role.games.length;
+    });
+    return count;
+  }, [admin]);
+  const isReady = totalImages === 0 || loadedImages >= totalImages;
+  useEffect(() => {
+    if (!isOpen) setLoadedImages(0);
+  }, [isOpen]);
 
   return (
     <>
@@ -87,13 +101,14 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
 
       {/* Overlay Modal */}
       {mounted && (
-        <CreditModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <CreditModal isOpen={isOpen} onClose={() => setIsOpen(false)} isReady={isReady}>
           {/* Modal Header */}
           <div className="flex items-center justify-between border-b border-slate-800 pb-4">
             <div className="flex items-center gap-4">
               {admin.avatarUrl !== undefined && (
                 <div className="w-12 h-12 relative rounded-xl overflow-hidden border border-amber-500/20 bg-slate-950">
-                  <Image src={admin.avatarUrl} alt={admin.username} fill sizes="48px" className="object-cover" />
+                  <Image src={admin.avatarUrl} alt={admin.username} fill sizes="48px" className="object-cover" onLoad={handleImageLoad}
+                    onError={handleImageLoad}/>
                 </div>
               )}
               <h3 className="flex flex-col text-2xl font-black">
@@ -134,7 +149,8 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
                   <div className="flex flex-wrap gap-3 items-center bg-slate-950/40 p-3 rounded-xl border border-slate-800/40">
                     {role.games.map((game, gIdx) => (
                       <div key={gIdx} className="w-28 h-14 relative shrink-0" title={GAME_ASSETS[game]?.alt}>
-                        <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill sizes="112px" className="object-contain" />
+                        <Image src={GAME_ASSETS[game]?.src} alt={GAME_ASSETS[game]?.alt} fill sizes="112px" className="object-contain" onLoad={handleImageLoad}
+                    onError={handleImageLoad} />
                       </div>
                     ))}
                   </div>
