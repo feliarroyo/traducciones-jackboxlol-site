@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   const { metadata } = post;
   return {
     title: metadata.title,
-    description: `Lee las últimas novedades sobre el parche de la fecha.`,
+    description: `Aprende más sobre esta novedad en nuestra página de noticias.`,
     openGraph: {
       title: metadata.title,
       description: metadata.excerpt,
