@@ -19,7 +19,7 @@ export default function VideoDisplay() {
         autoPlay
         loop
         preload="auto"
-        className="w-full h-full object-cover absolute inset-0"
+        className="w-full h-full object-cover absolute inset-0 rounded-3xl"
       />
       
     </div>
