@@ -19,7 +19,7 @@ export default function DownloadsPage() {
     const [platformFilter, setPlatformFilter] = useState("win-linux"); // win-linux, mac, switch
     const [storeFilter, setStoreFilter] = useState("default");       // default, epic, microsoft, nintendo
     const [langFilter, setLangFilter] = useState("latam");       // latam, spain
-    
+
 
     return (
         <div className="space-y-8 py-6">
@@ -41,9 +41,9 @@ export default function DownloadsPage() {
                     <h2 className="text-3xl text-center font-black text-amber-400">Descarga manual</h2>
                     <p className="text-sm text-center text-slate-400">Filtra según tu plataforma, tienda de compra y localización preferida.</p>
                 </div>
-                
+
                 {/* DYNAMIC INSTRUCTION ACCORDION AREA */}
-                <InstallationInstructions platformFilter={platformFilter} storeFilter={storeFilter} />                
+                <InstallationInstructions platformFilter={platformFilter} storeFilter={storeFilter} />
 
                 {/* THREE INTERACTIVE TOGGLE BARS */}
                 <LayoutGroup><div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-950/40 p-4 rounded-2xl border border-slate-800/80 text-xs font-bold">
@@ -138,7 +138,18 @@ export default function DownloadsPage() {
                 {/* DATA GRID DRAWER ELEMENT */}
                 <motion.div layout className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
                     {(storeFilter === "microsoft" && platformFilter === "mac") && (
-                        <p>Microsoft Store no está disponible en Mac <img src="/images/crazy.webp" alt="Burbujas de Bajo Trabajo con cara chistosa" fetchPriority="high" className="inline align-middle h-8 w-8" /></p>
+                        <motion.p
+                            layout="position"
+                            key="mac-ms-store-error"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            style={{ willChange: "opacity, transform" }}
+                            className="w-full py-8 text-center text-slate-300 flex justify-center items-center gap-2"
+                        >
+                            Microsoft Store no está disponible en Mac <img src="/images/crazy.webp" alt="Burbujas de Bajo Trabajo con cara chistosa" fetchPriority="high" className="inline align-middle h-8 w-8" />
+                        </motion.p>
                     )}
 
                     <AnimatePresence mode="popLayout">
@@ -184,7 +195,7 @@ export default function DownloadsPage() {
                                             duration: 0.25,
                                             ease: "easeInOut"
                                         }}
-                                        
+
                                         style={{ willChange: "opacity, transform" }}
                                     >
                                         <GameDownloadButton
