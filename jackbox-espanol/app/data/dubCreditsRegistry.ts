@@ -594,10 +594,31 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         ]
     },
     {
-        id: "champdup",
-        details: "(canción)",
-        category: "comingSoonMinor",
+        id: "jokeboat",
+        category: "comingSoon",
         roles: [
+            {
+                username: "\"Juan\"",
+                roles: ["Anfitrión (Chuck E.)"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Supervisión del doblaje", "Transcripción de diálogos", "Redacción de guiones"]
+            },
+            {
+                username: "Artuhaxis",
+                roles: ["Redacción de guiones"]
+            }
+        ]
+    },
+    {
+        id: "drawfulanimate",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "Mila Tapia",
+                roles: ["Anfitriona"]
+            },
             {
                 username: "Nahuel Guidi",
                 roles: ["Cantante"]
@@ -605,7 +626,35 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         ]
     },
     {
-        id: "drawfulanimate",
+        id: "doominate",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "\"Juan\"",
+                roles: ["Anfitrión (Lalo Parca)"]
+            },
+            {
+                username: "Hanzel Translations",
+                roles: ["Traducción de subtítulos (usados como guion)"]
+            }
+        ]
+    },
+    {
+        id: "suspectives",
+        category: "comingSoon",
+        roles: [
+            {
+                username: "\"Pilar\"",
+                roles: ["Anfitriona (Jefa del departamento)"]
+            },
+            {
+                username: "Artuhaxis",
+                roles: ["Voz del perito", "Traducción de subtítulos (usados como guion)"]
+            }
+        ]
+    },
+    {
+        id: "champdup",
         details: "(canción)",
         category: "comingSoonMinor",
         roles: [
