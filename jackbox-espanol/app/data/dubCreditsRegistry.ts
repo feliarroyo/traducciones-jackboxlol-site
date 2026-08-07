@@ -210,7 +210,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         demoUrl: "https://www.youtube.com/watch?v=vZ8IJwA0TVg",
         roles: [
             {
-                username: ["\"Lucho\"", "Rocío Benítez Blasco"],
+                username: ["\"Lucho\" (Luciano Ariel Diez)", "Rocío Benítez Blasco"],
                 isDuo: true,
                 roles: ["Anfitriones (Shadow Master MC y DJ Raych)"]
             },
