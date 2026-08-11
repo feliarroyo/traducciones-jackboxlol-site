@@ -813,6 +813,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
         targets: [
             {
                 name: "Voces en inglés",
+                // notes: "Revierte los doblajes de Mad Verse City, Zeeple Dome y Patentes Dementes.",
                 notes: "Revierte los doblajes de Zeeple Dome y Patentes Dementes.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-5-Spanish/releases/download/213.21-ES/JPP5-ES-ENGVOICES.zip"
             }
@@ -849,7 +850,8 @@ export const ENG_DOWNLOADS_REGISTRY = [
         targets: [
             {
                 name: "Canción en inglés",
-                notes: "Revierte el doblaje de Bajo Trabajo y la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
+                notes: "Revierte la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
+                // notes: "Revierte el doblaje de Bajo Trabajo y la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-8-Spanish/releases/download/437.12-ES/TemaCreditosOriginalesRuleta.zip"
             }
         ]
