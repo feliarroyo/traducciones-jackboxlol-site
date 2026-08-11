@@ -68,7 +68,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "bidiots",
         category: "mainDub",
-        demoUrl: "https://www.youtube.com/watch?v=C-ISJVTboiw",
+        demoUrl: "https://www.youtube.com/watch?v=Btx3HrN68gU",
         roles: [
             {
                 username: "Fixed Fun",
@@ -390,7 +390,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "jobjob",
         category: "comingSoon",
-        demoUrl: "https://www.youtube.com/watch?v=AiLzb5gn3fQ",
+        demoUrl: "https://www.youtube.com/watch?v=bj2lH24md8o",
         roles: [
             {
                 username: "Valentina Dogovich",
