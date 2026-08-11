@@ -206,7 +206,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     },
     {
         id: "madverse",
-        category: "mainDub",
+        category: "comingSoon",
         demoUrl: "https://www.youtube.com/watch?v=vZ8IJwA0TVg",
         roles: [
             {
@@ -389,7 +389,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     },
     {
         id: "jobjob",
-        category: "mainDub",
+        category: "comingSoon",
         demoUrl: "https://www.youtube.com/watch?v=AiLzb5gn3fQ",
         songUrl: "PLACEHOLDER",
         roles: [
