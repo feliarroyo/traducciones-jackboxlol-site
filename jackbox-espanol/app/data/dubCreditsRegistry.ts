@@ -389,7 +389,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     },
     {
         id: "jobjob",
-        category: "comingSoon",
+        category: "mainDub",
         demoUrl: "https://www.youtube.com/watch?v=bj2lH24md8o",
         roles: [
             {

@@ -850,8 +850,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
         targets: [
             {
                 name: "Canción en inglés",
-                notes: "Revierte la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
-                // notes: "Revierte el doblaje de Bajo Trabajo y la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
+                notes: "Revierte el doblaje de Bajo Trabajo y la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-8-Spanish/releases/download/437.12-ES/TemaCreditosOriginalesRuleta.zip"
             }
         ]
