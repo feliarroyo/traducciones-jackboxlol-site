@@ -577,6 +577,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "pollmine",
         category: "comingSoon",
+        demoUrl: "https://youtu.be/QGEXv20g9vI"
         roles: [
             {
                 username: "María Eugenia Suárez",
