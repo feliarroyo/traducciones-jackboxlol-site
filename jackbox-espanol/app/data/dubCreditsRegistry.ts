@@ -391,7 +391,6 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         id: "jobjob",
         category: "comingSoon",
         demoUrl: "https://www.youtube.com/watch?v=AiLzb5gn3fQ",
-        songUrl: "PLACEHOLDER",
         roles: [
             {
                 username: "Valentina Dogovich",
