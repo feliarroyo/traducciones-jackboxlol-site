@@ -598,7 +598,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         category: "comingSoon",
         roles: [
             {
-                username: "\"Juan\"",
+                username: "Juan Alfredo Menéndez",
                 roles: ["Anfitrión (Chuck E.)"]
             },
             {
@@ -630,7 +630,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         category: "comingSoon",
         roles: [
             {
-                username: "\"Juan\"",
+                username: "Juan Alfredo Menéndez",
                 roles: ["Anfitrión (Lalo Parca)"]
             },
             {
@@ -644,7 +644,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         category: "comingSoon",
         roles: [
             {
-                username: "\"Pilar\"",
+                username: "Pilar Menéndez",
                 roles: ["Anfitriona (Jefa del departamento)"]
             },
             {
