@@ -645,11 +645,15 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
         roles: [
             {
                 username: "Pilar Menéndez",
-                roles: ["Anfitriona (Jefa del departamento)"]
+                roles: ["Anfitriona (Jefa del departamento)", "Cantante de canción"]
             },
             {
                 username: "Artuhaxis",
-                roles: ["Voz del perito", "Traducción de subtítulos (usados como guion)"]
+                roles: ["Voz del perito", "Traducción de subtítulos (usados como guion)", "Letra", "Recorte y ecualización de audio"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Supervisión del doblaje", "Cantante de canción", "Letra"]
             }
         ]
     },
