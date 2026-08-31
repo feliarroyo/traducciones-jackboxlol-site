@@ -642,7 +642,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "suspectives",
         category: "comingSoon",
-        demoUrl: "https://youtu.be/92F56bLF_mY",
+        demoUrl: "https://youtu.be/KqDjW-GWMzk",
         roles: [
             {
                 username: "Pilar Menéndez",
