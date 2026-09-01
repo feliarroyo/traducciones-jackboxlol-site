@@ -628,6 +628,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     {
         id: "doominate",
         category: "comingSoon",
+        demoUrl: "https://youtu.be/i_YfMCJ-DBY",
         roles: [
             {
                 username: "Juan Alfredo Menéndez",
@@ -655,6 +656,25 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             {
                 username: "Akira896",
                 roles: ["Supervisión del doblaje", "Cantante de canción", "Letra"]
+            }
+        ]
+    },
+    {
+        id: "hearsay",
+        details: "(canción)",
+        category: "comingSoonMinor",
+        roles: [
+            {
+                username: "Akira896",
+                roles: ["Voz principal de clips", "Cantante"]
+            },
+            {
+                username: "Pilar y Juan Alfredo Menéndez",
+                roles: ["Voces adicionales de clips"]
+            },
+            {
+                username: "Artuhaxis",
+                roles: ["Letra"]
             }
         ]
     },
