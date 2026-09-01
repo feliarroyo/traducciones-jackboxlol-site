@@ -661,12 +661,11 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     },
     {
         id: "hearsay",
-        details: "(canción)",
         category: "comingSoonMinor",
         roles: [
             {
                 username: "Akira896",
-                roles: ["Voz principal de clips", "Cantante"]
+                roles: ["Voz de clips", "Cantante"]
             },
             {
                 username: "Pilar y Juan Alfredo Menéndez",
