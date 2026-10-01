@@ -775,7 +775,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
         targets: [
             {
                 name: "Voces en inglés",
-                notes: "Revierte el doblaje de Earwax: Sonidos Raros.",
+                notes: "Revierte los doblajes de Earwax: Sonidos Raros y Subastardos.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/download/15.9-ES/JPP2-ES-ENGVOICES.zip"
             }
         ]
@@ -850,7 +850,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
         targets: [
             {
                 name: "Canción en inglés",
-                notes: "Revierte la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
+                notes: "Revierte el doblaje de Bajo Trabajo y la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-8-Spanish/releases/download/437.12-ES/TemaCreditosOriginalesRuleta.zip"
             }
         ]
