@@ -7,14 +7,16 @@ import VideoDisplay from "./components/VideoDisplay";
 
 export default function Home() {
   const pp1dubs = ["drawful"];
-  const pp2dubs = ["earwax", "bidiots"]
+  const pp2dubs = ["earwax"]
+  //const pp2dubs = ["earwax", "bidiots"]
   const pp3dubs = ["fakinit"];
   const pp4dubs = ["survive", "monster", "civic"];
   // const pp5dubs = ["madverse", "zeeple", "patently"];
   const pp5dubs = ["zeeple", "patently"];
   const pp6dubs = ["ptb"];
   const pp7dubs = ["devils", "talkingpoints"];
-  const pp8dubs = ["jobjob"];
+  // const pp8dubs = ["jobjob"];
+  // const pp11dubs = ["suspectives", "doominate", "hearsay"];
   const drawful2 = ["drawful2"];
   const uyw = ["useyourwords"];
 
@@ -40,7 +42,7 @@ export default function Home() {
             Descargar traducciones
           </Link>
           </div>
-          
+
         </div>
 
         {/* Right Side: Showcase Character graphic */}
@@ -62,7 +64,7 @@ export default function Home() {
           <div className="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-4 max-w-3xl mx-auto flex items-start gap-3">
             <span className="text-xl mt-0.5">⚠️</span>
             <p className="text-sm md:text-sm text-amber-200/80 leading-relaxed">
-              Actualmente, <b>You Don't Know Jack 2015</b> (Party Pack 1) y <b>Legends of Trivia</b> (Party Pack 11) no se encuentran traducidos.
+              Actualmente, <b>You Don&apos;t Know Jack 2015</b> (Party Pack 1), <b>Legends of Trivia</b> (Party Pack 11) y Trivia Murder Party 3 no se encuentran traducidos.
             </p>
           </div>
         </div>
@@ -81,7 +83,7 @@ export default function Home() {
             <PackShowcase packLogoSrc={"/images/games/pp5.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 5"} gameLogos={pp5dubs}></PackShowcase>
             <PackShowcase packLogoSrc={"/images/games/pp6.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 6"} gameLogos={pp6dubs}></PackShowcase>
             <PackShowcase packLogoSrc={"/images/games/pp7.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 7"} gameLogos={pp7dubs}></PackShowcase>
-            <PackShowcase packLogoSrc={"/images/games/pp8.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 8"} gameLogos={pp8dubs}></PackShowcase>
+            {/* <PackShowcase packLogoSrc={"/images/games/pp8.webp"} packLogoAlt={"Logo de The Jackbox Party Pack 8"} gameLogos={pp8dubs}></PackShowcase> */}
             <SinglePackShowcase gameLogos={drawful2}></SinglePackShowcase>
             <SinglePackShowcase gameLogos={uyw}></SinglePackShowcase>
           </PackTicker>
