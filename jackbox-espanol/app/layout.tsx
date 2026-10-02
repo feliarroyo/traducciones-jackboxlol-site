@@ -5,6 +5,8 @@ import Image from "next/image";
 import "./globals.css";
 import HeaderNavbar from "./components/HeaderNavbar";
 import DonateButton from "./components/DonateButton";
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -115,7 +117,10 @@ export default function RootLayout({
             <p>El sitio no está afiliado con Jackbox Games, Inc., Smiling Buddha Games, LLC o Wide Right Interactive.</p>
           </div>
         </footer>
-
+        
+        {/* Vercel Analytics and speed insights */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
