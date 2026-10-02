@@ -64,7 +64,7 @@ export default function Home() {
           <div className="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-4 max-w-3xl mx-auto flex items-start gap-3">
             <span className="text-xl mt-0.5">⚠️</span>
             <p className="text-sm md:text-sm text-amber-200/80 leading-relaxed">
-              Actualmente, <b>You Don&apos;t Know Jack 2015</b> (Party Pack 1), <b>Legends of Trivia</b> (Party Pack 11) y Trivia Murder Party 3 no se encuentran traducidos.
+              Actualmente, <b>You Don&apos;t Know Jack 2015</b> (Party Pack 1), <b>Legends of Trivia</b> (Party Pack 11) y <b>Trivia Murder Party 3</b> no se encuentran traducidos.
             </p>
           </div>
         </div>
