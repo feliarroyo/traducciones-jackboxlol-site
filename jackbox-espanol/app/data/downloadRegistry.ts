@@ -4,7 +4,7 @@ export interface DownloadTarget {
     stores: string[];
     lang?: "latam" | "spain";
     notes?: string;
-    link: string;
+    link?: string;
     version_file?: string;
     version_property?: string;
 }
@@ -361,6 +361,20 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-11-Spanish/releases/latest/download/JPP11-ES-MS.zip",
                 "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-11-Spanish/main/ArchivoMS/jbg.config.jet",
                 "version_property": "buildVersion"
+            }
+        ]
+    },
+    {
+        id: "pp12",
+        title: "The Jackbox Party Pack 12",
+        imageSrc: "/images/buttons/pp12.webp",
+        hasSpain: false,
+        targets: [
+            {
+                name: "Próximamente",
+                platforms: ["win-linux", "mac", "switch"],
+                stores: ["default", "epic", "nintendo"],
+                lang: "latam"
             }
         ]
     },
