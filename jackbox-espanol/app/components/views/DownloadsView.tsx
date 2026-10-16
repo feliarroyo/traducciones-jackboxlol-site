@@ -199,7 +199,7 @@ export default function DownloadsPage() {
                                         style={{ willChange: "opacity, transform" }}
                                     >
                                         <GameDownloadButton
-                                            href={target.link}
+                                            href={target.link || ""}
                                             imageSrc={game.imageSrc || "/images/covers/default-pack.webp"}
                                             altText={`Descargar parche para ${game.title}`}
                                             isAdaptation={target.lang === "latam" && game.hasAdaptation}
