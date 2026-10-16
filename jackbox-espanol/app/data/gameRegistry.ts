@@ -20,6 +20,10 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
     src: "/images/games/bracketeering.webp",
     alt: "Bracketeering: Apuesta al Mejor"
   },
+  card: {
+    src: "/images/games/card.webp",
+    alt: "We Forgot A Card"
+  },
   champdup: {
     src: "/images/games/champdup.webp",
     alt: "Champ'd Up: Batalla de Campeones"
@@ -31,6 +35,10 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
   cookiehaus: {
     src: "/images/games/cookiehaus.webp",
     alt: "Cookie Haus"
+  },
+  debate: {
+    src: "/images/games/debate.webp",
+    alt: "Debate And Switch"
   },
   devils: {
     src: "/images/games/devils.webp",
@@ -84,6 +92,14 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
     src: "/images/games/hearsay.webp",
     alt: "Hear Say"
   },
+  hyperface: {
+    src: "/images/games/hyperface.webp",
+    alt: "Hyperface"
+  },
+  idolfactions: {
+    src: "/images/games/idolfactions.webp",
+    alt: "Idol Factions"
+  },
   interlashional: {
     src: "/images/games/interlashional.webp",
     alt: "Quiplash 2: InterLASHional"
@@ -103,6 +119,10 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
   madverse: {
     src: "/images/games/madverse.webp",
     alt: "Mad Verse City: Ciudad del Rap"
+  },
+  megapals: {
+    src: "/images/games/megapals.webp",
+    alt: "Megapals"
   },
   monster: {
     src: "/images/games/monster.webp",
