@@ -31,7 +31,7 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
           {/* Badge for upcoming translations */}
           {comingSoon && (
             <div className="mt-1.5 flex justify-center">
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-400/10 border border-slate-400/20">
                 Próximamente
               </span>
             </div>
