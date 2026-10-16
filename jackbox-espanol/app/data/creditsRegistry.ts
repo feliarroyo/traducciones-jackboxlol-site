@@ -31,6 +31,7 @@ export interface PackCreditItem {
         mainContributors: string[];
         isAdaptation?: boolean;
         isSolo?: true,
+        comingSoon?: boolean;
         roles: {
             username: string;
             roles: string[];
@@ -1164,6 +1165,59 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     }
                 ]
             },
+        ]
+    },
+    {
+        packId: "pp12",
+        games: [
+            {
+                id: "card",
+                isSolo: true,
+                mainContributors: ["Artuhaxis"],
+                comingSoon: true,
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
+            },
+            {
+                id: "megapals",
+                isSolo: true,
+                mainContributors: ["Artuhaxis"],
+                comingSoon: true,
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
+            },
+            {
+                id: "debate",
+                isSolo: true,
+                mainContributors: ["Akira896"],
+                comingSoon: true,
+                roles: [
+                    {
+                        username: "Akira896",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
+            }
         ]
     },
     {
