@@ -17,6 +17,7 @@ export interface GameCreditItem {
     mainContributors: string[];
     isAdaptation?: boolean;
     isSolo?: boolean;
+    comingSoon?: boolean;
     roles: {
         username: string;
         roles: string[];

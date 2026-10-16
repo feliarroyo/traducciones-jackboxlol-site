@@ -1,17 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 import Image from "next/image";
 import { GAME_ASSETS } from "../../data/gameRegistry";
 import { GameCreditItem } from "../../data/creditsRegistry";
-import { AnimatePresence, motion } from "framer-motion";
 import { useModal } from "../hooks/useModal";
 import { BaseCard } from "../ui/BaseCard";
 import { CreditModal } from "../ui/CreditModal";
 import { FadeImage } from "../ui/FadeImage";
 
-export default function CreditCardGame({ id, isAdaptation, isSolo, mainContributors, roles }: GameCreditItem) {
+export default function CreditCardGame({ id, isAdaptation, isSolo, mainContributors, roles, comingSoon }: GameCreditItem) {
   const { isOpen, setIsOpen, mounted } = useModal();
   const asset = GAME_ASSETS[id] || { src: "/images/placeholder.png", alt: id };
 
@@ -20,27 +17,39 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
       {/* 🟦 MAIN SQUARE CARD */}
       <BaseCard className="justify-center aspect-square">
         {/* Game Logo Container */}
-        <div className="flex flex-col w-full">
-          {
-            <div className=" w-full h-16 relative shrink-0 mt-2 justify-center items-center">
-              <Image src={asset.src} alt={id} fill sizes="(max-width: 640px) 100vw, 250px" className="object-contain" />
+        <div className="flex flex-col w-full items-center">
+          <div className="w-full h-16 relative shrink-0 mt-2 justify-center items-center">
+            <Image
+              src={asset.src}
+              alt={id}
+              fill
+              sizes="(max-width: 640px) 100vw, 250px"
+              className="object-contain"
+            />
+          </div>
+
+          {/* Badge for upcoming translations */}
+          {comingSoon && (
+            <div className="mt-1.5 flex justify-center">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20">
+                Próximamente
+              </span>
             </div>
-          }
+          )}
+
           {mainContributors.length > 0 && (
             <span className="text-slate-200 block font-bold text-[10px] my-1 py-1">
               {isAdaptation ? "Adaptación" : "Traducción"}{!isSolo && " principal"}
               {mainContributors.map((user, idx) => (
                 <div key={idx} className="text-center text-[11px] leading-snug">
-                  <p className="text-slate-400/80 font-medium tracking-wide ">
+                  <p className="text-slate-400/80 font-medium tracking-wide">
                     {user}
                   </p>
                 </div>
-              ))
-              }
+              ))}
             </span>
           )}
         </div>
-
 
         <button
           onClick={() => setIsOpen(true)}
@@ -57,13 +66,24 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
               <div className="w-20 h-10 relative">
                 <FadeImage src={asset.src} alt={id} fill sizes="80px" className="object-contain" />
               </div>
-              <h3 className="text-lg font-black text-amber-400 uppercase tracking-wider pl-2 border-l border-slate-600">
-                Créditos de traducción
-              </h3>
+              <div className="flex items-center gap-2 border-l border-slate-600 pl-2">
+                <h3 className="text-lg font-black text-amber-400 uppercase tracking-wider">
+                  Créditos de traducción
+                </h3>
+                {comingSoon && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-400/10 border border-slate-400/20">
+                    Próximamente
+                  </span>
+                )}
+              </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition-colors shrink-0">✕</button>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition-colors shrink-0"
+            >
+              ✕
+            </button>
           </div>
-
 
           {/* Roles Matrix content */}
           <div className="space-y-6 pr-2 mt-6">
