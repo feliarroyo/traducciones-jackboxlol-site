@@ -9,6 +9,7 @@ interface GamePackItem {
     mainContributors: string[];
     isAdaptation?: boolean;
     isSolo?: boolean;
+    comingSoon?: boolean;
     roles: {
       username: string;
       roles: string[];
@@ -55,7 +56,7 @@ export default function CreditCardContainer({
                 </div>)
               }
               {pack.games.map((game) =>
-                <CreditCardGame key={game.id} id={game.id} isAdaptation={game.isAdaptation} isSolo={game.isSolo} mainContributors={game.mainContributors} roles={game.roles} />
+                <CreditCardGame key={game.id} id={game.id} isAdaptation={game.isAdaptation} isSolo={game.isSolo} mainContributors={game.mainContributors} roles={game.roles} comingSoon={game.comingSoon} />
               )}
             </div>
           </div>
