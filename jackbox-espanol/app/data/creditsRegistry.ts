@@ -99,7 +99,7 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
             {
                 roleName: "Traducción principal",
                 games: [
-                    "drawful", "wordspud", "quiplashXL", "fakinit", "fibbage3", "monster", "ydkjfs", "split", "madverse", "zeeple", "patently", "tmp2", "rolemodels", "devils", "champdup", "drawfulanimate", "jobjob", "pollmine", "cookiehaus", "suspectives"
+                    "drawful", "wordspud", "quiplashXL", "fakinit", "fibbage3", "monster", "ydkjfs", "split", "madverse", "zeeple", "patently", "tmp2", "rolemodels", "devils", "champdup", "drawfulanimate", "jobjob", "pollmine", "cookiehaus", "suspectives", "megapals", "card", "hyperface"
                 ]
             },
             {
@@ -1189,6 +1189,22 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
             },
             {
                 id: "megapals",
+                isSolo: true,
+                mainContributors: ["Artuhaxis"],
+                comingSoon: true,
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
+                    }
+                ]
+            },
+            {
+                id: "hyperface",
                 isSolo: true,
                 mainContributors: ["Artuhaxis"],
                 comingSoon: true,
