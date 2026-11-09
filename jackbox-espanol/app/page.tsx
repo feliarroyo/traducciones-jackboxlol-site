@@ -7,8 +7,7 @@ import VideoDisplay from "./components/VideoDisplay";
 
 export default function Home() {
   const pp1dubs = ["drawful"];
-  const pp2dubs = ["earwax"]
-  //const pp2dubs = ["earwax", "bidiots"]
+  const pp2dubs = ["earwax", "bidiots"]
   const pp3dubs = ["fakinit"];
   const pp4dubs = ["survive", "monster", "civic"];
   // const pp5dubs = ["madverse", "zeeple", "patently"];

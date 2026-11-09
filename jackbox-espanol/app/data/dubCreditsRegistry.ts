@@ -67,7 +67,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     },
     {
         id: "bidiots",
-        category: "comingSoon",
+        category: "mainDub",
         demoUrl: "https://www.youtube.com/watch?v=Btx3HrN68gU",
         roles: [
             {
