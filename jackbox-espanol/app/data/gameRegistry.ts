@@ -73,7 +73,7 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
     alt: "¡Engáñame!"
   },
   fakinitxl: {
-    src: "/images/games/fakinitxl.webp",
+    src: "/images/games/fakinitxl.PNG",
     alt: "Fakin' It! XL"
   },
   fibbagexl: {

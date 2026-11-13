@@ -1176,7 +1176,6 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                 id: "card",
                 isSolo: true,
                 mainContributors: ["Artuhaxis"],
-                comingSoon: true,
                 roles: [
                     {
                         username: "Artuhaxis",
@@ -1185,6 +1184,10 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "Fixed Fun",
                         roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Implementación de TTS"]
                     }
                 ]
             },
@@ -1192,7 +1195,6 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                 id: "megapals",
                 isSolo: true,
                 mainContributors: ["Artuhaxis"],
-                comingSoon: true,
                 roles: [
                     {
                         username: "Artuhaxis",
@@ -1201,6 +1203,10 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "Fixed Fun",
                         roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Implementación de TTS"]
                     }
                 ]
             },
@@ -1208,7 +1214,6 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                 id: "hyperface",
                 isSolo: true,
                 mainContributors: ["Artuhaxis"],
-                comingSoon: true,
                 roles: [
                     {
                         username: "Artuhaxis",
@@ -1293,6 +1298,21 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "hectorflipi, lau_fleur y exviolinista13",
                         roles: ["Traducción principal (versión de España antes de la oficial)"]
+                    }
+                ]
+            },
+            {
+                id: "fakinitxl",
+                isSolo: true,
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
                     }
                 ]
             },
