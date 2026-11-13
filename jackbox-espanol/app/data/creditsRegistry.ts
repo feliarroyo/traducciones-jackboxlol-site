@@ -85,7 +85,8 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
                     "Encargado de las redes sociales",
                     "Encargado de subir los parches",
                     "Editor de la página web",
-                    "Encargado principal de editar/traducir archivos del dominio"
+                    "Encargado principal de editar/traducir archivos del dominio",
+                    "Implementación de TTS hispana en el Pack 12"
                 ]
             }
         ]
@@ -99,7 +100,7 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
             {
                 roleName: "Traducción principal",
                 games: [
-                    "drawful", "wordspud", "quiplashXL", "fakinit", "fibbage3", "monster", "ydkjfs", "split", "madverse", "zeeple", "patently", "tmp2", "rolemodels", "devils", "champdup", "drawfulanimate", "jobjob", "pollmine", "cookiehaus", "suspectives", "megapals", "card", "hyperface"
+                    "drawful", "wordspud", "quiplashXL", "fakinit", "fibbage3", "monster", "ydkjfs", "split", "madverse", "zeeple", "patently", "tmp2", "rolemodels", "devils", "champdup", "drawfulanimate", "jobjob", "pollmine", "cookiehaus", "suspectives", "megapals", "card", "hyperface", "fakinitxl"
                 ]
             },
             {
@@ -150,7 +151,7 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
             {
                 roleName: "Edición de imágenes",
                 games: [
-                    "wordspud", "bidiots", "quiplashXL", "bombcorp", "tmp1", "fakinit", "fibbage3", "survive", "monster", "bracketeering", "civic", "ydkjfs", "split", "madverse", "patently", "tmp2", "jokeboat", "ptb", "quiplash3", "devils", "champdup", "talkingpoints", "jobjob", "wheel", "weapons", "doominate", "hearsay", "cookiehaus", "suspectives"
+                    "wordspud", "bidiots", "quiplashXL", "bombcorp", "tmp1", "fakinit", "fibbage3", "survive", "monster", "bracketeering", "civic", "ydkjfs", "split", "madverse", "patently", "tmp2", "jokeboat", "ptb", "quiplash3", "devils", "champdup", "talkingpoints", "jobjob", "wheel", "weapons", "doominate", "hearsay", "cookiehaus", "suspectives", "megapals", "card", "hyperface"
                 ]
             },
             {
