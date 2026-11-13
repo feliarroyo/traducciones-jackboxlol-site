@@ -374,14 +374,14 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
                 name: "Próximamente",
                 platforms: ["win-linux", "mac"],
                 stores: ["default", "epic"],
-                link: "TBD",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/releases/latest/download/JPP12-ES.zip",
                 lang: "latam"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
-                link: "TBD",
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/releases/latest/download/JPP12-ES-MS.zip",
                 lang: "latam"
             }
         ]
@@ -639,14 +639,14 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
                 name: "Default",
                 platforms: ["win-linux", "mac"],
                 stores: ["default", "epic"],
-                link: "TBD",
+                link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES.zip",
                 lang: "latam"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
-                link: "TBD",
+                link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES-MS.zip",
                 lang: "latam"
             }
         ]
