@@ -372,8 +372,16 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         targets: [
             {
                 name: "Próximamente",
-                platforms: ["win-linux", "mac", "switch"],
-                stores: ["default", "epic", "nintendo"],
+                platforms: ["win-linux", "mac"],
+                stores: ["default", "epic"],
+                link: "TBD",
+                lang: "latam"
+            },
+            {
+                name: "Microsoft Store",
+                platforms: ["win-linux"],
+                stores: ["microsoft"],
+                link: "TBD",
                 lang: "latam"
             }
         ]
@@ -621,7 +629,28 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
             }
         ]
     },
-
+    {
+        id: "fakinitxl",
+        title: "Fakin' It! XL",
+        imageSrc: "/images/buttons/fakinitxl.webp",
+        hasSpain: false,
+        targets: [
+            {
+                name: "Default",
+                platforms: ["win-linux", "mac"],
+                stores: ["default", "epic"],
+                link: "TBD",
+                lang: "latam"
+            },
+            {
+                name: "Microsoft Store",
+                platforms: ["win-linux"],
+                stores: ["microsoft"],
+                link: "TBD",
+                lang: "latam"
+            }
+        ]
+    },
     {
         id: "useyourwords",
         title: "Usa Tus Palabras (Use Your Words)",
