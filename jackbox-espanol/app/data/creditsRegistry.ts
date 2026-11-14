@@ -85,7 +85,8 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
                     "Encargado de las redes sociales",
                     "Encargado de subir los parches",
                     "Editor de la página web",
-                    "Encargado principal de editar/traducir archivos del dominio"
+                    "Encargado principal de editar/traducir archivos del dominio",
+                    "Implementación de TTS hispana en el Pack 12"
                 ]
             }
         ]
@@ -99,7 +100,7 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
             {
                 roleName: "Traducción principal",
                 games: [
-                    "drawful", "wordspud", "quiplashXL", "fakinit", "fibbage3", "monster", "ydkjfs", "split", "madverse", "zeeple", "patently", "tmp2", "rolemodels", "devils", "champdup", "drawfulanimate", "jobjob", "pollmine", "cookiehaus", "suspectives", "megapals", "card", "hyperface"
+                    "drawful", "wordspud", "quiplashXL", "fakinit", "fibbage3", "monster", "ydkjfs", "split", "madverse", "zeeple", "patently", "tmp2", "rolemodels", "devils", "champdup", "drawfulanimate", "jobjob", "pollmine", "cookiehaus", "suspectives", "megapals", "card", "hyperface", "fakinitxl"
                 ]
             },
             {
@@ -150,7 +151,7 @@ export const CREDITS_REGISTRY_ADMINS: AdminCreditItem[] = [
             {
                 roleName: "Edición de imágenes",
                 games: [
-                    "wordspud", "bidiots", "quiplashXL", "bombcorp", "tmp1", "fakinit", "fibbage3", "survive", "monster", "bracketeering", "civic", "ydkjfs", "split", "madverse", "patently", "tmp2", "jokeboat", "ptb", "quiplash3", "devils", "champdup", "talkingpoints", "jobjob", "wheel", "weapons", "doominate", "hearsay", "cookiehaus", "suspectives"
+                    "wordspud", "bidiots", "quiplashXL", "bombcorp", "tmp1", "fakinit", "fibbage3", "survive", "monster", "bracketeering", "civic", "ydkjfs", "split", "madverse", "patently", "tmp2", "jokeboat", "ptb", "quiplash3", "devils", "champdup", "talkingpoints", "jobjob", "wheel", "weapons", "doominate", "hearsay", "cookiehaus", "suspectives", "megapals", "card", "hyperface"
                 ]
             },
             {
@@ -1175,7 +1176,6 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                 id: "card",
                 isSolo: true,
                 mainContributors: ["Artuhaxis"],
-                comingSoon: true,
                 roles: [
                     {
                         username: "Artuhaxis",
@@ -1184,6 +1184,10 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "Fixed Fun",
                         roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Implementación de TTS"]
                     }
                 ]
             },
@@ -1191,7 +1195,6 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                 id: "megapals",
                 isSolo: true,
                 mainContributors: ["Artuhaxis"],
-                comingSoon: true,
                 roles: [
                     {
                         username: "Artuhaxis",
@@ -1200,6 +1203,10 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "Fixed Fun",
                         roles: ["Edición de imágenes"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["Implementación de TTS"]
                     }
                 ]
             },
@@ -1207,7 +1214,6 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                 id: "hyperface",
                 isSolo: true,
                 mainContributors: ["Artuhaxis"],
-                comingSoon: true,
                 roles: [
                     {
                         username: "Artuhaxis",
@@ -1292,6 +1298,21 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "hectorflipi, lau_fleur y exviolinista13",
                         roles: ["Traducción principal (versión de España antes de la oficial)"]
+                    }
+                ]
+            },
+            {
+                id: "fakinitxl",
+                isSolo: true,
+                mainContributors: ["Artuhaxis"],
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
                     }
                 ]
             },

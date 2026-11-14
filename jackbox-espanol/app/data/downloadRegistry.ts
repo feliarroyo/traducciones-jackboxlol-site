@@ -371,10 +371,22 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         hasSpain: false,
         targets: [
             {
-                name: "Próximamente",
-                platforms: ["win-linux", "mac", "switch"],
-                stores: ["default", "epic", "nintendo"],
-                lang: "latam"
+                name: "Default",
+                platforms: ["win-linux", "mac"],
+                stores: ["default", "epic"],
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/releases/latest/download/JPP12-ES.zip",
+                lang: "latam",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/refs/heads/main/Main/jbg.config.jet",
+                "version_property": "buildVersion"
+            },
+            {
+                name: "Microsoft Store",
+                platforms: ["win-linux"],
+                stores: ["microsoft"],
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/releases/latest/download/JPP12-ES-MS.zip",
+                lang: "latam",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/refs/heads/main/ArchivoMS/jbg.config.jet",
+                "version_property": "buildVersion"
             }
         ]
     },
@@ -621,7 +633,32 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
             }
         ]
     },
-
+    {
+        id: "fakinitxl",
+        title: "Fakin' It! XL",
+        imageSrc: "/images/buttons/fakinitxl.webp",
+        hasSpain: false,
+        targets: [
+            {
+                name: "Default",
+                platforms: ["win-linux", "mac"],
+                stores: ["default", "epic"],
+                link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES.zip",
+                lang: "latam",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/refs/heads/main/ArchivoMS/jbg.config.jet",
+                "version_property": "buildVersion"
+            },
+            {
+                name: "Microsoft Store",
+                platforms: ["win-linux"],
+                stores: ["microsoft"],
+                link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES-MS.zip",
+                lang: "latam",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/refs/heads/main/ArchivoMS/jbg.config.jet",
+                "version_property": "buildVersion"
+            }
+        ]
+    },
     {
         id: "useyourwords",
         title: "Usa Tus Palabras (Use Your Words)",
@@ -789,7 +826,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
         targets: [
             {
                 name: "Voces en inglés",
-                notes: "Revierte el doblaje de Earwax: Sonidos Raros.",
+                notes: "Revierte los doblajes de Earwax: Sonidos Raros y Subastardos.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/download/15.9-ES/JPP2-ES-ENGVOICES.zip"
             }
         ]
