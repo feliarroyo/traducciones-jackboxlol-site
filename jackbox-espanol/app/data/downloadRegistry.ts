@@ -645,7 +645,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
                 stores: ["default", "epic"],
                 link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES.zip",
                 lang: "latam",
-                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/refs/heads/main/ArchivoMS/jbg.config.jet",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/refs/heads/main/Main/jbg.config.jet",
                 "version_property": "buildVersion"
             },
             {
@@ -654,7 +654,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
                 stores: ["microsoft"],
                 link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES-MS.zip",
                 lang: "latam",
-                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/refs/heads/main/ArchivoMS/jbg.config.jet",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/refs/heads/main/ArchivosMS/jbg.config.jet",
                 "version_property": "buildVersion"
             }
         ]
