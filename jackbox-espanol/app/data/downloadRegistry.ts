@@ -827,7 +827,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
             {
                 name: "Voces en inglés",
                 notes: "Revierte los doblajes de Earwax: Sonidos Raros y Subastardos.",
-                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/download/15.9-ES/JPP2-ES-ENGVOICES.zip"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/download/21.2-ES/JPP2-ES-ENGVOICES.zip"
             }
         ]
     },
