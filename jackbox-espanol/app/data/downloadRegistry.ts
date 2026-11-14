@@ -371,18 +371,22 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         hasSpain: false,
         targets: [
             {
-                name: "Próximamente",
+                name: "Default",
                 platforms: ["win-linux", "mac"],
                 stores: ["default", "epic"],
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/releases/latest/download/JPP12-ES.zip",
-                lang: "latam"
+                lang: "latam",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/refs/heads/main/Main/jbg.config.jet",
+                "version_property": "buildVersion"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/releases/latest/download/JPP12-ES-MS.zip",
-                lang: "latam"
+                lang: "latam",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/refs/heads/main/ArchivoMS/jbg.config.jet",
+                "version_property": "buildVersion"
             }
         ]
     },
@@ -640,14 +644,18 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
                 platforms: ["win-linux", "mac"],
                 stores: ["default", "epic"],
                 link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES.zip",
-                lang: "latam"
+                lang: "latam",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/refs/heads/main/ArchivoMS/jbg.config.jet",
+                "version_property": "buildVersion"
             },
             {
                 name: "Microsoft Store",
                 platforms: ["win-linux"],
                 stores: ["microsoft"],
                 link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES-MS.zip",
-                lang: "latam"
+                lang: "latam",
+                "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/refs/heads/main/ArchivoMS/jbg.config.jet",
+                "version_property": "buildVersion"
             }
         ]
     },
