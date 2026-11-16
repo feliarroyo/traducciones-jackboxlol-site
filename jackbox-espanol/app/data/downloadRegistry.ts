@@ -372,7 +372,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         targets: [
             {
                 name: "Default",
-                platforms: ["win-linux", "mac"],
+                platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic"],
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/releases/latest/download/JPP12-ES.zip",
                 lang: "latam",
@@ -641,7 +641,7 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         targets: [
             {
                 name: "Default",
-                platforms: ["win-linux", "mac"],
+                platforms: ["win-linux", "mac", "switch"],
                 stores: ["default", "epic"],
                 link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES.zip",
                 lang: "latam",
