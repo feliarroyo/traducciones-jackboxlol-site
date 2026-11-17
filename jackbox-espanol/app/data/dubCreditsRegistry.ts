@@ -390,7 +390,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     },
     {
         id: "jobjob",
-        category: "comingSoon",
+        category: "mainDub",
         demoUrl: "https://www.youtube.com/watch?v=bj2lH24md8o",
         roles: [
             {
@@ -416,37 +416,6 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             {
                 username: "EinfachEddi (German Jackbox Translations)",
                 roles: ["Transcripción de diálogos"]
-            }
-        ]
-    },
-    {
-        id: "drawful2",
-        category: "mainDub",
-        details: "(doblaje latino)",
-        demoUrl: "https://youtu.be/G6f_BFOrNfw?si=0aJAlJHO_H_ZeLks",
-        roles: [
-            {
-                username: "Camila Iriart",
-                roles: ["Anfitriona"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Supervisión del doblaje", "Voz extra", "Redacción de guiones"]
-            }
-        ]
-    },
-    {
-        id: "useyourwords",
-        category: "mainDub",
-        demoUrl: "https://youtu.be/5AiFgrBxPKE?si=nzn98kWD9vthgtha",
-        roles: [
-            {
-                username: "Mariano Cescatti",
-                roles: ["Anfitrión"]
-            },
-            {
-                username: "Akira896",
-                roles: ["Redacción de guiones", "Recorte y ecualización de audio"]
             }
         ]
     },
@@ -628,7 +597,7 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
     },
     {
         id: "doominate",
-        category: "comingSoon",
+        category: "mainDub",
         demoUrl: "https://youtu.be/i_YfMCJ-DBY",
         roles: [
             {
@@ -637,6 +606,10 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             },
             {
                 username: "Hanzel Translations",
+                roles: ["Traducción de subtítulos (usados como guion)"]
+            },
+            {
+                username: "Artuhaxis",
                 roles: ["Traducción de subtítulos (usados como guion)"]
             }
         ]
@@ -686,6 +659,37 @@ export const DUB_CREDITS_REGISTRY: DubCreditItem[] = [
             {
                 username: "Nahuel Guidi",
                 roles: ["Cantante"]
+            }
+        ]
+    },
+    {
+        id: "drawful2",
+        category: "mainDub",
+        details: "(doblaje latino)",
+        demoUrl: "https://youtu.be/G6f_BFOrNfw?si=0aJAlJHO_H_ZeLks",
+        roles: [
+            {
+                username: "Camila Iriart",
+                roles: ["Anfitriona"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Supervisión del doblaje", "Voz extra", "Redacción de guiones"]
+            }
+        ]
+    },
+    {
+        id: "useyourwords",
+        category: "mainDub",
+        demoUrl: "https://youtu.be/5AiFgrBxPKE?si=nzn98kWD9vthgtha",
+        roles: [
+            {
+                username: "Mariano Cescatti",
+                roles: ["Anfitrión"]
+            },
+            {
+                username: "Akira896",
+                roles: ["Redacción de guiones", "Recorte y ecualización de audio"]
             }
         ]
     }
