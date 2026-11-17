@@ -1,6 +1,6 @@
 ---
 title: "Doblajes para el Pack 11"
-date: "2026/07/30"
+date: "2026/12/31"
 image: "/images/news/pack11.webp"
 ---
 
