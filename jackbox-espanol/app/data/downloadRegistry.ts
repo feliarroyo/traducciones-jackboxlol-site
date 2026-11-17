@@ -989,7 +989,7 @@ export const EXTRA_DOWNLOADS_REGISTRY = [
             {
                 name: "Doblajes viejos de Survive The Internet",
                 notes: "Incluye dos versiones anteriores del doblaje: Yoshiro como Todd, Akira896 como ChicoFiestero7 | Yoshiro como ChicoFiestero7",
-                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-4-Spanish/releases/latest/download/JPP4-ES-STIYOSHIRO.zip"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-4-Spanish/releases/download/16.1-ES/JPP4-ES-STIYOSHIRO.zip"
             }
         ]
     },
