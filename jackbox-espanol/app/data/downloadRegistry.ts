@@ -372,8 +372,8 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         targets: [
             {
                 name: "Default",
-                platforms: ["win-linux", "mac"],
-                stores: ["default", "epic"],
+                platforms: ["win-linux", "mac", "switch"],
+                stores: ["default", "epic", "nintendo"],
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/releases/latest/download/JPP12-ES.zip",
                 lang: "latam",
                 "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-12-Spanish/refs/heads/main/Main/jbg.config.jet",
@@ -641,8 +641,8 @@ export const DOWNLOADS_REGISTRY: GameRegistryItem[] = [
         targets: [
             {
                 name: "Default",
-                platforms: ["win-linux", "mac"],
-                stores: ["default", "epic"],
+                platforms: ["win-linux", "mac", "switch"],
+                stores: ["default", "epic", "nintendo"],
                 link: "https://github.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/releases/latest/download/FIXL-ES.zip",
                 lang: "latam",
                 "version_file": "https://raw.githubusercontent.com/AkiraArtuhaxis/Fakin-It-XL-Spanish/refs/heads/main/Main/jbg.config.jet",
@@ -827,7 +827,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
             {
                 name: "Voces en inglés",
                 notes: "Revierte los doblajes de Earwax: Sonidos Raros y Subastardos.",
-                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/download/15.9-ES/JPP2-ES-ENGVOICES.zip"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-2-Spanish/releases/download/21.2-ES/JPP2-ES-ENGVOICES.zip"
             }
         ]
     },
@@ -989,7 +989,7 @@ export const EXTRA_DOWNLOADS_REGISTRY = [
             {
                 name: "Doblajes viejos de Survive The Internet",
                 notes: "Incluye dos versiones anteriores del doblaje: Yoshiro como Todd, Akira896 como ChicoFiestero7 | Yoshiro como ChicoFiestero7",
-                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-4-Spanish/releases/latest/download/JPP4-ES-STIYOSHIRO.zip"
+                link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-4-Spanish/releases/download/16.1-ES/JPP4-ES-STIYOSHIRO.zip"
             }
         ]
     },
