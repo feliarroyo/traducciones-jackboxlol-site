@@ -16,3 +16,7 @@ image: "/images/news/pollmine.webp"
   allowfullscreen
   class="w-full aspect-video rounded-xl shadow-lg my-4"
 ></iframe>
+
+**María Eugenia Suárez** presta su voz a Laverna Caverna, la anfitriona del juego, y también canta la canción. Como es habitual, **Akira896** supervisó la grabación del doblaje. Los audios fueron recortados y ecualizados por **Artuhaxis**.
+El guion fue realizado en base a los subtítulos previamente traducidos por **Hanzel Translations** y **Artuhaxis**.
+**Erizzle** de Team Gamechanger* por proporcionar la transcripción de los diálogos.
