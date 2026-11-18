@@ -346,6 +346,10 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "Artuhaxis",
                         roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Akira896",
+                        roles: ["SWFs"]
                     }
                 ]
             }]
@@ -1186,6 +1190,10 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "Artuhaxis",
                         roles: ["Traducción principal"]
+                    },
+                    {
+                        username: "Fixed Fun",
+                        roles: ["Edición de imágenes"]
                     }
                 ]
             }
