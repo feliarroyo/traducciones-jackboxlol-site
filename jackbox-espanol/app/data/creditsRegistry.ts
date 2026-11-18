@@ -337,6 +337,17 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                         roles: ["Videos"]
                     }
                 ]
+            },
+            {
+                id: "ydkj2015",
+                mainContributors: ["Artuhaxis"],
+                comingSoon: true,
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    }
+                ]
             }]
     },
     {
@@ -1167,6 +1178,17 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     }
                 ]
             },
+            {
+                id: "legendsoftrivia",
+                mainContributors: ["Artuhaxis"],
+                comingSoon: true,
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
+                    }
+                ]
+            }
         ]
     },
     {
@@ -1238,6 +1260,17 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "Fixed Fun",
                         roles: ["Edición de imágenes"]
+                    }
+                ]
+            },
+            {
+                id: "idolfactions",
+                mainContributors: ["Artuhaxis"],
+                comingSoon: true,
+                roles: [
+                    {
+                        username: "Artuhaxis",
+                        roles: ["Traducción principal"]
                     }
                 ]
             }
