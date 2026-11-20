@@ -337,22 +337,8 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                         roles: ["Videos"]
                     }
                 ]
-            },
-            {
-                id: "ydkj2015",
-                mainContributors: ["Artuhaxis"],
-                comingSoon: true,
-                roles: [
-                    {
-                        username: "Artuhaxis",
-                        roles: ["Traducción principal"]
-                    },
-                    {
-                        username: "Akira896",
-                        roles: ["SWFs"]
-                    }
-                ]
-            }]
+            }
+        ]
     },
     {
         packId: "pp2",
@@ -1181,21 +1167,6 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                         roles: ["Edición de imágenes"]
                     }
                 ]
-            },
-            {
-                id: "legendsoftrivia",
-                mainContributors: ["Artuhaxis"],
-                comingSoon: true,
-                roles: [
-                    {
-                        username: "Artuhaxis",
-                        roles: ["Traducción principal"]
-                    },
-                    {
-                        username: "Fixed Fun",
-                        roles: ["Edición de imágenes"]
-                    }
-                ]
             }
         ]
     },
@@ -1268,17 +1239,6 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                     {
                         username: "Fixed Fun",
                         roles: ["Edición de imágenes"]
-                    }
-                ]
-            },
-            {
-                id: "idolfactions",
-                mainContributors: ["Artuhaxis"],
-                comingSoon: true,
-                roles: [
-                    {
-                        username: "Artuhaxis",
-                        roles: ["Traducción principal"]
                     }
                 ]
             }
