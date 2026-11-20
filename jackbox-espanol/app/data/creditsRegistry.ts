@@ -337,7 +337,8 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                         roles: ["Videos"]
                     }
                 ]
-            }]
+            }
+        ]
     },
     {
         packId: "pp2",
@@ -1166,7 +1167,7 @@ export const CREDITS_REGISTRY_GAMES: PackCreditItem[] = [
                         roles: ["Edición de imágenes"]
                     }
                 ]
-            },
+            }
         ]
     },
     {

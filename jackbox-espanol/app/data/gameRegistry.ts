@@ -116,6 +116,10 @@ export const GAME_ASSETS: Record<string, GameAsset> = {
     src: "/images/games/jokeboat.webp",
     alt: "Crucero Cómico"
   },
+  legendsoftrivia: {
+    src: "/images/games/legendsoftrivia.webp",
+    alt: "Legends of Trivia"
+  },
   lieswatter: {
     src: "/images/games/lieswatter.webp",
     alt: "Mata Mentiras"

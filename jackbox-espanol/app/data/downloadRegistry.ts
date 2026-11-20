@@ -901,7 +901,7 @@ export const ENG_DOWNLOADS_REGISTRY = [
         targets: [
             {
                 name: "Canción en inglés",
-                notes: "Revierte la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
+                notes: "Revierte el doblaje de Bajo Trabajo y la versión adaptada de la canción de La Ruleta de Enormes Proporciones.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Party-Pack-8-Spanish/releases/download/437.12-ES/TemaCreditosOriginalesRuleta.zip"
             }
         ]
@@ -915,6 +915,18 @@ export const ENG_DOWNLOADS_REGISTRY = [
                 name: "Elimina el doblaje de los audios restaurados",
                 notes: "Revierte los audios doblados por Akira896, que pasarán a sonar en inglés.",
                 link: "https://github.com/AkiraArtuhaxis/The-Jackbox-Survey-Scramble-Spanish/releases/download/540.1-ES/JSS-ES-ENGVOICES.zip"
+            }
+        ]
+    },
+    {
+        id: "pp11",
+        title: "The Jackbox Party Pack 11",
+        imageSrc: "/images/buttons/pp11.webp",
+        targets: [
+            {
+                name: "Voces en inglés",
+                notes: "Revierte el doblaje de Doominate.",
+                link: ""
             }
         ]
     },

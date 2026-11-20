@@ -1,6 +1,6 @@
 ---
 title: "Doblajes para el Pack 11"
-date: "2026/07/30"
+date: "2026/12/31"
 image: "/images/news/pack11.webp"
 ---
 
@@ -21,20 +21,6 @@ Siguiendo la nueva tanda de doblajes, esta vez nos centramos en el pack más rec
 ></iframe>
 
 **Pilar Menéndez** da su voz a la anfitriona del juego, la jefa de policía; mientras que Charlie el perito es interpretado por **Artuhaxis**. La canción del juego es interpretada por **Akira896** junto a Pilar.
-
-### Doominate (¡Nuevo doblaje!)
-
-<iframe
-  src="https://www.youtube.com/embed/i_YfMCJ-DBY?si=KxiElmC3jrnZgcbE"
-  title="Trailer de Doominate"
-  frameborder="0"
-  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen
-  class="w-full aspect-video rounded-xl shadow-lg my-4"
-></iframe>
-
-**Juan Alfredo Menéndez** da su voz al anfitrión del juego, Lalo Parca.
 
 ### Hear Say (¡Nuevo doblaje!)
 
