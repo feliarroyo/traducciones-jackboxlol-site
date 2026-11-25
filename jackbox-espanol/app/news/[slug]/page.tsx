@@ -1,11 +1,18 @@
 import { notFound } from "next/navigation";
-import { getPostBySlug } from "../../lib/markdownParser";
+import { getAllNewsPosts, getPostBySlug } from "../../lib/markdownParser";
 import Image from "next/image";
 import BackButton from "@/app/components/BackButton";
 import { Metadata } from "next";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
+}
+
+// Every post is prerendered at build time; unknown slugs return 404 without hitting the server
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getAllNewsPosts().map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
