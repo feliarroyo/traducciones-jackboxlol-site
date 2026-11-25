@@ -6,54 +6,73 @@ interface PackTickerProps {
   children: React.ReactNode;
 }
 
+// Auto-scroll speed in pixels per second (same on 60 Hz and 120 Hz screens)
+const SPEED_PX_PER_SECOND = 60;
+
 export default function PackTicker({ children }: PackTickerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeftState, setScrollLeftState] = useState(0);
+  const dragRef = useRef({ active: false, startX: 0, startScroll: 0 });
+  // Pause reasons: pointer over the ticker, ticker off-screen
+  const isHoveredRef = useRef(false);
+  const isVisibleRef = useRef(true);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
 
+    // Respect the OS "reduce motion" setting: no auto-scroll (drag still works)
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
+
+    // Stop animating while the ticker is off-screen
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisibleRef.current = entry.isIntersecting;
+    });
+    observer.observe(el);
+
     let animationFrameId: number;
-    const speed = 1; // Speed factor of the auto-scroll loop
+    let lastTime: number | null = null;
+    // Sub-pixel accumulator: scrollLeft is rounded by some browsers
+    let position = el.scrollLeft;
 
-    const updateAutoScroll = () => {
-      // Only auto-scroll if the user isn't actively interacting with it
-      if (!isDragging) {
-        el.scrollLeft += speed;
+    const updateAutoScroll = (time: number) => {
+      const delta = lastTime === null ? 0 : Math.min(time - lastTime, 100);
+      lastTime = time;
 
-        // Infinite loop threshold: reset back to middle when hitting boundaries
+      const paused = dragRef.current.active || isHoveredRef.current || !isVisibleRef.current;
+      if (paused) {
+        position = el.scrollLeft; // resume from wherever the user left it
+      } else {
+        position += (SPEED_PX_PER_SECOND * delta) / 1000;
+        // Infinite loop threshold: jump back by one copy of the content
         const maxScroll = el.scrollWidth / 2;
-        if (el.scrollLeft >= maxScroll) {
-          el.scrollLeft -= maxScroll;
-        }
+        if (position >= maxScroll) position -= maxScroll;
+        el.scrollLeft = position;
       }
       animationFrameId = requestAnimationFrame(updateAutoScroll);
     };
 
     animationFrameId = requestAnimationFrame(updateAutoScroll);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isDragging]);
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
+    };
+  }, []);
 
   // --- MOUSE & TOUCH EVENT HANDLERS ---
   const handleStart = (clientX: number) => {
     const el = containerRef.current;
     if (!el) return;
+    dragRef.current = { active: true, startX: clientX, startScroll: el.scrollLeft };
     setIsDragging(true);
-    setStartX(clientX - el.offsetLeft);
-    setScrollLeftState(el.scrollLeft);
   };
 
   const handleMove = (clientX: number) => {
-    if (!isDragging) return;
     const el = containerRef.current;
-    if (!el) return;
+    if (!el || !dragRef.current.active) return;
 
-    const x = clientX - el.offsetLeft;
-    const walk = (x - startX) * 1; // Drag sensitivity multiplier
-    let targetScroll = scrollLeftState - walk;
+    let targetScroll = dragRef.current.startScroll - (clientX - dragRef.current.startX);
 
     // Boundary wrapping while dragging
     const halfWidth = el.scrollWidth / 2;
@@ -64,6 +83,7 @@ export default function PackTicker({ children }: PackTickerProps) {
   };
 
   const handleEnd = () => {
+    dragRef.current.active = false;
     setIsDragging(false);
   };
 
@@ -75,10 +95,11 @@ export default function PackTicker({ children }: PackTickerProps) {
           isDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
         // Mouse Listeners
+        onMouseEnter={() => { isHoveredRef.current = true; }}
         onMouseDown={(e) => handleStart(e.clientX)}
         onMouseMove={(e) => handleMove(e.clientX)}
         onMouseUp={handleEnd}
-        onMouseLeave={handleEnd}
+        onMouseLeave={() => { isHoveredRef.current = false; handleEnd(); }}
         // Mobile/Touchscreen Listeners
         onTouchStart={(e) => handleStart(e.touches[0].clientX)}
         onTouchMove={(e) => handleMove(e.touches[0].clientX)}
@@ -86,7 +107,8 @@ export default function PackTicker({ children }: PackTickerProps) {
       >
         {/* Render children twice back-to-back to enable seamless infinite wrapping */}
         <div className="flex flex-row gap-6 shrink-0 pr-6">{children}</div>
-        <div className="flex flex-row gap-6 shrink-0 aria-hidden:true">{children}</div>
+        {/* The copy is decorative: hidden from screen readers */}
+        <div className="flex flex-row gap-6 shrink-0" aria-hidden="true">{children}</div>
       </div>
     </div>
   );
