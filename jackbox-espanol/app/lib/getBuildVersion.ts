@@ -44,7 +44,14 @@ export async function getPatchReleaseDate(downloadUrl: string): Promise<string |
     }
 
     // Make request to API
+    // Optional token (GITHUB_TOKEN env var) raises the API limit from 60 to 5000 req/hour
+    const headers: HeadersInit = { Accept: "application/vnd.github+json" };
+    if (process.env.GITHUB_TOKEN) {
+      headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+
     const response = await fetch(apiUrl, {
+      headers,
       next: { revalidate: 3600 } // Caché de 1 hora
     });
 
@@ -62,7 +69,8 @@ export async function getPatchReleaseDate(downloadUrl: string): Promise<string |
     const formattedDate = new Intl.DateTimeFormat('es-ES', {
       day: '2-digit',
       month: '2-digit',
-      year: 'numeric'
+      year: 'numeric',
+      timeZone: 'UTC'
     }).format(dateObj);
 
     return formattedDate;
@@ -71,4 +79,38 @@ export async function getPatchReleaseDate(downloadUrl: string): Promise<string |
     console.error("Error al obtener la fecha del parche:", error);
     return null;
   }
+}
+export interface PatchInfo {
+  version: string | null;
+  date: string | null;
+}
+
+interface VersionedTarget {
+  link?: string;
+  version_file?: string;
+  version_property?: string;
+}
+
+// Fetches version + release date for every target on the server (cached 1h by fetch),
+// so visitors' browsers never call GitHub directly. Keyed by download link.
+export async function getAllPatchInfo(
+  registry: { targets: VersionedTarget[] }[]
+): Promise<Record<string, PatchInfo>> {
+  const targets = registry
+    .flatMap((game) => game.targets)
+    .filter((t): t is Required<VersionedTarget> =>
+      Boolean(t.link?.trim() && t.version_file && t.version_property)
+    );
+
+  const entries = await Promise.all(
+    targets.map(async (t) => {
+      const [version, date] = await Promise.all([
+        getBuildVersion(t.version_file, t.version_property),
+        getPatchReleaseDate(t.link),
+      ]);
+      return [t.link, { version, date }] as const;
+    })
+  );
+
+  return Object.fromEntries(entries);
 }
