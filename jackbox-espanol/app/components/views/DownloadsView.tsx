@@ -6,6 +6,7 @@ import GameDownloadButton from "../GameDownloadButton";
 import JackboxUtilityCard from "../JackboxUtilityCard";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import InstallationInstructions from "../InstallationInstructions";
+import type { PatchInfo } from "../../lib/getBuildVersion";
 
 // import type { Metadata } from "next";
 
@@ -14,7 +15,7 @@ import InstallationInstructions from "../InstallationInstructions";
 //     description: "Descarga el parcheador, los parches de traducción y otros recursos útiles.",
 // };
 
-export default function DownloadsPage() {
+export default function DownloadsPage({ patchInfo }: { patchInfo: Record<string, PatchInfo> }) {
     // TOGGLE FILTER STATES
     const [platformFilter, setPlatformFilter] = useState("win-linux"); // win-linux, mac, switch
     const [storeFilter, setStoreFilter] = useState("default");       // default, epic, microsoft, nintendo
@@ -136,7 +137,7 @@ export default function DownloadsPage() {
                 </LayoutGroup>
 
                 {/* DATA GRID DRAWER ELEMENT */}
-                <motion.div layout className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
+                <motion.div layout className="flex flex-row flex-wrap gap-4 justify-center items-start mt-4">
                     {(storeFilter === "microsoft" && platformFilter === "mac") && (
                         <motion.p
                             layout="position"
@@ -152,7 +153,8 @@ export default function DownloadsPage() {
                         </motion.p>
                     )}
 
-                    <AnimatePresence mode="popLayout">
+                    {/* initial={false}: items in the server HTML are visible right away; only filter changes animate */}
+                    <AnimatePresence mode="popLayout" initial={false}>
                         {DOWNLOADS_REGISTRY.flatMap((game) => {
                             // Determine the active storefront parameter to match against
                             const targetStoreToMatch = platformFilter === "switch" ? "nintendo" : storeFilter;
@@ -206,8 +208,7 @@ export default function DownloadsPage() {
                                             isSpain={target.lang === "spain"}
                                             noteTitle={game.title}
                                             notes={target.notes}
-                                            version_file={target.version_file}
-                                            version_property={target.version_property}
+                                            patchInfo={target.link ? patchInfo[target.link] : undefined}
                                         />
                                     </motion.div>
                                 );
@@ -229,7 +230,7 @@ export default function DownloadsPage() {
                     <h3 className="text-center text-2xl font-black text-amber-400">Voces en inglés</h3>
                     <p className="text-center text-sm text-slate-400">Estos archivos restauran el contenido relacionado a doblajes no oficiales en parches previamente instalados, tanto en voces y canciones como textualmente.</p>
                 </div>
-                <div className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
+                <div className="flex flex-row flex-wrap gap-4 justify-center items-start mt-4">
                     {ENG_DOWNLOADS_REGISTRY.map((game) => {
                         const games = game.targets;
 
@@ -251,7 +252,7 @@ export default function DownloadsPage() {
                     <h2 className="text-center text-2xl font-black text-amber-400">Extras</h2>
                     <p className="text-center text-sm text-slate-400">Se listan descargas que involucran contenido extra a lo que son los juegos en sí; o contenido obsoleto, como traducciones de títulos o doblajes retirados.</p>
                 </div>
-                <div className="flex flex-row flex-wrap gap-4 justify-center items-center mt-4">
+                <div className="flex flex-row flex-wrap gap-4 justify-center items-start mt-4">
                     {EXTRA_DOWNLOADS_REGISTRY.map((game) => {
                         const games = game.targets;
 
