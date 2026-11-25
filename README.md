@@ -47,7 +47,7 @@ description: "Short summary."         # optional: used for search engines and li
 ---
 ```
 
-If `description` is omitted, a generic description is used. If `image` is omitted, link previews fall back to `/images/og-image.png`.
+If `description` is omitted, a generic description is used. If `image` is omitted, link previews fall back to the site-wide `app/opengraph-image.png`.
 
 ## How to use locally
 

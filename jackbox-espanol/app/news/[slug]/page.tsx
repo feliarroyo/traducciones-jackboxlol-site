@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       publishedTime: metadata.date,
       images: [
         {
-          url: metadata.image || "/images/og-image.png",
+          url: metadata.image || "/opengraph-image.png", // site-wide default (app/opengraph-image.png)
           alt: metadata.title,
         },
       ],
