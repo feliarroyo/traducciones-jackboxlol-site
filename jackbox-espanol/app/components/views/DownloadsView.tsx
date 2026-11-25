@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { DOWNLOADS_REGISTRY, ENG_DOWNLOADS_REGISTRY, EXTRA_DOWNLOADS_REGISTRY } from "../../data/downloadRegistry";
 import GameDownloadButton from "../GameDownloadButton";
 import JackboxUtilityCard from "../JackboxUtilityCard";
@@ -51,12 +52,13 @@ export default function DownloadsPage({ patchInfo }: { patchInfo: Record<string,
 
                     {/* PLATFORM TOGGLE */}
                     <div className="space-y-2">
-                        <label className="text-amber-500 block text-center">Plataforma</label>
-                        <div className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 relative">
+                        <p id="filter-platform" className="text-amber-500 block text-center">Plataforma</p>
+                        <div role="group" aria-labelledby="filter-platform" className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 relative">
                             {["win-linux", "mac", "switch"].map((p) => (
                                 <button
                                     key={p}
                                     onClick={() => setPlatformFilter(p)}
+                                    aria-pressed={platformFilter === p}
                                     className={`relative flex-1 py-1.5 rounded-lg capitalize transition-colors duration-200 z-0 ${platformFilter === p ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
                                 >
                                     {p === "win-linux" ? "Win/Linux" : p}
@@ -76,11 +78,11 @@ export default function DownloadsPage({ patchInfo }: { patchInfo: Record<string,
 
                     {/* STOREFRONT TOGGLE */}
                     <div className="space-y-2">
-                        <label className="text-amber-500 block text-center">Versión</label>
-                        <div className={`flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 transition-all duration-300 relative ${platformFilter === "switch" ? "opacity-40 pointer-events-none" : ""}`}>
+                        <p id="filter-store" className="text-amber-500 block text-center">Versión</p>
+                        <div role="group" aria-labelledby="filter-store" className={`flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 transition-all duration-300 relative ${platformFilter === "switch" ? "opacity-40 pointer-events-none" : ""}`}>
                             {platformFilter === "switch" ? (
                                 // No interaction/animations on Switch
-                                <button className="relative flex-1 py-1.5 rounded-lg bg-slate-800 text-amber-500 cursor-not-allowed z-10">
+                                <button disabled aria-pressed="true" className="relative flex-1 py-1.5 rounded-lg bg-slate-800 text-amber-500 cursor-not-allowed z-10">
                                     Nintendo eShop
                                 </button>
                             ) : (
@@ -88,6 +90,7 @@ export default function DownloadsPage({ patchInfo }: { patchInfo: Record<string,
                                     <button
                                         key={s}
                                         onClick={() => setStoreFilter(s)}
+                                        aria-pressed={storeFilter === s}
                                         className={`relative flex-1 py-1.5 rounded-lg capitalize transition-colors duration-200 z-0 ${storeFilter === s ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
                                     >
                                         {s === "default" ? "Steam" : s === "epic" ? "Epic" : "MS Store"}
@@ -108,8 +111,8 @@ export default function DownloadsPage({ patchInfo }: { patchInfo: Record<string,
 
                     {/* C. LANGUAGE REGION TOGGLE */}
                     <div className="space-y-2">
-                        <label className="text-amber-500 block text-center">¿Usar parche de España si hubiera uno?</label>
-                        <div className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 relative">
+                        <p id="filter-lang" className="text-amber-500 block text-center">¿Usar parche de España si hubiera uno?</p>
+                        <div role="group" aria-labelledby="filter-lang" className="flex gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 relative">
                             {[
                                 { id: "latam", label: "No" },
                                 { id: "spain", label: "Sí" }
@@ -117,6 +120,7 @@ export default function DownloadsPage({ patchInfo }: { patchInfo: Record<string,
                                 <button
                                     key={l.id}
                                     onClick={() => setLangFilter(l.id)}
+                                    aria-pressed={langFilter === l.id}
                                     className={`relative flex-1 py-1.5 rounded-lg transition-colors duration-200 z-0 ${langFilter === l.id ? "text-slate-950 font-extrabold" : "text-slate-400 hover:text-slate-200"}`}
                                 >
                                     {l.label}
@@ -149,7 +153,7 @@ export default function DownloadsPage({ patchInfo }: { patchInfo: Record<string,
                             style={{ willChange: "opacity, transform" }}
                             className="w-full py-8 text-center text-slate-300 flex justify-center items-center gap-2"
                         >
-                            Microsoft Store no está disponible en Mac <img src="/images/crazy.webp" alt="Burbujas de Bajo Trabajo con cara chistosa" fetchPriority="high" className="inline align-middle h-8 w-8" />
+                            Microsoft Store no está disponible en Mac <Image src="/images/crazy.webp" alt="Burbujas de Bajo Trabajo con cara chistosa" width={32} height={32} className="inline align-middle h-8 w-8" />
                         </motion.p>
                     )}
 

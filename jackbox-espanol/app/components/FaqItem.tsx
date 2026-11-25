@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { motion } from "framer-motion";
 
 interface FaqItemProps {
@@ -10,6 +10,7 @@ interface FaqItemProps {
 
 export default function FaqItem({ question, answer }: FaqItemProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const answerId = useId();
 
   return (
     <div
@@ -20,6 +21,8 @@ export default function FaqItem({ question, answer }: FaqItemProps) {
       {/* QUESTION */}
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={answerId}
         className={`w-full flex items-center justify-between p-5 font-bold text-slate-200 cursor-pointer select-none hover:bg-slate-800/20 text-left transition-colors ${
           isOpen ? "border-b border-slate-800/50" : ""
         }`}
@@ -34,6 +37,7 @@ export default function FaqItem({ question, answer }: FaqItemProps) {
         
         {/* ARROW */}
         <motion.span
+          aria-hidden="true"
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className={`text-slate-500 shrink-0 transition-colors ${
@@ -46,6 +50,10 @@ export default function FaqItem({ question, answer }: FaqItemProps) {
 
       {/* ANSWER */}
       <motion.div
+        id={answerId}
+        role="region"
+        // Collapsed answers stay in the HTML (SEO) but are hidden from keyboard and screen readers
+        inert={!isOpen}
         initial={{ height: 0, opacity: 0 }}
         animate={{
           height: isOpen ? "auto" : 0,

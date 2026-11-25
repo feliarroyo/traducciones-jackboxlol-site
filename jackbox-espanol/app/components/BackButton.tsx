@@ -1,20 +1,16 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const subscribe = () => () => {};
+// Read once on the client; on the server (and during hydration) assume the visitor didn't come from the feed
+const getCameFromNews = () => sessionStorage.getItem("came-from-news") === "true";
+const getServerSnapshot = () => false;
 
 export default function BackButton() {
   const router = useRouter();
-  const [cameFromNews, setCameFromNews] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const fromNews = sessionStorage.getItem("came-from-news");
-      if (fromNews === "true") {
-        setCameFromNews(true);
-      }
-    }
-  }, []);
+  const cameFromNews = useSyncExternalStore(subscribe, getCameFromNews, getServerSnapshot);
 
   const handleBack = () => {
     if (cameFromNews) {
@@ -31,6 +27,7 @@ export default function BackButton() {
     >
       {/* Flechita animada hacia la izquierda */}
       <svg
+        aria-hidden="true"
         className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform fill-current"
         viewBox="0 0 20 20"
       >

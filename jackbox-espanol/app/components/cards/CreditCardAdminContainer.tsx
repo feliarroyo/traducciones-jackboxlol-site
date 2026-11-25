@@ -1,10 +1,11 @@
 import React from "react";
 import CreditCardAdmin from "./CreditCardAdmin";
+import type { AdminCreditItem } from "../../data/creditsRegistry";
 
 interface CreditCardAdminContainerProps {
     title: string;
     subtitle?: string;
-    data: any[];
+    data: AdminCreditItem[];
     titleClassName?: string;
 }
 

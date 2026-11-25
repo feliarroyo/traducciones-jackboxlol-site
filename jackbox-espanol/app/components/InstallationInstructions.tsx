@@ -27,7 +27,7 @@ export default function InstallationInstructions({ platformFilter,
                 "Las traducciones pueden instalarse en una consola hackeada/modificada que posea Atmosphere. Debes usar la versión original de los juegos, y no la que posea el parche del online de Nintendo. Los parches se aplican por medio de LayeredFS. Se debe realizar lo siguiente:",
                 "1. Instala el juego.",
                 <>2. Descarga <a href="https://www.mediafire.com/file/muy73uck35g57gb/Jackbox+1-8+Online+Patch+Switch.zip/file" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline font-semibold">estos archivos</a>.</>,
-                <>3. Extrae la carpeta correspondiente al id del juego (puedes encontrar el ID necesario en esta página) en \"atmosphere / contents\" de tu tarjeta SD.</>,
+                <>3. Extrae la carpeta correspondiente al id del juego (puedes encontrarlo en <a href="https://tinfoil.media/Title/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline font-semibold">esta página</a>) en &quot;atmosphere / contents&quot; de tu tarjeta SD.</>,
                 "4. Descarga el parche de traducción del juego.",
                 "5. Extrae el contenido del parche en \"atmosphere / contents / (id del juego)/romfs\" de tu tarjeta SD.",
                 <>Nota: hay bugs menores en esta plataforma que no interfieren con la experiencia y se listan en la <Link href="./help" target="_self" rel="noopener noreferrer" className="text-cyan-400 hover:underline font-semibold">sección de Ayuda</Link>.</>
@@ -35,7 +35,7 @@ export default function InstallationInstructions({ platformFilter,
         }
         if (storeFilter === "microsoft") {
             return [
-                <>Una vez descargado el parche, extrae el contenido del zip en la carpeta <b>"Content"</b>, reemplazando todo lo necesario.</>,
+                <>Una vez descargado el parche, extrae el contenido del zip en la carpeta <b>&quot;Content&quot;</b>, reemplazando todo lo necesario.</>,
                 "En Microsoft Store, el directorio por defecto es \"C:\\XboxGames\\[Carpeta del juego]\"."
             ];
         }
@@ -70,6 +70,8 @@ export default function InstallationInstructions({ platformFilter,
             {/* INSTRUCTION BUTTON */}
             <motion.button
                 onClick={() => setShowInstructions(!showInstructions)}
+                aria-expanded={showInstructions}
+                aria-controls="installation-instructions"
                 initial={false}
                 animate={{ width: showInstructions ? "100%" : "fit-content" }}
                 transition={{
@@ -100,6 +102,7 @@ export default function InstallationInstructions({ platformFilter,
             <AnimatePresence>
                 {showInstructions && (
                     <motion.div
+                        id="installation-instructions"
                         initial={{ height: 0, opacity: 0, marginTop: 0 }}
                         animate={{
                             height: "auto",

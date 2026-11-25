@@ -4,8 +4,6 @@
 import Image from "next/image";
 import { GAME_ASSETS } from "../../data/gameRegistry";
 import { DubCreditItem } from "../../data/dubCreditsRegistry";
-import { createPortal } from "react-dom";
-import { AnimatePresence, motion } from "framer-motion";
 import { useModal } from "../hooks/useModal";
 import { BaseCard } from "../ui/BaseCard";
 import { CreditModal } from "../ui/CreditModal";
@@ -30,11 +28,11 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                     </div>
                     {/* Game Details if available */}
                     {game.details && (
-                        <p className="text-[10px] text-slate-400/80 font-medium tracking-wide mt-1 px-1">
+                        <p className="text-[11px] text-slate-400/80 font-medium tracking-wide mt-1 px-1">
                             {game.details}
                         </p>
                     )}
-                    <span className="text-slate-200 block font-bold text-[10px] my-1 py-1">
+                    <span className="text-slate-200 block font-bold text-[11px] my-1 py-1">
                         {game.roles[0].isDuo ? "Voces principales" : "Voz principal"}
                         <div className="text-center text-[11px] leading-snug mt-1 flex flex-col items-center justify-center gap-0.5">
                             {game.roles[0].username instanceof Array ? (
@@ -58,7 +56,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                         {game.demoUrl && (
                             <a
                                 href={game.demoUrl} target="_blank" rel="noopener noreferrer"
-                                className="text-[10px] py-1 px-2 font-bold bg-slate-900 border border-slate-800 hover:border-amber-500/30 hover:bg-amber-950/20 text-slate-300 hover:text-amber-400 rounded-lg transition-all whitespace-nowrap"
+                                className="text-[11px] py-1 px-2 font-bold bg-slate-900 border border-slate-800 hover:border-amber-500/30 hover:bg-amber-950/20 text-slate-300 hover:text-amber-400 rounded-lg transition-all whitespace-nowrap"
                             >
                                 Ver muestra de doblaje
                             </a>
@@ -66,7 +64,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                         {game.songUrl && (
                             <a
                                 href={game.songUrl} target="_blank" rel="noopener noreferrer"
-                                className="text-[10px] py-1 font-bold bg-slate-900 border border-slate-800 hover:border-amber-500/30 hover:bg-amber-950/20 text-slate-300 hover:text-amber-400 rounded-lg transition-all whitespace-nowrap"
+                                className="text-[11px] py-1 font-bold bg-slate-900 border border-slate-800 hover:border-amber-500/30 hover:bg-amber-950/20 text-slate-300 hover:text-amber-400 rounded-lg transition-all whitespace-nowrap"
                             >
                                 🎵 Escuchar canción
                             </a>
@@ -97,7 +95,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                                 Créditos de doblaje
                             </h3>
                         </div>
-                        <button onClick={() => setIsOpen(false)} className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 text-lg transition-colors shrink-0">✕</button>
+                        <button onClick={() => setIsOpen(false)} aria-label="Cerrar" className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 text-lg transition-colors shrink-0">✕</button>
                     </div>
 
                     {/* Loop Over All Contributed Talent/Roles for this specific game */}
@@ -107,7 +105,7 @@ export default function DubGameCardXL({ game }: DubGameCardXLProps) {
                                 <div className="flex items-center justify-center gap-2 flex-wrap">
                                     <span className="font-bold text-slate-100 text-sm">{actor.username instanceof Array ? actor.username.join(" y ") : actor.username}</span>
                                     {actor.tags && actor.tags.map((t, tIdx) => (
-                                        <span key={tIdx} className="text-[8px] font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 uppercase">{t}</span>
+                                        <span key={tIdx} className="text-[11px] font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 uppercase">{t}</span>
                                     ))}
                                 </div>
                                 {actor.roles.map((role, rIdx) => (

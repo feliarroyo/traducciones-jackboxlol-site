@@ -31,14 +31,14 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
           {/* Badge for upcoming translations */}
           {comingSoon && (
             <div className="mt-1.5 flex justify-center">
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-400/10 border border-slate-400/20">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider text-slate-400 bg-slate-400/10 border border-slate-400/20">
                 Próximamente
               </span>
             </div>
           )}
 
           {mainContributors.length > 0 && (
-            <span className="text-slate-200 block font-bold text-[10px] my-1 py-1">
+            <span className="text-slate-200 block font-bold text-[11px] my-1 py-1">
               {isAdaptation ? "Adaptación" : "Traducción"}{!isSolo && " principal"}
               {mainContributors.map((user, idx) => (
                 <div key={idx} className="text-center text-[11px] leading-snug">
@@ -71,14 +71,14 @@ export default function CreditCardGame({ id, isAdaptation, isSolo, mainContribut
                   Créditos de traducción
                 </h3>
                 {comingSoon && (
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-400/10 border border-slate-400/20">
+                  <span className="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider text-slate-400 bg-slate-400/10 border border-slate-400/20">
                     Próximamente
                   </span>
                 )}
               </div>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsOpen(false)} aria-label="Cerrar"
               className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition-colors shrink-0"
             >
               ✕

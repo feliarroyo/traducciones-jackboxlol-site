@@ -74,9 +74,9 @@ export default function GameDownloadButton({
 
       {/* FLOATING HOVER NOTE TOOLTIP */}
       {(noteTitle || isComingSoon || notes) && (
-        <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 z-30 p-2.5 rounded-xl bg-slate-950/95 border border-slate-800/90 md:backdrop-blur-md text-[10px] text-slate-200 text-center leading-normal shadow-2xl transition-all duration-300 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
+        <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 z-30 p-2.5 rounded-xl bg-slate-950/95 border border-slate-800/90 md:backdrop-blur-md text-[11px] text-slate-200 text-center leading-normal shadow-2xl transition-all duration-300 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
           {(noteTitle || altText) && (
-            <p className="font-medium text-amber-400 mb-0.5 uppercase tracking-wider text-[8px]">
+            <p className="font-medium text-amber-400 mb-0.5 uppercase tracking-wider text-[11px]">
               {noteTitle || altText}
             </p>
           )}
@@ -84,7 +84,7 @@ export default function GameDownloadButton({
           {/* 🏷️ "Próximamente" Badge */}
           {isComingSoon && (
             <div className="my-1.5 flex justify-center">
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-400/10 border border-slate-400/20">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider text-slate-400 bg-slate-400/10 border border-slate-400/20">
                 Próximamente
               </span>
             </div>

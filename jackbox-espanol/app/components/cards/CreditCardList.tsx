@@ -17,7 +17,7 @@ export default function CreditCardList({ title, users }: CreditCardListProps) {
                 </h3>
                 {/* Contributions Matrix — Always Visible */}
                 <div className="flex flex-wrap gap-5 items-center justify-center">
-                    {users.map((user, idx) => (
+                    {users.map((user) => (
                         <div key={user} className="text-[11px] text-center">
                             <span className="text-amber-400 font-semibold">
                                 {user}

@@ -2,12 +2,9 @@
 
 import Image from "next/image";
 import { GAME_ASSETS } from "../../data/gameRegistry";
-import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "framer-motion";
 import { useModal } from "../hooks/useModal";
 import { BaseCard } from "../ui/BaseCard";
 import { CreditModal } from "../ui/CreditModal";
-import { useEffect, useMemo, useState } from "react";
 import { FadeImage } from "../ui/FadeImage";
 
 // 🏷️ Define the strict TypeScript shape for the Admin data structure
@@ -46,7 +43,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
           )}
 
           <div className="space-y-1 w-full max-w-full px-1 shrink min-w-0">
-            <h3 className="text-[9px] xs:text-sm sm:text-base md:text-lg font-bold transition-colors block">
+            <h3 className="text-xs sm:text-base md:text-lg font-bold transition-colors block">
               {admin.profileUrl ? (
                 <a
                   href={admin.profileUrl}
@@ -61,18 +58,18 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
               )}
               {/* TAGS (if present) */}
               {(admin.tags && admin.tags.length > 0) ? (
-                <div className="flex flex-wrap gap-1 justify-center w-full overflow-hidden max-h-4 sm:max-h-full">
+                <div className="flex flex-wrap gap-1 justify-center w-full overflow-hidden max-h-5 sm:max-h-full">
                   {admin.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="text-[5px] sm:text-[9px] md:text-[10px] leading-tight font-bold px-1.5 sm:px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 truncate max-w-full tracking-wide uppercase shrink-0"
+                      className="text-[11px] leading-tight font-bold px-1.5 sm:px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 truncate max-w-full sm:tracking-wide uppercase shrink-0"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               ) : (
-                <div className="text-[5px] sm:text-[9px] md:text-[10px] leading-tight font-bold px-1.5 sm:px-2 py-0.5 rounded-full text-amber-400 truncate max-w-full tracking-wide uppercase shrink-0">&nbsp;</div>
+                <div className="text-[11px] leading-tight font-bold px-1.5 sm:px-2 py-0.5 rounded-full text-amber-400 truncate max-w-full sm:tracking-wide uppercase shrink-0">&nbsp;</div>
               )}
             </h3>
           </div>
@@ -81,7 +78,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
 
         <button
           onClick={() => setIsOpen(true)}
-          className="mt-2 text-[9px] sm:text-xs font-bold text-cyan-400 hover:text-cyan-300 hover:underline transition-colors cursor-pointer"
+          className="mt-2 text-[11px] sm:text-xs font-bold text-cyan-400 hover:text-cyan-300 hover:underline transition-colors cursor-pointer"
         >
           Ver contribuciones
         </button>
@@ -108,7 +105,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
                 )}
                 {/* TAGS */}
                 {admin.tags && admin.tags.map((tag, tIdx) => (
-                  <span key={tIdx} className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 uppercase tracking-wider">
+                  <span key={tIdx} className="text-[11px] font-extrabold px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 uppercase tracking-wider">
                     {tag}
                   </span>
                 ))}
@@ -117,7 +114,7 @@ export default function CreditCardAdmin({ admin }: CreditCardAdminProps) {
             </div>
 
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsOpen(false)} aria-label="Cerrar"
               className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 text-lg transition-colors shrink-0"
             >
               ✕

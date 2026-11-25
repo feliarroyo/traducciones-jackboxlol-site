@@ -12,7 +12,7 @@ export const FAQ_REGISTRY: Faq[] = [
     {
         question: "Encontré un error en una de las traducciones. ¿Dónde puedo reportarlo?",
         answer: [
-            <React.Fragment key="q1-1">Puedes reportar el error en el canal "soporte" del <a href="https://discord.gg/jackbox" target="_blank" rel="noopener noreferrer" className={link}>servidor de Discord</a>.</React.Fragment>, 
+            <React.Fragment key="q1-1">Puedes reportar el error en el canal &quot;soporte&quot; del <a href="https://discord.gg/jackbox" target="_blank" rel="noopener noreferrer" className={link}>servidor de Discord</a>.</React.Fragment>, 
             <React.Fragment key="q1-2"><p>En lo posible, no escatimes en los detalles.</p> Por ejemplo: si una ocurrencia de emergencia en Quiplash 3 no está bien escrita, envía también el enunciado.</React.Fragment>
         ]
     },
@@ -40,14 +40,14 @@ export const FAQ_REGISTRY: Faq[] = [
         answer: [
             "Hay varias maneras de restaurar un juego a su idioma original:",
             <React.Fragment key="q5-1"><b>Usando Steam y la Utility:</b> En la Utility {"->"} “Ajustes” {"->"} hacer clic sobre el botón de la flecha. Al hacerlo, los archivos se verificarán con Steam automáticamente.</React.Fragment>,
-            <React.Fragment key="q5-2"><b>Usando solo Steam:</b> En tu biblioteca de Steam, haz clic derecho en el juego que quieras restaurar y selecciona "Propiedades..." {"->"} "ARCHIVOS LOCALES" {"->"} "Verificar integridad de los archivos de juego...".</React.Fragment>,
-            <React.Fragment key="q5-3"><b>Con Epic Games Store:</b> Debes hacer clic en los tres puntos al lado del juego que desees restaurar y pulsar "Verificar".</React.Fragment>,
+            <React.Fragment key="q5-2"><b>Usando solo Steam:</b> En tu biblioteca de Steam, haz clic derecho en el juego que quieras restaurar y selecciona &quot;Propiedades...&quot; {"->"} &quot;ARCHIVOS LOCALES&quot; {"->"} &quot;Verificar integridad de los archivos de juego...&quot;.</React.Fragment>,
+            <React.Fragment key="q5-3"><b>Con Epic Games Store:</b> Debes hacer clic en los tres puntos al lado del juego que desees restaurar y pulsar &quot;Verificar&quot;.</React.Fragment>,
             "Si deseas poder intercambiar entre inglés y español, una vez realizado el paso de arriba realiza lo siguiente:",
             <React.Fragment key="q5-4">
                 <ul>
-                    <ol>1. En la carpeta del juego, haz una copia de la carpeta "games" y llámala "gamesEN" (copia y pega la carpeta en el mismo lugar para ello).</ol>
+                    <ol>1. En la carpeta del juego, haz una copia de la carpeta &quot;games&quot; y llámala &quot;gamesEN&quot; (copia y pega la carpeta en el mismo lugar para ello).</ol>
                     <ol>2. Aplica la traducción.</ol>
-                    <ol>3. Coloca <a href="https://www.mediafire.com/file/zi7sy4d7ax50epm/JackboxGameRenamer.zip/file" target="_blank" rel="noopener noreferrer" className={link}>estos archivos</a> en la carpeta del juego (donde se encuentran las carpetas "games" y "gamesEN").</ol>
+                    <ol>3. Coloca <a href="https://www.mediafire.com/file/zi7sy4d7ax50epm/JackboxGameRenamer.zip/file" target="_blank" rel="noopener noreferrer" className={link}>estos archivos</a> en la carpeta del juego (donde se encuentran las carpetas &quot;games&quot; y &quot;gamesEN&quot;).</ol>
                     <ol>4. Una vez hecho todo, simplemente antes de iniciar un juego ejecuta el .bat del idioma con el que desees jugar.</ol>
                 </ul>
             </React.Fragment>,
@@ -67,13 +67,13 @@ export const FAQ_REGISTRY: Faq[] = [
             <React.Fragment key="q6-3">Ve al directorio de instalación del juego. Para ello, hay un método simple de hacerlo:
             <ul>
                 <li><b>- En Steam:</b> Haz clic derecho en el juego de tu biblioteca → Administrar → Explorar archivos locales</li>
-                <li><b>- En Epic Games Store:</b> Haz clic en "..." del juego → Gestionar → Clic en el icono de carpeta de la sección "Instalación"</li>
+                <li><b>- En Epic Games Store:</b> Haz clic en &quot;...&quot; del juego → Gestionar → Clic en el icono de carpeta de la sección &quot;Instalación&quot;</li>
             </ul>
             </React.Fragment>,
             "Acto seguido, haz clic derecho sobre la \"App\" del juego y pulsa \"Mostrar contenido del paquete\".",
             "Una vez descargado el parche, extrae el contenido del zip en la carpeta \"Contents/Resources/macos\", reemplazando todo lo necesario.",
-            <React.Fragment key="q6-4"><b>Aclaración para juegos no de Jackbox:</b> Los parches de estos juegos (ver listado al final) se extraen en la carpeta "Contents/Resources/Data".</React.Fragment>,
-            <React.Fragment key="q6-5"><b>Aclaración para Quiplash:</b> Para que el DLC "Quip Pack 1" sea traducido en esta plataforma, la carpeta "DLC" del parche debe extraerse en el mismo directorio en el que se encuentra la App del juego.</React.Fragment>,
+            <React.Fragment key="q6-4"><b>Aclaración para juegos no de Jackbox:</b> Los parches de estos juegos (ver listado al final) se extraen en la carpeta &quot;Contents/Resources/Data&quot;.</React.Fragment>,
+            <React.Fragment key="q6-5"><b>Aclaración para Quiplash:</b> Para que el DLC &quot;Quip Pack 1&quot; sea traducido en esta plataforma, la carpeta &quot;DLC&quot; del parche debe extraerse en el mismo directorio en el que se encuentra la App del juego.</React.Fragment>,
             <React.Fragment key="q6-6"><b>Método alternativo utilizando la consola de comandos (para usuarios experimentados):</b></React.Fragment>,
             "Descarga y extrae el parche en la carpeta de \"Descargas\". Asegúrate que sea extraído en una carpeta con el mismo nombre del parche.",
             <React.Fragment key="q6-7">Accede por la terminal al directorio donde están los juegos. Para ello, una vez abierta la terminal se debe escribir el siguiente comando:
@@ -82,13 +82,13 @@ export const FAQ_REGISTRY: Faq[] = [
             <React.Fragment key="q6-8">Accede a la carpeta del Pack a traducir, utilizando el comando: <p className={emphasis}>
                 <code>cd JUEGO/JUEGO.app/Contents/Resources</code>
             </p> (<code className={emphasis}>JUEGO</code> debe ser reemplazado con el nombre de la carpeta del juego).</React.Fragment>,
-            <React.Fragment key="q6-9">Instala la traducción usando el comando el comando <code className={emphasis}>ditto</code>. Asumiendo que el archivo de la traducción está extraído en la carpeta de "Descargas" de tu equipo, usa el siguiente comando:</React.Fragment>,
+            <React.Fragment key="q6-9">Instala la traducción usando el comando el comando <code className={emphasis}>ditto</code>. Asumiendo que el archivo de la traducción está extraído en la carpeta de &quot;Descargas&quot; de tu equipo, usa el siguiente comando:</React.Fragment>,
             <React.Fragment key="q6-10"><p className={emphasis}>
                 <code>ditto ~/Downloads/PARCHE macos</code></p>
                 (<code className={emphasis}>PARCHE</code> debe ser reemplazado con el nombre del parche descargado)
             </React.Fragment>,
             <React.Fragment key="q6-11"><b>Aclaración para juegos no de Jackbox:</b> Para los parches de estos juegos (ver listado al final), el directorio <code className={emphasis}>macos</code> debe reemplazarse por <code className={emphasis}>Data</code>.</React.Fragment>,
-            <React.Fragment key="q6-12"><b>Aclaración para Quiplash:</b> Para que el DLC "Quip Pack 1" sea traducido en esta plataforma, una vez reiniciada la consola se deben también ingresar estos comandos:</React.Fragment>,
+            <React.Fragment key="q6-12"><b>Aclaración para Quiplash:</b> Para que el DLC &quot;Quip Pack 1&quot; sea traducido en esta plataforma, una vez reiniciada la consola se deben también ingresar estos comandos:</React.Fragment>,
             <React.Fragment key="q6-13">
                 <p className={emphasis}><code>cd ~/Library/Application\ Support/Steam/steamapps/common</code></p>
                 <p className={emphasis}><code>cd Quiplash</code></p>

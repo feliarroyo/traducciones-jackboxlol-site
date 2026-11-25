@@ -19,7 +19,7 @@ export default function DubGameCard({ game }: DubGameCardProps) {
                 </div>
                 {/* Game Details if available */}
                 {game.details && (
-                    <p className="text-[10px] text-slate-400/80 font-medium tracking-wide mt-1 px-1">
+                    <p className="text-[11px] text-slate-400/80 font-medium tracking-wide mt-1 px-1">
                         {game.details}
                     </p>
                 )}
@@ -30,7 +30,7 @@ export default function DubGameCard({ game }: DubGameCardProps) {
                 
                     <a
                         href={game.songUrl} target="_blank" rel="noopener noreferrer"
-                        className="text-[10px] px-2 py-1 font-bold bg-slate-900 border border-slate-800 hover:border-amber-500/30 hover:bg-amber-950/20 text-slate-300 hover:text-amber-400 rounded-lg transition-all whitespace-nowrap"
+                        className="text-[11px] px-2 py-1 font-bold bg-slate-900 border border-slate-800 hover:border-amber-500/30 hover:bg-amber-950/20 text-slate-300 hover:text-amber-400 rounded-lg transition-all whitespace-nowrap"
                     >
                         🎵 Escuchar canción
                     </a>  
@@ -43,7 +43,7 @@ export default function DubGameCard({ game }: DubGameCardProps) {
                         <span className="text-slate-200 block font-bold">
                             {actor.username}
                         </span>
-                        <span className="text-slate-400 italic text-[10px]">
+                        <span className="text-slate-400 italic text-[11px]">
                             {actor.roles.join(", ")}
                         </span>
                     </div>

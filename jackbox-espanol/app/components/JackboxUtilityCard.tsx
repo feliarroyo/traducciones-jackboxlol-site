@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import DownloadButton from "./DownloadButton";
-import { WindowsIcon, MacIcon, LinuxIcon, SwitchIcon, EpicIcon, MicrosoftIcon, YouTubeIcon } from "./Icons";
+import { WindowsIcon, MacIcon, LinuxIcon, YouTubeIcon } from "./Icons";
 import Link from "next/dist/client/link";
 
 interface JackboxUtilityProps {

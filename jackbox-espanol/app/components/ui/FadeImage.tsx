@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Image, { ImageProps } from "next/image";
 
-export function FadeImage(props: ImageProps) {
+export function FadeImage({ alt, ...props }: ImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <Image
       {...props}
+      alt={alt}
       className={`
         ${props.className || ""} 
         transition-opacity duration-300 ease-in-out
