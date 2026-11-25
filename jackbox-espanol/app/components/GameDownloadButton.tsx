@@ -1,5 +1,6 @@
 import Image from "next/image";
 import VersionBadge from "./VersionBadge";
+import type { PatchInfo } from "../lib/getBuildVersion";
 
 interface GameDownloadButtonProps {
   href: string;
@@ -9,8 +10,7 @@ interface GameDownloadButtonProps {
   isSpain?: boolean;
   noteTitle?: string;
   notes?: string;
-  version_file?: string;
-  version_property?: string;
+  patchInfo?: PatchInfo;
 }
 
 export default function GameDownloadButton({
@@ -21,8 +21,7 @@ export default function GameDownloadButton({
   isSpain = false,
   noteTitle,
   notes,
-  version_file,
-  version_property,
+  patchInfo,
 }: GameDownloadButtonProps) {
   const isComingSoon = !href || href.trim() === "";
 
@@ -91,13 +90,9 @@ export default function GameDownloadButton({
             </div>
           )}
 
-          {!isComingSoon && version_file && version_property && (
+          {!isComingSoon && patchInfo?.version && (
             <div>
-              <VersionBadge
-                url={version_file}
-                property={version_property}
-                patchUrl={href}
-              />
+              <VersionBadge version={patchInfo.version} date={patchInfo.date} />
             </div>
           )}
 
@@ -107,26 +102,40 @@ export default function GameDownloadButton({
     </>
   );
 
+  // Visible label under the cover on touch screens, where the hover tooltip isn't available
+  const mobileCaption = (
+    <span className="md:hidden w-24 text-[11px] font-semibold leading-tight text-slate-300 text-center line-clamp-2">
+      {noteTitle || altText}
+      {isComingSoon && <span className="block text-slate-500 font-normal">Próximamente</span>}
+    </span>
+  );
+
   if (isComingSoon) {
     return (
-      <div
-        role="button"
-        aria-disabled="true"
-        className="group relative bg-slate-800/50 text-slate-100 font-bold rounded-2xl border border-slate-700/50 shadow-lg flex flex-col items-center justify-center gap-2 w-24 h-24 text-center cursor-not-allowed select-none"
-      >
-        {buttonContent}
+      <div className="flex flex-col items-center gap-1.5">
+        <div
+          role="button"
+          aria-disabled="true"
+          className="group relative bg-slate-800/50 text-slate-100 font-bold rounded-2xl border border-slate-700/50 shadow-lg flex flex-col items-center justify-center gap-2 w-24 h-24 text-center cursor-not-allowed select-none"
+        >
+          {buttonContent}
+        </div>
+        {mobileCaption}
       </div>
     );
   }
 
   return (
-    <a
-      href={href}
-      target="_self"
-      rel="noreferrer"
-      className="group relative bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold rounded-2xl border border-slate-700/80 shadow-lg transition-all hover:scale-105 active:scale-95 flex flex-col items-center justify-center gap-2 w-24 h-24 text-center"
-    >
-      {buttonContent}
-    </a>
+    <div className="flex flex-col items-center gap-1.5">
+      <a
+        href={href}
+        target="_self"
+        rel="noreferrer"
+        className="group relative bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold rounded-2xl border border-slate-700/80 shadow-lg transition-all hover:scale-105 active:scale-95 flex flex-col items-center justify-center gap-2 w-24 h-24 text-center"
+      >
+        {buttonContent}
+      </a>
+      {mobileCaption}
+    </div>
   );
 }
