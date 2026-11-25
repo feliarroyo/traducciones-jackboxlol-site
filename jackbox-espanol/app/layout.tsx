@@ -20,7 +20,14 @@ export const viewport: Viewport = {
   maximumScale: 5, // Permite zoom por accesibilidad pero controlado
 };
 
+const PRODUCTION_URL = "https://traducciones.jackbox.lol";
+
 const getBaseUrl = () => {
+  // Production must always use the public domain (VERCEL_URL is the per-deployment *.vercel.app URL)
+  if (process.env.VERCEL_ENV === "production") {
+    return PRODUCTION_URL;
+  }
+  // Preview deployments keep their own URL so their previews work
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
@@ -112,7 +119,7 @@ export default function RootLayout({
         <DonateButton />
 
         {/* FOOTER */}
-        <footer className="border-t border-slate-800 bg-slate-950/50 py-8 px-6 text-center text-xs text-slate-500">
+        <footer className="border-t border-slate-800 bg-slate-950/50 pt-8 pb-20 md:pb-8 px-6 text-center text-xs text-slate-500">
           <div className="max-w-4xl mx-auto">
             <p>El sitio no está afiliado con Jackbox Games, Inc., Smiling Buddha Games, LLC o Wide Right Interactive.</p>
           </div>
