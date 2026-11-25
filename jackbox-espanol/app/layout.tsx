@@ -7,6 +7,7 @@ import HeaderNavbar from "./components/HeaderNavbar";
 import DonateButton from "./components/DonateButton";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SITE_URL } from "./lib/siteConfig";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,12 +21,11 @@ export const viewport: Viewport = {
   maximumScale: 5, // Permite zoom por accesibilidad pero controlado
 };
 
-const PRODUCTION_URL = "https://traducciones.jackbox.lol";
 
 const getBaseUrl = () => {
   // Production must always use the public domain (VERCEL_URL is the per-deployment *.vercel.app URL)
   if (process.env.VERCEL_ENV === "production") {
-    return PRODUCTION_URL;
+    return SITE_URL;
   }
   // Preview deployments keep their own URL so their previews work
   if (process.env.VERCEL_URL) {
@@ -77,7 +77,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es-419" data-scroll-behavior="smooth" className="scroll-smooth">
-      <body className={`${geistSans.className} bg-indigo-900 text-slate-100 flex flex-col min-h-screen relative`}>
+      {/* overflow-x-clip: full-bleed elements sized with 100vw (dub carousel) include the vertical
+          scrollbar width on desktop; clipping avoids a horizontal scrollbar without breaking the sticky header */}
+      <body className={`${geistSans.className} bg-indigo-900 text-slate-100 flex flex-col min-h-screen relative overflow-x-clip`}>
         {/* BACKGROUND IMAGE */}
         <div className="fixed h-screen inset-0 -z-50">
           <Image

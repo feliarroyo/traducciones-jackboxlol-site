@@ -6,13 +6,19 @@ import { marked } from "marked";
 
 const newsDirectory = path.join(process.cwd(), "app/content/news");
 
-export interface PostMetadata {
-  slug: string;
+// Frontmatter fields of each news .md file
+type PostFrontmatter = {
   title: string;
   date: string;
-  category: string;
-  excerpt: string;
+  category?: string;
   image?: string;
+  // Optional summary for search engines and social previews.
+  // When missing, a generic description is used instead.
+  description?: string;
+};
+
+export interface PostMetadata extends PostFrontmatter {
+  slug: string;
 }
 
 // 1. GET ALL POSTS SORTED BY DATE (For the News Hub Feed)
@@ -37,7 +43,7 @@ export function getAllNewsPosts(): PostMetadata[] {
 
       return {
         slug,
-        ...(data as { title: string; date: string; category: string; excerpt: string; image?: string }),
+        ...(data as PostFrontmatter),
       };
     });
 
@@ -80,7 +86,7 @@ export async function getPostBySlug(slug: string) {
   return {
     metadata: {
       slug,
-      ...(data as { title: string; date: string; category: string; excerpt: string; image?: string }),
+      ...(data as PostFrontmatter),
     },
     htmlContent,
   };
