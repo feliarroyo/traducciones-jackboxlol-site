@@ -77,7 +77,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es-419" data-scroll-behavior="smooth" className="scroll-smooth">
-      <body className={`${geistSans.className} bg-indigo-900 text-slate-100 flex flex-col min-h-screen relative`}>
+      {/* overflow-x-clip: full-bleed elements sized with 100vw (dub carousel) include the vertical
+          scrollbar width on desktop; clipping avoids a horizontal scrollbar without breaking the sticky header */}
+      <body className={`${geistSans.className} bg-indigo-900 text-slate-100 flex flex-col min-h-screen relative overflow-x-clip`}>
         {/* BACKGROUND IMAGE */}
         <div className="fixed h-screen inset-0 -z-50">
           <Image
