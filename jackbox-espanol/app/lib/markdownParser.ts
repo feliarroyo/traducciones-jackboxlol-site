@@ -45,6 +45,22 @@ export function getAllNewsPosts(): PostMetadata[] {
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+// 1b. PAGINATION HELPERS (the full feed is too heavy for a single page)
+export const NEWS_PER_PAGE = 24;
+
+export function getNewsPageCount(): number {
+  return Math.max(1, Math.ceil(getAllNewsPosts().length / NEWS_PER_PAGE));
+}
+
+export function getNewsPage(page: number): { posts: PostMetadata[]; totalPages: number } {
+  const all = getAllNewsPosts();
+  const start = (page - 1) * NEWS_PER_PAGE;
+  return {
+    posts: all.slice(start, start + NEWS_PER_PAGE),
+    totalPages: Math.max(1, Math.ceil(all.length / NEWS_PER_PAGE)),
+  };
+}
+
 // 2. GET A SINGLE POST BY SLUG (For the Individual Article Page)
 export async function getPostBySlug(slug: string) {
   const fullPath = path.join(newsDirectory, `${slug}.md`);
@@ -55,7 +71,11 @@ export async function getPostBySlug(slug: string) {
   const { data, content } = matter(fileContents);
   
   // Convert markdown syntax (*, #, [link]) into HTML tags (<em>, <h1>, <a href>)
-  const htmlContent = await marked.parse(content);
+  // Embedded iframes (YouTube) load only when scrolled near, instead of on page load
+  const htmlContent = (await marked.parse(content)).replace(
+    /<iframe(?![^>]*\bloading=)/g,
+    '<iframe loading="lazy"'
+  );
 
   return {
     metadata: {
