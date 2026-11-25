@@ -22,12 +22,14 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     return { title: "Noticia no encontrada" };
   }
   const { metadata } = post;
+  // "description" in the frontmatter overrides the generic text
+  const description = metadata.description?.trim() || "Aprende más sobre esta novedad en nuestra página de noticias.";
   return {
     title: metadata.title,
-    description: `Aprende más sobre esta novedad en nuestra página de noticias.`,
+    description,
     openGraph: {
       title: metadata.title,
-      description: metadata.excerpt,
+      description,
       type: "article",
       publishedTime: metadata.date,
       images: [

@@ -34,6 +34,21 @@ Website developed for the **Jackbox en español** translation project, containin
 | ![News Screenshot](/ReadmeElements/news1.png) | ![Help Screenshot](/ReadmeElements/help.png) |
 | ![News Screenshot](/ReadmeElements/news2.png) | - |
 
+## Writing news
+
+Each news post is a Markdown file in `jackbox-espanol/app/content/news/`, named after its date (`YYYY-MM-DD.md`), which is also its URL (`/news/YYYY-MM-DD`). It starts with this frontmatter:
+
+```yaml
+---
+title: "Post title"
+date: "2026/11/20"
+image: "/images/news/20261120.webp"   # optional: card thumbnail and banner
+description: "Short summary."         # optional: used for search engines and link previews
+---
+```
+
+If `description` is omitted, a generic description is used. If `image` is omitted, link previews fall back to `/images/og-image.png`.
+
 ## How to use locally
 
 To use locally, run the following commands:
